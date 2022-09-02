@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="15.36" height="12" viewBox="0 0 15.36 12">
+  <defs>
+    <linearGradient id="linear-gradient" x1="0.5" x2="0.5" y2="1" gradientUnits="objectBoundingBox">
+      <stop offset="0" stop-color="#38b3f7" stop-opacity="0.49"/>
+      <stop offset="1" stop-color="#38b6fc"/>
+    </linearGradient>
+  </defs>
+  <g id="编组备份" transform="translate(-43.389 63.019)">
+    <path id="形状结合" d="M7.2,2a.96.96,0,0,1,.96.96v9.6h.96V3.722A.48.48,0,0,1,9.955,3.4l3.466,3.812a1.92,1.92,0,0,1,.5,1.292V12.56h.72a.72.72,0,0,1,0,1.44H.72a.72.72,0,1,1,0-1.44h.72V2.96A.96.96,0,0,1,2.4,2ZM5.28,6.8H4.32a.48.48,0,0,0-.48.48h0v5.28H5.76V7.28a.48.48,0,0,0-.48-.48Z" transform="translate(43.389 -65.019)" fill="url(#linear-gradient)"/>
+  </g>
+</svg>

@@ -1,0 +1,235 @@
+@font-face {
+  font-family: "iconfont"; /* Project id 3232305 */
+  src: url('iconfont.woff2?t=1648106979157') format('woff2'),
+       url('iconfont.woff?t=1648106979157') format('woff'),
+       url('iconfont.ttf?t=1648106979157') format('truetype');
+}
+
+.iconfont {
+  font-family: "iconfont" !important;
+  font-size: 16px;
+  font-style: normal;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-tobaccostem:before {
+  content: "\e715";
+}
+
+.icon-hand:before {
+  content: "\e714";
+}
+
+.icon-checkbox:before {
+  content: "\e712";
+}
+
+.icon-checkbox-selected:before {
+  content: "\e713";
+}
+
+.icon-environment_fill:before {
+  content: "\e6f2";
+}
+
+.icon-temperature_fill:before {
+  content: "\e70f";
+}
+
+.icon-humidity_fill:before {
+  content: "\e710";
+}
+
+.icon-airquality_fill:before {
+  content: "\e711";
+}
+
+.icon-msg:before {
+  content: "\e70b";
+}
+
+.icon-laundry:before {
+  content: "\e70c";
+}
+
+.icon-express:before {
+  content: "\e70d";
+}
+
+.icon-canteen:before {
+  content: "\e70e";
+}
+
+.icon-airconditioner:before {
+  content: "\e707";
+}
+
+.icon-elevator:before {
+  content: "\e708";
+}
+
+.icon-green:before {
+  content: "\e709";
+}
+
+.icon-watersad:before {
+  content: "\e70a";
+}
+
+.icon-quarantine:before {
+  content: "\e705";
+}
+
+.icon-measuretem:before {
+  content: "\e706";
+}
+
+.icon-reception:before {
+  content: "\e703";
+}
+
+.icon-order:before {
+  content: "\e704";
+}
+
+.icon-energy:before {
+  content: "\e6f9";
+}
+
+.icon-home:before {
+  content: "\e6fa";
+}
+
+.icon-activity:before {
+  content: "\e6fb";
+}
+
+.icon-partyhistory:before {
+  content: "\e6fc";
+}
+
+.icon-covarea:before {
+  content: "\e6fd";
+}
+
+.icon-partymember:before {
+  content: "\e6fe";
+}
+
+.icon-monitor:before {
+  content: "\e6ff";
+}
+
+.icon-warning1:before {
+  content: "\e700";
+}
+
+.icon-property:before {
+  content: "\e701";
+}
+
+.icon-assets:before {
+  content: "\e702";
+}
+
+.icon-airquality:before {
+  content: "\e6f5";
+}
+
+.icon-noise:before {
+  content: "\e6f6";
+}
+
+.icon-humidity:before {
+  content: "\e6f7";
+}
+
+.icon-temperature:before {
+  content: "\e6f8";
+}
+
+.icon-hide:before {
+  content: "\e6f3";
+}
+
+.icon-display:before {
+  content: "\e6f4";
+}
+
+.icon-building:before {
+  content: "\e6ec";
+}
+
+.icon-reserve:before {
+  content: "\e6ed";
+}
+
+.icon-event:before {
+  content: "\e6ee";
+}
+
+.icon-attractinv:before {
+  content: "\e6ef";
+}
+
+.icon-conference_room:before {
+  content: "\e6f0";
+}
+
+.icon-fullpicture:before {
+  content: "\e6f1";
+}
+
+.icon-run:before {
+  content: "\e6e7";
+}
+
+.icon-exhaustfan:before {
+  content: "\e6e8";
+}
+
+.icon-ventilation:before {
+  content: "\e6e9";
+}
+
+.icon-parking:before {
+  content: "\e6ea";
+}
+
+.icon-car:before {
+  content: "\e6eb";
+}
+
+.icon-more:before {
+  content: "\e6e4";
+}
+
+.icon-time:before {
+  content: "\e6e5";
+}
+
+.icon-calendar:before {
+  content: "\e6e6";
+}
+
+.icon-close:before {
+  content: "\e6df";
+}
+
+.icon-down:before {
+  content: "\e6e0";
+}
+
+.icon-right:before {
+  content: "\e6e1";
+}
+
+.icon-left:before {
+  content: "\e6e2";
+}
+
+.icon-up:before {
+  content: "\e6e3";
+}
+

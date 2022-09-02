@@ -1,0 +1,426 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 10 367 203">
+  <defs>
+    <style>
+      .a,
+      .ab,
+      .af,
+      .j,
+      .z {
+        fill: #fff;
+      }
+
+      .a {
+        stroke: #707070;
+      }
+
+      .b,
+      .m,
+      .n {
+        fill: none;
+      }
+
+      .c {
+        clip-path: url(#a);
+      }
+
+      .d {
+        fill: url(#b);
+      }
+
+      .e {
+        fill: url(#l);
+      }
+
+      .f {
+        isolation: isolate;
+        clip-path: url(#t);
+      }
+
+      .g {
+        stroke: rgba(56, 183, 253, 0.07);
+        fill: url(#u);
+      }
+
+      .g,
+      .h {
+        stroke-width: 2px;
+      }
+
+      .h {
+        stroke: rgba(253, 209, 90, 0);
+        fill: url(#v);
+      }
+
+      .i {
+        fill: url(#w);
+      }
+
+      .k {
+        fill: rgba(56, 183, 253, 0.25);
+      }
+
+      .l {
+        fill: url(#ad);
+      }
+
+      .n {
+        stroke: rgba(56, 183, 253, 0.2);
+        stroke-width: 1.5px;
+      }
+
+      .o {
+        fill: url(#ae);
+      }
+
+      .p {
+        fill: url(#af);
+      }
+
+      .q {
+        fill: url(#ag);
+      }
+
+      .r {
+        fill: url(#ah);
+      }
+
+      .s {
+        fill: url(#ai);
+      }
+
+      .t {
+        fill: url(#aj);
+      }
+
+      .u {
+        fill: url(#ak);
+      }
+
+      .v {
+        fill: url(#al);
+      }
+
+      .w {
+        fill: url(#an);
+      }
+
+      .x {
+        fill: url(#ao);
+      }
+
+      .y {
+        fill: url(#ap);
+      }
+
+      .ab,
+      .z {
+        font-size: 12px;
+      }
+
+      .ac,
+      .z {
+        font-family: MicrosoftJhengHeiUIRegular, Microsoft JhengHei UI;
+      }
+
+      .aa,
+      .ab,
+      .af {
+        font-family: YuGothicUI-Regular, Yu Gothic UI;
+      }
+
+      .ad {
+        fill: #38b7fd;
+        font-size: 18px;
+        font-family: SegoeUI, Segoe UI;
+      }
+
+      .ae {
+        font-size: 10.499px;
+        baseline-shift: 5.999400079342301;
+      }
+
+      .af {
+        font-size: 14px;
+      }
+
+      .ag,
+      .ah,
+      .ai,
+      .aj {
+        stroke: none;
+      }
+
+      .ah {
+        fill: rgba(68, 213, 250, 0.11);
+      }
+
+      .ai {
+        fill: rgba(56, 183, 253, 0.11);
+      }
+
+      .aj {
+        fill: rgba(56, 183, 253, 0.25);
+      }
+
+      .ak {
+        filter: url(#aq);
+      }
+
+      .al {
+        filter: url(#aa);
+      }
+
+      .am {
+        filter: url(#x);
+      }
+    </style>
+    <clipPath id="a">
+      <rect class="a" width="360" height="222" transform="translate(30 127)" />
+    </clipPath>
+    <linearGradient id="b" x1="0.5" x2="0.5" y2="1" gradientUnits="objectBoundingBox">
+      <stop offset="0" stop-color="#38b7fd" stop-opacity="0" />
+      <stop offset="0.51" stop-color="#38b7fd" stop-opacity="0.149" />
+      <stop offset="1" stop-color="#38b7fd" stop-opacity="0" />
+    </linearGradient>
+    <linearGradient id="l" x1="0.5" x2="0.5" y2="1" gradientUnits="objectBoundingBox">
+      <stop offset="0" stop-color="#38b7fd" stop-opacity="0" />
+      <stop offset="0.494" stop-color="#38b7fd" stop-opacity="0.149" />
+      <stop offset="1" stop-color="#38b7fd" stop-opacity="0" />
+    </linearGradient>
+    <clipPath id="t">
+      <rect class="b" x="-2" y="5.355" width="367" height="209" />
+    </clipPath>
+    <radialGradient id="u" cx="0.5" cy="0.5" r="0.5" gradientUnits="objectBoundingBox">
+      <stop offset="0" stop-color="#44d5fa" stop-opacity="0" />
+      <stop offset="0.912" stop-color="#44d5fa" stop-opacity="0.059" />
+      <stop offset="1" stop-color="#44d5fa" stop-opacity="0.11" />
+    </radialGradient>
+    <radialGradient id="v" cx="0.5" cy="0.5" r="0.5" gradientUnits="objectBoundingBox">
+      <stop offset="0" stop-color="#38b7fd" stop-opacity="0" />
+      <stop offset="0.807" stop-color="#38b7fd" stop-opacity="0.059" />
+      <stop offset="1" stop-color="#38b7fd" stop-opacity="0.11" />
+    </radialGradient>
+    <linearGradient id="w" x1="0.482" x2="0.5" y2="1" gradientUnits="objectBoundingBox">
+      <stop offset="0" stop-color="#38b7fd" stop-opacity="0.529" />
+      <stop offset="0.335" stop-color="#38b7fd" stop-opacity="0.278" />
+      <stop offset="0.598" stop-color="#38b7fd" stop-opacity="0.02" />
+      <stop offset="1" stop-color="#38b7fd" stop-opacity="0" />
+    </linearGradient>
+    <filter id="x">
+      <feOffset dx="3" dy="7" input="SourceAlpha" />
+      <feGaussianBlur stdDeviation="5" result="y" />
+      <feFlood flood-color="#38b7fd" flood-opacity="0.149" result="z" />
+      <feComposite operator="out" in="SourceGraphic" in2="y" />
+      <feComposite operator="in" in="z" />
+      <feComposite operator="in" in2="SourceGraphic" />
+    </filter>
+    <filter id="aa">
+      <feOffset dx="3" dy="7" input="SourceAlpha" />
+      <feGaussianBlur stdDeviation="5" result="ab" />
+      <feFlood flood-color="#44d5fa" flood-opacity="0.149" result="ac" />
+      <feComposite operator="out" in="SourceGraphic" in2="ab" />
+      <feComposite operator="in" in="ac" />
+      <feComposite operator="in" in2="SourceGraphic" />
+    </filter>
+    <linearGradient id="ad" x1="0.482" y1="1" x2="0.5" gradientUnits="objectBoundingBox">
+      <stop offset="0" stop-color="#38b7fd" />
+      <stop offset="0.335" stop-color="#38b7fd" stop-opacity="0.671" />
+      <stop offset="0.598" stop-color="#38b7fd" stop-opacity="0.251" />
+      <stop offset="1" stop-color="#38b7fd" stop-opacity="0" />
+    </linearGradient>
+    <linearGradient id="ae" x1="0.84" y1="0.715" x2="0" y2="0.741" gradientUnits="objectBoundingBox">
+      <stop offset="0" stop-color="#5fafdb" />
+      <stop offset="1" stop-color="#5b7685" />
+    </linearGradient>
+    <linearGradient id="af" x1="0.594" y1="-0.152" x2="0.5" y2="0.778" gradientUnits="objectBoundingBox">
+      <stop offset="0" stop-color="#38b7fd" />
+      <stop offset="1" stop-color="#3a4f5b" />
+    </linearGradient>
+    <linearGradient id="ag" x1="0.784" y1="1" x2="0.689" y2="-0.124" gradientUnits="objectBoundingBox">
+      <stop offset="0" stop-color="#38b7fd" stop-opacity="0.329" />
+      <stop offset="1" stop-color="#38b7fd" stop-opacity="0" />
+    </linearGradient>
+    <linearGradient id="ah" x1="0.68" y1="0.421" x2="0" y2="0.645" gradientUnits="objectBoundingBox">
+      <stop offset="0" stop-color="#51778d" />
+      <stop offset="1" stop-color="#69b5df" />
+    </linearGradient>
+    <linearGradient id="ai" x1="0.287" y1="0.528" x2="0.593" y2="0.133" gradientUnits="objectBoundingBox">
+      <stop offset="0" stop-color="#394b54" />
+      <stop offset="1" stop-color="#65bae8" />
+    </linearGradient>
+    <linearGradient id="aj" x1="0.551" x2="0.596" y2="0.039" xlink:href="#ag" />
+    <linearGradient id="ak" x1="0.244" y1="0.651" x2="1" y2="0.5" gradientUnits="objectBoundingBox">
+      <stop offset="0" stop-color="#4f7488" />
+      <stop offset="1" stop-color="#6fb8e1" />
+    </linearGradient>
+    <linearGradient id="al" x1="0.5" x2="0.5" y2="1" gradientUnits="objectBoundingBox">
+      <stop offset="0" stop-color="#3a4a53" />
+      <stop offset="1" stop-color="#60b6e5" />
+    </linearGradient>
+    <linearGradient id="an" x1="0.136" y1="0.688" x2="0.943" y2="0.442" gradientUnits="objectBoundingBox">
+      <stop offset="0" stop-color="#38b7fd" />
+      <stop offset="1" stop-color="#24282a" />
+    </linearGradient>
+    <linearGradient id="ao" x1="0.391" y1="0.823" x2="0.414" y2="0.061" xlink:href="#ag" />
+    <linearGradient id="ap" y1="0.223" x2="0.923" y2="0.756" gradientUnits="objectBoundingBox">
+      <stop offset="0" stop-color="#5094b9" />
+      <stop offset="1" stop-color="#3e535e" />
+    </linearGradient>
+    <filter id="aq" x="156.595" y="49.163" width="50.501" height="44.723" filterUnits="userSpaceOnUse">
+      <feOffset dy="3" input="SourceAlpha" />
+      <feGaussianBlur stdDeviation="3" result="ar" />
+      <feFlood flood-color="#4a9db2" flood-opacity="0.769" />
+      <feComposite operator="in" in2="ar" />
+      <feComposite in="SourceGraphic" />
+    </filter>
+  </defs>
+  <g transform="translate(-29.5 -127)">
+    <g class="c">
+      <g transform="translate(-24 106)">
+        <g transform="translate(2.577 42.134)">
+          <rect class="d" width="1.536" height="197.349" transform="translate(115.805) rotate(9)" />
+          <rect class="d" width="1.536" height="197.76" transform="translate(79.879 0.271) rotate(10)" />
+          <rect class="d" width="1.536" height="197.349"
+            transform="matrix(0.978, 0.208, -0.208, 0.978, 41.031, 0.902)" />
+          <rect class="d" width="1.536" height="196.581"
+            transform="matrix(0.995, 0.105, -0.105, 0.995, 149.469, 7.17)" />
+          <rect class="d" width="1.536" height="196.581"
+            transform="matrix(0.998, 0.07, -0.07, 0.998, 185.853, 10.067)" />
+          <rect class="d" width="1.536" height="196.581" transform="matrix(1, 0.017, -0.017, 1, 221.89, 14.579)" />
+          <rect class="d" width="1.536" height="196.581" transform="translate(256.55 17.834) rotate(-2)" />
+          <rect class="d" width="1.536" height="196.581"
+            transform="matrix(0.998, -0.07, 0.07, 0.998, 293.537, 22.737)" />
+          <rect class="d" width="1.536" height="196.581" transform="translate(328.991 26.439) rotate(-7)" />
+          <rect class="d" width="1.536" height="181.909" transform="translate(367.545 31.64) rotate(-9)" />
+        </g>
+        <g transform="matrix(-0.174, -0.985, 0.985, -0.174, 31.214, 304.673)">
+          <rect class="e" width="1.536" height="420.805"
+            transform="matrix(0.978, 0.208, -0.208, 0.978, 144.25, 17.901)" />
+          <rect class="e" width="1.536" height="403.037" transform="translate(113.711 10.392) rotate(12)" />
+          <rect class="e" width="1.536" height="394.697" transform="matrix(0.978, 0.208, -0.208, 0.978, 82.062, 0)" />
+          <rect class="e" width="1.536" height="426.181"
+            transform="matrix(0.978, 0.208, -0.208, 0.978, 172.254, 24.583)" />
+          <rect class="e" width="1.536" height="405.448"
+            transform="matrix(0.978, 0.208, -0.208, 0.978, 198.999, 25.46)" />
+          <rect class="e" width="1.536" height="422.897"
+            transform="matrix(0.978, 0.208, -0.208, 0.978, 224.711, 29.993)" />
+          <rect class="e" width="1.536" height="196.581" transform="translate(356.717 129.928) rotate(-7)" />
+          <rect class="e" width="1.536" height="196.581" transform="translate(395.271 135.129) rotate(-9)" />
+        </g>
+      </g>
+    </g>
+    <g transform="translate(2 -6)">
+      <g class="f" transform="translate(29.5 141.645)">
+        <g transform="translate(13.5 -32.645)">
+          <g transform="translate(23 -41)">
+            <g transform="translate(-35 122.928)">
+              <g class="g" transform="translate(57 -4.928)">
+                <ellipse class="ag" cx="120.5" cy="60.5" rx="120.5" ry="60.5" />
+                <ellipse class="b" cx="120.5" cy="60.5" rx="119.5" ry="59.5" />
+              </g>
+              <g class="h" transform="translate(0 -29.928)">
+                <ellipse class="ag" cx="179.5" cy="87.5" rx="179.5" ry="87.5" />
+                <ellipse class="b" cx="179.5" cy="87.5" rx="178.5" ry="86.5" />
+              </g>
+            </g>
+            <g transform="translate(0 12)">
+              <g class="i" transform="translate(125.064 167.758)">
+                <path class="ag" d="M-32.974,16.315l49.394,19.8,50.76-16.5L15.716-.586Z" />
+                <path class="ah"
+                  d="M 15.69473266601562 0.4797248840332031 L -30.11835479736328 16.3820858001709 L 16.45611190795898 35.05252075195312 L 64.21829986572266 19.52445793151855 L 15.69473266601562 0.4797248840332031 M 15.71599769592285 -0.5861892700195312 L 67.1806640625 19.61287879943848 L 16.42051696777344 36.1156120300293 L -32.97388458251953 16.31474494934082 L 15.71599769592285 -0.5861892700195312 Z" />
+              </g>
+              <g class="am" transform="matrix(1, 0, 0, 1, -38.5, 53)">
+                <path class="j" d="M9.26-14.828l52.7-16.9L58.426,28.193,7.83,44.514Z"
+                  transform="translate(172.08 105.96)" />
+              </g>
+              <path class="k" d="M9.26-14.828l52.7-16.9L58.426,28.193,7.83,44.514Z"
+                transform="translate(133.581 158.963)" />
+              <g class="al" transform="matrix(1, 0, 0, 1, -38.5, 53)">
+                <path class="j" d="M20.141-60.8l48.536,19.93L67.3,18.585,17.64-1.1Z"
+                  transform="translate(112.68 131.96)" />
+              </g>
+              <g class="l" transform="translate(127.062 108)">
+                <path class="ag" d="M-32.773,16.161,17.162-.586l51.471,19.82-52.854,16.9Z" />
+                <path class="ai"
+                  d="M 17.13841819763184 0.4763908386230469 L -29.91238403320312 16.25651168823242 L 15.82196235656738 35.0712776184082 L 65.62290191650391 19.14653968811035 L 17.13841819763184 0.4763908386230469 M 17.16179084777832 -0.5861854553222656 L 68.63273620605469 19.23397636413574 L 15.77897834777832 36.13491058349609 L -32.77274322509766 16.16109657287598 L 17.16179084777832 -0.5861854553222656 Z" />
+              </g>
+              <g class="m" transform="translate(116.733 124.748)">
+                <path class="ag" d="M-34.973,20.468,27.324-.586l61.752,24.23L25.64,44.114Z" />
+                <path class="aj"
+                  d="M 27.28520965576172 1.010116577148438 L -30.58682250976562 20.56871604919434 L 25.68783187866211 42.52278900146484 L 84.61798095703125 23.5061206817627 L 27.28520965576172 1.010116577148438 M 27.32353019714355 -0.586181640625 L 89.0755615234375 23.64383506774902 L 25.64023017883301 44.11431884765625 L -34.972900390625 20.46770286560059 L 27.32353019714355 -0.586181640625 Z" />
+              </g>
+              <g class="m" transform="translate(116.733 139.173)">
+                <path class="ag" d="M-34.973,20.468,27.324-.586l61.752,24.23L25.64,44.114Z" />
+                <path class="aj"
+                  d="M 27.28520965576172 1.010116577148438 L -30.58682250976562 20.56871604919434 L 25.68783187866211 42.52278900146484 L 84.61798095703125 23.5061206817627 L 27.28520965576172 1.010116577148438 M 27.32353019714355 -0.586181640625 L 89.0755615234375 23.64383506774902 L 25.64023017883301 44.11431884765625 L -34.972900390625 20.46770286560059 L 27.32353019714355 -0.586181640625 Z" />
+              </g>
+              <path class="k" d="M20.141-60.8l48.536,19.93L67.3,18.585,17.64-1.1Z"
+                transform="translate(74.185 184.965)" />
+              <g class="n" transform="translate(114 174)">
+                <ellipse class="ag" cx="28" cy="10.5" rx="28" ry="10.5" />
+                <ellipse class="b" cx="28" cy="10.5" rx="27.25" ry="9.75" />
+              </g>
+            </g>
+          </g>
+          <g transform="translate(51 163)">
+            <path class="o"
+              d="M.1,13.461H0V5.128H6.924C13.473,2.019,24.057,0,36,0S58.527,2.019,65.076,5.128H72v8.333h-.1C70.481,19.915,54.95,25,36,25S1.519,19.915.1,13.461Z"
+              transform="translate(0 39)" />
+            <ellipse class="p" cx="36" cy="12.5" rx="36" ry="12.5" transform="translate(0 31)" />
+            <path class="q" d="M.012,43.628H0V0H72V43.628h-.012C71.5,50.49,55.574,56,36,56S.5,50.49.012,43.628Z"
+              transform="translate(0)" />
+          </g>
+          <g transform="translate(24.613 -98.44)">
+            <path class="r"
+              d="M43.362,21.17.007,11.957l0-.008H0V2.792L78.784,0V9.125l.02.014-.02.007v.013h-.041L43.362,21.17h0Z"
+              transform="translate(191.41 305.005)" />
+            <path class="s" d="M18.789,0,50.536,35.474l2.273,27.664-32-19.417L0,4.588Z"
+              transform="translate(187.903 304.855) rotate(-50)" />
+            <path class="t" d="M.318,50.833l-.3.011L0,0H79.15l-.115,47.988-.073,0L43.535,60.017Z"
+              transform="translate(191.237 257)" />
+          </g>
+          <g transform="translate(9.516 41.645)">
+            <path class="u"
+              d="M43.362,21.17.007,11.957l0-.008H0V2.792L78.784,0V9.125l.02.014-.02.007v.013h-.041L43.362,21.17h0Z"
+              transform="translate(3.507 48.005)" />
+            <path class="v" d="M18.789,0,50.536,35.474l2.273,27.664-32-19.417L0,4.588Z"
+              transform="translate(0 47.855) rotate(-50)" />
+            <path class="t" d="M.318,50.833l-.3.011L0,0H79.15l-.115,47.988-.073,0L43.535,60.017Z"
+              transform="translate(3.334)" />
+          </g>
+          <g transform="translate(-140.927 -134.666)">
+            <path class="w" d="M38.135-5.178l16.712,34.6L-15.535,13.676Z" transform="translate(399.688 213.327)" />
+            <path class="x" d="M7.887,45.692l.6-.209-.491-.11L0,0,91.322.446,78.16,61.12l-.051-.011.16.331Z"
+              transform="translate(376.265 181.311)" />
+            <path class="y"
+              d="M0,10.019.322,9.9V0l16.9,3.867.028-.01L25.679,5.8l20.143,4.609,18.99,4.264.046.091,5.515,1.262-.2,9.313.213.424Z"
+              transform="translate(384.152 226.681)" />
+          </g><text class="z" transform="translate(265 96)">
+            <tspan x="0" y="0">总人数</tspan>
+
+          </text><text class="ab" transform="translate(236 207)">
+            <tspan x="0" y="0">企业数</tspan>
+          </text><text class="z" transform="translate(30 90)">
+            <tspan x="0" y="0">总面积</tspan>
+          </text><text class="ab" transform="translate(63 210)">
+            <tspan x="0" y="0">占用面积</tspan>
+          </text><text class="ad" transform="translate(19 57)">
+            <tspan x="0" y="0">3.12km</tspan>
+            <tspan class="ae" y="0">2</tspan>
+          </text><text class="ad" transform="translate(54 181)">
+            <tspan x="0" y="0">2.98km</tspan>
+            <tspan class="ae" y="0">2</tspan>
+          </text><text class="ad" transform="translate(262 69)">
+            <tspan x="0" y="0">4560</tspan>
+          </text><text class="ad" transform="translate(234 180)">
+            <tspan x="0" y="0">679</tspan>
+          </text>
+        </g>
+      </g>
+      <g class="ak" transform="matrix(1, 0, 0, 1, 27.5, 133)"><text class="af"
+          transform="translate(170.23 78.08) rotate(-18)">
+          <tspan x="0" y="0">园区</tspan>
+        </text></g>
+    </g>
+  </g>
+</svg>

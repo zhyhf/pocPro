@@ -1,0 +1,107 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="331" height="151"
+  viewBox="0 0 331 151">
+  <defs>
+    <style>
+      .a {
+        fill: none;
+        stroke: rgba(255, 255, 255, 0.24);
+        stroke-dasharray: 2;
+      }
+
+      .b {
+        fill: #3889ff;
+      }
+
+      .c {
+        fill: #2dffbf;
+      }
+
+      .d,
+      .g {
+        fill: #fff;
+        font-size: 12px;
+        font-family: MicrosoftJhengHeiUIRegular, Microsoft JhengHei UI;
+      }
+
+      .e {
+        fill: url(#a);
+      }
+
+      .f {
+        fill: url(#h);
+      }
+
+      .g {
+        opacity: 0.75;
+      }
+    </style>
+    <linearGradient id="a" x1="0.5" x2="0.5" y2="1" gradientUnits="objectBoundingBox">
+      <stop offset="0" stop-color="#3889ff" />
+      <stop offset="1" stop-color="#1c4580" stop-opacity="0" />
+    </linearGradient>
+    <linearGradient id="h" x1="0.5" x2="0.5" y2="1" gradientUnits="objectBoundingBox">
+      <stop offset="0" stop-color="#2dffbf" />
+      <stop offset="1" stop-color="#178060" stop-opacity="0" />
+    </linearGradient>
+  </defs>
+  <g transform="translate(-3077 995)">
+    <g transform="translate(1522 -1371)">
+      <line class="a" x2="306.948" transform="translate(1578.978 506.5)" />
+      <line class="a" x2="306.948" transform="translate(1578.978 482.5)" />
+      <line class="a" x2="306.948" transform="translate(1578.978 458.5)" />
+      <line class="a" x2="306.948" transform="translate(1578.978 410.5)" />
+      <line class="a" x2="306.948" transform="translate(1578.978 434.5)" />
+      <rect class="b" width="12" height="12" transform="translate(1736 378)" />
+      <rect class="c" width="12" height="12" transform="translate(1818 378)" /><text class="d"
+        transform="translate(1756 388)">
+        <tspan x="0" y="0">车辆进数</tspan>
+      </text><text class="d" transform="translate(1838 388)">
+        <tspan x="0" y="0">车辆出数</tspan>
+      </text>
+    </g>
+    <rect class="e" width="10" height="55" transform="translate(3105 -919)" />
+    <rect class="e" width="10" height="55" transform="translate(3193 -919)" />
+    <rect class="e" width="10" height="87" transform="translate(3245 -951)" />
+    <rect class="e" width="10" height="55" transform="translate(3289 -920)" />
+    <rect class="e" width="10" height="55" transform="translate(3335 -920)" />
+    <rect class="e" width="10" height="55" transform="translate(3381 -911)" />
+    <rect class="e" width="10" height="25" transform="translate(3147 -889)" />
+    <rect class="f" width="10" height="77" transform="translate(3119 -941)" />
+    <rect class="f" width="10" height="55" transform="translate(3207 -919)" />
+    <rect class="f" width="10" height="34" transform="translate(3259 -898)" />
+    <rect class="f" width="10" height="77" transform="translate(3303 -942)" />
+    <rect class="f" width="10" height="18" transform="translate(3349 -883)" />
+    <rect class="f" width="10" height="36" transform="translate(3395 -901)" />
+    <rect class="f" width="10" height="96" transform="translate(3161 -960)" /><text class="g"
+      transform="translate(3105 -847)">
+      <tspan x="0" y="0">周一</tspan>
+    </text><text class="g" transform="translate(3245 -847)">
+      <tspan x="0" y="0">周四</tspan>
+    </text><text class="g" transform="translate(3147 -847)">
+      <tspan x="0" y="0">周二</tspan>
+    </text><text class="g" transform="translate(3289 -847)">
+      <tspan x="0" y="0">周五</tspan>
+    </text><text class="g" transform="translate(3193 -847)">
+      <tspan x="0" y="0">周三</tspan>
+    </text><text class="g" transform="translate(3335 -847)">
+      <tspan x="0" y="0">周六</tspan>
+    </text><text class="g" transform="translate(3381 -847)">
+      <tspan x="0" y="0">周日</tspan>
+    </text><text class="d" transform="translate(3086 -864)">
+      <tspan x="0" y="0"></tspan>
+      <tspan x="0" y="15"></tspan>
+    </text><text class="g" transform="translate(3089 -861)">
+      <tspan x="0" y="0">0</tspan>
+    </text><text class="g" transform="translate(3082 -884)">
+      <tspan x="0" y="0">20</tspan>
+    </text><text class="g" transform="translate(3082 -907)">
+      <tspan x="0" y="0">40</tspan>
+    </text><text class="g" transform="translate(3082 -931)">
+      <tspan x="0" y="0">60</tspan>
+    </text><text class="g" transform="translate(3082 -954)">
+      <tspan x="0" y="0">80</tspan>
+    </text><text class="g" transform="translate(3077 -978)">
+      <tspan x="0" y="0">次数</tspan>
+    </text>
+  </g>
+</svg>

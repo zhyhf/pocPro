@@ -1,0 +1,154 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="239.907" height="189.464" viewBox="0 0 239.907 189.464">
+  <defs>
+    <linearGradient id="linear-gradient" x1="0.979" y1="0.5" x2="-0.07" y2="0.5" gradientUnits="objectBoundingBox">
+      <stop offset="0" stop-color="#12ebce" stop-opacity="0.2"/>
+      <stop offset="1" stop-color="#12ebce" stop-opacity="0"/>
+    </linearGradient>
+    <linearGradient id="linear-gradient-2" x1="0.979" y1="0.5" x2="-0.015" y2="0.5" gradientUnits="objectBoundingBox">
+      <stop offset="0" stop-color="#43bcff" stop-opacity="0.2"/>
+      <stop offset="1" stop-color="#43bcff" stop-opacity="0"/>
+    </linearGradient>
+    <linearGradient id="linear-gradient-3" x1="0.979" y1="0.5" x2="-0.309" y2="0.5" gradientUnits="objectBoundingBox">
+      <stop offset="0" stop-color="#034d8b" stop-opacity="0.2"/>
+      <stop offset="1" stop-color="#034d8b" stop-opacity="0"/>
+    </linearGradient>
+    <linearGradient id="linear-gradient-4" x1="0.979" x2="0.113" xlink:href="#linear-gradient-3"/>
+    <linearGradient id="linear-gradient-5" x1="1" x2="-0.102" xlink:href="#linear-gradient"/>
+    <linearGradient id="linear-gradient-6" x1="1" y1="0.5" x2="0" y2="0.5" gradientUnits="objectBoundingBox">
+      <stop offset="0" stop-color="#4f839f" stop-opacity="0.2"/>
+      <stop offset="1" stop-color="#4f839f" stop-opacity="0"/>
+    </linearGradient>
+    <linearGradient id="linear-gradient-7" x1="1" y1="0.577" x2="-0.214" y2="0.457" xlink:href="#linear-gradient-3"/>
+    <clipPath id="clip-path">
+      <rect id="矩形_156" data-name="矩形 156" width="85" height="174" transform="translate(7926.455 -5253)" fill="#fff"/>
+    </clipPath>
+    <clipPath id="clip-path-2">
+      <path id="路径_186" data-name="路径 186" d="M40.5,0,81,86.489l-92.465-7.073Z" transform="translate(7963.243 -5152.273) rotate(-155)" fill="#fff"/>
+    </clipPath>
+    <filter id="椭圆_2145">
+      <feOffset input="SourceAlpha"/>
+      <feGaussianBlur stdDeviation="10" result="blur"/>
+      <feFlood flood-color="#12ebce" flood-opacity="0.2" result="color"/>
+      <feComposite operator="out" in="SourceGraphic" in2="blur"/>
+      <feComposite operator="in" in="color"/>
+      <feComposite operator="in" in2="SourceGraphic"/>
+    </filter>
+    <clipPath id="clip-path-3">
+      <path id="路径_187" data-name="路径 187" d="M51.965,86.489,92.465,0,0,7.073Z" transform="translate(120.354 78.386) rotate(155)" fill="#fff"/>
+    </clipPath>
+    <filter id="椭圆_2119">
+      <feOffset input="SourceAlpha"/>
+      <feGaussianBlur stdDeviation="10" result="blur-2"/>
+      <feFlood flood-color="#034d8b" flood-opacity="0.2" result="color-2"/>
+      <feComposite operator="out" in="SourceGraphic" in2="blur-2"/>
+      <feComposite operator="in" in="color-2"/>
+      <feComposite operator="in" in2="SourceGraphic"/>
+    </filter>
+    <filter id="椭圆_2146">
+      <feOffset input="SourceAlpha"/>
+      <feGaussianBlur stdDeviation="10" result="blur-3"/>
+      <feFlood flood-color="#034d8b" flood-opacity="0.2" result="color-3"/>
+      <feComposite operator="out" in="SourceGraphic" in2="blur-3"/>
+      <feComposite operator="in" in="color-3"/>
+      <feComposite operator="in" in2="SourceGraphic"/>
+    </filter>
+    <clipPath id="clip-path-4">
+      <path id="路径_188" data-name="路径 188" d="M40.5,0,87.862,83.07-13.1,80.167Z" transform="translate(7927.603 -5129.516) rotate(-92)" fill="#fff"/>
+    </clipPath>
+    <filter id="椭圆_2117" x="-32.536" y="19.891" width="149" height="149" filterUnits="userSpaceOnUse">
+      <feOffset input="SourceAlpha"/>
+      <feGaussianBlur stdDeviation="10" result="blur-4"/>
+      <feFlood flood-color="#43bcff" flood-opacity="0.2" result="color-4"/>
+      <feComposite operator="out" in="SourceGraphic" in2="blur-4"/>
+      <feComposite operator="in" in="color-4"/>
+      <feComposite operator="in" in2="SourceGraphic"/>
+    </filter>
+    <filter id="椭圆_2144" x="-32.536" y="19.891" width="149" height="149" filterUnits="userSpaceOnUse">
+      <feOffset input="SourceAlpha"/>
+      <feGaussianBlur stdDeviation="10" result="blur-5"/>
+      <feFlood flood-color="#43bcff" flood-opacity="0.2" result="color-5"/>
+      <feComposite operator="out" in="SourceGraphic" in2="blur-5"/>
+      <feComposite operator="in" in="color-5"/>
+      <feComposite operator="in" in2="SourceGraphic"/>
+    </filter>
+    <linearGradient id="linear-gradient-8" x1="0.271" y1="0.047" x2="0.937" y2="0.713" gradientUnits="objectBoundingBox">
+      <stop offset="0" stop-color="#38b7fd"/>
+      <stop offset="1" stop-color="#4389af"/>
+    </linearGradient>
+    <linearGradient id="linear-gradient-9" x1="0.059" y1="0.926" x2="0.906" y2="0.724" gradientUnits="objectBoundingBox">
+      <stop offset="0" stop-color="#386dfd"/>
+      <stop offset="1" stop-color="#243c7b"/>
+    </linearGradient>
+    <linearGradient id="linear-gradient-10" x1="0.882" y1="1" x2="0.03" y2="0.085" gradientUnits="objectBoundingBox">
+      <stop offset="0" stop-color="#2dfdbe"/>
+      <stop offset="1" stop-color="#73a596"/>
+    </linearGradient>
+  </defs>
+  <g id="光伏充能" transform="translate(-7884.536 5264.891)">
+    <path id="路径_216" data-name="路径 216" d="M7186.227-5697.487c4.651-.274,72.234,0,72.234,0l11.766-16.144h61s17.511,5.746,15.322,19.974-15.322,18.879-15.322,18.879h-61l-11.766-15.6h-72.234Z" transform="translate(776.455 466)" fill="url(#linear-gradient)"/>
+    <path id="路径_217" data-name="路径 217" d="M7186.227-5697.487c4.651-.274,72.234,0,72.234,0l11.766-16.144h61s17.511,5.746,15.322,19.974-15.322,18.879-15.322,18.879h-61l-11.766-15.6h-72.234Z" transform="translate(776.455 527)" fill="url(#linear-gradient-2)"/>
+    <path id="路径_218" data-name="路径 218" d="M7186.227-5697.487c4.651-.274,72.234,0,72.234,0l11.766-16.144h61s17.511,5.746,15.322,19.974-15.322,18.879-15.322,18.879h-61l-11.766-15.6h-72.234Z" transform="translate(776.455 588)" fill="url(#linear-gradient-3)"/>
+    <path id="路径_219" data-name="路径 219" d="M7186.227-5697.487c4.651-.274,72.234,0,72.234,0l11.766-16.144h61s17.511,5.746,15.322,19.974-15.322,18.879-15.322,18.879h-61l-11.766-15.6h-72.234Z" transform="translate(776.455 588)" fill="url(#linear-gradient-4)"/>
+    <path id="路径_189" data-name="路径 189" d="M7269.591-5714.881h61.835l.19.063a32.269,32.269,0,0,1,8.863,4.855,20.781,20.781,0,0,1,5.706,6.6,15.7,15.7,0,0,1,1.6,9.895,24.517,24.517,0,0,1-3.5,9.43c-.265.419-.543.832-1.019,1.488a25.642,25.642,0,0,1-4.406,4.63,26.289,26.289,0,0,1-7.219,4.319l-.2.072H7269.6l-11.766-15.6h-72.861v-9.542l1.177-.069c1.4-.082,8.417-.124,20.868-.124,19.443,0,46.334.1,50.806.119Zm61.424,2.5h-60.152l-11.768,16.146-.639,0c-.3,0-30.279-.122-51.435-.122-10.291,0-16.842.027-19.545.083v4.653h71.607l11.766,15.6H7331a24.949,24.949,0,0,0,6.346-3.876,22.079,22.079,0,0,0,7.973-13.943c.831-5.4-1.3-10.148-6.324-14.108A30.517,30.517,0,0,0,7331.015-5712.381Z" transform="translate(776.455 466)" fill="url(#linear-gradient-5)"/>
+    <path id="路径_190" data-name="路径 190" d="M7269.591-5714.881h61.835l.19.063a32.269,32.269,0,0,1,8.863,4.855,20.781,20.781,0,0,1,5.706,6.6,15.7,15.7,0,0,1,1.6,9.895,24.517,24.517,0,0,1-3.5,9.43,25.894,25.894,0,0,1-5.425,6.119,26.289,26.289,0,0,1-7.219,4.319l-.2.072H7269.6l-11.766-15.6h-72.861v-9.542l1.177-.069c1.4-.082,8.417-.124,20.868-.124,19.443,0,46.334.1,50.806.119Zm61.424,2.5h-60.152l-11.768,16.146-.639,0c-.3,0-30.279-.122-51.435-.122-10.291,0-16.842.027-19.545.083v4.653h71.607l11.766,15.6H7331a24.949,24.949,0,0,0,6.346-3.876,22.079,22.079,0,0,0,7.973-13.943c.831-5.4-1.3-10.148-6.324-14.108A30.517,30.517,0,0,0,7331.015-5712.381Z" transform="translate(776.455 527)" fill="url(#linear-gradient-6)"/>
+    <path id="路径_191" data-name="路径 191" d="M7269.591-5714.881h61.835l.19.063a32.269,32.269,0,0,1,8.863,4.855,20.781,20.781,0,0,1,5.706,6.6,15.7,15.7,0,0,1,1.6,9.895,24.517,24.517,0,0,1-3.5,9.43,25.894,25.894,0,0,1-5.425,6.119,26.289,26.289,0,0,1-7.219,4.319l-.2.072H7269.6l-11.766-15.6h-72.861v-9.542l1.177-.069c1.4-.082,8.417-.124,20.868-.124,19.443,0,46.334.1,50.806.119Zm61.424,2.5h-60.152l-11.768,16.146-.639,0c-.3,0-30.279-.122-51.435-.122-10.291,0-16.842.027-19.545.083v4.653h71.607l11.766,15.6H7331a24.949,24.949,0,0,0,6.346-3.876,22.079,22.079,0,0,0,7.973-13.943c.831-5.4-1.3-10.148-6.324-14.108A30.517,30.517,0,0,0,7331.015-5712.381Z" transform="translate(776.455 588)" fill="url(#linear-gradient-7)"/>
+    <g id="蒙版组_19" data-name="蒙版组 19" clip-path="url(#clip-path)">
+      <g id="椭圆_2121" data-name="椭圆 2121" transform="translate(7848.455 -5249)" fill="none" stroke="rgba(55,183,253,0.65)" stroke-width="5" stroke-dasharray="3">
+        <ellipse cx="79" cy="79.5" rx="79" ry="79.5" stroke="none"/>
+        <ellipse cx="79" cy="79.5" rx="76.5" ry="77" fill="none"/>
+      </g>
+      <g id="椭圆_2123" data-name="椭圆 2123" transform="translate(7848.455 -5249)" fill="none" stroke="rgba(55,183,253,0.65)" stroke-width="5" stroke-dasharray="3">
+        <ellipse cx="79" cy="79.5" rx="79" ry="79.5" stroke="none"/>
+        <ellipse cx="79" cy="79.5" rx="76.5" ry="77" fill="none"/>
+      </g>
+    </g>
+    <g id="蒙版组_15" data-name="蒙版组 15" clip-path="url(#clip-path-2)">
+      <g data-type="innerShadowGroup">
+        <circle id="椭圆_2145-2" data-name="椭圆 2145" cx="74.5" cy="74.5" r="74.5" transform="translate(7852 -5245)" fill="rgba(18,235,206,0.2)"/>
+        <g transform="matrix(1, 0, 0, 1, 7884.54, -5264.89)" filter="url(#椭圆_2145)">
+          <circle id="椭圆_2145-3" data-name="椭圆 2145" cx="74.5" cy="74.5" r="74.5" transform="translate(-32.54 19.89)" fill="#fff"/>
+        </g>
+      </g>
+    </g>
+    <g id="蒙版组_16" data-name="蒙版组 16" transform="translate(7889.832 -5192.891)" clip-path="url(#clip-path-3)">
+      <g data-type="innerShadowGroup">
+        <circle id="椭圆_2119-2" data-name="椭圆 2119" cx="74.5" cy="74.5" r="74.5" transform="translate(-37.832 -51.427)" fill="rgba(3,77,139,0.2)"/>
+        <g transform="matrix(1, 0, 0, 1, -5.3, -72)" filter="url(#椭圆_2119)">
+          <circle id="椭圆_2119-3" data-name="椭圆 2119" cx="74.5" cy="74.5" r="74.5" transform="translate(-32.54 20.57)" fill="#fff"/>
+        </g>
+      </g>
+      <g data-type="innerShadowGroup">
+        <circle id="椭圆_2146-2" data-name="椭圆 2146" cx="74.5" cy="74.5" r="74.5" transform="translate(-37.832 -51.427)" fill="rgba(3,77,139,0.2)"/>
+        <g transform="matrix(1, 0, 0, 1, -5.3, -72)" filter="url(#椭圆_2146)">
+          <circle id="椭圆_2146-3" data-name="椭圆 2146" cx="74.5" cy="74.5" r="74.5" transform="translate(-32.54 20.57)" fill="#fff"/>
+        </g>
+      </g>
+    </g>
+    <g id="蒙版组_17" data-name="蒙版组 17" clip-path="url(#clip-path-4)">
+      <g data-type="innerShadowGroup">
+        <circle id="椭圆_2117-2" data-name="椭圆 2117" cx="74.5" cy="74.5" r="74.5" transform="translate(7852 -5245)" fill="rgba(79,131,159,0.2)"/>
+        <g transform="matrix(1, 0, 0, 1, 7884.54, -5264.89)" filter="url(#椭圆_2117)">
+          <circle id="椭圆_2117-3" data-name="椭圆 2117" cx="74.5" cy="74.5" r="74.5" transform="translate(-32.54 19.89)" fill="#fff"/>
+        </g>
+      </g>
+      <g data-type="innerShadowGroup">
+        <circle id="椭圆_2144-2" data-name="椭圆 2144" cx="74.5" cy="74.5" r="74.5" transform="translate(7852 -5245)" fill="rgba(79,131,159,0.2)"/>
+        <g transform="matrix(1, 0, 0, 1, 7884.54, -5264.89)" filter="url(#椭圆_2144)">
+          <circle id="椭圆_2144-3" data-name="椭圆 2144" cx="74.5" cy="74.5" r="74.5" transform="translate(-32.54 19.89)" fill="#fff"/>
+        </g>
+      </g>
+    </g>
+    <circle id="椭圆_2120" data-name="椭圆 2120" cx="25.5" cy="25.5" r="25.5" transform="translate(7900.5 -5193)" fill="#37b7fd" opacity="0.55"/>
+    <text id="电能" transform="translate(7907.455 -5161)" fill="#43bcff" font-size="18" font-family="SourceHanSansCN-Medium, Source Han Sans CN" font-weight="500" opacity="0.65"><tspan x="0" y="0">电能</tspan></text>
+    <text id="电能-2" data-name="电能" transform="translate(7907.455 -5161)" fill="#fff" font-size="18" font-family="SourceHanSansCN-Medium, Source Han Sans CN" font-weight="500" opacity="0.65"><tspan x="0" y="0">电能</tspan></text>
+    <g id="组_92" data-name="组 92" transform="translate(7893.536 -5199.854)">
+      <g id="椭圆_99" data-name="椭圆 99" transform="translate(0 1.709)" fill="none" stroke="#38b7fd" stroke-width="2.5">
+        <circle cx="32" cy="32" r="32" stroke="none"/>
+        <circle cx="32" cy="32" r="30.75" fill="none"/>
+      </g>
+      <path id="减去_19" data-name="减去 19" d="M32,61.5A31.99,31.99,0,0,1,9.373,6.872,31.947,31.947,0,0,1,24.232-1.554V2.531A28.063,28.063,0,0,0,32,57.56a27.811,27.811,0,0,0,11-2.248H50.92A31.891,31.891,0,0,1,32,61.5Z" transform="translate(0 2.502)" fill="url(#linear-gradient-8)"/>
+      <path id="交叉_2" data-name="交叉 2" d="M3.312,61.485A32.007,32.007,0,0,1,0,59.855V55.2A28.062,28.062,0,1,0,0,8.8V4.146a32.029,32.029,0,0,1,45.253,15.4A31.976,31.976,0,0,1,38.4,54.628,32.037,32.037,0,0,1,3.312,61.485Z" transform="translate(16.232 0)" fill="url(#linear-gradient-9)"/>
+      <path id="交叉_1" data-name="交叉 1" d="M43.148,38.164A28.053,28.053,0,0,0,0,8.8V4.146a32.031,32.031,0,0,1,45.254,15.4A31.8,31.8,0,0,1,47.768,32a32.16,32.16,0,0,1-.591,6.164Z" transform="translate(16.232 0.001)" fill="url(#linear-gradient-10)"/>
+    </g>
+  </g>
+</svg>

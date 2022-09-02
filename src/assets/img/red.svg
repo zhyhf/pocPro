@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="5px" height="3px" viewBox="0 0 5 3" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>矩形</title>
+    <g id="页面" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="事件分析" transform="translate(-1411.000000, -255.000000)" fill="#FF4848">
+            <g id="气泡展开" transform="translate(404.000000, 144.000000)">
+                <g id="-mockplus-" transform="translate(938.000000, 0.000000)">
+                    <g id="-mockplus-" transform="translate(30.000000, 48.000000)">
+                        <g id="5.大屏/10.内容/园区安全-图标-1" transform="translate(0.000000, 1.000000)">
+                            <g id="编组" transform="translate(12.000000, 57.000000)">
+                                <path d="M27.4270083,5 L31.5729917,5 C31.6834486,5 31.7729917,5.08954305 31.7729917,5.2 C31.7729917,5.2467873 31.7565884,5.29209388 31.7266359,5.32803688 L29.6536443,7.81562689 C29.5829314,7.90048227 29.4568185,7.91194709 29.3719631,7.84123427 C29.3626705,7.83349042 29.3540996,7.82491951 29.3463557,7.81562689 L27.2733641,5.32803688 C27.2026513,5.2431815 27.2141161,5.11706856 27.2989714,5.04635574 C27.3349144,5.01640324 27.380221,5 27.4270083,5 Z" id="矩形" transform="translate(29.500000, 6.500000) scale(1, -1) translate(-29.500000, -6.500000) "></path>
+                            </g>
+                        </g>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

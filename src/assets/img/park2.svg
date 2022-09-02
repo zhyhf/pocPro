@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="44px" height="44px" viewBox="0 0 44 44" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>图标</title>
+    <defs>
+        <filter x="-14.8%" y="-14.8%" width="129.5%" height="129.5%" filterUnits="objectBoundingBox" id="filter-1">
+            <feGaussianBlur stdDeviation="1.53846154" in="SourceGraphic"></feGaussianBlur>
+        </filter>
+        <linearGradient x1="50%" y1="0.855004371%" x2="50%" y2="99.9808785%" id="linearGradient-2">
+            <stop stop-color="#19F2FF" offset="0.0191215035%"></stop>
+            <stop stop-color="#107FDB" offset="100%"></stop>
+        </linearGradient>
+        <linearGradient x1="50%" y1="0.855004371%" x2="50%" y2="99.9808785%" id="linearGradient-3">
+            <stop stop-color="#38B7FD" offset="0.0191215035%"></stop>
+            <stop stop-color="#38B7FD" offset="100%"></stop>
+        </linearGradient>
+    </defs>
+    <g id="页面" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="摄像头" transform="translate(-438.000000, -358.000000)">
+            <g id="气泡展开" transform="translate(248.000000, 168.000000)">
+                <g id="数据" transform="translate(20.000000, 188.000000)">
+                    <g id="-mockplus-" transform="translate(168.000000, 0.000000)">
+                        <g id="2" transform="translate(-4.000000, -4.000000)">
+                            <g id="图标" transform="translate(8.000000, 8.000000)">
+                                <g id="图标bg">
+                                    <path d="M20,0 C8.954305,0 0,8.954305 0,20 C0,31.045695 8.954305,40 20,40 C31.045695,40 40,31.045695 40,20" id="路径" stroke="#FFFFFF" stroke-width="1.53846154" opacity="0.244396391"></path>
+                                    <path d="M40,20 C40,8.954305 31.045695,0 20,0" id="路径" stroke="#A92929" stroke-width="1.53846154" stroke-dasharray="1.538461538461539,1.538461538461539"></path>
+                                    <path d="M40,20 C40,8.954305 31.045695,0 20,0" id="路径" stroke="#FF3434" stroke-width="0.5" stroke-dasharray="1.538461538461539,1.538461538461539"></path>
+                                    <circle id="椭圆形" stroke="#38FDDF" stroke-width="0.769230769" filter="url(#filter-1)" cx="20" cy="20" r="16.9230769"></circle>
+                                    <circle id="椭圆形" stroke="#38FDDF" stroke-width="0.5" cx="20" cy="20" r="16.9230769"></circle>
+                                </g>
+                                <g id="1.图标/2.设计/" transform="translate(10.000000, 10.000000)" fill="url(#linearGradient-3)">
+                                    <path d="M0.625,10.8012368 C0.625,10.5209298 0.829981384,10.3837102 1.08070971,10.4970066 L2.40559926,11.3663647 C2.65632756,11.4792098 2.86130897,11.8005924 2.86130897,12.0808994 L2.86130897,13.2125094 L6.09438457,13.2125094 L6.71900598,11.8272238 L8.62981965,12.7390117 L7.72631798,14.7431394 C7.55305246,15.1252816 7.17944711,15.3695374 6.76871177,15.3692036 L2.86042921,15.3692036 L2.86042921,16.5008135 C2.86042921,16.7815719 2.6558877,17.1025032 2.4047195,17.2153482 L1.08070971,18.0856091 C0.829981406,18.1980027 0.625,18.0616859 0.625,17.7809275 L0.625,10.8012368 Z M18.2177583,10.8775201 L16.900335,13.7672556 L15.0154739,12.8681064 L18.2177583,10.8775201 Z M5.89556142,1.9699849 L18.9875382,8.21528015 C19.4832765,8.45270609 19.5065898,8.88422548 19.0385636,9.17491429 L13.1675622,12.8247739 C12.6995361,13.1154627 11.9104017,13.1596979 11.4137837,12.9231747 L2.7803721,8.80478258 C2.28371736,8.56663157 2.0681854,7.96124013 2.29826995,7.45064224 L4.57153998,2.46289199 C4.80625118,1.95354956 5.3971878,1.7335555 5.89556142,1.9699849 Z" id="形状"></path>
+                                </g>
+                            </g>
+                        </g>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

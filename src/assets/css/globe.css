@@ -1,0 +1,33 @@
+.title{
+  font-size: 2rem;
+  color: #38B7FD;
+}
+.bg{
+  background: url(../img/billboard.png) no-repeat;
+  background-size: 100% 100%;
+  padding: 1.5rem;
+}
+.bgsmall{
+  background: url(../img/backGround.svg) no-repeat;
+  background-size: 100% 100%;
+  padding: 1.5rem;
+}
+.bgmiddle{
+  background: url(../icon/background2.svg) no-repeat;
+  background-size: 100% 100%;
+  padding: 1.5rem;
+}
+.bgScond{
+  background: url(../img/backSecond.svg) no-repeat;
+  padding: 1.5rem;
+}
+.flex-1{
+  flex: 1;
+}
+.box-container{
+  width: 250px;
+  height: 300px;
+}
+.flex{
+  display: flex;
+}

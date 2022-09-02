@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="13.578" height="12" viewBox="0 0 13.578 12">
+  <defs>
+    <linearGradient id="linear-gradient" x1="0.5" x2="0.5" y2="1" gradientUnits="objectBoundingBox">
+      <stop offset="0" stop-color="#38b7fd" stop-opacity="0.471"/>
+      <stop offset="1" stop-color="#38b7fd"/>
+    </linearGradient>
+  </defs>
+  <path id="摊位租赁" d="M160.064,203.888h1.212a.4.4,0,0,0,0-.807h-1.038l1.013-1.011a.4.4,0,1,0-.571-.57l-.946.945-.946-.945a.4.4,0,1,0-.571.57l1.012,1.011h-1.184a.4.4,0,1,0,0,.807h1.212v.807h-1.212a.4.4,0,1,0,0,.807h1.212v1.269a.4.4,0,0,0,.4.4h0a.4.4,0,0,0,.4-.4V205.5h1.212a.4.4,0,1,0,0-.807h-1.212v-.807Zm4.84-1.242v5.674a.807.807,0,0,1-.807.807h-8.875a.807.807,0,0,1-.807-.807v-5.677l-.553.464a.605.605,0,1,1-.778-.927l1.33-1.116v0h.006l.067-.056,4.129-3.494a1.614,1.614,0,0,1,2.085,0l4.2,3.55h.006v.008l1.327,1.113a.605.605,0,1,1-.778.927Z" transform="translate(-152.869 -197.127)" fill="url(#linear-gradient)"/>
+</svg>

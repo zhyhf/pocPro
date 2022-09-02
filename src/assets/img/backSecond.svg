@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="380px" height="340px" viewBox="0 0 380 340" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>4.沉浸式/3.背景/二级</title>
+    <defs>
+        <path d="M30,-1.77635684e-15 L372,0 L372,332 L0,332 L0,30 L30,-1.77635684e-15 Z" id="path-1"></path>
+        <filter x="-1.6%" y="-1.8%" width="103.2%" height="103.6%" filterUnits="objectBoundingBox" id="filter-2">
+            <feOffset dx="0" dy="0" in="SourceAlpha" result="shadowOffsetOuter1"></feOffset>
+            <feGaussianBlur stdDeviation="2" in="shadowOffsetOuter1" result="shadowBlurOuter1"></feGaussianBlur>
+            <feComposite in="shadowBlurOuter1" in2="SourceAlpha" operator="out" result="shadowBlurOuter1"></feComposite>
+            <feColorMatrix values="0 0 0 0 0.149654627   0 0 0 0 0.649544013   0 0 0 0 0.925073596  0 0 0 0.64 0" type="matrix" in="shadowBlurOuter1"></feColorMatrix>
+        </filter>
+        <polygon id="path-3" points="0 0 22 0 22 22"></polygon>
+        <filter x="-27.3%" y="-27.3%" width="154.5%" height="154.5%" filterUnits="objectBoundingBox" id="filter-4">
+            <feOffset dx="0" dy="0" in="SourceAlpha" result="shadowOffsetOuter1"></feOffset>
+            <feGaussianBlur stdDeviation="2" in="shadowOffsetOuter1" result="shadowBlurOuter1"></feGaussianBlur>
+            <feColorMatrix values="0 0 0 0 0.149019608   0 0 0 0 0.650980392   0 0 0 0 0.925490196  0 0 0 0.64 0" type="matrix" in="shadowBlurOuter1"></feColorMatrix>
+        </filter>
+        <polygon id="path-5" points="330 0 372 0 372 42"></polygon>
+        <filter x="-14.3%" y="-14.3%" width="128.6%" height="128.6%" filterUnits="objectBoundingBox" id="filter-6">
+            <feOffset dx="0" dy="0" in="SourceAlpha" result="shadowOffsetOuter1"></feOffset>
+            <feGaussianBlur stdDeviation="2" in="shadowOffsetOuter1" result="shadowBlurOuter1"></feGaussianBlur>
+            <feColorMatrix values="0 0 0 0 0.149019608   0 0 0 0 0.650980392   0 0 0 0 0.925490196  0 0 0 0.64 0" type="matrix" in="shadowBlurOuter1"></feColorMatrix>
+        </filter>
+        <linearGradient x1="80.8831766%" y1="57.8638347%" x2="100%" y2="34.5452%" id="linearGradient-7">
+            <stop stop-color="#2DFFBF" stop-opacity="0.0452906469" offset="0.0109265734%"></stop>
+            <stop stop-color="#1DF3B1" stop-opacity="0.49808785" offset="100%"></stop>
+        </linearGradient>
+    </defs>
+    <g id="页面" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="事件分析" transform="translate(-1338.000000, -470.000000)">
+            <g id="气泡展开" transform="translate(404.000000, 144.000000)">
+                <g id="4.沉浸式/3.背景/二级" transform="translate(938.000000, 330.000000)">
+                    <g id="形状结合">
+                        <use fill="black" fill-opacity="1" filter="url(#filter-2)" xlink:href="#path-1"></use>
+                        <use fill-opacity="0.88" fill="#011330" fill-rule="evenodd" xlink:href="#path-1"></use>
+                    </g>
+                    <g id="矩形" transform="translate(11.000000, 11.000000) scale(1, -1) rotate(-180.000000) translate(-11.000000, -11.000000) ">
+                        <use fill="black" fill-opacity="1" filter="url(#filter-4)" xlink:href="#path-3"></use>
+                        <use fill="#38B7FD" fill-rule="evenodd" xlink:href="#path-3"></use>
+                    </g>
+                    <g id="矩形">
+                        <use fill="black" fill-opacity="1" filter="url(#filter-6)" xlink:href="#path-5"></use>
+                        <use fill="#38B7FD" fill-rule="evenodd" xlink:href="#path-5"></use>
+                    </g>
+                    <polygon id="路径" fill="url(#linearGradient-7)" fill-rule="nonzero" transform="translate(352.500000, 295.000000) scale(-1, -1) rotate(-90.000000) translate(-352.500000, -295.000000) " points="389.5 275.5 389.5 314.5 388 314.5 388 277 315.5 277 315.5 275.5"></polygon>
+                    <path d="M372,315.5 L371.999,330.5 L372,330.5 L372,332 L355.5,332 L355.5,330.5 L370.499,330.5 L370.5,315.5 L372,315.5 Z M372,310.5 L372,313.5 L370.5,313.5 L370.5,310.5 L372,310.5 Z" id="形状结合" fill="#52FFCB"></path>
+                    <polygon id="路径" fill="url(#linearGradient-7)" fill-rule="nonzero" transform="translate(37.000000, 312.500000) scale(-1, -1) translate(-37.000000, -312.500000) " points="74 293 74 332 72.5 332 72.5 294.5 -2.4370254e-17 294.5 -2.4370254e-17 293"></polygon>
+                    <path d="M1.5,315.5 L1.499,330.5 L16.5,330.5 L16.5,332 L0,332 L1.55431223e-15,315.5 L1.5,315.5 Z M21.5,330.5 L21.5,332 L18.5,332 L18.5,330.5 L21.5,330.5 Z" id="形状结合" fill="#52FFCB"></path>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

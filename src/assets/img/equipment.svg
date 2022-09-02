@@ -1,0 +1,617 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="10 20 314 182">
+  <defs>
+    <style>
+      .a,
+      .al,
+      .am,
+      .h,
+      .x,
+      .z {
+        fill: #fff;
+      }
+
+      .a {
+        stroke: #707070;
+      }
+
+      .ae,
+      .af,
+      .ag,
+      .b,
+      .c,
+      .i,
+      .j,
+      .k,
+      .o,
+      .r {
+        fill: none;
+      }
+
+      .b {
+        stroke: rgba(39, 129, 223, 0.55);
+      }
+
+      .c {
+        stroke: rgba(44, 252, 189, 0.7);
+        stroke-width: 2px;
+      }
+
+      .d {
+        clip-path: url(#a);
+      }
+
+      .e {
+        fill: url(#b);
+      }
+
+      .f {
+        fill: url(#l);
+      }
+
+      .g {
+        fill: rgba(79, 131, 159, 0.2);
+      }
+
+      .i {
+        stroke: #4acaff;
+      }
+
+      .j {
+        stroke: rgba(56, 183, 253, 0.42);
+        stroke-dasharray: 1 1.5;
+      }
+
+      .j,
+      .r {
+        stroke-width: 2.5px;
+      }
+
+      .l {
+        fill: rgba(56, 183, 253, 0.31);
+      }
+
+      .m,
+      .n {
+        fill: rgba(56, 183, 253, 0.49);
+      }
+
+      .m {
+        font-size: 2px;
+      }
+
+      .ak,
+      .m,
+      .n,
+      .y,
+      .z {
+        font-family: SegoeUI, Segoe UI;
+      }
+
+      .n {
+        font-size: 3px;
+      }
+
+      .o {
+        stroke: #fff;
+      }
+
+      .p {
+        fill: url(#af);
+      }
+
+      .q {
+        fill: rgba(56, 183, 253, 0.33);
+      }
+
+      .r {
+        stroke: #38b7fd;
+      }
+
+      .s {
+        fill: url(#ag);
+      }
+
+      .t {
+        fill: url(#ah);
+      }
+
+      .u {
+        fill: url(#ai);
+      }
+
+      .v {
+        fill: #2df3c6;
+      }
+
+      .v,
+      .x {
+        font-size: 16px;
+        letter-spacing: 0.402em;
+      }
+
+      .al,
+      .v,
+      .x {
+        font-family: MicrosoftJhengHeiUIRegular, Microsoft JhengHei UI;
+      }
+
+      .am,
+      .w {
+        font-family: YuGothicUI-Regular, Yu Gothic UI;
+      }
+
+      .y {
+        fill: #38b7fd;
+        font-size: 24px;
+      }
+
+      .z {
+        font-size: 22px;
+      }
+
+      .aa {
+        fill: url(#aj);
+      }
+
+      .ab {
+        fill: url(#ap);
+      }
+
+      .ac {
+        fill: url(#aq);
+      }
+
+      .ad {
+        fill: url(#av);
+      }
+
+      .ae {
+        stroke: #2db6e3;
+      }
+
+      .af {
+        stroke: #3fccfb;
+      }
+
+      .ag {
+        stroke: rgba(255, 255, 255, 0.23);
+        stroke-width: 0.8px;
+      }
+
+      .ah {
+        fill: #40cdff;
+      }
+
+      .ai {
+        fill: #37b5e2;
+      }
+
+      .aj {
+        fill: rgba(26, 26, 26, 0.64);
+      }
+
+      .ak {
+        fill: #2cfcbd;
+        font-size: 13px;
+      }
+
+      .al,
+      .am {
+        font-size: 10px;
+        opacity: 0.75;
+      }
+
+      .an {
+        stroke: none;
+      }
+
+      .ao {
+        filter: url(#ac);
+      }
+
+      .ap {
+        filter: url(#z);
+      }
+
+      .aq {
+        filter: url(#w);
+      }
+
+      .ar {
+        filter: url(#t);
+      }
+    </style>
+    <clipPath id="a">
+      <rect class="a" width="374" height="212" transform="translate(-1.381 -6.919)" />
+    </clipPath>
+    <linearGradient id="b" x1="0.5" x2="0.5" y2="1" gradientUnits="objectBoundingBox">
+      <stop offset="0" stop-color="#38b7fd" stop-opacity="0" />
+      <stop offset="0.51" stop-color="#38b7fd" stop-opacity="0.149" />
+      <stop offset="1" stop-color="#38b7fd" stop-opacity="0" />
+    </linearGradient>
+    <linearGradient id="l" x1="0.5" x2="0.5" y2="1" gradientUnits="objectBoundingBox">
+      <stop offset="0" stop-color="#38b7fd" stop-opacity="0" />
+      <stop offset="0.494" stop-color="#38b7fd" stop-opacity="0.149" />
+      <stop offset="1" stop-color="#38b7fd" stop-opacity="0" />
+    </linearGradient>
+    <filter id="t">
+      <feOffset input="SourceAlpha" />
+      <feGaussianBlur stdDeviation="10" result="u" />
+      <feFlood flood-color="#43bcff" flood-opacity="0.2" result="v" />
+      <feComposite operator="out" in="SourceGraphic" in2="u" />
+      <feComposite operator="in" in="v" />
+      <feComposite operator="in" in2="SourceGraphic" />
+    </filter>
+    <filter id="w">
+      <feOffset input="SourceAlpha" />
+      <feGaussianBlur stdDeviation="10" result="x" />
+      <feFlood flood-color="#43bcff" result="y" />
+      <feComposite operator="out" in="SourceGraphic" in2="x" />
+      <feComposite operator="in" in="y" />
+      <feComposite operator="in" in2="SourceGraphic" />
+    </filter>
+    <filter id="z">
+      <feOffset input="SourceAlpha" />
+      <feGaussianBlur stdDeviation="10" result="aa" />
+      <feFlood flood-color="#43bcff" flood-opacity="0.2" result="ab" />
+      <feComposite operator="out" in="SourceGraphic" in2="aa" />
+      <feComposite operator="in" in="ab" />
+      <feComposite operator="in" in2="SourceGraphic" />
+    </filter>
+    <filter id="ac">
+      <feOffset input="SourceAlpha" />
+      <feGaussianBlur stdDeviation="10" result="ad" />
+      <feFlood flood-color="#43bcff" flood-opacity="0.2" result="ae" />
+      <feComposite operator="out" in="SourceGraphic" in2="ad" />
+      <feComposite operator="in" in="ae" />
+      <feComposite operator="in" in2="SourceGraphic" />
+    </filter>
+    <linearGradient id="af" x1="0.5" y1="0.05" x2="0.5" y2="1" gradientUnits="objectBoundingBox">
+      <stop offset="0" stop-color="#75828a" stop-opacity="0" />
+      <stop offset="0.28" stop-color="#627a88" stop-opacity="0.431" />
+      <stop offset="0.449" stop-color="#75828a" stop-opacity="0.69" />
+      <stop offset="0.765" stop-color="#75828a" stop-opacity="0" />
+      <stop offset="1" stop-color="#75828a" stop-opacity="0.569" />
+    </linearGradient>
+    <linearGradient id="ag" x1="0.271" y1="0.047" x2="0.937" y2="0.713" gradientUnits="objectBoundingBox">
+      <stop offset="0" stop-color="#38b7fd" />
+      <stop offset="1" stop-color="#4389af" />
+    </linearGradient>
+    <linearGradient id="ah" x1="0.059" y1="0.926" x2="0.906" y2="0.724" gradientUnits="objectBoundingBox">
+      <stop offset="0" stop-color="#386dfd" />
+      <stop offset="1" stop-color="#243c7b" />
+    </linearGradient>
+    <linearGradient id="ai" x1="0.882" y1="1" x2="0.03" y2="0.085" gradientUnits="objectBoundingBox">
+      <stop offset="0" stop-color="#2dfdbe" />
+      <stop offset="1" stop-color="#73a596" />
+    </linearGradient>
+    <linearGradient id="aj" x1="0.32" y1="0.116" x2="0.5" y2="1" gradientUnits="objectBoundingBox">
+      <stop offset="0" stop-color="#25b9df" stop-opacity="0" />
+      <stop offset="1" stop-color="#25b9df" />
+    </linearGradient>
+    <linearGradient id="ap" x1="0.68" y1="0.116" xlink:href="#aj" />
+    <linearGradient id="aq" x1="0.32" y1="0.884" y2="0" xlink:href="#aj" />
+    <radialGradient id="av" cx="0.417" cy="0.343" r="0.51" gradientTransform="translate(-0.087 0.106) rotate(-11.169)"
+      gradientUnits="objectBoundingBox">
+      <stop offset="0" stop-color="#8faac6" />
+      <stop offset="1" stop-color="#245589" />
+    </radialGradient>
+  </defs>
+  <g transform="translate(-1556.614 -634.547)">
+    <g transform="translate(1616.243 672.822)">
+      <path class="b" d="M1143.191,1390.672s-54.22-3.355-66.8-54.356" transform="translate(-1075.162 -1336.316)" />
+      <path class="b" d="M1143.191,1336.316s-54.22,3.355-66.8,54.356" transform="translate(-1075.162 -1254.316)" />
+      <line class="b" x1="68.919" transform="translate(0 67.184)" />
+      <line class="c" x1="3" y1="1" transform="translate(51.793 50.684)" />
+      <line class="c" x1="3" y2="1" transform="translate(51.757 84.178)" />
+      <line class="c" x1="2" y1="3" transform="translate(17.399 30.184)" />
+      <line class="c" x1="2" y2="3" transform="translate(18.068 102.684)" />
+      <line class="c" x1="2" transform="translate(50.858 67.184)" />
+      <line class="c" x1="2" transform="translate(5 67.184)" />
+    </g>
+    <g transform="translate(1557.996 641.467)">
+      <g class="d">
+        <g transform="translate(-3.124 17.521)">
+          <rect class="e" width="1.375" height="176.731" transform="translate(103.707) rotate(9)" />
+          <rect class="e" width="1.375" height="177.1" transform="translate(71.534 0.243) rotate(10)" />
+          <rect class="e" width="1.375" height="176.731"
+            transform="matrix(0.978, 0.208, -0.208, 0.978, 36.744, 0.808)" />
+          <rect class="e" width="1.375" height="176.044"
+            transform="matrix(0.995, 0.105, -0.105, 0.995, 133.854, 6.421)" />
+          <rect class="e" width="1.375" height="176.044"
+            transform="matrix(0.998, 0.07, -0.07, 0.998, 166.437, 9.015)" />
+          <rect class="e" width="1.375" height="176.044" transform="matrix(1, 0.017, -0.017, 1, 198.709, 13.056)" />
+          <rect class="e" width="1.375" height="176.044" transform="translate(229.747 15.97) rotate(-2)" />
+          <rect class="e" width="1.375" height="176.044"
+            transform="matrix(0.998, -0.07, 0.07, 0.998, 262.871, 20.361)" />
+          <rect class="e" width="1.375" height="176.044" transform="translate(294.621 23.677) rotate(-7)" />
+          <rect class="e" width="1.375" height="162.904" transform="translate(329.147 28.335) rotate(-9)" />
+        </g>
+        <g transform="matrix(-0.174, -0.985, 0.985, -0.174, 20.458, 252.631)">
+          <rect class="f" width="1.375" height="376.843"
+            transform="matrix(0.978, 0.208, -0.208, 0.978, 129.18, 16.031)" />
+          <rect class="f" width="1.375" height="360.931"
+            transform="matrix(0.978, 0.208, -0.208, 0.978, 101.832, 9.306)" />
+          <rect class="f" width="1.375" height="353.462" transform="matrix(0.978, 0.208, -0.208, 0.978, 73.489, 0)" />
+          <rect class="f" width="1.375" height="381.657"
+            transform="matrix(0.978, 0.208, -0.208, 0.978, 154.258, 22.015)" />
+          <rect class="f" width="1.375" height="363.09"
+            transform="matrix(0.978, 0.208, -0.208, 0.978, 178.209, 22.8)" />
+          <rect class="f" width="1.375" height="378.716"
+            transform="matrix(0.978, 0.208, -0.208, 0.978, 201.235, 26.86)" />
+          <rect class="f" width="1.375" height="176.043" transform="translate(319.451 116.354) rotate(-7)" />
+          <rect class="f" width="1.375" height="176.044" transform="translate(353.977 121.011) rotate(-9)" />
+        </g>
+      </g>
+    </g>
+    <g transform="translate(1133 -605.579)">
+      <g data-type="innerShadowGroup">
+        <circle class="g" cx="81.588" cy="81.588" r="81.588" transform="translate(564.378 1264.065)" />
+        <g class="ar" transform="matrix(1, 0, 0, 1, 423.61, 1240.13)">
+          <circle class="h" cx="81.588" cy="81.588" r="81.588" transform="translate(140.76 23.94)" />
+        </g>
+      </g>
+      <g data-type="innerShadowGroup">
+        <g class="aq" transform="matrix(1, 0, 0, 1, 423.61, 1240.13)">
+          <circle class="h" cx="81.588" cy="81.588" r="81.588" transform="translate(140.76 23.94)" />
+        </g>
+        <g class="i" transform="translate(564.378 1264.065)">
+          <circle class="an" cx="81.588" cy="81.588" r="81.588" />
+          <circle class="k" cx="81.588" cy="81.588" r="81.088" />
+        </g>
+      </g>
+      <g data-type="innerShadowGroup">
+        <circle class="g" cx="81.588" cy="81.588" r="81.588" transform="translate(564.378 1264.065)" />
+        <g class="ap" transform="matrix(1, 0, 0, 1, 423.61, 1240.13)">
+          <circle class="h" cx="81.588" cy="81.588" r="81.588" transform="translate(140.76 23.94)" />
+        </g>
+      </g>
+      <g data-type="innerShadowGroup">
+        <circle class="g" cx="81.588" cy="81.588" r="81.588" transform="translate(564.378 1264.065)" />
+        <g class="ao" transform="matrix(1, 0, 0, 1, 423.61, 1240.13)">
+          <circle class="h" cx="81.588" cy="81.588" r="81.588" transform="translate(140.76 23.94)" />
+        </g>
+      </g>
+      <g class="j" transform="translate(560.106 1259.793)">
+        <circle class="an" cx="85.86" cy="85.86" r="85.86" />
+        <circle class="k" cx="85.86" cy="85.86" r="84.61" />
+      </g>
+      <g transform="translate(548.999 1259.793)">
+        <circle class="k" cx="85.86" cy="85.86" r="85.86" transform="translate(11.107)" />
+        <path class="l"
+          d="M46.134,165.179h0c-1.139-.7-2.277-1.437-3.381-2.183A97.243,97.243,0,0,1,7.621,120.332a96.412,96.412,0,0,1-5.65-18.2,97.876,97.876,0,0,1,0-39.084A96.425,96.425,0,0,1,16.56,28.375,97.53,97.53,0,0,1,42.752,2.184C43.857,1.437,45,.7,46.134,0V5.108a92.635,92.635,0,0,0,0,154.963v5.108Zm105.936-2.792v-5.3a92.61,92.61,0,0,0,0-148.988v-5.3a97.244,97.244,0,0,1,34.242,42.054,96.5,96.5,0,0,1,5.65,18.2,97.914,97.914,0,0,1,0,39.084,96.438,96.438,0,0,1-14.59,34.672,97.529,97.529,0,0,1-25.3,25.582Z"
+          transform="translate(0 3.27)" />
+      </g>
+      <g transform="translate(554.937 1258.579)"><text class="m"
+          transform="matrix(-0.899, -0.438, 0.438, -0.899, 44.91, 162.828)">
+          <tspan x="0" y="0">0</tspan>
+        </text><text class="n" transform="translate(11.566 51.637) rotate(-74)">
+          <tspan x="0" y="0">50</tspan>
+        </text><text class="n" transform="translate(129.563 8.58) rotate(31)">
+          <tspan x="0" y="0">110</tspan>
+        </text><text class="n" transform="translate(164.249 39.819) rotate(61)">
+          <tspan x="0" y="0">130</tspan>
+        </text><text class="n" transform="matrix(0.052, 0.999, -0.999, 0.052, 177.793, 75.53)">
+          <tspan x="0" y="0">150</tspan>
+        </text><text class="n" transform="translate(176.668 110.338) rotate(115)">
+          <tspan x="0" y="0">170</tspan>
+        </text><text class="n" transform="translate(157.202 145.925) rotate(137)">
+          <tspan x="0" y="0">180</tspan>
+        </text><text class="n" transform="translate(67.016 3.446) rotate(-8)">
+          <tspan x="0" y="0">90</tspan>
+        </text><text class="n" transform="matrix(0.766, -0.643, 0.643, 0.766, 36.606, 18.69)">
+          <tspan x="0" y="0">70</tspan>
+        </text><text class="n" transform="translate(3.446 89.855) rotate(-98)">
+          <tspan x="0" y="0">30</tspan>
+        </text><text class="n" transform="matrix(-0.454, -0.891, 0.891, -0.454, 12.803, 127.596)">
+          <tspan x="0" y="0">10</tspan>
+        </text></g>
+      <g transform="translate(643.214 1381.976)">
+        <path class="o" d="M0,0,2.752,2.462,5.5,0" transform="translate(0 0)" />
+        <path class="o" d="M0,0,2.752,2.462,5.5,0" transform="translate(0 1.709)" />
+      </g>
+      <g transform="translate(595.133 1295.675)">
+        <path class="p"
+          d="M50.405,100.81A50.418,50.418,0,0,1,30.785,3.961a50.418,50.418,0,0,1,39.24,92.888A50.089,50.089,0,0,1,50.405,100.81Zm0-99.956a49.551,49.551,0,1,0,49.55,49.551A49.607,49.607,0,0,0,50.405.854Z"
+          transform="translate(0 0)" />
+        <path class="q"
+          d="M52.274,119.874,0,90.59V30.106L52.274,0,104,30.106V90.59L52.274,119.874ZM10.332,45.725V76.216H24A31.9,31.9,0,0,0,46.341,91.872v24.6H57.516V91.82a31.929,31.929,0,0,0,22.052-15.6h15.2V45.725H80.26A32.188,32.188,0,0,0,57.516,28.845V4.715H46.341V28.794A32.152,32.152,0,0,0,23.3,45.725Z"
+          transform="translate(-1.75 -8.429)" />
+        <g transform="translate(18.212 20.067)">
+          <g class="r" transform="translate(0 1.709)">
+            <circle class="an" cx="32" cy="32" r="32" />
+            <circle class="k" cx="32" cy="32" r="30.75" />
+          </g>
+          <path class="s"
+            d="M32,61.5A31.99,31.99,0,0,1,9.373,6.872,31.947,31.947,0,0,1,24.232-1.554V2.531A28.063,28.063,0,0,0,32,57.56a27.811,27.811,0,0,0,11-2.248H50.92A31.891,31.891,0,0,1,32,61.5Z"
+            transform="translate(0 2.502)" />
+          <path class="t"
+            d="M3.312,61.485A32.007,32.007,0,0,1,0,59.855V55.2A28.062,28.062,0,1,0,0,8.8V4.146a32.029,32.029,0,0,1,45.253,15.4A31.976,31.976,0,0,1,38.4,54.628,32.037,32.037,0,0,1,3.312,61.485Z"
+            transform="translate(16.232 0)" />
+          <path class="u"
+            d="M43.148,38.164A28.053,28.053,0,0,0,0,8.8V4.146a32.031,32.031,0,0,1,45.254,15.4A31.8,31.8,0,0,1,47.768,32a32.16,32.16,0,0,1-.591,6.164Z"
+            transform="translate(16.232 0.001)" />
+        </g><text class="v" transform="translate(30.905 -10.428)">
+          <!-- <tspan x="0" y="0">总数</tspan>
+          <tspan class="w" y="0"></tspan> -->
+        </text><text class="x" transform="translate(30.905 -10.428)">
+          <tspan x="0" y="0">总数</tspan>
+        </text><text class="z" transform="translate(25.405 59.405)">
+          <tspan x="0" y="0">2363</tspan>
+        </text>
+      </g>
+    </g>
+    <g transform="translate(501 -613)">
+      <g transform="translate(-107 -29)">
+        <rect class="aa" width="0.5" height="9" transform="translate(1220 1304)" />
+        <rect class="aa" width="0.5" height="9" transform="matrix(0.53, 0.848, -0.848, 0.53, 1227.632, 1307.383)" />
+        <rect class="aa" width="0.5" height="9" transform="matrix(0.891, 0.454, -0.454, 0.891, 1224.086, 1304.954)" />
+        <rect class="aa" width="0.5" height="9" transform="translate(1229.299 1310.301) rotate(79)" />
+        <rect class="aa" width="0.5" height="9" transform="matrix(-0.309, 0.951, -0.951, -0.309, 1228.869, 1314.781)" />
+        <rect class="aa" width="0.5" height="9" transform="matrix(-0.719, 0.695, -0.695, -0.719, 1226.971, 1318.848)" />
+      </g>
+      <g transform="translate(1065.132 1286)">
+        <rect class="ab" width="0.5" height="9" transform="translate(5.762)" />
+        <rect class="ac" width="0.5" height="9" transform="matrix(-0.53, 0.848, -0.848, -0.53, 7.08, 8.152)" />
+        <rect class="ac" width="0.5" height="9" transform="matrix(-0.891, 0.454, -0.454, -0.891, 6.262, 8.974)" />
+        <path class="ac" d="M1.085,0l.494-.033L.987,5.925l-.494.033Z" transform="translate(6.005 6.953) rotate(101)" />
+        <path class="ac" d="M0,0,.483.053l.951,6.074L.951,6.074Z"
+          transform="matrix(0.309, 0.951, -0.951, 0.309, 6.008, 8)" />
+        <rect class="ac" width="0.5" height="9" transform="matrix(0.719, 0.695, -0.695, 0.719, 6.077, 8.374)" />
+      </g>
+      <circle class="ad" cx="24" cy="24" r="24" transform="translate(1070 1271)" />
+      <g class="ae" transform="translate(1070 1271)">
+        <circle class="an" cx="24" cy="24" r="24" />
+        <circle class="k" cx="24" cy="24" r="23.5" />
+      </g>
+      <g class="af" transform="translate(1070 1271)">
+        <circle class="an" cx="24" cy="24" r="24" />
+        <circle class="k" cx="24" cy="24" r="23.5" />
+      </g>
+      <g transform="translate(-56.2 -36.04)">
+        <path class="ag" d="M1153.8,1309.267s7.91,13,.313,43.546" />
+        <path class="ag" d="M1157.413,1309.267s-7.91,13-.313,43.546" transform="translate(-11)" />
+        <path class="ag" d="M1132.187,1318.822s37.437-1.645,36.105.392-7.44,1.645-7.44,1.645" />
+        <path class="ag" d="M1128.427,1331.431a79.726,79.726,0,0,0,43.546,0" />
+        <path class="ag" d="M1133.91,1332.607s12.3,4.386,32.816,0" transform="translate(0 13)" />
+      </g>
+      <g transform="translate(-104 -30)">
+        <circle class="ah" cx="1.5" cy="1.5" r="1.5" transform="translate(1217 1311)" />
+        <circle class="ai" cx="1.5" cy="1.5" r="1.5" transform="translate(1217 1311)" />
+        <circle class="ai" cx="1.5" cy="1.5" r="1.5" transform="translate(1217 1311)" />
+        <circle class="h" cx="1.5" cy="1.5" r="1.5" transform="translate(1217 1311)" />
+        <circle class="h" cx="1.5" cy="1.5" r="1.5" transform="translate(1217 1311)" />
+        <path class="o" d="M1219.7,1311.374s.57.127,1.308,2.152" transform="translate(-2)" />
+      </g>
+      <g transform="translate(1068.394 1292)">
+        <circle class="ah" cx="1.5" cy="1.5" r="1.5" />
+        <circle class="ai" cx="1.5" cy="1.5" r="1.5" />
+        <circle class="ai" cx="1.5" cy="1.5" r="1.5" />
+        <circle class="h" cx="1.5" cy="1.5" r="1.5" />
+        <circle class="h" cx="1.5" cy="1.5" r="1.5" />
+        <path class="o" d="M1221.009,1311.374s-.57.127-1.308,2.152" transform="translate(-1218.71 -1311)" />
+      </g>
+      <rect class="aj" width="36" height="14" transform="translate(1076 1286)" /><text class="ak"
+        transform="translate(1083.354 1297.5)">
+        <tspan x="0" y="0">580</tspan>
+      </text><text class="al" transform="translate(1084.354 1310)">
+        <tspan x="0" y="0">电气</tspan>
+        <!-- <tspan class="w" y="0"></tspan> -->
+      </text>
+    </g>
+    <g transform="translate(501 -549)">
+      <g transform="translate(-107 -29)">
+        <rect class="aa" width="0.5" height="9" transform="translate(1220 1304)" />
+        <rect class="aa" width="0.5" height="9" transform="matrix(0.53, 0.848, -0.848, 0.53, 1227.632, 1307.383)" />
+        <rect class="aa" width="0.5" height="9" transform="matrix(0.891, 0.454, -0.454, 0.891, 1224.086, 1304.954)" />
+        <rect class="aa" width="0.5" height="9" transform="translate(1229.299 1310.301) rotate(79)" />
+        <rect class="aa" width="0.5" height="9" transform="matrix(-0.309, 0.951, -0.951, -0.309, 1228.869, 1314.781)" />
+        <rect class="aa" width="0.5" height="9" transform="matrix(-0.719, 0.695, -0.695, -0.719, 1226.971, 1318.848)" />
+      </g>
+      <g transform="translate(1065.132 1286)">
+        <rect class="ab" width="0.5" height="9" transform="translate(5.762)" />
+        <rect class="ac" width="0.5" height="9" transform="matrix(-0.53, 0.848, -0.848, -0.53, 7.08, 8.152)" />
+        <rect class="ac" width="0.5" height="9" transform="matrix(-0.891, 0.454, -0.454, -0.891, 6.262, 8.974)" />
+        <path class="ac" d="M1.085,0l.494-.033L.987,5.925l-.494.033Z" transform="translate(6.005 6.953) rotate(101)" />
+        <path class="ac" d="M0,0,.483.053l.951,6.074L.951,6.074Z"
+          transform="matrix(0.309, 0.951, -0.951, 0.309, 6.008, 8)" />
+        <rect class="ac" width="0.5" height="9" transform="matrix(0.719, 0.695, -0.695, 0.719, 6.077, 8.374)" />
+      </g>
+      <circle class="ad" cx="24" cy="24" r="24" transform="translate(1070 1271)" />
+      <g class="ae" transform="translate(1070 1271)">
+        <circle class="an" cx="24" cy="24" r="24" />
+        <circle class="k" cx="24" cy="24" r="23.5" />
+      </g>
+      <g class="af" transform="translate(1070 1271)">
+        <circle class="an" cx="24" cy="24" r="24" />
+        <circle class="k" cx="24" cy="24" r="23.5" />
+      </g>
+      <g transform="translate(-56.2 -36.04)">
+        <path class="ag" d="M1153.8,1309.267s7.91,13,.313,43.546" />
+        <path class="ag" d="M1157.413,1309.267s-7.91,13-.313,43.546" transform="translate(-11)" />
+        <path class="ag" d="M1132.187,1318.822s37.437-1.645,36.105.392-7.44,1.645-7.44,1.645" />
+        <path class="ag" d="M1128.427,1331.431a79.726,79.726,0,0,0,43.546,0" />
+        <path class="ag" d="M1133.91,1332.607s12.3,4.386,32.816,0" transform="translate(0 13)" />
+      </g>
+      <g transform="translate(-104 -30)">
+        <circle class="ah" cx="1.5" cy="1.5" r="1.5" transform="translate(1217 1311)" />
+        <circle class="ai" cx="1.5" cy="1.5" r="1.5" transform="translate(1217 1311)" />
+        <circle class="ai" cx="1.5" cy="1.5" r="1.5" transform="translate(1217 1311)" />
+        <circle class="h" cx="1.5" cy="1.5" r="1.5" transform="translate(1217 1311)" />
+        <circle class="h" cx="1.5" cy="1.5" r="1.5" transform="translate(1217 1311)" />
+        <path class="o" d="M1219.7,1311.374s.57.127,1.308,2.152" transform="translate(-2)" />
+      </g>
+      <g transform="translate(1068.394 1292)">
+        <circle class="ah" cx="1.5" cy="1.5" r="1.5" />
+        <circle class="ai" cx="1.5" cy="1.5" r="1.5" />
+        <circle class="ai" cx="1.5" cy="1.5" r="1.5" />
+        <circle class="h" cx="1.5" cy="1.5" r="1.5" />
+        <circle class="h" cx="1.5" cy="1.5" r="1.5" />
+        <path class="o" d="M1221.009,1311.374s-.57.127-1.308,2.152" transform="translate(-1218.71 -1311)" />
+      </g>
+      <rect class="aj" width="36" height="14" transform="translate(1076 1286)" /><text class="ak"
+        transform="translate(1083.354 1297.5)">
+        <tspan x="0" y="0">735</tspan>
+      </text><text class="am" transform="translate(1084.354 1310)">
+        <tspan x="0" y="0">门禁</tspan>
+      </text>
+    </g>
+    <g transform="translate(501 -485)">
+      <g transform="translate(-107 -29)">
+        <rect class="aa" width="0.5" height="9" transform="translate(1220 1304)" />
+        <rect class="aa" width="0.5" height="9" transform="matrix(0.53, 0.848, -0.848, 0.53, 1227.632, 1307.383)" />
+        <rect class="aa" width="0.5" height="9" transform="matrix(0.891, 0.454, -0.454, 0.891, 1224.086, 1304.954)" />
+        <rect class="aa" width="0.5" height="9" transform="translate(1229.299 1310.301) rotate(79)" />
+        <rect class="aa" width="0.5" height="9" transform="matrix(-0.309, 0.951, -0.951, -0.309, 1228.869, 1314.781)" />
+        <rect class="aa" width="0.5" height="9" transform="matrix(-0.719, 0.695, -0.695, -0.719, 1226.971, 1318.848)" />
+      </g>
+      <g transform="translate(1065.132 1286)">
+        <rect class="ab" width="0.5" height="9" transform="translate(5.762)" />
+        <rect class="ac" width="0.5" height="9" transform="matrix(-0.53, 0.848, -0.848, -0.53, 7.08, 8.152)" />
+        <rect class="ac" width="0.5" height="9" transform="matrix(-0.891, 0.454, -0.454, -0.891, 6.262, 8.974)" />
+        <path class="ac" d="M1.085,0l.494-.033L.987,5.925l-.494.033Z" transform="translate(6.005 6.953) rotate(101)" />
+        <path class="ac" d="M0,0,.483.053l.951,6.074L.951,6.074Z"
+          transform="matrix(0.309, 0.951, -0.951, 0.309, 6.008, 8)" />
+        <rect class="ac" width="0.5" height="9" transform="matrix(0.719, 0.695, -0.695, 0.719, 6.077, 8.374)" />
+      </g>
+      <circle class="ad" cx="24" cy="24" r="24" transform="translate(1070 1271)" />
+      <g class="ae" transform="translate(1070 1271)">
+        <circle class="an" cx="24" cy="24" r="24" />
+        <circle class="k" cx="24" cy="24" r="23.5" />
+      </g>
+      <g class="af" transform="translate(1070 1271)">
+        <circle class="an" cx="24" cy="24" r="24" />
+        <circle class="k" cx="24" cy="24" r="23.5" />
+      </g>
+      <g transform="translate(-56.2 -36.04)">
+        <path class="ag" d="M1153.8,1309.267s7.91,13,.313,43.546" />
+        <path class="ag" d="M1157.413,1309.267s-7.91,13-.313,43.546" transform="translate(-11)" />
+        <path class="ag" d="M1132.187,1318.822s37.437-1.645,36.105.392-7.44,1.645-7.44,1.645" />
+        <path class="ag" d="M1128.427,1331.431a79.726,79.726,0,0,0,43.546,0" />
+        <path class="ag" d="M1133.91,1332.607s12.3,4.386,32.816,0" transform="translate(0 13)" />
+      </g>
+      <g transform="translate(-104 -30)">
+        <circle class="ah" cx="1.5" cy="1.5" r="1.5" transform="translate(1217 1311)" />
+        <circle class="ai" cx="1.5" cy="1.5" r="1.5" transform="translate(1217 1311)" />
+        <circle class="ai" cx="1.5" cy="1.5" r="1.5" transform="translate(1217 1311)" />
+        <circle class="h" cx="1.5" cy="1.5" r="1.5" transform="translate(1217 1311)" />
+        <circle class="h" cx="1.5" cy="1.5" r="1.5" transform="translate(1217 1311)" />
+        <path class="o" d="M1219.7,1311.374s.57.127,1.308,2.152" transform="translate(-2)" />
+      </g>
+      <g transform="translate(1068.394 1292)">
+        <circle class="ah" cx="1.5" cy="1.5" r="1.5" />
+        <circle class="ai" cx="1.5" cy="1.5" r="1.5" />
+        <circle class="ai" cx="1.5" cy="1.5" r="1.5" />
+        <circle class="h" cx="1.5" cy="1.5" r="1.5" />
+        <circle class="h" cx="1.5" cy="1.5" r="1.5" />
+        <path class="o" d="M1221.009,1311.374s-.57.127-1.308,2.152" transform="translate(-1218.71 -1311)" />
+      </g>
+      <rect class="aj" width="36" height="14" transform="translate(1076 1286)" /><text class="ak"
+        transform="translate(1079.354 1297.5)">
+        <tspan x="0" y="0">1048</tspan>
+      </text><text class="am" transform="translate(1084.354 1310)">
+        <tspan x="0" y="0">防盗</tspan>
+      </text>
+    </g>
+  </g>
+</svg>

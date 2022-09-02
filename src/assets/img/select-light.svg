@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="180px" height="122px" viewBox="0 0 180 122" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>选中光效</title>
+    <defs>
+        <polygon id="path-1" points="0 0 180 0 180 122 3.06005221e-14 122"></polygon>
+        <filter x="-61.4%" y="-61.4%" width="222.7%" height="222.7%" filterUnits="objectBoundingBox" id="filter-3">
+            <feGaussianBlur stdDeviation="18" in="SourceGraphic"></feGaussianBlur>
+        </filter>
+        <filter x="-54.5%" y="-54.5%" width="209.1%" height="209.1%" filterUnits="objectBoundingBox" id="filter-4">
+            <feGaussianBlur stdDeviation="12" in="SourceGraphic"></feGaussianBlur>
+        </filter>
+        <linearGradient x1="1.87350135e-14%" y1="50%" x2="100%" y2="50%" id="linearGradient-5">
+            <stop stop-color="#FFFFFF" stop-opacity="0.1" offset="0%"></stop>
+            <stop stop-color="#39AEF0" offset="49.6148383%"></stop>
+            <stop stop-color="#FFFFFF" stop-opacity="0.1" offset="100%"></stop>
+        </linearGradient>
+    </defs>
+    <g id="页面" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="大屏2" transform="translate(-582.000000, -738.000000)">
+            <g id="-mockplus-" transform="translate(0.000000, 620.000000)">
+                <g id="区域" transform="translate(612.000000, 118.000000)">
+                    <g id="选中光效" transform="translate(-30.000000, 0.000000)">
+                        <mask id="mask-2" fill="white">
+                            <use xlink:href="#path-1"></use>
+                        </mask>
+                        <use id="矩形" fill="#FFFFFF" opacity="0" xlink:href="#path-1"></use>
+                        <circle id="椭圆形" fill="#38B7FD" opacity="0.3" filter="url(#filter-3)" mask="url(#mask-2)" cx="90" cy="122" r="44"></circle>
+                        <circle id="椭圆形" fill="#38B7FD" opacity="0.59748" filter="url(#filter-4)" mask="url(#mask-2)" cx="90" cy="122" r="33"></circle>
+                        <rect id="矩形" fill="url(#linearGradient-5)" mask="url(#mask-2)" x="50" y="119" width="80" height="3"></rect>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

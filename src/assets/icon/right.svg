@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="13px" height="12px" viewBox="0 0 13 12" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>右</title>
+    <g id="页面" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="事件处理" transform="translate(-1210.000000, -691.000000)">
+            <g id="气泡展开" transform="translate(708.000000, 342.000000)">
+                <g id="-mockplus-" transform="translate(0.000000, 158.000000)">
+                    <g id="表格" transform="translate(19.888268, 44.631579)">
+                        <g id="-mockplus-" transform="translate(466.379888, 146.912281)">
+                            <g id="右" transform="translate(15.910615, 0.000000)">
+                                <rect id="矩形" fill="#38B7FD" x="0" y="0" width="11.9329609" height="11.1578947" rx="2"></rect>
+                                <path d="M4.66957979,5.42288557 L7.63022842,3.05001461 C7.71641897,2.98093548 7.84228992,2.99480702 7.91136906,3.08099757 C7.93980932,3.1164827 7.95530726,3.16060066 7.95530726,3.20607641 L7.95530726,7.95181833 C7.95530726,8.06227528 7.86576421,8.15181833 7.75530726,8.15181833 C7.70983152,8.15181833 7.66571355,8.13632039 7.63022842,8.10788012 L4.66957979,5.73500916 C4.58338924,5.66593003 4.5695177,5.54005908 4.63859684,5.45386853 C4.6477586,5.44243733 4.65814859,5.43204734 4.66957979,5.42288557 Z" id="矩形" fill="#FFFFFF" transform="translate(6.215084, 5.578947) scale(-1, 1) translate(-6.215084, -5.578947) "></path>
+                            </g>
+                        </g>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>
