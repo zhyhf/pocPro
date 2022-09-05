@@ -166,8 +166,8 @@ export default {
       .intelligent-item0,.intelligent-item1,.intelligent-item3{
           margin-left: 4px;
           padding-left: 5px;
-          width: 150px;
-          height: 52px;
+          width: 180px;
+          height: 62px;
           border-radius: 5px;
           display: flex;
           img{
@@ -243,8 +243,8 @@ export default {
     }
   }
   .chart {
-    width: 9rem;
-    height: 9rem;
+    width: 8.6rem;
+    height: 8.6rem;
     margin: auto 12px;
     background: url("../../assets/img/chart.svg") no-repeat;
     background-size: 100% 100%;
@@ -266,14 +266,14 @@ export default {
     }
   }
   .top {
-    width: 172px;
+    width: 190px;
     height: 51px;
     background: url("../../assets/img/park-top.png") no-repeat;
     background-size: 100% 100%;
     display: flex;
     justify-content: space-evenly;
     align-items: center;
-    padding-bottom: 2rem;
+    padding-bottom: 1.8rem;
     .bold{
       margin-left: 4px;
     }
@@ -283,21 +283,21 @@ export default {
     }
   }
   .bottom {
-    width: 172px;
+    width: 190px;
     height: 51px;
     background: url("../../assets/img/park-bottom.png") no-repeat;
     background-size: 100% 100%;
     display: flex;
     justify-content: space-evenly;
     align-items: center;
-    padding-top: 2rem;
+    padding-top: 1.8rem;
     img {
         height: 70%;
         margin-bottom: 12px;
     }
   }
   .bold {
-    font-size: 2.4rem;
+    font-size: 2rem;
     font-weight: bold;
     color: #38b7fd;
   }

@@ -192,6 +192,7 @@ export default {
         legend: {
           right: 0,
           padding: [10, 10, 0, 0],
+          itemHeight: 6,
           data: ["意向单位数", "参加单位数", "已签约数"],
           textStyle: {
             color: "#C6CFCE",

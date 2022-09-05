@@ -287,13 +287,13 @@ export default {
           electricYear: "10%",
           electricMonth: "6%",
         },
-        {
-          target: "中东",
-          waterYear: "9%",
-          waterMonth: "5%",
-          electricYear: "10%",
-          electricMonth: "5%",
-        },
+        // {
+        //   target: "中东",
+        //   waterYear: "9%",
+        //   waterMonth: "5%",
+        //   electricYear: "10%",
+        //   electricMonth: "5%",
+        // },
       ],
     };
   },

@@ -65,7 +65,7 @@ components: {
      border: 1px dashed #38b7fd;
   }
 .analyseCom {
-  width: 380px;
+  width: 410px;
   position: absolute;
   top: calc(13% + 350px);
   left: 27%;
@@ -76,6 +76,7 @@ components: {
   color: #fff;
   img{
     margin-top: 12px;
+    width: 100%;
   }
   .subtitle{
     font-size: 14px;

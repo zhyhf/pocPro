@@ -37,7 +37,7 @@ components: {
 <style lang="less" scoped>
 @import "../../../assets/css/globe.css";
 .environment {
-  width: 380px;
+  width: 410px;
   position: absolute;
   top: 13%;
   left: 27%;
@@ -62,6 +62,8 @@ components: {
             font-weight: 400;
             color: #ffffff;
             margin-top: 8px;
+            height:1.6rem !important;
+            line-height: 1.6rem !important;
             img{
                 margin-left: 4px;   
             }

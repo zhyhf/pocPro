@@ -6,6 +6,7 @@ import ElementUI from 'element-ui'
 import 'element-ui/lib/theme-chalk/index.css';
 import * as echarts from 'echarts'
 import '@/assets/iconfont/iconfont.css' // 引入iconfont'
+import './util/rem'
 
 Vue.prototype.$echarts = echarts
 Vue.use(ElementUI)

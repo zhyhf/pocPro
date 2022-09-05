@@ -24,7 +24,7 @@ components: {
 <style lang="less" scoped> 
 @import "../../../assets/css/globe.css";
 .dataComponet1 { 
-  width: 380px;
+  width: 410px;
   position: absolute;
   top:calc(13% + 139px);
   left: 27%;

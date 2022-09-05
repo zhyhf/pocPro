@@ -35,7 +35,7 @@ export default {
             contract: "2021.9-2024.9",
           },
           {
-            name: "中国农业银行股份有限公司",
+            name: "农业银行股份有限公司",
             type: "企业入驻",
             contacts: "张默",
             phone: "17546841475",
@@ -50,14 +50,14 @@ export default {
             area: "363.92㎡",
             contract: "2021.9-2024.9",
           },
-          {
-            name: "管理房",
-            type: "管理",
-            contacts: "李承浩",
-            phone: "17562485247",
-            area: "35.13㎡",
-            contract: "2021.9-2024.9",
-          },
+          // {
+          //   name: "管理房",
+          //   type: "管理",
+          //   contacts: "李承浩",
+          //   phone: "17562485247",
+          //   area: "35.13㎡",
+          //   contract: "2021.9-2024.9",
+          // },
         ],
       },
     };
@@ -69,14 +69,14 @@ export default {
 </script>
 <style lang="less" scoped>
 .enterprise-detail {
-  width: 625px;
-  height: 280px;
+  width: 730px;
+  height: 320px;
   position: absolute;
   // background: url("../../assets/img/enterprise-bg.png") no-repeat;
   background-size: 100% 100%;
   padding: 1rem;
   top: 17.5%;
-  left: calc(32.5% + 480px);
+  left: calc(32.5% + 510px);
   transform: translateX(-50%);
   z-index: 103;
 }

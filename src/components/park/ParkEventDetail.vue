@@ -159,8 +159,7 @@ export default {
 <style lang="less" scoped>
 @import "../../assets/css/globe.css";
 .park-space {
-  width: 252px;
-  // height: 300px;
+  width: 262px;
   position: absolute;
   bottom: 12%;
   left: 46%;
@@ -215,6 +214,7 @@ export default {
   .text-group {
     width: 100%;
     margin: 0.5rem 0;
+    font-size: 12px;
 
     .text-item {
       height: 2rem;

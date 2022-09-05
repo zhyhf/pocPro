@@ -210,7 +210,7 @@ export default {
         width: 11rem;
       }
       :nth-child(3) {
-        width: 13.5rem;
+        width: 15rem;
       }
       :nth-child(4) {
         width: 7rem;

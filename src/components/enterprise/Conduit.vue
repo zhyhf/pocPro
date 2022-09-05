@@ -26,11 +26,12 @@ export default {
   left: 60.5%;
   transform: translateX(-50%);
   z-index: 103;
-  height: 350px;
+  height: 360px;
   width: 500px;
   .title{
     display: flex;
     margin-top: 1rem;
+    font-size: 20px;
     .closeTool {
       width: 16px;
       height: 16px;

@@ -472,7 +472,7 @@ export default {
     align-items: center;
     justify-content: center;
     .pandemic-text {
-      width: 32px;
+      width: 36px;
     }
   }
   .pandemic-item {

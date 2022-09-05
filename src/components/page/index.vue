@@ -40,9 +40,9 @@ export default {
 <style scoped lang="less">
 ::v-deep .el-pagination button {
   color: #d5d8da !important;
-  min-width: 20px !important;
-  height: 20px;
-  line-height: 20px;
+  min-width: 18px !important;
+  height: 18px;
+  line-height: 18px;
   background-color: transparent;
   .el-icon-arrow-left:before {
     content: "";
@@ -53,9 +53,9 @@ export default {
 }
 ::v-deep .el-pager li {
   color: #d5d8da;
-  min-width: 20px !important;
-  height: 20px;
-  line-height: 20px;
+  min-width: 18px !important;
+  height: 18px;
+  line-height: 18px;
   background-color: transparent;
 }
 ::v-deep .el-pager li.active {

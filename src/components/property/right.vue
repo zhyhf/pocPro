@@ -460,6 +460,8 @@ export default {
     box-sizing: border-box;
     background-image: url("../../assets/img/device-midium-bg.png");
     background-size: 100% 100%;
+    margin-left: 4px;
+    margin-right: 4px;
   }
 }
 .service {
@@ -470,7 +472,8 @@ export default {
     flex: 1.5;
     background-image: url("../../assets/img/device-big-bg.png");
     background-size: 100% 100%;
-    margin-right: 2px;
+    margin-right: 4px;
+    margin-left: 4px;
     display: flex;
     flex-direction: column;
     align-items: center;

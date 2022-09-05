@@ -30,6 +30,7 @@ export default {
   width: 500px;
   .title{
     display: flex;
+    font-size: 20px;
     .closeTool {
       width: 16px;
       height: 16px;

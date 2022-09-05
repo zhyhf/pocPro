@@ -279,7 +279,7 @@ export default {
       justify-content: flex-start;
       margin-bottom: 10px;
       :nth-child(1) {
-        width: 345px;
+        width: 320px;
       }
       :nth-child(2) {
         width: 135px;
@@ -288,7 +288,7 @@ export default {
         width: 105px;
       }
       :nth-child(4) {
-        width: 188px;
+        width: 200px;
       }
       :nth-child(5) {
         width: 138px;
