@@ -25,39 +25,79 @@ export default {
       showicon: false,
       currentIndex: null,
       middlePicUrl: [
-        {
-          name: "首页",
-          // defaultUrl:require("@/assets/icon/home-checked.svg"),
-          picUrl: require("@/assets/icon/home-notchecked.svg"),
-          checkedPicUrl: require("@/assets/icon/home-checked.svg"),
-          hoveredPicUrl: require("@/assets/icon/home-hover.svg"),
-          isClick:true,
-          value:'homePage'
-        },
-        {
-          name: "资产",
-          picUrl: require("@/assets/icon/assets-notchecked.svg"),
-          checkedPicUrl: require("@/assets/icon/assets-checked.svg"),
-          hoveredPicUrl: require("@/assets/icon/assets-hover.svg"),
-          isClick:true,
-          value:'assets'
-        },
-        {
-          name: "物业",
-          picUrl: require("@/assets/icon/property-notchecked.svg"),
-          checkedPicUrl: require("@/assets/icon/property-checked.svg"),
-          hoveredPicUrl: require("@/assets/icon/property-hover.svg"),
-          isClick:true,
-          value:'property'
-        },
-        {
-          name: "能耗",
-          picUrl: require("@/assets/icon/energy-notchecked.svg"),
-          checkedPicUrl: require("@/assets/icon/energy-checked.svg"),
-          hoveredPicUrl: require("@/assets/icon/energy-hover.svg"),
-          isClick:true,
-          value:'energy'
-        }
+          {
+              name: "首页",
+              picUrl: require("@/assets/icon/navigator/home.svg"),
+              checkedPicUrl: require("@/assets/icon/navigator/home-active.svg"),
+              hoveredPicUrl: require("@/assets/icon/navigator/home-hover.svg"),
+              isClick:true,
+              value:'homePage'
+          },
+          {
+              name: "物业",
+              picUrl: require("@/assets/icon/navigator/property.svg"),
+              checkedPicUrl: require("@/assets/icon/navigator/property-active.svg"),
+              hoveredPicUrl: require("@/assets/icon/navigator/property-hover.svg"),
+              isClick:true,
+              value:'property'
+          },
+          {
+              name: "招商",
+              picUrl: require("@/assets/icon/navigator/business.svg"),
+              checkedPicUrl: require("@/assets/icon/navigator/business-active.svg"),
+              hoveredPicUrl: require("@/assets/icon/navigator/business-hover.svg"),
+              isClick:true,
+              value:'assets'
+          },
+          {
+              name: "安防",
+              picUrl: require("@/assets/icon/navigator/security.svg"),
+              checkedPicUrl: require("@/assets/icon/navigator/security-active.svg"),
+              hoveredPicUrl: require("@/assets/icon/navigator/security-hover.svg"),
+              isClick:true,
+              value:'property'
+          },
+          {
+              name: "能耗",
+              picUrl: require("@/assets/icon/navigator/energy.svg"),
+              checkedPicUrl: require("@/assets/icon/navigator/energy-active.svg"),
+              hoveredPicUrl: require("@/assets/icon/navigator/energy-hover.svg"),
+              isClick:true,
+              value:'energy'
+          }
+        // {
+        //   name: "首页",
+        //   // defaultUrl:require("@/assets/icon/home-checked.svg"),
+        //   picUrl: require("@/assets/icon/home-notchecked.svg"),
+        //   checkedPicUrl: require("@/assets/icon/home-checked.svg"),
+        //   hoveredPicUrl: require("@/assets/icon/home-hover.svg"),
+        //   isClick:true,
+        //   value:'homePage'
+        // },
+        // {
+        //   name: "资产",
+        //   picUrl: require("@/assets/icon/assets-notchecked.svg"),
+        //   checkedPicUrl: require("@/assets/icon/assets-checked.svg"),
+        //   hoveredPicUrl: require("@/assets/icon/assets-hover.svg"),
+        //   isClick:true,
+        //   value:'assets'
+        // },
+        // {
+        //   name: "物业",
+        //   picUrl: require("@/assets/icon/property-notchecked.svg"),
+        //   checkedPicUrl: require("@/assets/icon/property-checked.svg"),
+        //   hoveredPicUrl: require("@/assets/icon/property-hover.svg"),
+        //   isClick:true,
+        //   value:'property'
+        // },
+        // {
+        //   name: "能耗",
+        //   picUrl: require("@/assets/icon/energy-notchecked.svg"),
+        //   checkedPicUrl: require("@/assets/icon/energy-checked.svg"),
+        //   hoveredPicUrl: require("@/assets/icon/energy-hover.svg"),
+        //   isClick:true,
+        //   value:'energy'
+        // }
       ]
     };
   },
@@ -118,25 +158,35 @@ export default {
 
 <style lang="less" scoped>
 .navContent {
-    display: inline-flex;
+    display: flex;
     position: absolute;
     top:7%;
-    left: 25%;
-    width: 50%;
+    left: 50%;
+    transform: translateX(-50%);
     z-index: 101;
-     pointer-events: all;
+    pointer-events: all;
     cursor:pointer;
-    justify-content: center;
-    margin: 0 auto;
-  .middle-pic-wrapper:nth-child(1) {
-    margin-right: -8px;
-  }
-  .middle-pic-wrapper:nth-child(4) {
-    margin-left: -8px;
-  }
-  img{
-      width: 70px;
-  }
+    .middle-pic-wrapper {
+        width: 80px;
+        position: relative;
+        .topImg {
+            width: 100%;
+        }
+    }
+    .middle-pic-wrapper:nth-child(1) {
+        margin-right: -10px;
+    }
+    .middle-pic-wrapper:nth-child(2) {
+        width: 80.5px;
+        margin-right: -1px;
+    }
+    .middle-pic-wrapper:nth-child(4) {
+        width: 80.5px;
+        margin-left: -2px;
+    }
+    .middle-pic-wrapper:last-child {
+        margin-left: -10px;
+    }
   div{
     &:hover {
       .bottomFont {

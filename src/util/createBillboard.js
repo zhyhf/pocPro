@@ -115,45 +115,107 @@ const addIcon = () => {
       // 右下
     // {
     //   id: "housePositionIcon2",
-    //   position: [120.726150, 27.976046, 33.2],
+    //   position: [120.726150, 27.976038, 32.5],
     //   image: require("../assets/icon/housePosition.png"),
     //   scale: 0.7,
     // },
     //   // 左下
     // {
     //   id: "housePositionIcon3",
-    //   position: [120.726035, 27.975580, 33.2],
+    //   position: [120.726135, 27.975545, 7.2],
     //   image: require("../assets/icon/housePosition.png"),
     //   scale: 0.7,
     // },
     //   // 左上
     // {
     //   id: "housePositionIcon4",
-    //   position: [120.726030, 27.975582, 58.5],
+    //   position: [120.726130, 27.975545, 65.5],
     //   image: require("../assets/icon/housePosition.png"),
     //   scale: 0.7,
     // },
     //   // 右上
     // {
     //   id: "housePositionIcon5",
-    //   position: [120.726150, 27.976045, 58.5],
+    //   position: [120.726150, 27.976038, 65.5],
     //   image: require("../assets/icon/housePosition.png"),
     //   scale: 0.7,
     // },
-    //   // 侧上
+    //   // 侧右上
     // {
     //   id: "housePositionIcon6",
-    //   position: [120.725905, 27.976068, 58.5],
+    //   position: [120.725890, 27.976080, 65.5],
     //   image: require("../assets/icon/housePosition.png"),
     //   scale: 0.7,
     // },
-    //   // 侧下
+    //   // 侧右下
     // {
     //   id: "housePositionIcon7",
-    //   position: [120.725905, 27.976073, 33.5],
+    //   position: [120.725905, 27.976080, 32.5],
     //   image: require("../assets/icon/housePosition.png"),
     //   scale: 0.7,
     // },
+    //   // 侧左上
+    // {
+    //   id: "housePositionIcon8",
+    //   position: [120.725790, 27.975592, 65.5],
+    //   image: require("../assets/icon/housePosition.png"),
+    //   scale: 0.7,
+    // },
+    //   // 侧左下
+    // {
+    //   id: "housePositionIcon9",
+    //   position: [120.725790, 27.975590, 7.2],
+    //   image: require("../assets/icon/housePosition.png"),
+    //   scale: 0.7,
+    // },
+    //   // 1
+    // {
+    //   id: "housePositionIcon10",
+    //   position: [120.725905, 27.976210, 31.7],
+    //   image: require("../assets/icon/housePosition.png"),
+    //   scale: 0.7,
+    // },
+    //   // 2
+    // {
+    //   id: "housePositionIcon11",
+    //   position: [120.726105, 27.976170, 31.7],
+    //   image: require("../assets/icon/housePosition.png"),
+    //   scale: 0.7,
+    // },
+    //   // 3
+    // {
+    //   id: "housePositionIcon12",
+    //   position: [120.725905, 27.976210, 7.7],
+    //   image: require("../assets/icon/housePosition.png"),
+    //   scale: 0.7,
+    // },
+    //   // 4
+    // {
+    //   id: "housePositionIcon13",
+    //   position: [120.726105, 27.976180, 7.7],
+    //   image: require("../assets/icon/housePosition.png"),
+    //   scale: 0.7,
+    // },
+    //   // 5
+    // {
+    //   id: "housePositionIcon14",
+    //   position: [120.726250, 27.975980, 7.7],
+    //   image: require("../assets/icon/housePosition.png"),
+    //   scale: 0.7,
+    // },
+    // // 6
+    // {
+    //   id: "housePositionIcon15",
+    //   position: [120.726250, 27.975980, 32.7],
+    //   image: require("../assets/icon/housePosition.png"),
+    //   scale: 0.7,
+    // },
+    // {
+    //   id: "housePositionIcon16",
+    //   position: [120.726250, 27.975980, 65.5],
+    //   image: require("../assets/icon/housePosition.png"),
+    //   scale: 0.7,
+    // }
   ];
   for (let index = 0; index < billArr.length; index++) {
     // if (billArr[index].id.indexOf("road") !== -1) {

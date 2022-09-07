@@ -6,31 +6,23 @@
       <img
         style="width: auto;"
         class="left-btn"
-        :src="
-          $store.state.DigitalTwin.largeScreenShow
-            ? require('../assets/img/left-notchecked.svg')
-            : require('../assets/img/left-checked.svg')
-        "
+        :src="hideIcons"
         @click="close"
-        @mouseenter="changeLeftTips"
-        @mouseleave="changeLeftTips"
+        @mouseenter="onMouseEnter('hide')"
+        @mouseleave="onMouseLeave('hide')"
       />
       <img
         style="width: auto;"
         class="right-btn"
-        :src="
-          !$store.state.DigitalTwin.largeScreenShow
-            ? require('../assets/img/right-notchecked.svg')
-            : require('../assets/img/right-checked.svg')
-        "
+        :src="showIcons"
         @click="open"
-        @mouseenter="changeRightTips"
-        @mouseleave="changeRightTips"
+        @mouseenter="onMouseEnter('show')"
+        @mouseleave="onMouseLeave('show')"
       />
     </div>
     <div class="top">
-      <div class="left-group">浙江省温州市龙湾区文昌创客小镇</div>
-      <div class="name">文昌创客小镇</div>
+<!--      <div class="left-group">浙江省温州市龙湾区文昌创客小镇</div>-->
+      <div class="name">迁宿电商产业大脑</div>
       <div class="time">
         <div class="titleContent">
           <i class="iconfont icon-humidity" />
@@ -74,6 +66,20 @@ export default {
       closureActive: "closureActive",
       isLeftTipsShow: false,
       isRightTipsShow: false,
+      icons: {
+        hide: {
+          default: require('../assets/icon/header/hide.svg'),
+          active: require('../assets/icon/header/hide-active.svg'),
+          hover: require('../assets/icon/header/hide-hover.svg'),
+          isHover: false
+        },
+        show: {
+          default: require('../assets/icon/header/show.svg'),
+          active: require('../assets/icon/header/show-active.svg'),
+          hover: require('../assets/icon/header/show-hover.svg'),
+          isHover: false
+        }
+      }
     };
   },
   methods: {
@@ -87,14 +93,42 @@ export default {
         this.$store.commit("DigitalTwin/changeLargeScreenShow", true);
       }
     },
-    changeLeftTips() {
-      this.isLeftTipsShow = !this.isLeftTipsShow;
+    onMouseEnter(type) {
+      if (type === 'hide') {
+        this.isLeftTipsShow = !this.isLeftTipsShow
+        this.icons.hide.isHover = true
+      } else {
+        this.isRightTipsShow = !this.isRightTipsShow
+        this.icons.show.isHover = true
+      }
     },
-    changeRightTips() {
-      this.isRightTipsShow = !this.isRightTipsShow;
+    onMouseLeave(type) {
+      if (type === 'hide') {
+        this.isLeftTipsShow = !this.isLeftTipsShow
+        this.icons.hide.isHover = false
+      } else {
+        this.isRightTipsShow = !this.isRightTipsShow
+        this.icons.show.isHover = false
+      }
     },
+    // changeLeftTips() {
+    //   this.isLeftTipsShow = !this.isLeftTipsShow;
+    // },
+    // changeRightTips() {
+    //   this.isRightTipsShow = !this.isRightTipsShow;
+    // },
   },
   computed: {
+    hideIcons: function() {
+     return this.icons.hide.isHover
+              ? this.icons.hide.hover
+              : (this.$store.state.DigitalTwin.largeScreenShow ? this.icons.hide.default : this.icons.hide.active)
+    },
+    showIcons: function() {
+      return this.icons.show.isHover
+              ? this.icons.show.hover
+              : (!this.$store.state.DigitalTwin.largeScreenShow ? this.icons.show.default : this.icons.show.active)
+    },
     nowday: function () {
       return `${this.year}.${this.month}.${this.date}`;
     },
@@ -141,8 +175,8 @@ export default {
 .switchBtn {
   line-height: 3rem;
   position: absolute;
-  top: 10%;
-  left: 27%;
+  top: 13%;
+  left: 80px;
   transform: translateX(-50%);
   cursor: pointer;
   display: flex;

@@ -89,13 +89,61 @@ export default {
           roll: 0.2,
         },
       ],
+      areaPositions: [
+        [120.726150, 27.976038, 32.5],// 右下
+        [120.726135, 27.975545, 7.2],// 左下
+        [120.726130, 27.975545, 65.5],// 左上
+        [120.726150, 27.976038, 65.5],// 右上
+        [120.725880, 27.976080, 65.5],// 右侧上
+        [120.725895, 27.976080, 32.5],// 右侧下
+        [120.725790, 27.975592, 65.5],// 左侧上
+        [120.725780, 27.975590, 7.2],// 左侧下
+        [120.725905, 27.976210, 31.7],// 后上
+        [120.726105, 27.976170, 31.7],// 前上
+        [120.725905, 27.976210, 7.7], // 后下
+        [120.726105, 27.976180, 7.7],// 前下
+        [120.726250, 27.975980, 7.7],// 下
+        [120.726250, 27.975980, 32.7],// 上
+        [120.726250, 27.975980, 65.5]
+      ],
+      points: {},
     };
   },
+  created() {
+      this.areaPositions.forEach((item, index) => {
+          this.points[`p${index + 1}`] = Cesium.Cartesian3.fromDegrees(...item)
+      })
+  },
   methods: {
+    // cleanUpWrapper(arr) {
+    //   const list = new Array(arr.length)
+    //   for (let i = 0; i < list.length; i++) {
+    //     $viewer.entities.removeById(`area${i + 1}`)
+    //   }
+    // },
+    addWrapper(arr) {
+      if ($viewer.entities.getById('area$1')) return
+      let index = 0
+      for (const points of arr) {
+        this.addArea(points, ++index)
+      }
+    },
+    addArea(pointArr, index) {
+      $viewer.entities.add({
+        id: `area${index}`,
+        polygon: {
+          hierarchy: pointArr,
+          material: Cesium.Color.RED.withAlpha(0.3),
+          perPositionHeight: true,
+          fill: true
+        }
+      })
+    },
     changeActive(index) {
       this.$store.commit("DigitalTwin/changeCheckBtnNum", index);
     },
     flyTo(index) {
+      if (this.activeNum === index) return
       $viewer.qtum.centerAt(this.position[index]); // 飞行到指定位置
       if (index === 3) {
         this.$store.commit("DigitalTwin/changeEnterPriseShow", false);
@@ -124,30 +172,21 @@ export default {
           this.$store.commit("DigitalTwin/changeEventListShow", true);
         }, 1000);
       } else if(index===1){
-        let p1 = Cesium.Cartesian3.fromDegrees(120.726150, 27.976046, 33.2) // 右下
-        let p2 = Cesium.Cartesian3.fromDegrees(120.726035, 27.975580, 33.2) // 左下
-        let p3 = Cesium.Cartesian3.fromDegrees(120.726030, 27.975582, 58.5) // 左上
-        let p4 = Cesium.Cartesian3.fromDegrees(120.726150, 27.976045, 58.5) // 右上
-        let p5 = Cesium.Cartesian3.fromDegrees(120.725905, 27.976068, 58.5) // 侧上
-        let p6 = Cesium.Cartesian3.fromDegrees(120.725905, 27.976073, 33.5) // 侧下
 
-        $viewer.entities.add({
-          polygon: {
-            hierarchy: [p1, p2, p3, p4],
-            material: new Cesium.Color(100, 100, 100, 0.5),
-            perPositionHeight: true,
-            fill: true
-          },
-        })
+        const points = this.points
+        const areasPointCollection = [
+          [points.p1, points.p4, points.p5, points.p6],
+          [points.p1, points.p6, points.p9, points.p10, points.p14],
+          [points.p9, points.p10, points.p12, points.p11],
+          [points.p10, points.p14, points.p13, points.p12],
+          [points.p2, points.p3, points.p15, points.p13],
+          [points.p1, points.p4, points.p15, points.p14],
+          [points.p3, points.p2, points.p8, points.p7],
+          [points.p3, points.p15, points.p4, points.p5, points.p7],
+          [points.p7, points.p5, points.p6, points.p9, points.p11, points.p8]
+        ]
 
-        $viewer.entities.add({
-          polygon: {
-            hierarchy: [p1, p4, p5, p6],
-            material: new Cesium.Color(100, 100, 100, 0.5),
-            perPositionHeight: true,
-            fill: true
-          }
-        })
+        this.addWrapper(areasPointCollection)
 
         this.$store.commit("DigitalTwin/changeEventListShow", false);
         this.$store.commit("DigitalTwin/changeEventDetailShow", false);
