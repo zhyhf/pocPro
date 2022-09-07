@@ -2,12 +2,12 @@
   <div class="main">
     <largeScreenVue></largeScreenVue>
     <div id="cesiumContainer"></div>
-<!--    <div-->
-<!--      v-for="(item, index) in $store.state.BubbleAndImmersChart.immersionChart"-->
-<!--      :key="index"-->
-<!--    >-->
-<!--      <component :tableid="item.id" :is="item.componentName" />-->
-<!--    </div>-->
+    <div
+      v-for="(item, index) in $store.state.BubbleAndImmersChart.immersionChart"
+      :key="index"
+    >
+     <component :tableid="item.id" :is="item.componentName" />
+   </div>
   </div>
 </template>
 <script>

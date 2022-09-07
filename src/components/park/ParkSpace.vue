@@ -99,7 +99,7 @@ export default {
        document.getElementsByClassName('intelligent-item0')[0].style.backgroundColor = '#38B7FD'
        document.getElementsByClassName('intelligent-item1')[0].style.backgroundColor = ''
        this.showEvent = false
-       $viewer.entities.getById("parkAllList1")._show = true;
+      $viewer.entities.getById("parkAllList1")._show = true;
       $viewer.entities.getById(
               "parkListDetail"
           )._billboard._image._value = require("@/assets/icon/car-label.png");
