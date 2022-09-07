@@ -54,8 +54,9 @@
                   />
                   <div class="theme">{{ item.theme }}</div>
                   <div class="item-detail">
-                    <span class="item-value">{{ item.value }}</span>
-                    <span class="item-unit">{{ item.unit }}</span>
+                    <dv-digital-flop :config="config['config' + (index + 1)]" />
+<!--                    <span class="item-value">{{ item.value }}</span>-->
+<!--                    <span class="item-unit">{{ item.unit }}</span>-->
                   </div>
                   <img :src="item.pic" v-if="index === 1" class="pic" />
                 </div>
@@ -73,6 +74,7 @@
           <div class="panel-item-content device">
             <div
               class="device-item"
+              :class="deviceActiveNum === index ? 'device-item-active' : ''"
               v-for="(item, index) in deviceArray"
               :key="index"
             >
@@ -117,6 +119,7 @@
 export default {
   data() {
     return {
+      deviceActiveNum: 0,
       activeName: "first",
       energyChart: {},
       energyOptions: {
@@ -273,9 +276,49 @@ export default {
       // timeOptions: ['月', '季度', '半年', '年'],
       timeOptions: ["半年"],
       activeIndex: 2,
+      config: {
+        config1: {
+          number:[0],
+          content:'{nt}个',
+          style: {
+            fontSize: 20,
+            fill: '#FFFFFF'
+          }
+        },
+        config2: {
+          number:[0],
+          content:'{nt}m²',
+          style: {
+            fontSize: 20,
+            fill: '#FFFFFF'
+          }
+        },
+        config3: {
+          number:[0],
+          content:'{nt}个',
+          style: {
+            fontSize: 20,
+            fill: '#FFFFFF'
+          }
+        }
+      }
     };
   },
   mounted() {
+    setTimeout(() => {
+      this.config.config1.number[0] = 1650
+      this.config.config2.number[0] = 45542
+      this.config.config3.number[0] = 5625
+      this.config.config1 = {...this.config.config1}
+      this.config.config2 = {...this.config.config2}
+      this.config.config3 = {...this.config.config3}
+    }, 1000)
+    // setInterval( ()=>{
+    //   this.power(360);
+    // },8000);
+    setInterval(() => {
+      this.deviceActiveNum = (++this.deviceActiveNum) % 4
+    }, 2000)
     this.$nextTick(() => {
       this.energyChart = this.$echarts.init(this.$refs.energyChart);
       this.energyChart.setOption(this.energyOptions);
@@ -286,6 +329,14 @@ export default {
     });
   },
   methods: {
+    // power(n){
+    //   for (const key in this.config) {
+    //     this.config[key].number[0] = Math.floor((Math.random() * n) + 1);
+    //     this.config[key] = {...this.config[key]}
+    //   }
+    //   // this.config.number[0] = Math.floor((Math.random() * n) + 1);
+    //   // this.config=  {...this.config};//对象解构，更新props
+    // },
     handleIndexChange(index) {
       this.activeIndex = index;
     },
@@ -463,7 +514,12 @@ export default {
     background-size: 100% 100%;
     margin-left: 4px;
     margin-right: 4px;
-    animation: scaleIn 3s ease-in-out;
+  }
+  .device-item-active {
+    background-image: url("../../assets/img/device-midium-bg-active.png") !important;
+    .card-title, .card-value, .card-unit {
+      color: #ffd800 !important;
+    }
   }
 }
 .service {
@@ -480,6 +536,7 @@ export default {
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    animation: scaleIn 3s;
   }
   .service-item:nth-child(2) {
     flex: 1.8;

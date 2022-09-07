@@ -244,6 +244,14 @@
                 this.energyChart.resize()
                 this.brokenChart.resize()
             })
+
+          setInterval(() => {
+            const data = this.brokenOptions.series[0].data.slice()
+            this.brokenOptions.series[0].data = []
+            this.brokenChart.setOption(this.brokenOptions)
+            this.brokenOptions.series[0].data = data
+            this.brokenChart.setOption(this.brokenOptions)
+          }, 4000)
         },
         methods: {
             handleIndexChange(index) {
