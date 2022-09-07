@@ -17,7 +17,7 @@
         <div class="panel-title">园区运营概况</div>
         <div class="panel-item-body industry-operate">
           <!-- <Charts /> -->
-          <!-- <div class="top">
+          <div class="top">
             <div
               class="top-item"
               v-for="(item, index) in industryArray"
@@ -42,7 +42,7 @@
                 <span class="item-unit">{{ item.unit }}</span>
               </div>
             </div>
-          </div> -->
+          </div>
         </div> 
       </div>
       <div class="panel-item">
