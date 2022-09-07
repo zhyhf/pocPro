@@ -109,28 +109,32 @@ export default {
   },
   methods: {
     choseSys(n, item) {
-      this.$store.commit("DigitalTwin/changeNavCheckBtnNum", item.value);
-      if(item.isClick){
-        if (this.checkedTarget) {
-          this.checkedTarget.src = this.middlePicUrl[
-            this.checkedTargetNum
-          ].picUrl;
-        }
-        let target = this.$refs['style'+n][0];
-        target.src = item.checkedPicUrl;
-        this.checkedTargetNum = n;
-        this.checkedTarget = target;
-        this.showicon = false;
-       }
+      this.$store.commit("DigitalTwin/changeLargeScreenShow", false);
+      setTimeout(() => {
+          this.$store.commit("DigitalTwin/changeNavCheckBtnNum", item.value);
+          if(item.isClick){
+              if (this.checkedTarget) {
+                  this.checkedTarget.src = this.middlePicUrl[
+                      this.checkedTargetNum
+                      ].picUrl;
+              }
+              let target = this.$refs['style'+n][0];
+              target.src = item.checkedPicUrl;
+              this.checkedTargetNum = n;
+              this.checkedTarget = target;
+              this.showicon = false;
+          }
 
-      if (n !== 3) {
-        //能源分析
-        this.$store.commit("DigitalTwin/changeDataAnalysisShow", false);
-        this.$store.commit("DigitalTwin/changeEnergyAnalysisShow", false);
-        this.$store.commit("DigitalTwin/changeEnvAnalysisShow", false);
-        this.$store.commit("DigitalTwin/changeCompanyAnalysisShow", false);
-      }
-      },
+          if (n !== 3) {
+              //能源分析
+              this.$store.commit("DigitalTwin/changeDataAnalysisShow", false);
+              this.$store.commit("DigitalTwin/changeEnergyAnalysisShow", false);
+              this.$store.commit("DigitalTwin/changeEnvAnalysisShow", false);
+              this.$store.commit("DigitalTwin/changeCompanyAnalysisShow", false);
+          }
+          this.$store.commit("DigitalTwin/changeLargeScreenShow", true);
+      }, 400)
+    },
      mouseenterImage(n, item) {
       if(item.isClick){
         let target = this.$refs['style'+n][0];

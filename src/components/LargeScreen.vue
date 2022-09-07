@@ -9,7 +9,7 @@
       <div class="left mid index" :class="[isLargeSreen ? '' : leftOut]">
         <IndexLeft v-show="navCheckBtnNum === 'homePage'" />
         <AssetsLeft v-show="navCheckBtnNum === 'assets'" />
-        <PropertyLeft v-show="navCheckBtnNum === 'property'" />
+        <PropertyLeft v-if="navCheckBtnNum === 'property'" />
         <EnergyLeft v-if="navCheckBtnNum === 'energy'" />
         <!-- <div class="park chart row-1">
           <div class="margin-t">园区概况</div>

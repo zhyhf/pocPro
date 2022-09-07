@@ -404,6 +404,7 @@ export default {
     align-items: center;
     .pic {
       display: block;
+      animation: myFloat 4s ease-in-out infinite;
     }
     .theme {
       margin-top: 10px;
@@ -462,6 +463,7 @@ export default {
     background-size: 100% 100%;
     margin-left: 4px;
     margin-right: 4px;
+    animation: scaleIn 3s ease-in-out;
   }
 }
 .service {
@@ -515,4 +517,26 @@ export default {
     color: #c6cfce;
   }
 }
+  @keyframes myFloat {
+    0% {
+      transform: translateY(0);
+    }
+    50% {
+      transform: translateY(10%);
+    }
+    100% {
+      transform: translateY(0);
+    }
+  }
+  @keyframes scaleIn {
+    0% {
+      transform: scale(0.9)
+    }
+    50% {
+      transform: scale(1.1)
+    }
+    100% {
+      transform: scale(1);
+    }
+  }
 </style>

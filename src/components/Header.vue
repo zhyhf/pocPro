@@ -22,7 +22,7 @@
     </div>
     <div class="top">
 <!--      <div class="left-group">浙江省温州市龙湾区文昌创客小镇</div>-->
-      <div class="name">迁宿电商产业大脑</div>
+      <div class="name">宿迁电商产业大脑</div>
       <div class="time">
         <div class="titleContent">
           <i class="iconfont icon-humidity" />
@@ -190,7 +190,7 @@ export default {
     height: 3.6rem;
     border: 1px solid #38b7fd;
     position: absolute;
-    top: 3.6rem;
+    left: 9rem;
     font-size: 1.4rem;
 
     font-weight: 700;

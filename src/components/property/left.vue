@@ -1,6 +1,34 @@
 <template>
   <div>
     <div class="panel-wrapper">
+<!--      <div class="panel-item park">-->
+<!--        <div class="panel-title">园区内停车情况</div>-->
+<!--        <div class="panel-item-body">-->
+<!--          <div class="panel-item-content">-->
+<!--          </div>-->
+<!--        </div>-->
+<!--      </div>-->
+<!--      <div class="panel-item car-count">-->
+<!--        <div class="panel-title">园区车辆统计</div>-->
+<!--        <div class="panel-item-body">-->
+<!--          <div class="panel-item-content">-->
+<!--            <circle-chart id="parking" style="width: 100%; height: 100%"></circle-chart>-->
+<!--          </div>-->
+<!--        </div>-->
+<!--      </div>-->
+<!--      <div class="panel-item person-count">-->
+<!--        <div class="panel-title">园区人员统计</div>-->
+<!--        <div class="panel-item-body">-->
+<!--          <div class="panel-item-content"></div>-->
+<!--        </div>-->
+<!--      </div>-->
+<!--      <div class="panel-item green">-->
+<!--        <div class="panel-title">园区绿化状态</div>-->
+<!--        <div class="panel-item-body">-->
+<!--          <div class="panel-item-content"></div>-->
+<!--        </div>-->
+<!--      </div>-->
+
       <div class="panel-item conclusion">
         <div class="panel-title">物业概况</div>
         <div class="panel-item-body">
@@ -174,10 +202,12 @@
 </template>
 
 <script>
-import ElPagination from "../../components/page/index.vue";
+import ElPagination from '@/components/page/index.vue'
+import CircleChart from './CircleChart'
 export default {
   components: {
     ElPagination,
+    CircleChart
   },
   data() {
     return {
@@ -289,6 +319,10 @@ export default {
 }
 .line {
   display: inline;
+}
+
+.park {
+  flex: 0.7 !important;
 }
 
 .conclusion {
