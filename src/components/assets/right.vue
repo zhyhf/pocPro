@@ -5,7 +5,8 @@
         <div class="panel-title">招商企业</div>
         <div class="panel-item-body">
           <div class="panel-item-content">
-            <el-table
+            <dv-scroll-board :config="config" ref="scrollBoard" />
+            <!-- <el-table
               :header-cell-class-name="'tableHeaderCell'"
               class="box-table"
               :data="tableData"
@@ -29,14 +30,14 @@
                 min-width="25%"
                 show-overflow-tooltip
               />
-            </el-table>
-            <div class="table-buttons">
+            </el-table> -->
+            <!-- <div class="table-buttons">
               <el-pagination
                 :total="4"
                 :page-size="5"
                 @currentChange="currentChange"
               />
-            </div>
+            </div> -->
           </div>
         </div>
       </div>
@@ -64,6 +65,21 @@ export default {
   },
   data() {
     return {
+        config:{
+        header: ['企业', '招商状态', '时间'],
+        data: [
+          ['中东科技有限公司', '完成资产合同', '2022.08'],
+          ['DXC Technology', '完成物业合同', '2022.08'],
+          ['KFC', '完成资产合同', '2022.09'],
+          ['温州才华智能网络', '已入驻', '2022.04'],
+          ['龙湾农村商业银行', '完成物业合同', '2022.05']
+        ],
+        rowNum: 4,
+        headerBGC: 'transparent',
+        columnWidth: [120],
+        align: ['center']
+
+      },
       eventChart: {},
       eventOptions: {
         color: ["rgb(45, 253, 189)", "rgb(55, 133, 247)"],

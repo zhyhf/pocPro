@@ -140,7 +140,7 @@ export default {
   top:calc(12% + 270px);
   flex-direction: column;
   z-index: 120;
-  width: 380px;
+  width: 420px;
   height: 250px;
 }
 </style>

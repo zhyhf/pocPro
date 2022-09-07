@@ -66,7 +66,7 @@ export default {
   top:calc(12% + 540px);
   flex-direction: column;
   z-index: 120;
-  width: 380px;
-  height: 190px;
+  width: 420px;
+  height: 220px;
 }
 </style>

@@ -134,7 +134,7 @@ export default {
   top: 12%;
   flex-direction: column;
   z-index: 120;
-  width: 380px;
-  height: 250px;
+  width: 420px;
+  height: 260px;
 }
 </style>
