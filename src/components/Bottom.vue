@@ -49,11 +49,6 @@ export default {
           picUrl: require("@/assets/icon/parking.svg"),
           checkedPicUrl: require("@/assets/icon/active-parking.svg"),
         },
-        // {
-        //   name: "会议室",
-        //   picUrl: require("@/assets/icon/meeting.svg"),
-        //   checkedPicUrl: require("@/assets/icon/active-meeting.svg"),
-        // },
         {
           name: "预警事件",
           picUrl: require("@/assets/icon/list.svg"),

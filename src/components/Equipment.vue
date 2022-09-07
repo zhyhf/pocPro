@@ -1,6 +1,5 @@
 <template>
   <div :id="tableid" class="exhaust-container">
-    <!-- <div class="closeTool"></div> -->
     <titleToolVue :title="title" :iconPath="iconPath"></titleToolVue>
     <div class="charts">
       <div class="chart-item">
@@ -19,8 +18,6 @@
         <div class="temprature chart-container"></div>
         <span>温度</span>
       </div>
-      <!-- <div id="chart1"></div>
-      <div id="chart2"></div> -->
     </div>
     <div class="status">
       <div class="left flex">
@@ -45,7 +42,6 @@
   </div>
 </template>
 <script>
-import * as echarts from "echarts";
 import titleToolVue from "./titleTool.vue";
 import closeToolVue from "./closeTool.vue";
 export default {
@@ -59,236 +55,7 @@ export default {
   components: {
     titleToolVue,
     closeToolVue,
-  },
-  methods: {
-    initialChart1() {
-      let option = {
-        // backgroundColor: "#0E1327",
-        series: [
-          {
-            radius: "80%",
-            type: "gauge",
-            z: 0,
-            axisLine: {
-              lineStyle: {
-                width: 1,
-                color: [
-                  [
-                    0.3,
-                    new echarts.graphic.LinearGradient(0, 1, 1, 0, [
-                      {
-                        offset: 0,
-                        color: "rgba(0, 237, 3,0.1)",
-                      },
-                      {
-                        offset: 0.5,
-                        color: "rgba(0, 237, 3,0.6)",
-                      },
-                      {
-                        offset: 1,
-                        color: "rgba(0, 237, 3,1)",
-                      },
-                    ]),
-                  ],
-                  [
-                    0.7,
-                    new echarts.graphic.LinearGradient(0, 1, 1, 0, [
-                      {
-                        offset: 0,
-                        color: "rgba(255, 184, 0,0.1)",
-                      },
-                      {
-                        offset: 0.5,
-                        color: "rgba(255, 184, 0,0.6)",
-                      },
-                      {
-                        offset: 1,
-                        color: "rgba(255, 184, 0,1)",
-                      },
-                    ]),
-                  ],
-                  [
-                    1,
-                    new echarts.graphic.LinearGradient(0, 1, 1, 0, [
-                      {
-                        offset: 0,
-                        color: "rgba(175, 36, 74,0.1)",
-                      },
-                      {
-                        offset: 0.5,
-                        color: "rgba(255, 36, 74,0.6)",
-                      },
-                      {
-                        offset: 1,
-                        color: "rgba(255, 36, 74,1)",
-                      },
-                    ]),
-                  ],
-                ],
-              },
-            },
-            pointer: {
-              itemStyle: {
-                color: "auto",
-              },
-            },
-            axisTick: {
-              distance: 0,
-              length: 8,
-              lineStyle: {
-                color: "auto",
-                width: 1,
-              },
-            },
-            splitLine: {
-              distance: 0,
-              length: 10,
-              lineStyle: {
-                color: "auto",
-                width: 1,
-              },
-            },
-            // axisLabel: {
-            //   color: "white",
-            //   distance: 10,
-            //   fontSize: 1,
-            // },
-            detail: {
-              valueAnimation: true,
-              formatter: "{value}",
-              color: "white",
-              fontSize: 15,
-            },
-            data: [
-              {
-                value: 60,
-              },
-            ],
-          },
-        ],
-      };
-
-      // 基于准备好的dom，初始化echarts实例
-      let chartDom = echarts.init(document.getElementById("chart1"));
-      // 绘制图表
-      chartDom.setOption(option);
-    },
-    initialChart2() {
-      let option = {
-        // backgroundColor: "#0E1327",
-        series: [
-          {
-            radius: "80%",
-            type: "gauge",
-            z: 0,
-            axisLine: {
-              lineStyle: {
-                width: 1,
-                color: [
-                  [
-                    0.3,
-                    new echarts.graphic.LinearGradient(0, 1, 1, 0, [
-                      {
-                        offset: 0,
-                        color: "rgba(0, 237, 3,0.1)",
-                      },
-                      {
-                        offset: 0.5,
-                        color: "rgba(0, 237, 3,0.6)",
-                      },
-                      {
-                        offset: 1,
-                        color: "rgba(0, 237, 3,1)",
-                      },
-                    ]),
-                  ],
-                  [
-                    0.7,
-                    new echarts.graphic.LinearGradient(0, 1, 1, 0, [
-                      {
-                        offset: 0,
-                        color: "rgba(255, 184, 0,0.1)",
-                      },
-                      {
-                        offset: 0.5,
-                        color: "rgba(255, 184, 0,0.6)",
-                      },
-                      {
-                        offset: 1,
-                        color: "rgba(255, 184, 0,1)",
-                      },
-                    ]),
-                  ],
-                  [
-                    1,
-                    new echarts.graphic.LinearGradient(0, 1, 1, 0, [
-                      {
-                        offset: 0,
-                        color: "rgba(175, 36, 74,0.1)",
-                      },
-                      {
-                        offset: 0.5,
-                        color: "rgba(255, 36, 74,0.6)",
-                      },
-                      {
-                        offset: 1,
-                        color: "rgba(255, 36, 74,1)",
-                      },
-                    ]),
-                  ],
-                ],
-              },
-            },
-            pointer: {
-              itemStyle: {
-                color: "auto",
-              },
-            },
-            axisTick: {
-              distance: 0,
-              length: 8,
-              lineStyle: {
-                color: "auto",
-                width: 1,
-              },
-            },
-            splitLine: {
-              distance: 0,
-              length: 10,
-              lineStyle: {
-                color: "auto",
-                width: 1,
-              },
-            },
-            // axisLabel: {
-            //   color: "white",
-            //   distance: 10,
-            //   fontSize: 1,
-            // },
-            detail: {
-              valueAnimation: true,
-              formatter: "{value}",
-              color: "white",
-              fontSize: 15,
-            },
-            data: [
-              {
-                value: 60,
-              },
-            ],
-          },
-        ],
-      };
-      // 基于准备好的dom，初始化echarts实例
-      let chartDom = echarts.init(document.getElementById("chart2"));
-      // 绘制图表
-      chartDom.setOption(option);
-    },
-  },
-  mounted() {
-    // this.initialChart1();
-    // this.initialChart2();
-  },
+  }
 };
 </script>
 <style lang="less" scoped>

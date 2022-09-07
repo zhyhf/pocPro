@@ -10,7 +10,6 @@
             controlsList="nodownload noplaybackrate"
             controls
           ></video>
-        <!-- <video src="static/video/video.mp4" controls muted></video> -->
       </div>
     </div>
     <div class="text-group flex-column">

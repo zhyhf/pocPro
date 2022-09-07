@@ -16,7 +16,8 @@
       <div class="panel-item">
         <div class="panel-title">园区运营概况</div>
         <div class="panel-item-body industry-operate">
-          <div class="top">
+          <Charts />
+          <!-- <div class="top">
             <div
               class="top-item"
               v-for="(item, index) in industryArray"
@@ -41,8 +42,8 @@
                 <span class="item-unit">{{ item.unit }}</span>
               </div>
             </div>
-          </div>
-        </div>
+          </div> -->
+        </div> 
       </div>
       <div class="panel-item">
         <div class="panel-title">园区产值(近5年)</div>
@@ -55,6 +56,7 @@
 </template>
 
 <script>
+import Charts from './charts.vue'
 export default {
   data() {
     return {
@@ -174,6 +176,7 @@ export default {
       ],
     };
   },
+  components:{ Charts },
   mounted() {
     this.$nextTick(() => {
       this.outputChart = this.$echarts.init(this.$refs.outputChart);

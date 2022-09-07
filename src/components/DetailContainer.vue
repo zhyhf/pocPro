@@ -1,8 +1,6 @@
 <template>
   <div class="detail">
-    <!-- <div class="closeTool"></div> -->
     <titleToolVue :title="title" :iconPath="iconPath"></titleToolVue>
-    <!-- <div class="line"></div> -->
     <div class="detail-content" v-for="(item, index) in formData" :key="index">
       <div class="left-item">{{ item.name }}</div>
       <div class="right-item">{{ item.content }}</div>
@@ -11,12 +9,10 @@
 </template>
 <script>
 import titleToolVue from "./titleTool.vue";
-// import closeToolVue from "./closeTool.vue";
 export default {
   props: ["formData", "title"],
   components: {
     titleToolVue,
-    // closeToolVue
   },
   data() {
     return {
@@ -29,7 +25,6 @@ export default {
 @import url("../assets/css/globe.css");
 .detail {
   width: 36.8rem;
-  // height: 26.4rem;
   font-size: 1.4rem;
   background: url(../assets/img/bg.png) no-repeat;
   background-size: 100% 100%;
