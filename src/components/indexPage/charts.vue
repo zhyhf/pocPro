@@ -1,5 +1,5 @@
 <template>
-       <div class="panel-item-content" ref="brokenChart"></div>
+       <div class="panel-item-content" ref="brokenYChart"></div>
 </template>
 <script>
     export default {
@@ -7,7 +7,7 @@
             return {
                     brokenChart: {},
                     brokenOptions: {
-                    color:['#1563FF','#3AFFF7','#008C89','#007697','#D1DEEE'],
+                    color:['#65E1DF','#139AFF','#33FEBF','#1563FF','#D1DEEE'],
                     tooltip: {
                         trigger:"item",
                         backgroundColor: 'rgba(0,0,0,0.65)',
@@ -42,34 +42,48 @@
                             }
                         ],
                         orient: 'vertical',  //垂直显示
-                        y: 'center',    //延Y轴居中
-                        x: 'right', //居右显示
-                        padding: [0, 10, 0, 0],
+                        right: '6%',
+                        top: '16%',
                         align: 'left',
+                        itemHeight: 8,
+                        itemWidth: 8,
                         textStyle: {
-                            color: '#C6CFCE',
-                            fontSize: '12'
+                            color: '#fff',
+                            fontSize: '14',
+                            fontWeight: 400,
                         },
-                        itemStyle: {
-
+                        formatter: function (name) {  //图例后添加数值
+                            let data =  [
+                                { value: 34.72, name: '电子商务' },
+                                { value: 21.39, name: '农产品' },
+                                { value: 23.61, name: '服装' },
+                                { value: 13.33, name: '电子产品' },
+                                { value: 6.95, name: '其他' }
+                            ];
+                            let tarValue;
+                            for (let i = 0; i < data.length; i++) {
+                            if (data[i].name === name) {
+                                tarValue = data[i].value;
+                            }
+                            }
+                            return name  + '     '+ tarValue+ '%';
                         }
                     },
                     series: [
                         {
                             type: 'pie',
-                            radius: ['35%', '65%'],
-                            center: ['37%', '50%'],
+                            radius: ['40%', '70%'],
+                            center: ['25%', '50%'],
                             avoidLabelOverlap: false,
+                            roseType: 'radius',
                             label: {
                                 show: false,
-                                textStyle: {
-                                    color: '#C6CFCE'
-                                }
                             },
                             labelLine: {
                                 show: false,
-                                length: 10,
-                                length2: 4
+                            },
+                              itemStyle: {
+                                borderRadius: 5
                             },
                             data: [
                                 { value: 34.72, name: '电子商务' },
@@ -79,15 +93,44 @@
                                 { value: 6.95, name: '其他' }
                             ]
                         }
-                    ]
+                    ],
+                    // graphic: {
+                    //     id:'image1',
+                    //     elements:[
+                    //         {
+                    //           type: 'image', // 图形元素类型
+                    //           z: 40,  // 层叠
+                    //           style: {
+                    //             image: require('@/assets/img/echarts/nQuan.png'),
+                    //             width: 69,
+                    //             height: 69
+                    //         },
+                    //         left: '16%',
+                    //         top: 'middle'
+                    //     },
+                    //      {
+                    //           type: 'image', // 图形元素类型
+                    //         //   z: 40,  // 层叠
+                    //           style: {
+                    //             image: require('@/assets/img/echarts/wquan.png'),
+                    //             width: 124,
+                    //             height: 124
+                    //         },
+                    //         left: '8%',
+                    //         top: 'middle'
+                    //     }
+                    //     ]
+                    // }
                 },
             }
         },
         mounted() {
-            this.brokenChart = this.$echarts.init(this.$refs.brokenChart)
+            this.brokenChart = this.$echarts.init(this.$refs.brokenYChart)
             this.brokenChart.setOption(this.brokenOptions)
             window.addEventListener('resize', () => {
-                this.brokenChart.resize()
+            setTimeout(()=>{
+              this.brokenChart.resize()
+              })
             })
         }
     }

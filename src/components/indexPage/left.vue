@@ -16,7 +16,7 @@
       <div class="panel-item">
         <div class="panel-title">园区运营概况</div>
         <div class="panel-item-body industry-operate">
-          <Charts />
+          <!-- <Charts /> -->
           <!-- <div class="top">
             <div
               class="top-item"
