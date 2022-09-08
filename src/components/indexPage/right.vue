@@ -42,20 +42,21 @@
       <div class="panel-item">
         <div class="panel-title">党建管理</div>
         <div class="panel-item-body">
-          <div class="panel-item-content party-manage">
-            <div
-              class="party-item"
-              v-for="(item, index) in partyArray"
-              :key="index"
-            >
-              <img :src="item.pic" class="pic" />
-              <div class="theme">{{ item.theme }}</div>
-              <div class="item-detail">
-                <span class="item-value">{{ item.value }}</span>
-                <span class="item-unit">{{ item.unit }}</span>
-              </div>
-            </div>
-          </div>
+          <div class="panel-item-content" ref="radarChart"></div>
+<!--          <div class="panel-item-content party-manage">-->
+<!--            <div-->
+<!--              class="party-item"-->
+<!--              v-for="(item, index) in partyArray"-->
+<!--              :key="index"-->
+<!--            >-->
+<!--              <img :src="item.pic" class="pic" />-->
+<!--              <div class="theme">{{ item.theme }}</div>-->
+<!--              <div class="item-detail">-->
+<!--                <span class="item-value">{{ item.value }}</span>-->
+<!--                <span class="item-unit">{{ item.unit }}</span>-->
+<!--              </div>-->
+<!--            </div>-->
+<!--          </div>-->
         </div>
       </div>
       <div class="panel-item">
@@ -182,32 +183,99 @@ export default {
           unit: "个",
         },
       ],
+      isHighLight: false,
+      radarOptions: {
+        radar: {
+          center: ['50%', '52%'],
+          axisName: {
+            color: '#fff',
+            padding: -5,
+            fontSize: 10,
+            formatter: (value, indicator) => {
+              if (value === '创新能力和创业活跃度') return value
+              const arr = value.split('')
+              arr.splice(5, 0, '\n')
+              return arr.join('')
+            }
+          },
+          indicator: [
+            { name: '创新能力和创业活跃度', max: 6500 },
+            { name: '结构优化和产业价值链', max: 16000 },
+            { name: '绿色发展和宜居包容性', max: 30000 },
+            { name: '开放创新和国际竞争力', max: 38000 },
+            { name: '综合质效和持续创新力', max: 52000 }
+          ],
+          splitLine: {
+            lineStyle: {
+              color: ['rgba(255, 255, 255, 0.4)']
+            }
+          },
+          splitArea: {
+            areaStyle: {
+              color: ['transparent', 'rgba(255, 255, 255, 0.1)']
+            }
+          },
+        },
+        series: [
+          {
+            type: 'radar',
+            symbol: 'image://http://localhost:8080/rardar-default.png',
+            symbolSize: 50,
+            data: [
+              {
+                value: [4200, 12000, 3800, 4100, 6700],
+              }
+            ],
+            lineStyle: {
+              color: '#38B7FD'
+            },
+            areaStyle: {
+              color: new this.$echarts.graphic.LinearGradient(
+              0, 0, 0, 1,
+              [
+                {offset: 0, color: 'rgba(0, 47, 74, 0.7)'},
+                {offset: 1, color: 'rgba(0, 47, 74, 0.15)'}
+              ]
+    )
+            }
+          }
+        ]
+      }
     };
   },
-    mounted() {
-    setTimeout(() => {
-      this.config.config1.number[0] = 1650
-      this.config.config2.number[0] = 45542
-      this.config.config3.number[0] = 5625
-      this.config.config1 = {...this.config.config1}
-      this.config.config2 = {...this.config.config2}
-      this.config.config3 = {...this.config.config3}
-    }, 1000)
-    // setInterval( ()=>{
-    //   this.power(360);
-    // },8000);
-    setInterval(() => {
-      this.deviceActiveNum = (++this.deviceActiveNum) % 4
-    }, 2000)
-    this.$nextTick(() => {
-      this.energyChart = this.$echarts.init(this.$refs.energyChart);
-      this.energyChart.setOption(this.energyOptions);
+  mounted() {
+    this.radarChart = this.$echarts.init(this.$refs.radarChart)
+    this.radarChart.setOption(this.radarOptions)
 
-      window.addEventListener("resize", () => {
-        this.energyChart.resize();
+    setInterval(() => {
+      this.radarOptions.series[0].symbol = `image://http://localhost:8080/rardar-${this.isHighLight ? 'default' : 'active'}.png`
+      this.isHighLight = !this.isHighLight
+      this.radarChart.setOption(this.radarOptions)
+    }, 500)
+
+      setTimeout(() => {
+          this.config.config1.number[0] = 1650
+          this.config.config2.number[0] = 45542
+          this.config.config3.number[0] = 5625
+          this.config.config1 = {...this.config.config1}
+          this.config.config2 = {...this.config.config2}
+          this.config.config3 = {...this.config.config3}
+      }, 1000)
+      // setInterval( ()=>{
+      //   this.power(360);
+      // },8000);
+      setInterval(() => {
+          this.deviceActiveNum = (++this.deviceActiveNum) % 4
+      }, 2000)
+      this.$nextTick(() => {
+          this.energyChart = this.$echarts.init(this.$refs.energyChart);
+          this.energyChart.setOption(this.energyOptions);
+
+          window.addEventListener("resize", () => {
+              this.energyChart.resize();
+          });
       });
-    });
-  },
+  }
 };
 </script>
 

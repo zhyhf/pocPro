@@ -40,10 +40,10 @@
         <i class="iconfont icon-noise" />
            <span>60db</span>
         </div>
-        <div class="now-date">{{ nowday }}</div>
-        <div class="now-week">{{ nowWeek }}</div>
-        <!-- <img class="icon" src="../assets/icon/weather.png" /> -->
-        <div class="now-time">{{ nowTime }}</div>
+          <div class="now-date">{{ nowday }}</div>
+          <div class="now-week">{{ nowWeek }}</div>
+          <!-- <img class="icon" src="../assets/icon/weather.png" /> -->
+          <div class="now-time" style="width: 63px">{{ nowTime }}</div>
       </div>
     </div>
   </div>
