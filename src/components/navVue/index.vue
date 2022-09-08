@@ -49,14 +49,14 @@ export default {
               isClick:true,
               value:'assets'
           },
-          {
-              name: "安防",
-              picUrl: require("@/assets/icon/navigator/security.svg"),
-              checkedPicUrl: require("@/assets/icon/navigator/security-active.svg"),
-              hoveredPicUrl: require("@/assets/icon/navigator/security-hover.svg"),
-              isClick:true,
-              value:'property'
-          },
+          // {
+          //     name: "安防",
+          //     picUrl: require("@/assets/icon/navigator/security.svg"),
+          //     checkedPicUrl: require("@/assets/icon/navigator/security-active.svg"),
+          //     hoveredPicUrl: require("@/assets/icon/navigator/security-hover.svg"),
+          //     isClick:true,
+          //     value:'property'
+          // },
           {
               name: "能耗",
               picUrl: require("@/assets/icon/navigator/energy.svg"),

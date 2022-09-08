@@ -170,6 +170,9 @@ export default {
                 ),
               }, // 2DFDBD
             },
+            animationDelay: function (idx) {
+              return idx * 500;
+            }
           },
           {
             name: "活动数量",
@@ -200,8 +203,15 @@ export default {
                 ),
               },
             },
+            animationDelay: function (idx) {
+              return idx * 500;
+            }
           },
         ],
+        // animationEasing: 'elasticOut',
+        // animationDelayUpdate: function (idx) {
+        //   return idx * 200;
+        // }
       },
       enterpriseChart: {},
       enterpriseOptions: {
@@ -293,6 +303,9 @@ export default {
                 ),
               }, // 2DFDBD
             },
+            animationDelay: function (idx) {
+              return idx * 500;
+            }
           },
           {
             name: "参加单位数",
@@ -323,6 +336,9 @@ export default {
                 ),
               },
             },
+            animationDelay: function (idx) {
+              return idx * 500;
+            }
           },
           {
             name: "已签约数",
@@ -353,8 +369,15 @@ export default {
                 ),
               },
             },
+            animationDelay: function (idx) {
+              return idx * 500;
+            }
           },
         ],
+        animationEasing: 'elasticOut',
+          animationDelayUpdate: function (idx) {
+            return idx * 200;
+        }
       },
       tableData: [
         {

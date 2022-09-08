@@ -224,9 +224,16 @@
                                         }
                                     }
                                 }
+                            },
+                            animationDelay: function (idx) {
+                              return idx * 500;
                             }
                         }
-                    ]
+                    ],
+                  animationEasing: 'elasticOut',
+                  animationDelayUpdate: function (idx) {
+                    return idx * 200;
+                  }
                 },
                 // timeOptions: ['月', '季度', '半年', '年'],
                 timeOptions: ['半年'],

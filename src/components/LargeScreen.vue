@@ -7,8 +7,8 @@
     <!-- 左右布局页面 isLargeSreen:是否展示大屏左右侧页面 -->
     <div class="large-screen">
       <div class="left mid index" :class="[isLargeSreen ? '' : leftOut]">
-        <IndexLeft v-show="navCheckBtnNum === 'homePage'" />
-        <AssetsLeft v-show="navCheckBtnNum === 'assets'" />
+        <IndexLeft v-if="navCheckBtnNum === 'homePage'" />
+        <AssetsLeft v-if="navCheckBtnNum === 'assets'" />
         <PropertyLeft v-if="navCheckBtnNum === 'property'" />
         <EnergyLeft v-if="navCheckBtnNum === 'energy'" />
         <!-- <div class="park chart row-1">
@@ -28,7 +28,7 @@
         </div> -->
       </div>
       <div class="right mid index" :class="[isLargeSreen ? '' : rightOut]">
-        <IndexRight v-show="navCheckBtnNum === 'homePage'" />
+        <IndexRight v-if="navCheckBtnNum === 'homePage'" />
         <AssetsRight v-if="navCheckBtnNum === 'assets'" />
         <PropertyRight v-if="navCheckBtnNum === 'property'" />
         <EnergyRight v-if="navCheckBtnNum === 'energy'" />

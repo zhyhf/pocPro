@@ -26,8 +26,9 @@
                   />
                   <div class="theme">{{ item.theme }}</div>
                   <div class="item-detail">
-                    <span class="item-value">{{ item.value }}</span>
-                    <span class="item-unit">{{ item.unit }}</span>
+                      <dv-digital-flop :config="config['config' + (index + 1)]" />
+                    <!-- <span class="item-value">{{ item.value }}</span>
+                    <span class="item-unit">{{ item.unit }}</span> -->
                   </div>
                   <img :src="item.pic" v-if="index === 1" class="pic" />
                 </div>
@@ -106,6 +107,35 @@ export default {
           unit: "个",
         },
       ],
+        config: {
+        config1: {
+          number:[0],
+          content:'{nt}个',
+          style: {
+            fontSize: 20,
+            fill: '#FFFFFF'
+          },
+          animationFrame: 80,
+        },
+        config2: {
+          number:[0],
+          content:'{nt}m²',
+          style: {
+            fontSize: 20,
+            fill: '#FFFFFF'
+          },
+          animationFrame: 80,
+        },
+        config3: {
+          number:[0],
+          content:'{nt}个',
+          style: {
+            fontSize: 20,
+            fill: '#FFFFFF'
+          },
+         animationFrame: 80,
+        }
+      },
       partyArray: [
         {
           pic: require("@/assets/img/party-count.png"),
@@ -154,6 +184,30 @@ export default {
       ],
     };
   },
+    mounted() {
+    setTimeout(() => {
+      this.config.config1.number[0] = 1650
+      this.config.config2.number[0] = 45542
+      this.config.config3.number[0] = 5625
+      this.config.config1 = {...this.config.config1}
+      this.config.config2 = {...this.config.config2}
+      this.config.config3 = {...this.config.config3}
+    }, 1000)
+    // setInterval( ()=>{
+    //   this.power(360);
+    // },8000);
+    setInterval(() => {
+      this.deviceActiveNum = (++this.deviceActiveNum) % 4
+    }, 2000)
+    this.$nextTick(() => {
+      this.energyChart = this.$echarts.init(this.$refs.energyChart);
+      this.energyChart.setOption(this.energyOptions);
+
+      window.addEventListener("resize", () => {
+        this.energyChart.resize();
+      });
+    });
+  },
 };
 </script>
 
@@ -172,6 +226,7 @@ export default {
     align-items: center;
     .pic {
       display: block;
+      animation: myFloat 4s ease-in-out infinite;
     }
     .theme {
       margin-top: 10px;
@@ -315,4 +370,26 @@ export default {
     }
   }
 }
+  @keyframes myFloat {
+    0% {
+      transform: translateY(0);
+    }
+    50% {
+      transform: translateY(10%);
+    }
+    100% {
+      transform: translateY(0);
+    }
+  }
+  @keyframes scaleIn {
+    0% {
+      transform: scale(0.9)
+    }
+    50% {
+      transform: scale(1.1)
+    }
+    100% {
+      transform: scale(1);
+    }
+  }
 </style>

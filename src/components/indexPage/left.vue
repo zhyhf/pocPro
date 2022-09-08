@@ -25,20 +25,23 @@
             >
               <div class="item-title">{{ item.title }}</div>
               <div class="item-detail">
-                <span class="item-value">{{ item.value }}</span>
+                 <dv-digital-flop :config="config['config' + (index + 1)]"  style="width:6rem;height:1.7rem;"/>
                 <span class="item-unit">{{ item.unit }}</span>
+                <!-- <span class="item-value">{{ item.value }}</span>
+                <span class="item-unit">{{ item.unit }}</span> -->
               </div>
             </div>
           </div>
           <div class="bottom">
             <div
               class="bottom-item"
-              v-for="(item, index) in buildingDetail"
-              :key="index"
+              v-for="(item, t) in buildingDetail"
+              :key="t"
             >
               <div class="item-title">{{ item.title }}</div>
               <div class="item-detail">
-                <span class="item-value">{{ item.value }}</span>
+                <!-- <span class="item-value">{{ item.value }}</span> -->
+                <dv-digital-flop :config="configBottom['config' + (t + 1)]"  style="width:6rem;height:1.7rem;"/>
                 <span class="item-unit">{{ item.unit }}</span>
               </div>
             </div>
@@ -132,8 +135,15 @@ export default {
                 },
               },
             },
+            animationDelay: function (idx) {
+              return idx * 500;
+            }
           },
         ],
+         animationEasing: 'elasticOut',
+         animationDelayUpdate: function (idx) {
+          return idx * 200;
+        }
       },
       industryArray: [
         {
@@ -174,13 +184,97 @@ export default {
           unit: "个",
         },
       ],
+      config: {
+        config1: {
+          number:[0],
+          animationFrame: 50,
+          style: {
+            fontSize: 17,
+            fontWeight: 700,
+            fill: '#FFFFFF'
+          }
+        },
+        config2: {
+          number:[0],
+          animationFrame: 50,
+          style: {
+            fontSize: 17,
+            fill: '#FFFFFF',
+            fontWeight: 700,
+          }
+        },
+        config3: {
+          number:[0],
+          animationFrame: 50,
+          style: {
+            fontSize: 17,
+            fill: '#FFFFFF',
+            fontWeight: 700,
+          }
+        }
+      },
+      configBottom: {
+        config1: {
+          number:[0],
+          animationFrame: 50,
+          style: {
+            fontSize: 17,
+            fontWeight: 700,
+            fill: '#FFFFFF'
+          }
+        },
+         config2: {
+          number:[0],
+          animationFrame: 50,
+          style: {
+            fontSize: 17,
+            fill: '#FFFFFF',
+            fontWeight: 700,
+          }
+        },
+         config3: {
+          number:[0],
+          animationFrame: 50,
+          style: {
+            fontSize: 17,
+            fill: '#FFFFFF',
+            fontWeight: 700,
+          }
+        },
+        config4: {
+          number:[0],
+          animationFrame: 50,
+          style: {
+            fontSize: 17,
+            fill: '#FFFFFF',
+            fontWeight: 700,
+          }
+        }
+      }
     };
   },
   components:{ Charts },
   mounted() {
+    setTimeout(() => {
+      this.config.config1.number[0] = 1503
+      this.config.config2.number[0] = 23
+      this.config.config3.number[0] = 3642
+      this.config.config1 = {...this.config.config1}
+      this.config.config2 = {...this.config.config2}
+      this.config.config3 = {...this.config.config3}
+      this.configBottom.config1.number[0] = 95
+      this.configBottom.config2.number[0] = 5000
+      this.configBottom.config3.number[0] = 350
+      this.configBottom.config4.number[0] = 25
+      this.configBottom.config1 = {...this.configBottom.config1}
+      this.configBottom.config2 = {...this.configBottom.config2}
+      this.configBottom.config3 = {...this.configBottom.config3}
+      this.configBottom.config4 = {...this.configBottom.config4}
+    }, 1000)
     this.$nextTick(() => {
       this.outputChart = this.$echarts.init(this.$refs.outputChart);
       this.outputChart.setOption(this.outputOptions);
+
       window.addEventListener("resize", () => {
         this.outputChart.resize();
       });
@@ -211,6 +305,35 @@ export default {
       align-items: center;
     }
   }
+  .item-title {
+    font-size: 12px;
+    color: #c6cfce;
+  }
+  .item-title::before {
+    content: "";
+    display: inline-block;
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background-color: #38b7fd;
+    margin: 0 4px;
+  }
+    .item-detail {
+    display: inline-flex;
+    margin-left: 6px;
+    margin-top: 5px;
+    position: relative;
+    .item-value {
+      font-size: 19px;
+      font-weight: 700;
+      color: #fff;
+    }
+    .item-unit {
+      margin-left: 1px;
+      font-size: 12px;
+      color: #c6cfce;
+    }
+  }
   .bottom {
     flex: 2;
     display: flex;
@@ -231,32 +354,6 @@ export default {
     .bottom-item:nth-child(1),
     .bottom-item:nth-child(2) {
       margin-top: 2px;
-    }
-  }
-  .item-title {
-    font-size: 12px;
-    color: #c6cfce;
-  }
-  .item-title::before {
-    content: "";
-    display: inline-block;
-    width: 8px;
-    height: 8px;
-    border-radius: 50%;
-    background-color: #38b7fd;
-    margin: 0 4px;
-  }
-  .item-detail {
-    margin-left: 6px;
-    .item-value {
-      font-size: 19px;
-      font-weight: 700;
-      color: #fff;
-    }
-    .item-unit {
-      margin-left: 4px;
-      font-size: 12px;
-      color: #c6cfce;
     }
   }
 }

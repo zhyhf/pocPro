@@ -198,8 +198,15 @@ export default {
                 },
               },
             },
+            animationDelay: function (idx) {
+              return idx * 500;
+            }
           },
         ],
+        animationEasing: 'elasticOut',
+        animationDelayUpdate: function (idx) {
+          return idx * 200;
+        }
       },
       safetyArray: [
         {
@@ -280,6 +287,7 @@ export default {
         config1: {
           number:[0],
           content:'{nt}个',
+          animationFrame: 80,
           style: {
             fontSize: 20,
             fill: '#FFFFFF'
@@ -288,6 +296,7 @@ export default {
         config2: {
           number:[0],
           content:'{nt}m²',
+          animationFrame: 80,
           style: {
             fontSize: 20,
             fill: '#FFFFFF'
@@ -296,6 +305,7 @@ export default {
         config3: {
           number:[0],
           content:'{nt}个',
+          animationFrame: 80,
           style: {
             fontSize: 20,
             fill: '#FFFFFF'
