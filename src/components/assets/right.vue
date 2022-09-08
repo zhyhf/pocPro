@@ -77,7 +77,8 @@ export default {
         rowNum: 4,
         headerBGC: 'transparent',
         columnWidth: [120],
-        align: ['center']
+        align: ['center'],
+        waitTime: 1000
 
       },
       eventChart: {},
