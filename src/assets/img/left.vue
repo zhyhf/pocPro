@@ -50,7 +50,7 @@
         </div> 
       </div>
       <div class="panel-item">
-        <div class="panel-title">园区产值</div>
+        <div class="panel-title">园区产值(近5年)</div>
         <div class="panel-item-body">
           <div class="panel-item-content" ref="outputChart"></div>
         </div>
@@ -85,7 +85,7 @@ export default {
             { name: '结构优化和产业价值链', max: 16000 },
             { name: '绿色发展和宜居包容性', max: 30000 },
             { name: '开放创新和国际竞争力', max: 38000 },
-            { name: '综合质效和持续创新力', max: 13000 }
+            { name: '综合质效和持续创新力', max: 30000 }
           ],
           splitLine: {
             lineStyle: {
@@ -101,11 +101,11 @@ export default {
         series: [
           {
             type: 'radar',
-            symbol: 'image://http://localhost:8080/rardar-default.png',
+            symbol: '@/asset/img/rardar-default.png',
             symbolSize: 50,
             data: [
               {
-                value: [4200, 12000, 23800, 18000, 8700],
+                value: [4200, 12000, 23800, 18000, 16700],
               }
             ],
             lineStyle: {
@@ -124,21 +124,10 @@ export default {
         ]
       },
       outputOptions: {
-         tooltip: {
-            trigger: "axis",
-            backgroundColor: 'rgba(0,0,0,0.65)',
-            color: '#fff',
-            textStyle:{
-              color: '#fff',
-              fontSize: '12px'
-            },
-            borderWidth: "0",
-        },
         xAxis: {
           type: "category",
-          data: ["2013","2014","2015", "2016", "2017", "2018", "2019", "2020", "2021","2022"],
+          data: ["2017", "2018", "2019", "2020", "2021"],
           axisLabel: {
-            interval:1,
             textStyle: {
               color: "#C6CFCE",
             },
@@ -170,33 +159,8 @@ export default {
         },
         series: [
           {
-            data: [200, 240, 230, 290, 360,250,200,270,340,300],
-            type: "line",
-            areaStyle: {
-                 color: new this.$echarts.graphic.LinearGradient(
-                  0,
-                  1,
-                  0,
-                  0,
-                  [
-                    {
-                      offset: 0,
-                      color: "rgba(2,247,183,0)", // 0% 处的颜色
-                    },
-                    {
-                      offset: 0.7,
-                      color: "rgba(148,67,252,0.2)", // 60% 处的颜色
-                    },
-                    {
-                      offset: 1,
-                      color: "rgba(148,67,252,0.6)", // 100% 处的颜色
-                    },
-                  ],
-                  false
-                ),
-            },
-            symbol: 'none',
-            smooth: true,
+            data: [50, 55, 66, 80, 95],
+            type: "bar",
             itemStyle: {
               normal: {
                 color: new this.$echarts.graphic.LinearGradient(
@@ -207,15 +171,15 @@ export default {
                   [
                     {
                       offset: 0,
-                      color: "rgba(2,247,183,1)", // 0% 处的颜色
+                      color: "rgba(56,183,253, 0)", // 0% 处的颜色
                     },
                     {
-                      offset: 0.4,
-                      color: "rgba(19,154,255,1)", // 60% 处的颜色
+                      offset: 0.6,
+                      color: "rgba(56,183,253, 0.5)", // 60% 处的颜色
                     },
                     {
                       offset: 1,
-                      color: "rgba(148,67,252,1)", // 100% 处的颜色
+                      color: "rgb(56,183,253)", // 100% 处的颜色
                     },
                   ],
                   false
@@ -230,8 +194,15 @@ export default {
                 },
               },
             },
+            animationDelay: function (idx) {
+              return idx * 500;
+            }
           },
         ],
+         animationEasing: 'elasticOut',
+         animationDelayUpdate: function (idx) {
+          return idx * 200;
+        }
       },
       industryArray: [
         {
@@ -345,6 +316,7 @@ export default {
   mounted() {
     this.radarChart = this.$echarts.init(this.$refs.radarChart)
     this.radarChart.setOption(this.radarOptions)
+
     setInterval(() => {
       this.radarOptions.series[0].symbol = `image://http://localhost:8080/rardar-${this.isHighLight ? 'default' : 'active'}.png`
       this.isHighLight = !this.isHighLight

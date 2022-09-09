@@ -40,30 +40,23 @@
         </div>
       </div>
       <div class="panel-item">
-        <div class="panel-title">党建管理</div>
-        <div class="panel-item-body">
-          <div class="panel-item-content" ref="radarChart"></div>
-<!--          <div class="panel-item-content party-manage">-->
-<!--            <div-->
-<!--              class="party-item"-->
-<!--              v-for="(item, index) in partyArray"-->
-<!--              :key="index"-->
-<!--            >-->
-<!--              <img :src="item.pic" class="pic" />-->
-<!--              <div class="theme">{{ item.theme }}</div>-->
-<!--              <div class="item-detail">-->
-<!--                <span class="item-value">{{ item.value }}</span>-->
-<!--                <span class="item-unit">{{ item.unit }}</span>-->
-<!--              </div>-->
-<!--            </div>-->
-<!--          </div>-->
+        <div class="panel-title">企业资质分析</div>
+        <div class="panel-item-body company-zzfx">
+               <div class="zzImg">
+                <img src="@/assets/img/echarts/zzIMg1.png" class="zzImg1"/>
+                <img src="@/assets/img/echarts/zzIMg2.png" class="zzImg1"/>
+                <img src="@/assets/img/echarts/zzIMg3.png" class="zzImg1"/>
+                <img src="@/assets/img/echarts/zzIMg4.png" class="zzImg1"/>
+              </div>
+              <div class="panel-item-contentZ" ref="outputChart"></div>
         </div>
       </div>
       <div class="panel-item">
-        <div class="panel-title">智慧办公</div>
+        <div class="panel-title">优质企业Top10</div>
         <div class="panel-item-body">
           <div class="panel-item-content intelligent-work">
-            <div
+             <dv-scroll-board :config="configTable" ref="scrollBoard" />
+            <!-- <div
               class="intelligent-item"
               v-for="(item, index) in intelligentWork"
               :key="index"
@@ -76,7 +69,7 @@
                   <span class="item-unit">{{ item.unit }}</span>
                 </div>
               </div>
-            </div>
+            </div> -->
           </div>
         </div>
       </div>
@@ -88,6 +81,136 @@
 export default {
   data() {
     return {
+        configTable:{
+          header: ['企业名称', '高新人才数', '注册资本(亿元)'],
+          data: [
+            ['中东科技有限公司', '287', '345'],
+            ['DXC Technology', '225', '298'],
+            ['KFC', '219', '289'],
+            ['温州才华智能网络', '203', '276'],
+            ['龙湾农村商业银行', '195', '234']
+          ],
+          rowNum: 4,
+          headerBGC: 'transparent',
+          columnWidth: [120],
+          align: ['center'],
+          waitTime: 1000
+      },
+      outputChart: {},
+      outputOptions: {
+        tooltip: {
+            trigger: "item",
+            backgroundColor: 'rgba(0,0,0,0.65)',
+            color: '#fff',
+            textStyle:{
+              color: '#fff',
+              fontSize: '12px'
+            },
+            borderWidth: "0",
+        },
+        xAxis: {
+          type: "category",
+          data: ["能源", "工业", "农业", "医疗", "制造业","交通","信息化服务业"],
+          axisLabel: {
+            interval: 0,
+              formatter: function (value) {
+                var ret = "";//拼接加\n返回的类目项  
+                var maxLength = 3;//每项显示文字个数  
+                var valLength = value.length;//X轴类目项的文字个数  
+                var rowN = Math.ceil(valLength / maxLength); //类目项需要换行的行数  
+                if (rowN > 1)//如果类目项的文字大于4,  
+                {
+                    for (var i = 0; i < rowN; i++) {
+                        var temp = "";//每次截取的字符串  
+                        var start = i * maxLength;//开始截取的位置  
+                        var end = start + maxLength;//结束截取的位置  
+                        //这里也可以加一个是否是最后一行的判断，但是不加也没有影响，那就不加吧  
+                        temp = value.substring(start, end) + "\n";
+                        ret += temp; //凭借最终的字符串  
+                    }
+                    return ret;
+                }
+                else {
+                    return value;
+                }
+            },
+            textStyle: {
+              color: "#C6CFCE",
+            },
+          },
+        },
+        yAxis: {
+          name: "单位(家)",
+          nameTextStyle: {
+            color: "#C6CFCE",
+          },
+          type: "value",
+          splitLine: {
+            lineStyle: {
+              type: "dashed",
+              color: "#C6CFCE",
+            },
+          },
+          axisLabel: {
+            textStyle: {
+              color: "#C6CFCE",
+            },
+          },
+        },
+        grid: {
+          left: 36,
+          top: 34,
+          right: 20,
+          bottom: 33,
+        },
+        series: [
+          {
+            data: [20, 40, 16, 35, 30,39,48],
+            type: "bar",
+            barWidth: 15,
+            itemStyle: {
+              normal: {
+                color: new this.$echarts.graphic.LinearGradient(
+                  0,
+                  1,
+                  0,
+                  0,
+                  [
+                    {
+                      offset: 0,
+                      color: "rgba(2,247,183,0)", // 0% 处的颜色
+                    },
+                    {
+                      offset: 0.6,
+                      color: "rgba(2,247,183,0.5)", // 60% 处的颜色
+                    },
+                    {
+                      offset: 1,
+                      color: "rgba(2,247,183,1)", // 100% 处的颜色
+                    },
+                  ],
+                  false
+                ),
+                // label: {
+                //   show: true,
+                //   position: "top",
+                //   textStyle: {
+                //     color: "#fff",
+                //     fontSize: 12,
+                //   },
+                // },
+              },
+            },
+            animationDelay: function (idx) {
+              return idx * 500;
+            }
+          },
+        ],
+         animationEasing: 'elasticOut',
+         animationDelayUpdate: function (idx) {
+          return idx * 200;
+        }
+      },
       safetyArray: [
         {
           pic: require("@/assets/img/monitor.png"),
@@ -108,7 +231,7 @@ export default {
           unit: "个",
         },
       ],
-        config: {
+      config: {
         config1: {
           number:[0],
           content:'{nt}个',
@@ -244,15 +367,20 @@ export default {
     };
   },
   mounted() {
-    this.radarChart = this.$echarts.init(this.$refs.radarChart)
-    this.radarChart.setOption(this.radarOptions)
-
-    setInterval(() => {
-      this.radarOptions.series[0].symbol = `image://http://localhost:8080/rardar-${this.isHighLight ? 'default' : 'active'}.png`
-      this.isHighLight = !this.isHighLight
-      this.radarChart.setOption(this.radarOptions)
-    }, 500)
-
+    // this.radarChart = this.$echarts.init(this.$refs.radarChart)
+    // this.radarChart.setOption(this.radarOptions)
+    // setInterval(() => {
+    //   this.radarOptions.series[0].symbol = `image://http://localhost:8080/rardar-${this.isHighLight ? 'default' : 'active'}.png`
+    //   this.isHighLight = !this.isHighLight
+    //   this.radarChart.setOption(this.radarOptions)
+    // }, 500)
+     this.$nextTick(() => {
+          this.outputChart = this.$echarts.init(this.$refs.outputChart);
+          this.outputChart.setOption(this.outputOptions);
+          window.addEventListener("resize", () => {
+              this.outputChart.resize();
+          });
+      });
       setTimeout(() => {
           this.config.config1.number[0] = 1650
           this.config.config2.number[0] = 45542
@@ -261,26 +389,34 @@ export default {
           this.config.config2 = {...this.config.config2}
           this.config.config3 = {...this.config.config3}
       }, 1000)
-      // setInterval( ()=>{
-      //   this.power(360);
-      // },8000);
       setInterval(() => {
           this.deviceActiveNum = (++this.deviceActiveNum) % 4
       }, 2000)
-      this.$nextTick(() => {
-          this.energyChart = this.$echarts.init(this.$refs.energyChart);
-          this.energyChart.setOption(this.energyOptions);
-
-          window.addEventListener("resize", () => {
-              this.energyChart.resize();
-          });
-      });
   }
 };
 </script>
 
 <style scoped lang="less">
 @import "../../style/panel.less";
+.zzImg{
+  display: flex;
+  justify-content: space-between;
+  margin:6px 12px;
+  height: 100px;
+}
+.zzImg1{
+  width: 100%;
+  margin-left: 3px;
+}
+.panel-item-contentZ{
+    width: 100%;
+     height: 180px;
+    // height: calc(100% - 4vh - 100px);
+    margin-top: 8px;
+}
+.company-zzfx{
+   height: 300px;
+}
 .industry-safety {
   display: flex;
   justify-content: space-between;
@@ -292,6 +428,9 @@ export default {
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    img{
+      width: 58px;
+    }
     .pic {
       display: block;
       animation: myFloat 4s ease-in-out infinite;
@@ -377,6 +516,7 @@ export default {
   }
 }
 .intelligent-work {
+  padding-right: 8px !important;
   display: flex;
   flex-wrap: wrap;
   padding: 0 0 10px 1%;

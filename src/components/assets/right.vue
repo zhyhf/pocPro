@@ -79,7 +79,6 @@ export default {
         columnWidth: [120],
         align: ['center'],
         waitTime: 1000
-
       },
       eventChart: {},
       eventOptions: {
