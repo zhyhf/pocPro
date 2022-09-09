@@ -216,7 +216,7 @@ export default {
           unit: "家",
         },
         {
-          title: "企业员工数量",
+          title: "企业员工数",
           value: "3642",
           unit: "个",
         },

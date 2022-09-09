@@ -25,15 +25,14 @@
         </div>
       </div>
       <div class="panel-item">
-        <div class="panel-title">碳排放构成</div>
+        <div class="panel-title">节能目标完成情况</div>
         <div class="panel-item-body">
-          <div class="panel-item-content">
-            <div
+            <div class="wave-echart" id='waveEchart' ref='waveEchart'></div>
+            <!-- <div
               ref="COChart"
               id="COChart"
               style="width: 100%; height: 100%"
-            ></div>
-          </div>
+            ></div> -->
         </div>
       </div>
       <div class="panel-item">
@@ -161,6 +160,63 @@ export default {
   },
   data() {
     return {
+      waveOptions:{   
+        title: {// 标题
+            text: '能耗使用情况',
+            textStyle: {// 标题的样式
+              color: '#888', // 字体颜色
+              fontSize: 12,
+              fontWeight: '400',
+              align: 'center', // 文字的水平方式
+              baseline: 'middle',
+              position: 'inside',
+              verticalAlign: 'middle'// 文字的垂直方式
+            },
+            left: 'center', // 定位
+            top: '20%'
+          },
+          series: [{
+            type: 'liquidFill',
+            radius: '75%',
+            waveAnimation: true,
+            data: [{
+              value: 0.5,
+              direction: 'left',
+              itemStyle: {
+                normal: {
+                  color: '#1890ff'
+                }
+              }
+            }],
+            outline: {
+              // show: true , //是否显示轮廓 布尔值
+              borderDistance: 1, // 外部轮廓与图表的距离 数字
+              itemStyle: {
+                borderColor: '#1890ff', // 边框的颜色
+                borderWidth: 3 // 边框的宽度
+                // shadowBlur: 5 , //外部轮廓的阴影范围 一旦设置了内外都有阴影
+                // shadowColor: '#000' //外部轮廓的阴影颜色
+              }
+            },
+            itemStyle: {
+              opacity: 0.9, // 波浪的透明度
+              shadowBlur: 0 // 波浪的阴影范围
+            },
+            backgroundStyle: {
+              color: '#fff' // 图表的背景颜色
+            },
+            label: { // 数据展示样式
+              show: true,
+              color: '#000',
+              insideColor: '#fff',
+              fontSize: 20,
+              fontWeight: 400,
+              align: 'center',
+              baseline: 'middle',
+              position: 'inside'
+            }
+          }]
+      },
       activeIndex: 100,
       COElementChart: {},
       COElementOptions: {
@@ -298,12 +354,14 @@ export default {
     };
   },
   mounted() {
+      // this.COElementChart = this.$echarts.init(this.$refs.COChart);
+      // this.COElementChart.setOption(this.COElementOptions);
+      this.waveEchart = this.$echarts.init(this.$refs.waveEchart)
+      this.waveEchart.setOption(this.waveOptions)
     this.$nextTick(() => {
-      this.COElementChart = this.$echarts.init(this.$refs.COChart);
-      this.COElementChart.setOption(this.COElementOptions);
-
       window.addEventListener("resize", () => {
-        this.COElementChart.resize();
+        // this.COElementChart.resize();
+        this.waveEchart.resize();
       });
     });
   },
@@ -352,6 +410,10 @@ export default {
 <style lang="less" scoped>
 @import "../../style/panel.less";
 @import "../../style/element.less";
+.wave-echart{
+  height: 200px;
+  width:200px;
+}
 .condition {
   display: flex;
   flex-wrap: wrap;

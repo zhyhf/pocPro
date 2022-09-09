@@ -22,6 +22,8 @@
                   <img
                     :src="item.pic"
                     class="pic"
+                    @mouseenter.stop="mouseenterImage(index)"
+                    @mouseleave.stop="mouseleaveImage(index)"
                     v-if="index === 0 || index === 2"
                   />
                   <div class="theme">{{ item.theme }}</div>
@@ -30,7 +32,8 @@
                     <!-- <span class="item-value">{{ item.value }}</span>
                     <span class="item-unit">{{ item.unit }}</span> -->
                   </div>
-                  <img :src="item.pic" v-if="index === 1" class="pic" />
+                  <img :src="item.pic"  @mouseenter.stop="mouseenterImage(index)"
+                    @mouseleave.stop="mouseleaveImage(index)" v-if="index === 1" class="pic" />
                 </div>
                 <div v-show="index===0" class="line"></div>
                 <div v-show="index===1" class="lineInfo"></div>
@@ -392,6 +395,43 @@ export default {
       setInterval(() => {
           this.deviceActiveNum = (++this.deviceActiveNum) % 4
       }, 2000)
+  },
+  methods: {
+    // 鼠标移入图片
+    mouseenterImage(i){
+      this.safetyArray.map((item,index)=>{
+        if( i === 0 && index === i){
+          item.pic = require("@/assets/img/monitorLight.png")
+        }else if( i === 1 && index === i){
+          item.pic = require("@/assets/img/monitorAreaLight.png")
+        }else if( i === 2 && index === i){
+          item.pic = require("@/assets/img/monitorAlertLight.png")
+        }
+      })
+    },
+    // 鼠标移出图片
+    mouseleaveImage(){
+       this.safetyArray = [
+        {
+          pic: require("@/assets/img/monitor.png"),
+          theme: "监控点位",
+          value: "1650",
+          unit: "个",
+        },
+        {
+          pic: require("@/assets/img/monitor-area.png"),
+          theme: "监控覆盖面积",
+          value: "45542",
+          unit: "m²",
+        },
+        {
+          pic: require("@/assets/img/monitor-alert.png"),
+          theme: "告警数量",
+          value: "5625",
+          unit: "个",
+        },
+      ]
+    }
   }
 };
 </script>

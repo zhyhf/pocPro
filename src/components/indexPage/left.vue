@@ -15,9 +15,14 @@
         </div>
       </div>
       <div class="panel-item">
+        <div class="panel-title">各产业分布情况</div>
+        <div class="panel-item-body">
+            <Charts />
+        </div>
+      </div>
+      <div class="panel-item">
         <div class="panel-title">园区运营概况</div>
         <div class="panel-item-body industry-operate">
-          <!-- <Charts /> -->
           <div class="top">
             <div
               class="top-item"
@@ -69,7 +74,7 @@ export default {
        radarOptions: {
         radar: {
           center: ['50%', '52%'],
-          axisName: {
+          name: {
             color: '#fff',
             padding: -5,
             fontSize: 10,
@@ -245,7 +250,7 @@ export default {
           unit: "家",
         },
         {
-          title: "企业员工数量",
+          title: "企业员工数",
           value: "3642",
           unit: "个",
         },
@@ -254,7 +259,7 @@ export default {
         {
           title: "园区产值",
           value: "95",
-          unit: "亿元",
+          unit: "亿",
         },
         {
           title: "租金单价",
@@ -435,7 +440,7 @@ export default {
     flex-wrap: wrap;
     justify-content: space-between;
     .bottom-item {
-      width: 48.5%;
+      width: 23.5%;
       height: 48%;
       /*margin-top: 1%;*/
       box-sizing: border-box;
