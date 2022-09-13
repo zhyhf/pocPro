@@ -1,9 +1,9 @@
 <template>
   <div>
     <div class="panel-wrapper">
-      <div class="panel-item">
+      <div class="panel-item zhibiaocontext">
         <div class="panel-title">综合指标</div>
-        <div class="panel-item-body">
+        <div class="panel-item-body contextZhibiao">
           <div class="panel-item-content" ref="radarChart"></div>
           <!-- <div>
             <img
@@ -14,13 +14,13 @@
           </div> -->
         </div>
       </div>
-      <div class="panel-item">
+      <div class="panel-item chanyeContent">
         <div class="panel-title">各产业分布情况</div>
         <div class="panel-item-body">
             <Charts />
         </div>
       </div>
-      <div class="panel-item">
+      <div class="panel-item panelYuanqu">
         <div class="panel-title">园区运营概况</div>
         <div class="panel-item-body industry-operate">
           <div class="top">
@@ -31,7 +31,7 @@
             >
               <div class="item-title">{{ item.title }}</div>
               <div class="item-detail">
-                 <dv-digital-flop :config="config['config' + (index + 1)]"  style="width:6rem;height:1.7rem;"/>
+                <dv-digital-flop :config="config['config' + (index + 1)]"  style="width:6rem;height:1.7rem;"/>
                 <span class="item-unit">{{ item.unit }}</span>
                 <!-- <span class="item-value">{{ item.value }}</span>
                 <span class="item-unit">{{ item.unit }}</span> -->
@@ -73,10 +73,9 @@ export default {
       isHighLight: false,
        radarOptions: {
         radar: {
-          center: ['50%', '52%'],
+          center: ['50%', '54%'],
           name: {
-            color: '#fff',
-            padding: -5,
+            color: 'rgba(255,255,255,0.8)',
             fontSize: 10,
             formatter: (value, indicator) => {
               if (value === '创新能力和创业活跃度') return value
@@ -85,12 +84,13 @@ export default {
               return arr.join('')
             }
           },
+          nameGap: 7,
           indicator: [
             { name: '创新能力和创业活跃度', max: 6500 },
             { name: '结构优化和产业价值链', max: 16000 },
             { name: '绿色发展和宜居包容性', max: 30000 },
-            { name: '开放创新和国际竞争力', max: 38000 },
-            { name: '综合质效和持续创新力', max: 13000 }
+            { name: '开放创新和国际竞争力', max: 33000 },
+            { name: '综合质效和持续创新力', max: 12000 }
           ],
           splitLine: {
             lineStyle: {
@@ -103,9 +103,17 @@ export default {
             }
           },
         },
+        tooltip: {
+          trigger: 'axis'
+        },
         series: [
           {
             type: 'radar',
+            // tooltip: 
+            //   {
+            //     trigger: 'item',
+            //     confine: true
+            //  },
             symbol: 'image://http://localhost:8080/rardar-default.png',
             symbolSize: 50,
             data: [
@@ -263,8 +271,8 @@ export default {
         },
         {
           title: "租金单价",
-          value: "5000",
-          unit: "¥/m²",
+          value: "2000",
+          unit: "元/m²",
         },
         {
           title: "建筑数量",
@@ -280,7 +288,7 @@ export default {
       config: {
         config1: {
           number:[0],
-          animationFrame: 50,
+          animationFrame: 90,
           style: {
             fontSize: 17,
             fontWeight: 700,
@@ -289,7 +297,7 @@ export default {
         },
         config2: {
           number:[0],
-          animationFrame: 50,
+          animationFrame: 90,
           style: {
             fontSize: 17,
             fill: '#FFFFFF',
@@ -298,7 +306,7 @@ export default {
         },
         config3: {
           number:[0],
-          animationFrame: 50,
+          animationFrame: 90,
           style: {
             fontSize: 17,
             fill: '#FFFFFF',
@@ -309,7 +317,7 @@ export default {
       configBottom: {
         config1: {
           number:[0],
-          animationFrame: 50,
+          animationFrame: 90,
           style: {
             fontSize: 17,
             fontWeight: 700,
@@ -318,7 +326,7 @@ export default {
         },
          config2: {
           number:[0],
-          animationFrame: 50,
+          animationFrame: 90,
           style: {
             fontSize: 17,
             fill: '#FFFFFF',
@@ -327,7 +335,7 @@ export default {
         },
          config3: {
           number:[0],
-          animationFrame: 50,
+          animationFrame: 90,
           style: {
             fontSize: 17,
             fill: '#FFFFFF',
@@ -336,7 +344,7 @@ export default {
         },
         config4: {
           number:[0],
-          animationFrame: 50,
+          animationFrame: 90,
           style: {
             fontSize: 17,
             fill: '#FFFFFF',
@@ -363,7 +371,7 @@ export default {
       this.config.config2 = {...this.config.config2}
       this.config.config3 = {...this.config.config3}
       this.configBottom.config1.number[0] = 95
-      this.configBottom.config2.number[0] = 5000
+      this.configBottom.config2.number[0] = 2000
       this.configBottom.config3.number[0] = 350
       this.configBottom.config4.number[0] = 25
       this.configBottom.config1 = {...this.configBottom.config1}
@@ -385,16 +393,35 @@ export default {
 
 <style lang="less" scoped>
 @import "../../style/panel.less";
+.contextZhibiao{
+    height: calc(100% - 2vh) !important;
+    .panel-item-content{
+       height: calc(100% - 2vh) !important;
+    }
+}
+.zhibiaocontext{
+  margin-bottom: 0vh !important;
+}
+.chanyeContent{
+  margin-top: 3vh;
+}
+.panelYuanqu{
+    margin-top: 2px !important;
+    margin-bottom: -18px !important;
+}
 .industry-operate {
   display: flex;
   padding: 5px 10px;
+  padding-left: 6px;
   flex-direction: column;
+  height: calc(100% - 7vh) !important;
   .top {
     flex: 1;
     display: flex;
     justify-content: space-between;
     .top-item {
       width: 32%;
+      padding: 2px;
       box-sizing: border-box;
       /*border: 1px solid red;*/
       background-image: url("../../assets/img/index-samll-bg.png");
@@ -412,15 +439,15 @@ export default {
   .item-title::before {
     content: "";
     display: inline-block;
-    width: 8px;
-    height: 8px;
+    width: 6px;
+    height: 6px;
     border-radius: 50%;
     background-color: #38b7fd;
-    margin: 0 4px;
+    margin: 2px 4px;
   }
     .item-detail {
     display: inline-flex;
-    margin-left: 6px;
+    margin-left: 1px;
     margin-top: 5px;
     position: relative;
     .item-value {
@@ -429,19 +456,20 @@ export default {
       color: #fff;
     }
     .item-unit {
-      margin-left: 1px;
-      font-size: 12px;
+      margin-left: 0px;
+      font-size: 8px;
       color: #c6cfce;
     }
   }
   .bottom {
     flex: 2;
+    margin-top: 3px;
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
     .bottom-item {
       width: 23.5%;
-      height: 48%;
+      height: 93%;
       /*margin-top: 1%;*/
       box-sizing: border-box;
       background-image: url("../../assets/img/indedx-big-bg.png");
@@ -454,6 +482,12 @@ export default {
     .bottom-item:nth-child(1),
     .bottom-item:nth-child(2) {
       margin-top: 2px;
+    }
+     .bottom-item:nth-child(2) {
+       width: 27.5%;
+    }
+    .bottom-item:nth-child(4) {
+       width: 22%;
     }
   }
 }

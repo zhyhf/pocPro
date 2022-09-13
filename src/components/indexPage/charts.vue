@@ -7,7 +7,7 @@
             return {
                     brokenChart: {},
                     brokenOptions: {
-                    color:['#65E1DF','#139AFF','#33FEBF','#1563FF','#D1DEEE','red','blue'],
+                    color:['#65E1DF','#33FEBF','#D1DEEE','#FFAE76','#139AFF','#8F3AFF','#1563FF','#FFD265'],
                     tooltip: {
                         trigger:"item",
                         backgroundColor: 'rgba(0,0,0,0.65)',
@@ -25,50 +25,55 @@
                                 icon: 'rect'
                             },
                             {
-                                name: '农产品',
+                                name: '物业',
                                 icon: 'rect'
                             },
                             {
-                                name: '服装',
+                                name: '物流',
                                 icon: 'rect'
                             },
                             {
-                                name: '电子产品',
+                                name: '广告',
                                 icon: 'rect'
                             },
                             {
-                                name: '其他',
+                                name: '房地产',
                                 icon: 'rect'
                             },
                              {
-                                name: '电产品1',
+                                name: '保险',
                                 icon: 'rect'
                             },
                             {
-                                name: '其他1',
+                                name: '人力资源',
+                                icon: 'rect'
+                            },
+                            {
+                                name: '策划',
                                 icon: 'rect'
                             }
                         ],
                         orient: 'vertical',  //垂直显示
                         right: '1%',
-                        top: '16%',
+                        top: '18%',
                         align: 'left',
                         itemHeight: 6,
                         itemWidth: 6,
                         textStyle: {
                             color: '#fff',
-                            fontSize: '12',
+                            fontSize: '11',
                             fontWeight: 300,
                         },
                         formatter: function (name) {  //图例后添加数值
                             let data =  [
                                 { value: 34.72, name: '电子商务' },
-                                { value: 21.39, name: '农产品' },
-                                { value: 23.61, name: '服装' },
-                                { value: 13.33, name: '电子产品' },
-                                { value: 6.95, name: '其他' },
-                                { value: 1.95, name: '电产品1' },
-                                { value: 4.95, name: '其他1' }
+                                { value: 21.39, name: '物业' },
+                                { value: 23.61, name: '物流' },
+                                { value: 13.33, name: '广告' },
+                                { value: 6.95, name: '房地产' },
+                                { value: 1.95, name: '保险' },
+                                { value: 24.95, name: '人力资源' },
+                                { value: 13.33, name: '策划' }
                             ];
                             let tarValue;
                             for (let i = 0; i < data.length; i++) {
@@ -93,12 +98,13 @@
                             },
                             data: [
                                 { value: 34.72, name: '电子商务' },
-                                { value: 21.39, name: '农产品' },
-                                { value: 23.61, name: '服装' },
-                                { value: 13.33, name: '电子产品' },
-                                { value: 6.95, name: '其他' },
-                                { value: 3.33, name: '电产品1' },
-                                { value: 1.95, name: '其他1' }
+                                { value: 21.39, name: '物业' },
+                                { value: 23.61, name: '物流' },
+                                { value: 13.33, name: '广告' },
+                                { value: 6.95, name: '房地产' },
+                                { value: 1.95, name: '保险' },
+                                { value: 24.95, name: '人力资源' },
+                                { value: 13.33, name: '策划' }
                             ]
                         }
                     ],
@@ -115,7 +121,7 @@
                             },
                             left: '11%',
                             top: 'middle'
-                        },
+                         },
                          {
                               type: 'image', // 图形元素类型
                             //   z: 40,  // 层叠
@@ -124,7 +130,7 @@
                                 width: 100,
                                 height: 100
                             },
-                            left: '5%',
+                            left: '5.3%',
                             top: 'middle'
                         }
                         ]

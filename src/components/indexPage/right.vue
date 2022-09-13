@@ -28,9 +28,9 @@
                   />
                   <div class="theme">{{ item.theme }}</div>
                   <div class="item-detail">
-                      <dv-digital-flop :config="config['config' + (index + 1)]" />
-                    <!-- <span class="item-value">{{ item.value }}</span>
-                    <span class="item-unit">{{ item.unit }}</span> -->
+                      <dv-digital-flop :config="config['config' + (index + 1)]" style="width:6rem;height:1.7rem;"/>
+                    <!-- <span class="item-value">{{ item.value }}</span> -->
+                    <span class="item-unit">{{ item.unit }}</span>
                   </div>
                   <img :src="item.pic"  @mouseenter.stop="mouseenterImage(index)"
                     @mouseleave.stop="mouseleaveImage(index)" v-if="index === 1" class="pic" />
@@ -45,11 +45,12 @@
       <div class="panel-item">
         <div class="panel-title">企业资质分析</div>
         <div class="panel-item-body company-zzfx">
-               <div class="zzImg">
-                <img src="@/assets/img/echarts/zzIMg1.png" class="zzImg1"/>
-                <img src="@/assets/img/echarts/zzIMg2.png" class="zzImg1"/>
-                <img src="@/assets/img/echarts/zzIMg3.png" class="zzImg1"/>
-                <img src="@/assets/img/echarts/zzIMg4.png" class="zzImg1"/>
+              <div class="zzImg">
+               <div   
+                v-for="(item, index) in imgArr"
+               :key="index" >
+                <img :src="deviceActiveNum === index ?item.new : item.old"  class="zzImg1"/>
+              </div>
               </div>
               <div class="panel-item-contentZ" ref="outputChart"></div>
         </div>
@@ -84,6 +85,25 @@
 export default {
   data() {
     return {
+        deviceActiveNum: 0,
+        imgArr: [
+          {
+            new:require('@/assets/img/echarts/zzIMgLight1.png'),
+            old:require("@/assets/img/echarts/zzIMg1.png")
+          },
+            {
+            new:require('@/assets/img/echarts/zzIMgLight2.png'),
+            old:require("@/assets/img/echarts/zzIMg2.png")
+          },
+            {
+            new:require('@/assets/img/echarts/zzIMgLight3.png'),
+            old:require("@/assets/img/echarts/zzIMg3.png")
+          },
+            {
+            new:require('@/assets/img/echarts/zzIMgLight4.png'),
+            old:require("@/assets/img/echarts/zzIMg4.png")
+          }
+        ],
         configTable:{
           header: ['企业名称', '高新人才数', '注册资本(亿元)'],
           data: [
@@ -237,27 +257,27 @@ export default {
       config: {
         config1: {
           number:[0],
-          content:'{nt}个',
+          content:'{nt}',
           style: {
-            fontSize: 20,
+            fontSize: 18,
             fill: '#FFFFFF'
           },
           animationFrame: 80,
         },
         config2: {
           number:[0],
-          content:'{nt}m²',
+          content:'{nt}',
           style: {
-            fontSize: 20,
+            fontSize: 18,
             fill: '#FFFFFF'
           },
           animationFrame: 80,
         },
         config3: {
           number:[0],
-          content:'{nt}个',
+          content:'{nt}',
           style: {
-            fontSize: 20,
+            fontSize: 18,
             fill: '#FFFFFF'
           },
          animationFrame: 80,
@@ -393,8 +413,8 @@ export default {
           this.config.config3 = {...this.config.config3}
       }, 1000)
       setInterval(() => {
-          this.deviceActiveNum = (++this.deviceActiveNum) % 4
-      }, 2000)
+      this.deviceActiveNum = (++this.deviceActiveNum) % 4
+    }, 2000)
   },
   methods: {
     // 鼠标移入图片
@@ -435,13 +455,21 @@ export default {
   }
 };
 </script>
-
+<style scoped lang="less">
+ /deep/ .dv-scroll-board {
+    .header{
+      color: rgba(255,255,255,0.64) !important;
+      font-weight: 400;
+      font-size: 12px !important;
+    }
+}
+</style>
 <style scoped lang="less">
 @import "../../style/panel.less";
-.zzImg{
+.zzImg{ 
   display: flex;
   justify-content: space-between;
-  margin:6px 12px;
+  margin:6px 12px 13px 12px;
   height: 100px;
 }
 .zzImg1{
@@ -485,6 +513,7 @@ export default {
     .item-detail {
       margin-top: 6px;
       margin-left: 6px;
+      display: flex;
       .item-value {
         font-size: 19px;
         font-weight: 700;
@@ -542,6 +571,7 @@ export default {
     .item-detail {
       margin-top: 6px;
       margin-left: 6px;
+      display: flex;
       .item-value {
         font-size: 19px;
         font-weight: 700;
@@ -591,6 +621,7 @@ export default {
       }
       .item-detail {
         padding-left: 2px;
+        display: flex;
         .item-value {
           font-size: 19px;
           font-weight: 700;
@@ -604,6 +635,7 @@ export default {
       }
       .item-detail {
         padding-left: 2px;
+        display: flex;
         .item-value {
           font-size: 19px;
           font-weight: 700;
