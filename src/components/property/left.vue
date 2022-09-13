@@ -1,34 +1,6 @@
 <template>
   <div>
     <div class="panel-wrapper">
-<!--      <div class="panel-item park">-->
-<!--        <div class="panel-title">园区内停车情况</div>-->
-<!--        <div class="panel-item-body">-->
-<!--          <div class="panel-item-content">-->
-<!--          </div>-->
-<!--        </div>-->
-<!--      </div>-->
-<!--      <div class="panel-item car-count">-->
-<!--        <div class="panel-title">园区车辆统计</div>-->
-<!--        <div class="panel-item-body">-->
-<!--          <div class="panel-item-content">-->
-<!--            <circle-chart id="parking" style="width: 100%; height: 100%"></circle-chart>-->
-<!--          </div>-->
-<!--        </div>-->
-<!--      </div>-->
-<!--      <div class="panel-item person-count">-->
-<!--        <div class="panel-title">园区人员统计</div>-->
-<!--        <div class="panel-item-body">-->
-<!--          <div class="panel-item-content"></div>-->
-<!--        </div>-->
-<!--      </div>-->
-<!--      <div class="panel-item green">-->
-<!--        <div class="panel-title">园区绿化状态</div>-->
-<!--        <div class="panel-item-body">-->
-<!--          <div class="panel-item-content"></div>-->
-<!--        </div>-->
-<!--      </div>-->
-
       <div class="panel-item conclusion">
         <div class="panel-title">物业概况</div>
         <div class="panel-item-body">
@@ -52,7 +24,8 @@
                 {{ item.title }}
               </div>
               <div class="item-detail">
-                <span class="item-value">{{ item.value }}</span>
+                <dv-digital-flop :config="item.config" style="height: 30px; position: relative; left: -10px"/>
+<!--                <span class="item-value">{{ item.value }}</span>-->
                 <span class="item-unit">{{ item.unit }}</span>
               </div>
             </div>
@@ -71,45 +44,21 @@
           <div class="panel-item-content">
             <img
               src="../../assets/img/intelligent-parking.svg"
-              alt=""
               style="width: 85%; margin-left: 7.5%"
             />
           </div>
           <div class="parking-lot">停车场</div>
-          <div class="parking-num">
+          <div
+              v-for="(item, index) in parkingInfo"
+              :key="index"
+              :class="item.className"
+          >
             <div class="item-detail">
-              <span class="parking-value">15</span>
-              <span class="item-unit">个</span>
+              <dv-digital-flop :config="item.config" style="height: 30px; position: relative; left: -6px; top: 2px;"/>
+<!--              <span class="parking-value">{{ item.config.number[0] }}</span>-->
+              <span class="item-unit">{{ item.unit }}</span>
             </div>
-            <div class="parking-theme">停车场数量</div>
-          </div>
-          <div class="carport">
-            <div class="item-detail">
-              <span class="parking-value">1650</span>
-              <span class="item-unit">个</span>
-            </div>
-            <div class="parking-theme">车位总数</div>
-          </div>
-          <div class="charger">
-            <div class="item-detail">
-              <span class="parking-value">35</span>
-              <span class="item-unit">个</span>
-            </div>
-            <div class="parking-theme">充电桩总数</div>
-          </div>
-          <div class="used-charger">
-            <div class="item-detail">
-              <span class="parking-value">1504</span>
-              <span class="item-unit">个</span>
-            </div>
-            <div class="parking-theme">已用充电桩</div>
-          </div>
-          <div class="temp-car">
-            <div class="item-detail">
-              <span class="parking-value">560</span>
-              <span class="item-unit">辆</span>
-            </div>
-            <div class="parking-theme">临时车辆数</div>
+            <div class="parking-theme">{{ item.title }}</div>
           </div>
         </div>
       </div>
@@ -118,96 +67,103 @@
         <div class="pandemic-title">
           <div class="pandemic-text">疫情管控</div>
         </div>
-        <div class="pandemic-item">
-          <div class="item-title">临时隔离点</div>
+        <div
+          v-for="(item, index) in pandemicInfo"
+          :key="index"
+          class="pandemic-item"
+        >
+          <div class="item-title">{{ item.title }}</div>
           <div class="item-detail">
-            <img src="../../assets/img/quarantine.png" class="item-icon" />
-            <span class="item-data">26</span>
-            <span class="item-unit">个</span>
-          </div>
-        </div>
-        <div class="pandemic-item">
-          <div class="item-title">测温点</div>
-          <div class="item-detail">
-            <img
-              src="../../assets/img/temperature-icon.png"
-              class="item-icon"
-            />
-            <span class="item-data">500</span>
-            <span class="item-unit">个</span>
+            <img :src="item.pic" class="item-icon" />
+            <dv-digital-flop :config="item.config" style="height: 20px; position: relative; top: 2px;"/>
+<!--            <span class="item-data">{{ item.config.number[0]}}</span>-->
+            <span class="item-unit">{{ item.unit }}</span>
           </div>
         </div>
       </div>
 
-      <div class="panel-item sentiment-alert">
-        <div class="panel-title">舆情告警情况</div>
+      <div class="panel-item energy-consume">
+        <div class="panel-title">能耗统计</div>
         <div class="panel-item-body">
           <div class="panel-item-content">
-            <el-table
-              :header-cell-class-name="'tableHeaderCell'"
-              class="box-table"
-              :data="tableData"
-              :fit="true"
-            >
-              <el-table-column
-                prop="name"
-                label="事件类型"
-                min-width="22%"
-                show-overflow-tooltip
-              />
-              <el-table-column
-                prop="time"
-                label="发生时间"
-                min-width="40%"
-                show-overflow-tooltip
-              />
-              <el-table-column
-                prop="status"
-                label="当前状态"
-                min-width="22%"
-                show-overflow-tooltip
-              >
-                <template slot-scope="{ row }">
-                  <span>{{ row.status }}</span>
-                </template>
-              </el-table-column>
-              <el-table-column
-                label="操作"
-                min-width="16%"
-                show-overflow-tooltip
-              >
-                <template slot-scope="{ row }">
-                  <el-link
-                    :class="{
-                      line: true,
-                      operation: true,
-                      active: activeIndex === row.id,
-                    }"
-                    type="primary"
-                    :underline="false"
-                    @click="handleFly(row)"
-                    >查看</el-link
-                  >
-                </template>
-              </el-table-column>
-            </el-table>
-            <div class="table-buttons">
-              <el-pagination :total="4" :page-size="5" @currentChange="currentChange" />
-            </div>
+            <el-tabs v-model="activeName" @tab-click="tabClick">
+              <el-tab-pane label="水用量" name="first"></el-tab-pane>
+              <el-tab-pane label="电用量" name="second"></el-tab-pane>
+              <el-tab-pane label="碳排放" name="third"></el-tab-pane>
+            </el-tabs>
+            <div ref="energyChart" class="energy-chart"></div>
           </div>
         </div>
       </div>
+
+<!--      <div class="panel-item sentiment-alert">-->
+<!--        <div class="panel-title">舆情告警情况</div>-->
+<!--        <div class="panel-item-body">-->
+<!--          <div class="panel-item-content">-->
+<!--            <el-table-->
+<!--              :header-cell-class-name="'tableHeaderCell'"-->
+<!--              class="box-table"-->
+<!--              :data="tableData"-->
+<!--              :fit="true"-->
+<!--            >-->
+<!--              <el-table-column-->
+<!--                prop="name"-->
+<!--                label="事件类型"-->
+<!--                min-width="22%"-->
+<!--                show-overflow-tooltip-->
+<!--              />-->
+<!--              <el-table-column-->
+<!--                prop="time"-->
+<!--                label="发生时间"-->
+<!--                min-width="40%"-->
+<!--                show-overflow-tooltip-->
+<!--              />-->
+<!--              <el-table-column-->
+<!--                prop="status"-->
+<!--                label="当前状态"-->
+<!--                min-width="22%"-->
+<!--                show-overflow-tooltip-->
+<!--              >-->
+<!--                <template slot-scope="{ row }">-->
+<!--                  <span>{{ row.status }}</span>-->
+<!--                </template>-->
+<!--              </el-table-column>-->
+<!--              <el-table-column-->
+<!--                label="操作"-->
+<!--                min-width="16%"-->
+<!--                show-overflow-tooltip-->
+<!--              >-->
+<!--                <template slot-scope="{ row }">-->
+<!--                  <el-link-->
+<!--                    :class="{-->
+<!--                      line: true,-->
+<!--                      operation: true,-->
+<!--                      active: activeIndex === row.id,-->
+<!--                    }"-->
+<!--                    type="primary"-->
+<!--                    :underline="false"-->
+<!--                    @click="handleFly(row)"-->
+<!--                    >查看</el-link-->
+<!--                  >-->
+<!--                </template>-->
+<!--              </el-table-column>-->
+<!--            </el-table>-->
+<!--            <div class="table-buttons">-->
+<!--              <el-pagination :total="4" :page-size="5" @currentChange="currentChange" />-->
+<!--            </div>-->
+<!--          </div>-->
+<!--        </div>-->
+<!--      </div>-->
     </div>
   </div>
 </template>
 
 <script>
 import ElPagination from '@/components/page/index.vue'
-import CircleChart from './CircleChart'
+
 export default {
   components: {
-    ElPagination,
-    CircleChart
+    ElPagination
   },
   data() {
     return {
@@ -245,39 +201,332 @@ export default {
       propertyConclusion: [
         {
           title: "楼宇数量",
-          value: 350,
+          config: {
+            number:[0],
+            animationFrame: 50,
+            style: {
+              fontSize: 20,
+              fontWeight: 600,
+              fill: '#FFFFFF'
+            }
+          },
           unit: "个",
         },
         {
           title: "企业数量",
-          value: 1560,
+          config: {
+            number:[0],
+            animationFrame: 50,
+            style: {
+              fontSize: 20,
+              fontWeight: 600,
+              fill: '#FFFFFF'
+            }
+          },
           unit: "家",
         },
         {
           title: "物业人员数",
-          value: 3642,
+          config: {
+            number:[0],
+            animationFrame: 50,
+            style: {
+              fontSize: 20,
+              fontWeight: 600,
+              fill: '#FFFFFF'
+            }
+          },
           unit: "个",
         },
         {
           title: "已入驻企业",
-          value: 1503,
+          config: {
+            number:[0],
+            animationFrame: 50,
+            style: {
+              fontSize: 20,
+              fontWeight: 600,
+              fill: '#FFFFFF'
+            }
+          },
           unit: "家",
         },
         {
           title: "物业收入",
-          value: 15,
+          config: {
+            number:[0],
+            animationFrame: 50,
+            style: {
+              fontSize: 20,
+              fontWeight: 600,
+              fill: '#FFFFFF'
+            }
+          },
           unit: "亿元",
         },
         {
           title: "待建项目",
-          value: 25,
+          config: {
+            number:[0],
+            animationFrame: 50,
+            style: {
+              fontSize: 20,
+              fontWeight: 600,
+              fill: '#FFFFFF'
+            }
+          },
           unit: "个",
         },
       ],
+      parkingInfo: [
+        {
+          title: '停车场数量',
+          className: 'parking-num',
+          config: {
+            number:[0],
+            animationFrame: 50,
+            style: {
+              fontSize: 18,
+              fontWeight: 400,
+              fill: '#38b7fd'
+            }
+          },
+          unit: '个'
+        },
+        {
+          title: '车位总数',
+          className: 'carport',
+          config: {
+            number:[0],
+            animationFrame: 50,
+            style: {
+              fontSize: 18,
+              fontWeight: 400,
+              fill: '#38b7fd'
+            }
+          },
+          unit: '个'
+        },
+        {
+          title: '充电桩总数',
+          className: 'charger',
+          config: {
+            number:[0],
+            animationFrame: 50,
+            style: {
+              fontSize: 18,
+              fontWeight: 400,
+              fill: '#38b7fd'
+            }
+          },
+          unit: '个'
+        },
+        {
+          title: '已用充电桩',
+          className: 'used-charger',
+          config: {
+            number:[0],
+            animationFrame: 50,
+            style: {
+              fontSize: 18,
+              fontWeight: 400,
+              fill: '#38b7fd'
+            }
+          },
+          unit: '个'
+        },
+        {
+          title: '临时车辆数',
+          className: 'temp-car',
+          config: {
+            number:[0],
+            animationFrame: 50,
+            style: {
+              fontSize: 18,
+              fontWeight: 400,
+              fill: '#38b7fd'
+            }
+          },
+          unit: '个'
+        }
+      ],
+      pandemicInfo: [
+        {
+          title: '临时隔离点',
+          config: {
+            number:[0],
+            animationFrame: 50,
+            style: {
+              fontSize: 18,
+              fontWeight: 400,
+              fill: '#38b7fd'
+            }
+          },
+          pic: require('@/assets/img/quarantine.png'),
+          unit: '个'
+        },
+        {
+          title: '测温点',
+          config: {
+            number:[0],
+            animationFrame: 50,
+            style: {
+              fontSize: 18,
+              fontWeight: 400,
+              fill: '#38b7fd'
+            }
+          },
+          pic: require('@/assets/img/quarantine.png'),
+          unit: '个'
+        }
+      ],
+      energyChart: null,
+      energyOptions: {
+        xAxis: {
+          type: 'category',
+          boundaryGap: true,
+          data: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12],
+          axisTick: {
+            length: 3,
+            alignWithLabel: true,
+            lineStyle: {
+              type: 'dash',
+            }
+          }
+        },
+        yAxis: {
+          type: 'value',
+          name: '能耗(吨)'
+        },
+        grid: {
+          top: '18%',
+          left: '13%',
+          right: '7%'
+        },
+        series: [
+          {
+            data: [195, 270, 265, 300, 318, 360, 360, 390, 385, 395, 300, 260],
+            type: 'line',
+            // smooth: true,
+            showSymbol: false,
+            color: new this.$echarts.graphic.LinearGradient(
+              0,
+              1,
+              0,
+              0,
+              [
+                {
+                  offset: 0,
+                  color: "rgba(2,247,183,1)", // 0% 处的颜色
+                },
+                {
+                  offset: 0.4,
+                  color: "rgba(19,154,255,1)", // 60% 处的颜色
+                },
+                {
+                  offset: 1,
+                  color: "rgba(148,67,252,1)", // 100% 处的颜色
+                },
+              ],
+              false
+            ),
+            areaStyle: {
+              color: new this.$echarts.graphic.LinearGradient(
+                0,
+                1,
+                0,
+                0,
+                [
+                  {
+                    offset: 0,
+                    color: "rgba(2,247,183,0)", // 0% 处的颜色
+                  },
+                  {
+                    offset: 0.7,
+                    color: "rgba(148,67,252,0.2)", // 60% 处的颜色
+                  },
+                  {
+                    offset: 1,
+                    color: "rgba(148,67,252,0.6)", // 100% 处的颜色
+                  },
+                ],
+                false
+              )
+            }
+          },
+          {
+            showSymbol: false,
+            type: "lines",
+            polyline: true,
+            smooth: false,
+            coordinateSystem: "cartesian2d",
+            zlevel: 1,
+            effect: {
+              show: true,
+              smooth: true,
+              period: 6,
+              symbolSize: 4,
+            },
+            lineStyle: {
+              color: "#fff",
+              width: 1,
+              opacity: 0,
+              curveness: 0,
+              cap: "round",
+            },
+            data: [
+              {
+                coords: [
+                  ['1', 195],
+                  ["2", 270],
+                  ["3", 265],
+                  ["4", 300],
+                  ["5", 318],
+                  ["6", 360],
+                  ["7", 360],
+                  ["8", 390],
+                  ["9", 385],
+                  ["10", 395],
+                  ["11", 300],
+                  ["12", 260],
+                ],
+              },
+            ]
+          },
+        ]
+      },
+      activeName: "first",
       loginPage: "https://park.keytop.cn/unityp/login",
     };
   },
+  mounted() {
+    this.initFlippers()
+    this.$nextTick(() => {
+      // console.log(this.$refs.energyChart);
+      this.energyChart = this.$echarts.init(this.$refs.energyChart);
+      this.energyChart.setOption(this.energyOptions);
+    })
+  },
   methods: {
+    tabClick() {
+
+    },
+    initFlippers() {
+      const propertyVals = [350, 1560, 3642, 1503, 15, 25]
+      const parkingVals = [15, 1650, 1504, 35, 560]
+      const pandemicVals = [26, 500]
+      this.setFlipper(propertyVals, this.propertyConclusion)
+      this.setFlipper(parkingVals, this.parkingInfo)
+      this.setFlipper(pandemicVals, this.pandemicInfo)
+    },
+    setFlipper(arr, data) {
+      setTimeout(() => {
+        data.forEach((item, index) => {
+          item.config.number[0] = arr[index]
+          item.config = {...item.config}
+        })
+      }, 1000)
+    },
     handleFly(item) {
       this.activeIndex = item.id;
       $viewer.qtum.centerAt({
@@ -404,13 +653,18 @@ export default {
         margin: 0 4px;
       }
       .item-detail {
+        display: flex;
         margin-left: 6px;
+        position: relative;
         .item-value {
           font-size: 19px;
           font-weight: 700;
           color: #fff;
         }
         .item-unit {
+          position: absolute;
+          right: 0;
+          bottom: 7px;
           font-size: 12px;
           color: #c6cfce;
         }
@@ -442,13 +696,14 @@ export default {
     color: #fff;
     font-weight: bold;
     position: absolute;
-    top: 30%;
-    left: 42%;
+    top: 32%;
+    left: 44%;
   }
   .item-detail {
     display: flex;
     justify-content: center;
     align-items: flex-end;
+    position: relative;
     .parking-value {
       line-height: normal;
       font-size: 19px;
@@ -456,7 +711,10 @@ export default {
       color: #38b7fd;
     }
     .item-unit {
-      margin-left: 4px;
+      position: absolute;
+      right: 2px;
+      bottom: 6px;
+      /*margin-left: 4px;*/
       font-size: 12px;
       color: #c6cfce;
     }
@@ -510,21 +768,26 @@ export default {
     }
   }
   .pandemic-item {
-    flex: 1;
+    flex: 1.5;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    margin-left: -20px;
+    margin: 15px 0;
+    border-left: 2px dashed grey;
     .item-title {
-      flex: 1;
       font-size: 12px;
-      margin-top: 8px;
+      margin-top: -5px;
       color: #c6cfce;
     }
     .item-detail {
-      flex: 2;
-      margin-top: -8px;
+      margin-top: 4px;
+      display: flex;
+      position: relative;
+      .item-icon {
+        width: 25px;
+        height: 25px;
+      }
       .item-data {
         font-size: 19px;
         font-weight: 700;
@@ -537,20 +800,29 @@ export default {
         font-size: 12px;
         color: #c6cfce;
         position: relative;
-        left: 6px;
+        right: 2px;
         top: 4px;
       }
     }
   }
 }
-.sentiment-alert {
+.energy-consume {
   flex: 2.78 !important;
-  .table-buttons {
-    position: absolute;
-    right: 10px;
-    bottom: 0;
+  .energy-chart {
+    width: 100%;
+    /*height: calc(100% - 35px);*/
+    height: 240px;
+    margin-top: -5px;
   }
 }
+/*.sentiment-alert {*/
+/*  flex: 2.78 !important;*/
+/*  .table-buttons {*/
+/*    position: absolute;*/
+/*    right: 10px;*/
+/*    bottom: 0;*/
+/*  }*/
+/*}*/
 .state::before {
   content: "";
   display: inline-block;

@@ -1,67 +1,116 @@
 <template>
   <div>
     <div class="panel-wrapper">
-      <div class="panel-item energy-consume">
-        <div class="panel-title">能耗统计</div>
-        <div class="panel-item-body">
-          <div class="time-options">
-            <div
-              v-for="(item, index) in timeOptions"
-              :key="index"
-              :class="
-                index === activeIndex
-                  ? 'time-options-item time-options-active'
-                  : 'time-options-item'
-              "
-              @click="handleIndexChange(index)"
-            >
-              {{ item }}
+<!--      <div class="panel-item energy-consume">-->
+<!--        <div class="panel-title">能耗统计</div>-->
+<!--        <div class="panel-item-body">-->
+<!--          <div class="time-options">-->
+<!--            <div-->
+<!--              v-for="(item, index) in timeOptions"-->
+<!--              :key="index"-->
+<!--              :class="-->
+<!--                index === activeIndex-->
+<!--                  ? 'time-options-item time-options-active'-->
+<!--                  : 'time-options-item'-->
+<!--              "-->
+<!--              @click="handleIndexChange(index)"-->
+<!--            >-->
+<!--              {{ item }}-->
+<!--            </div>-->
+<!--          </div>-->
+<!--          <div class="panel-item-content" ref="outputChart">-->
+<!--            <el-tabs v-model="activeName" @tab-click="tabClick">-->
+<!--              <el-tab-pane label="水用量" name="first"></el-tab-pane>-->
+<!--              <el-tab-pane label="电用量" name="second"></el-tab-pane>-->
+<!--              <el-tab-pane label="碳排放" name="third"></el-tab-pane>-->
+<!--            </el-tabs>-->
+<!--            <div ref="energyChart" class="energy-chart"></div>-->
+<!--          </div>-->
+<!--        </div>-->
+<!--      </div>-->
+
+<!--      <div class="panel-item safety">-->
+<!--        <div class="panel-title">园区安全</div>-->
+<!--        <div class="panel-item-body">-->
+<!--          <div class="panel-item-content industry-safety">-->
+<!--            <div-->
+<!--              class="safety-item"-->
+<!--              v-for="(item, index) in safetyArray"-->
+<!--              :key="index"-->
+<!--            >-->
+<!--              <div style="display: flex">-->
+<!--                <div-->
+<!--                    style="-->
+<!--                    display: flex;-->
+<!--                    flex-direction: column;-->
+<!--                    justify-content: center;-->
+<!--                    align-items: center;-->
+<!--                  "-->
+<!--                >-->
+<!--                  <img-->
+<!--                      :src="item.pic"-->
+<!--                      class="pic"-->
+<!--                      v-if="index === 0 || index === 2"-->
+<!--                  />-->
+<!--                  <div class="theme">{{ item.theme }}</div>-->
+<!--                  <div class="item-detail">-->
+<!--                    <dv-digital-flop :config="config['config' + (index + 1)]" />-->
+<!--&lt;!&ndash;                    <span class="item-value">{{ item.value }}</span>&ndash;&gt;-->
+<!--&lt;!&ndash;                    <span class="item-unit">{{ item.unit }}</span>&ndash;&gt;-->
+<!--                  </div>-->
+<!--                  <img :src="item.pic" v-if="index === 1" class="pic" />-->
+<!--                </div>-->
+<!--                <div v-show="index===0" class="line"></div>-->
+<!--                <div v-show="index===1" class="lineInfo"></div>-->
+<!--              </div>-->
+<!--            </div>-->
+<!--          </div>-->
+<!--        </div>-->
+<!--      </div>-->
+
+      <div class="info">
+        <img :src="activeBg" class="info-bg">
+        <div class="bg-item" v-for="(item, index) in varieties">
+          <div class="variety-content" :style="index === 2 || index === 3 ? varietyStyle: {}">
+            <div class="variety-head">
+              <img :src="index === varietyIndex ? item.activeIcon: item.icon">
+              <span class="variety-title">{{ item.title }}</span>
             </div>
-          </div>
-          <div class="panel-item-content" ref="outputChart">
-            <el-tabs v-model="activeName" @tab-click="tabClick">
-              <el-tab-pane label="水用量" name="first"></el-tab-pane>
-              <el-tab-pane label="电用量" name="second"></el-tab-pane>
-              <el-tab-pane label="碳排放" name="third"></el-tab-pane>
-            </el-tabs>
-            <div ref="energyChart" class="energy-chart"></div>
+            <dv-digital-flop :config="item.config" style="height: 30px; position: relative;"/>
           </div>
         </div>
       </div>
 
-      <div class="panel-item safety">
-        <div class="panel-title">园区安全</div>
+      <div class="panel-item broken">
+        <div class="panel-title">设备故障分析</div>
         <div class="panel-item-body">
-          <div class="panel-item-content industry-safety">
-            <div
-              class="safety-item"
-              v-for="(item, index) in safetyArray"
-              :key="index"
-            >
-              <div style="display: flex">
-                <div
-                    style="
-                    display: flex;
-                    flex-direction: column;
-                    justify-content: center;
-                    align-items: center;
-                  "
-                >
-                  <img
-                      :src="item.pic"
-                      class="pic"
-                      v-if="index === 0 || index === 2"
-                  />
-                  <div class="theme">{{ item.theme }}</div>
-                  <div class="item-detail">
-                    <dv-digital-flop :config="config['config' + (index + 1)]" />
-<!--                    <span class="item-value">{{ item.value }}</span>-->
-<!--                    <span class="item-unit">{{ item.unit }}</span>-->
-                  </div>
-                  <img :src="item.pic" v-if="index === 1" class="pic" />
+          <div class="panel-item-content broken-wrapper" ref="brokenWrapper">
+            <div v-for="(ele, index) in electricityInfo" :key="index" class="ele-item">
+              <img src="@/assets/icon/property/ele-icon.svg" class="ele-icon">
+              <div class="ele-content">
+                <div class="content-header">
+                  <span class="header-detail content-title">{{ ele.title }}</span>
+                  <span class="header-detail" :style="{ left: ele.percent + '%' }">{{ ele.value }}</span>
+                  <span class="header-detail content-percent">{{ ele.percent + '%' }}</span>
                 </div>
-                <div v-show="index===0" class="line"></div>
-                <div v-show="index===1" class="lineInfo"></div>
+                <svg width="100%" height="10" class="svg-wrapper">
+                  <defs>
+                    <linearGradient id="grad1" x1="0%" y1="0%" x2="100%" y2="0%">
+                      <stop offset="0%" style="stop-color:rgba(6,60,89,0.39);stop-opacity:1" />
+                      <stop offset="100%" style="stop-color:rgba(2,247,183,1);stop-opacity:1" />
+                    </linearGradient>
+                  </defs>
+                  <defs>
+                    <linearGradient id="grad1" x1="0%" y1="0%" x2="100%" y2="0%">
+                      <stop offset="0%" style="stop-color:rgb(255,255,0);stop-opacity:1"></stop>
+                      <stop offset="100%" style="stop-color:rgb(255,0,0);stop-opacity:1"></stop>
+                    </linearGradient>
+                  </defs>
+                  <line x1="0" y1="0" x2="100%" y2="0" stroke="#434645" stroke-width=10 stroke-dasharray="5 1"></line>
+                  <path :d="`M0,0 L${ele.current},0 L${ele.current},0.01`" stroke="url(#grad1)" fill="none" stroke-width=10 stroke-dasharray="5 1"/>
+<!--                  <line x1="0" y1="0" :x2="`${ele.current}%`" y2="0" stroke="#02F7B7" stroke-width=10 stroke-dasharray="5 1"></line>-->
+                </svg>
+
               </div>
             </div>
           </div>
@@ -74,7 +123,6 @@
           <div class="panel-item-content device">
             <div
               class="device-item"
-              :class="deviceActiveNum === index ? 'device-item-active' : ''"
               v-for="(item, index) in deviceArray"
               :key="index"
             >
@@ -83,13 +131,16 @@
                 <div class="card-title">{{ item.title }}</div>
               </div>
               <div class="card-detail">
-                <span class="card-value">{{ item.value }}</span>
-                <span class="card-unit">{{ item.unit }}</span>
+                <dv-digital-flop v-if="index !== 3" :config="item.config" style="height: 30px; position: relative; left: 0px"/>
+                <dv-digital-flop v-else :config="item.config" style="height: 30px; position: relative; left: -10px"/>
+<!--                <span class="card-value">{{ item.value }}</span>-->
+                <span class="card-unit" :style="index === 3 ? { right: 0 } : {}">{{ item.unit }}</span>
               </div>
             </div>
           </div>
         </div>
       </div>
+
       <div class="panel-item extra-service">
         <div class="panel-title">园区增值服务</div>
         <div class="panel-item-body">
@@ -104,7 +155,8 @@
                 <div class="card-title">{{ item.title }}</div>
               </div>
               <div class="card-detail">
-                <span class="card-value">{{ item.value }}</span>
+                <dv-digital-flop :config="item.config" style="height: 30px; position: relative; left: 0px"/>
+<!--                <span class="card-value">{{ item.value }}</span>-->
                 <span class="card-unit">{{ item.unit }}</span>
               </div>
             </div>
@@ -119,7 +171,7 @@
 export default {
   data() {
     return {
-      deviceActiveNum: 0,
+      // deviceActiveNum: 0,
       activeName: "first",
       energyChart: {},
       energyOptions: {
@@ -232,25 +284,57 @@ export default {
         {
           pic: require("@/assets/img/elevator.png"),
           title: "电梯",
-          value: 50,
+          config: {
+            number:[0],
+            animationFrame: 50,
+            style: {
+              fontSize: 18,
+              fontWeight: 600,
+              fill: '#FFFFFF'
+            }
+          },
           unit: "个",
         },
         {
           pic: require("@/assets/img/AC.png"),
           title: "空调",
-          value: 380,
+          config: {
+            number:[0],
+            animationFrame: 50,
+            style: {
+              fontSize: 18,
+              fontWeight: 600,
+              fill: '#FFFFFF'
+            }
+          },
           unit: "个",
         },
         {
           pic: require("@/assets/img/water.png"),
           title: "给排水",
-          value: 150,
+          config: {
+            number:[0],
+            animationFrame: 50,
+            style: {
+              fontSize: 18,
+              fontWeight: 600,
+              fill: '#FFFFFF'
+            }
+          },
           unit: "个",
         },
         {
           pic: require("@/assets/img/plant.png"),
           title: "绿化面积",
-          value: 15600,
+          config: {
+            number:[0],
+            animationFrame: 50,
+            style: {
+              fontSize: 18,
+              fontWeight: 600,
+              fill: '#FFFFFF'
+            }
+          },
           unit: "m²",
         },
       ],
@@ -259,94 +343,231 @@ export default {
           pic: require("@/assets/img/message.png"),
           title: "信息发布",
           value: 165,
+          config: {
+            number:[0],
+            animationFrame: 50,
+            style: {
+              fontSize: 18,
+              fontWeight: 600,
+              fill: '#FFFFFF'
+            }
+          },
           unit: "条",
         },
         {
           pic: require("@/assets/img/laundry.png"),
           title: "智慧洗衣房",
           value: 35,
+          config: {
+            number:[0],
+            animationFrame: 50,
+            style: {
+              fontSize: 18,
+              fontWeight: 600,
+              fill: '#FFFFFF'
+            }
+          },
           unit: "个",
         },
         {
           pic: require("@/assets/img/dinning.png"),
           title: "食堂",
           value: 3,
+          config: {
+            number:[0],
+            animationFrame: 50,
+            style: {
+              fontSize: 18,
+              fontWeight: 600,
+              fill: '#FFFFFF'
+            }
+          },
           unit: "个",
         },
         {
           pic: require("@/assets/img/package.png"),
           title: "快递驿站",
           value: 50,
+          config: {
+            number:[0],
+            animationFrame: 50,
+            style: {
+              fontSize: 18,
+              fontWeight: 600,
+              fill: '#FFFFFF'
+            }
+          },
           unit: "个",
         },
       ],
       // timeOptions: ['月', '季度', '半年', '年'],
       timeOptions: ["半年"],
       activeIndex: 2,
-      config: {
-        config1: {
-          number:[0],
-          content:'{nt}个',
-          animationFrame: 80,
-          style: {
-            fontSize: 20,
-            fill: '#FFFFFF'
+      activeBg: require('@/assets/img/property/left-top.svg'),
+      infoBg: [
+        require('@/assets/img/property/left-top.svg'),
+        require('@/assets/img/property/right-top.svg'),
+        require('@/assets/img/property/left-bottom.svg'),
+        require('@/assets/img/property/right-bottom.svg'),
+      ],
+      varieties: [
+        {
+          icon: require('@/assets/icon/property/equipment.svg'),
+          activeIcon: require('@/assets/icon/property/equipment-highlight.svg'),
+          title: '正常运行设备(台)',
+          // value: 1354
+          config: {
+            number:[0],
+            animationFrame: 50,
+            style: {
+              fontSize: 20,
+              fontWeight: 600,
+              fill: '#FFFFFF'
+            }
           }
         },
-        config2: {
-          number:[0],
-          content:'{nt}m²',
-          animationFrame: 80,
-          style: {
-            fontSize: 20,
-            fill: '#FFFFFF'
+        {
+          icon: require('@/assets/icon/property/money.svg'),
+          activeIcon: require('@/assets/icon/property/money-highlight.svg'),
+          title: '年度累计缴费(元)',
+          // value: 1638254.34
+          config: {
+            number:[0],
+            animationFrame: 50,
+            style: {
+              fontSize: 20,
+              fontWeight: 600,
+              fill: '#FFFFFF'
+            }
           }
         },
-        config3: {
-          number:[0],
-          content:'{nt}个',
-          animationFrame: 80,
-          style: {
-            fontSize: 20,
-            fill: '#FFFFFF'
+        {
+          icon: require('@/assets/icon/property/people.svg'),
+          activeIcon: require('@/assets/icon/property/people-highlight.svg'),
+          title: '今日进出人数(人)',
+          // value: 5544
+          config: {
+            number:[0],
+            animationFrame: 50,
+            style: {
+              fontSize: 20,
+              fontWeight: 600,
+              fill: '#FFFFFF'
+            }
+          }
+        },
+        {
+          icon: require('@/assets/icon/property/car.svg'),
+          activeIcon: require('@/assets/icon/property/car-highlight.svg'),
+          title: '今日进出车辆(辆)',
+          // value: 468
+          config: {
+            number:[0],
+            animationFrame: 50,
+            style: {
+              fontSize: 18,
+              fontWeight: 600,
+              fill: '#FFFFFF'
+            }
           }
         }
-      }
+      ],
+      varietyStyle: {
+        top: '60%'
+      },
+      varietyIndex: 0,
+      electricityInfo: [
+        {
+          title: '工厂用电',
+          value: 2169,
+          percent: 70.53,
+          current: 0
+        },
+        {
+          title: '工厂用煤',
+          value: 1892,
+          percent: 65.02,
+          current: 0
+        },
+        {
+          title: '员工充电',
+          value: 1600,
+          percent: 54.98,
+          current: 0
+        },
+        {
+          title: '日常照明',
+          value: 1339,
+          percent: 46.01,
+          current: 0
+        },
+        {
+          title: '设备未关',
+          value: 1105,
+          percent: 37.97,
+          current: 0
+        },
+        {
+          title: '光伏充电',
+          value: 873,
+          percent: 30,
+          current: 0
+        }
+      ],
     };
   },
   mounted() {
-    setTimeout(() => {
-      this.config.config1.number[0] = 1650
-      this.config.config2.number[0] = 45542
-      this.config.config3.number[0] = 5625
-      this.config.config1 = {...this.config.config1}
-      this.config.config2 = {...this.config.config2}
-      this.config.config3 = {...this.config.config3}
-    }, 1000)
-    // setInterval( ()=>{
-    //   this.power(360);
-    // },8000);
-    setInterval(() => {
-      this.deviceActiveNum = (++this.deviceActiveNum) % 4
-    }, 2000)
-    this.$nextTick(() => {
-      this.energyChart = this.$echarts.init(this.$refs.energyChart);
-      this.energyChart.setOption(this.energyOptions);
-
-      window.addEventListener("resize", () => {
-        this.energyChart.resize();
-      });
-    });
+    this.initProgressBar()
+    this.initFlippers()
+    this.setBackgroundInterval()
+    // this.$nextTick(() => {
+      // this.energyChart = this.$echarts.init(this.$refs.energyChart);
+      // this.energyChart.setOption(this.energyOptions);
+      //
+      // window.addEventListener("resize", () => {
+      //   this.energyChart.resize();
+      // });
+    // });
   },
   methods: {
-    // power(n){
-    //   for (const key in this.config) {
-    //     this.config[key].number[0] = Math.floor((Math.random() * n) + 1);
-    //     this.config[key] = {...this.config[key]}
-    //   }
-    //   // this.config.number[0] = Math.floor((Math.random() * n) + 1);
-    //   // this.config=  {...this.config};//对象解构，更新props
-    // },
+    initProgressBar() {
+      for (const item of this.electricityInfo) {
+        let time = 0
+        const barTimer = setInterval(() => {
+          time = (time + 1) > item.percent ? item.percent : (time + 1)
+          item.current = time * 0.01 * (this.$refs.brokenWrapper.clientWidth - 40)
+          if (time >= item.percent) clearInterval(barTimer)
+        }, 15)
+      }
+    },
+    initFlippers() {
+      const varietyVals = [1354, 1638254, 5544, 468]
+      const deviceVals = [15, 342, 5, 1542]
+      const serviceVals = [50, 3, 5, 8]
+      this.setFlipper(deviceVals, this.deviceArray)
+      this.setFlipper(serviceVals, this.extraService)
+      this.setFlipper(varietyVals, this.varieties)
+    },
+    setFlipper(arr, data) {
+      setTimeout(() => {
+        data.forEach((item, index) => {
+          item.config.number[0] = arr[index]
+          item.config = {...item.config}
+        })
+      }, 1000)
+    },
+    setBackgroundInterval() {
+      const infoBg = [
+        require('@/assets/img/property/left-top.svg'),
+        require('@/assets/img/property/right-top.svg'),
+        require('@/assets/img/property/left-bottom.svg'),
+        require('@/assets/img/property/right-bottom.svg')
+      ]
+      this.varietyIndex = 0
+      setInterval(() => {
+        this.activeBg = infoBg[this.varietyIndex = (this.varietyIndex + 1) % 4]
+      }, 1000)
+    },
     handleIndexChange(index) {
       this.activeIndex = index;
     },
@@ -439,14 +660,93 @@ export default {
 .safety {
   flex: 2.12 !important;
 }
+.info {
+  flex: 1.1;
+  width: 100%;
+  margin-bottom: 20px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  position: relative;
+  .info-bg {
+    width: 100%;
+    position: absolute;
+  }
+  .bg-item {
+    flex-basis: 49.5%;
+    z-index: 99;
+    position: relative;
+    .variety-content {
+      position: absolute;
+      width: 100%;
+      left: 50%;
+      top: 50%;
+      transform: translate3d(-50%, -50%, 0);
+    }
+    .variety-head {
+      text-align: center;
+      font-size: 12px;
+      color: #fff;
+    }
+  }
+}
+.broken {
+  flex: 1.5 !important;
+  .broken-wrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    padding: 10px 20px 0;
+    .ele-item {
+      flex: 1;
+      width: 100%;
+      margin-bottom: 5px;
+      display: flex;
+      .ele-icon {
+        flex: 0.1
+      }
+      .ele-content {
+        flex: 0.9;
+        display: flex;
+        flex-direction: column;
+        .content-header {
+          flex: 1;
+          display: flex;
+          align-items: center;
+          font-size: 12px;
+          color: #fff;
+          font-weight: bold;
+          position: relative;
+          background-image: url("../../assets/img/property/ele-bg.png");
+          background-size: 100% 100%;
+          background-repeat: no-repeat;
+          .header-detail {
+            position: absolute;
+          }
+        }
+        .content-title {
+          left: 2px;
+        }
+        .content-percent {
+          right: 0;
+        }
+        .svg-wrapper {
+          margin-left: 3px;
+        }
+      }
+    }
+  }
+}
+
 .equipment {
-  flex: 1 !important;
+  flex: 0.5 !important;
   .small-panel-center {
     height: 103% !important;
   }
 }
 .extra-service {
-  flex: 1 !important;
+  flex: 0.5 !important;
   .small-panel-center {
     height: 104% !important;
   }
@@ -559,10 +859,11 @@ export default {
 }
 .card-head {
   display: flex;
-  margin-top: 2px;
+  margin-top: 6px;
   .card-icon {
     width: 12px;
     height: 12px;
+    margin-top: 4px;
     margin-left: 5px;
     margin-right: 5px;
   }
@@ -572,14 +873,20 @@ export default {
   }
 }
 .card-detail {
+  display: flex;
   margin-left: 7px;
+  position: relative;
   .card-value {
     font-size: 19px;
     font-weight: 700;
     color: #fff;
   }
   .card-unit {
-    margin-left: 2px;
+    position: absolute;
+    right: 4px;
+    top: 8px;
+    /*margin-left: -10px !important;*/
+    /*margin-top: 6px;*/
     font-size: 12px;
     color: #c6cfce;
   }
