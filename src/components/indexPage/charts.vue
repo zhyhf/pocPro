@@ -87,8 +87,8 @@
                     series: [
                         {
                             type: 'pie',
-                            radius: ['53%', '70%'],
-                            center: ['20%', '50%'],
+                            radius: ['53%', '65%'],
+                            center: ['15%', '50%'],
                             avoidLabelOverlap: false,
                             label: {
                                 show: false,
@@ -119,7 +119,7 @@
                                 width: 62,
                                 height: 62
                             },
-                            left: '11%',
+                            left: '5.3%',
                             top: 'middle'
                          },
                          {
@@ -127,10 +127,10 @@
                             //   z: 40,  // 层叠
                               style: {
                                 image: require('@/assets/img/echarts/wquan.png'),
-                                width: 100,
-                                height: 100
+                                width: 92,
+                                height: 92
                             },
-                            left: '5.3%',
+                            left: '0.5%',
                             top: 'middle'
                         }
                         ]
