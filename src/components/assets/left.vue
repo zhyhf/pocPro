@@ -1,51 +1,18 @@
 <template>
   <div>
     <div class="panel-wrapper">
-      <div class="panel-item">
-        <div class="panel-title">资产宣传片</div>
-        <div class="panel-item-body">
-          <div class="panel-item-content advertising-video">
-            <img
-              v-show="chosenPic.indexOf('.mp4') === -1"
-              :src="chosenPic"
-              alt=""
-              class="video"
-            />
-            <video
-              :src="chosenPic"
-              class="video"
-              controls
-              muted
-              v-show="chosenPic.indexOf('.mp4') !== -1"
-            />
-            <el-pagination
-              :isShowPager="true"
-              class="el-pagination"
-              :page-size="1"
-              :total="3"
-              @currentChange="currentPicChange"
-            />
+      <div class="panel-item panelZhaoshang">
+        <div class="panel-title">招商企业</div>
+                 <div class="panel-item-body">
+          <div class="panel-item-content">
+            <dv-scroll-board :config="config" ref="scrollBoard" />
           </div>
         </div>
       </div>
       <div class="panel-item">
-        <div class="panel-title">招商政策</div>
+        <div class="panel-title">当月招商趋势分析</div>
         <div class="panel-item-body">
-          <div class="jump-to-login">
-            <a :href="loginPage" target="_blank">
-              <img src="../../assets/img/jump-arrow.png" />
-            </a>
-          </div>
-          <div class="panel-item-content advertising-video">
-            <img :src="chosenPolicy" alt="" class="video" />
-            <el-pagination
-              :isShowPager="true"
-              class="el-pagination"
-              :page-size="1"
-              :total="3"
-              @currentChange="currentPolicyChange"
-            />
-          </div>
+           <div class="panel-item-content" ref="enterpriseChart"></div>
         </div>
       </div>
       <div class="panel-item">
@@ -53,9 +20,9 @@
         <div class="panel-item-body">
           <div class="panel-item-content">
             <img
-              src="../../assets/img/business-progress.png"
+              src="../../assets/img/echarts/funnelContent.png"
               alt=""
-              style="width: 100%; display: block; margin-top: 3vh"
+              style="height: 100%; display: block; margin-top: 1vh;margin-left: 5vh"
             />
           </div>
         </div>
@@ -66,12 +33,205 @@
 
 <script>
 import ElPagination from "../../components/page/index.vue";
+import * as echarts from "echarts";
 export default {
   components: {
     ElPagination,
   },
   data() {
     return {
+      enterpriseChart: {},
+      enterpriseOptions: {
+        legend: {
+          right: 0,
+          padding: [10, 10, 0, 0],
+          itemHeight: 6,
+          data: ["意向单位数", "已签约数"],
+          textStyle: {
+            color: "#C6CFCE",
+            fontSize: "10",
+          },
+        },
+        grid: {
+          left: 35,
+          top: 35,
+          right: 20,
+          bottom: 30,
+        },
+        xAxis: {
+          name: "9月",
+          nameTextStyle: {
+            color: "#C6CFCE",
+          },
+          nameLocation: "start", // x轴name处于x轴的什么位置
+          type: "category",
+          data: [
+            "1",
+            "4",
+            "7",
+            "10",
+            "13",
+            "16",
+            "19",
+            "22",
+            "25",
+            "28",
+            "30"
+          ],
+          axisTick: {
+            interval: 0,
+          },
+          axisLabel: {
+            interval: 0,
+            textStyle: {
+              fontSize: 10,
+              color: "#C6CFCE",
+            }
+          },
+        },
+        yAxis: {
+          name: "产值(亿元)",
+          nameTextStyle: {
+            color: "#C6CFCE",
+          },
+          type: "value",
+          splitLine: {
+            lineStyle: {
+              type: "dashed",
+              color: "grey",
+            },
+          },
+          axisLabel: {
+            textStyle: {
+              fontSize: 10,
+              color: "#C6CFCE",
+            },
+          },
+        },
+        series: [
+          {
+            name: "意向单位数",
+            data: [23, 25, 38, 32, 22, 35, 36,30,23,22,20],
+            type: "line",
+            stack: 'Total',
+            symbol: 'none',
+            areaStyle: {
+              normal: {
+                color: new echarts.graphic.LinearGradient(0, 0, 0, 1, [{
+                  offset: 0,
+                  color: 'rgba(84,251,200,1)'
+                },
+                {
+                  offset: 0.2,
+                  color: 'rgba(84,251,200,0.3)'
+                },
+                 {
+                  offset: 1,
+                  color: 'rgba(84,251,200,0)'
+                }]),
+              }
+            },
+            itemStyle: {  
+              normal: {
+                color: new this.$echarts.graphic.LinearGradient(
+                  0,
+                  1,
+                  0,
+                  0,
+                  [
+                    {
+                      offset: 0,
+                      color: "rgba(96, 224, 249, 0)", // 0% 处的颜色
+                    },
+                    {
+                      offset: 0.6,
+                      color: "rgba(96, 224, 249, 0.5)", // 60% 处的颜色
+                    },
+                    {
+                      offset: 1,
+                      color: "rgb(96, 224, 249)", // 100% 处的颜色
+                    },
+                  ],
+                  false
+                ),
+              }, // 2DFDBD
+            },
+            animationDelay: function (idx) {
+              return idx * 500;
+            }
+          },
+          {
+            name: "已签约数",
+            data: [17, 20, 18, 16, 15, 15, 12, 13,20,12,20],
+            type: "line",
+            stack: 'Total',
+            symbol: 'none',
+            itemStyle: {
+              normal: {
+                color: new this.$echarts.graphic.LinearGradient(
+                  0,
+                  1,
+                  0,
+                  0,
+                  [
+                    {
+                      offset: 0,
+                      color: "rgba(42, 150, 222, 0)", // 0% 处的颜色
+                    },
+                    {
+                      offset: 0.6,
+                      color: "rgba(42, 150, 222, 0.5)", // 60% 处的颜色
+                    },
+                    {
+                      offset: 1,
+                      color: "rgb(42, 150, 222)", // 100% 处的颜色
+                    },
+                  ],
+                  false
+                ),
+              },
+            },
+            areaStyle: {
+              normal: {
+                color: new echarts.graphic.LinearGradient(0, 0, 0, 1, [{
+                  offset: 0,
+                  color: 'rgba(56,183,253,1)'
+                },
+                 {
+                  offset: 0.2,
+                  color: 'rgba(56,183,253,0.3)'
+                },
+                {
+                  offset: 1,
+                  color: 'rgba(56,183,253,0)'
+                }]),
+              }
+            },
+            animationDelay: function (idx) {
+              return idx * 500;
+            }
+          },
+        ],
+        animationEasing: 'elasticOut',
+          animationDelayUpdate: function (idx) {
+            return idx * 200;
+        }
+      },
+        config:{
+          // header: ['企业', '招商状态', '时间'],
+          data: [
+            ['中东科技有限公司', '完成资产合同', '2022.08'],
+            ['DXC Technology', '完成物业合同', '2022.08'],
+            ['KFC', '完成资产合同', '2022.09'],
+            ['温州才华智能网络', '已入驻', '2022.04'],
+            ['龙湾农村商业银行', '完成物业合同', '2022.05']
+          ],
+          rowNum: 5,
+          headerBGC: 'transparent',
+          columnWidth: [120],
+          align: ['center'],
+          waitTime: 1000
+      },
       advertising: [
         require("../../../public/static/video/propaganda.mp4"),
         require("../../assets/img/policy1.jpg"),
@@ -90,6 +250,15 @@ export default {
   created() {
     this.chosenPic = this.advertising[0];
     this.chosenPolicy = this.policy[0];
+  },
+  mounted() {
+    this.$nextTick(() => {
+      this.enterpriseChart = this.$echarts.init(this.$refs.enterpriseChart);
+      this.enterpriseChart.setOption(this.enterpriseOptions);
+      window.addEventListener("resize", () => {
+        this.enterpriseChart.resize();
+      });
+    });
   },
   methods: {
     currentPicChange(current) {

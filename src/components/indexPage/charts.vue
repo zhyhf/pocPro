@@ -66,13 +66,13 @@
                         },
                         formatter: function (name) {  //图例后添加数值
                             let data =  [
-                                { value: 34.72, name: '电子商务' },
-                                { value: 21.39, name: '物业' },
-                                { value: 23.61, name: '物流' },
+                                { value: 24.72, name: '电子商务' },
+                                { value: 11.39, name: '物业' },
+                                { value: 13.61, name: '物流' },
                                 { value: 13.33, name: '广告' },
                                 { value: 6.95, name: '房地产' },
-                                { value: 1.95, name: '保险' },
-                                { value: 24.95, name: '人力资源' },
+                                { value: 10.95, name: '保险' },
+                                { value: 14.91, name: '人力资源' },
                                 { value: 13.33, name: '策划' }
                             ];
                             let tarValue;
@@ -97,13 +97,13 @@
                                 show: false,
                             },
                             data: [
-                                { value: 34.72, name: '电子商务' },
-                                { value: 21.39, name: '物业' },
-                                { value: 23.61, name: '物流' },
+                                { value: 24.72, name: '电子商务' },
+                                { value: 11.39, name: '物业' },
+                                { value: 13.61, name: '物流' },
                                 { value: 13.33, name: '广告' },
                                 { value: 6.95, name: '房地产' },
-                                { value: 1.95, name: '保险' },
-                                { value: 24.95, name: '人力资源' },
+                                { value: 10.95, name: '保险' },
+                                { value: 14.95, name: '人力资源' },
                                 { value: 13.33, name: '策划' }
                             ]
                         }

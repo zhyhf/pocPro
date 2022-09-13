@@ -2,49 +2,15 @@
   <div>
     <div class="panel-wrapper">
       <div class="panel-item">
-        <div class="panel-title">招商企业</div>
+        <div class="panel-title">产业现状分析</div>
         <div class="panel-item-body">
-          <div class="panel-item-content">
-            <dv-scroll-board :config="config" ref="scrollBoard" />
-            <!-- <el-table
-              :header-cell-class-name="'tableHeaderCell'"
-              class="box-table"
-              :data="tableData"
-              :fit="true"
-            >
-              <el-table-column
-                prop="enterprise"
-                label="企业"
-                min-width="40%"
-                show-overflow-tooltip
-              />
-              <el-table-column
-                prop="state"
-                label="招商状态"
-                min-width="35%"
-                show-overflow-tooltip
-              />
-              <el-table-column
-                prop="time"
-                label="时间"
-                min-width="25%"
-                show-overflow-tooltip
-              />
-            </el-table> -->
-            <!-- <div class="table-buttons">
-              <el-pagination
-                :total="4"
-                :page-size="5"
-                @currentChange="currentChange"
-              />
-            </div> -->
-          </div>
+              <div class="panel-item-content" ref="eventChart"></div>
         </div>
-      </div>
+      </div>  
       <div class="panel-item">
         <div class="panel-title">招商活动统计</div>
         <div class="panel-item-body">
-          <div class="panel-item-content" ref="eventChart"></div>
+          <!-- <div class="panel-item-content" ref="eventChart"></div> -->
         </div>
       </div>
       <div class="panel-item">
@@ -83,10 +49,15 @@ export default {
       eventChart: {},
       eventOptions: {
         color: ["rgb(45, 253, 189)", "rgb(55, 133, 247)"],
+        tooltip: {
+         trigger: 'axis',
+         },
         legend: {
           right: 0,
-          padding: [10, 20, 0, 0],
-          data: ["策划数量", "活动数量"],
+          itemHeight: 6,
+          itemWidth: 6,
+          padding: [10, 100, 0, 0],
+          data: ["企业数量", "注册资本"],
           textStyle: {
             color: "#C6CFCE",
             fontSize: "10",
@@ -95,30 +66,76 @@ export default {
         xAxis: {
           type: "category",
           data: [
-            "2021.10",
-            "2021.11",
-            "2021.12",
-            "2022.01",
-            "2022.02",
-            "2022.03",
-            "2022.04",
+            "电子商务",
+            "房地产",
+            "物业",
+            "保险",
+            "物流",
+            "人力资源",
+            "广告",
+            "策划",
           ],
           axisTick: {
             interval: 0,
           },
           axisLabel: {
             interval: 0,
-            rotate: 30,
+            textStyle: {
+              fontSize: 10,
+              color: "#C6CFCE",
+            },
+            formatter: function (value) {
+            var ret = "";//拼接加\n返回的类目项  
+            var maxLength = 2;//每项显示文字个数  
+            var valLength = value.length;//X轴类目项的文字个数  
+            var rowN = Math.ceil(valLength / maxLength); //类目项需要换行的行数  
+            if (rowN > 1)//如果类目项的文字大于4,  
+            {
+                for (var i = 0; i < rowN; i++) {
+                    var temp = "";//每次截取的字符串  
+                    var start = i * maxLength;//开始截取的位置  
+                    var end = start + maxLength;//结束截取的位置  
+                    //这里也可以加一个是否是最后一行的判断，但是不加也没有影响，那就不加吧  
+                    temp = value.substring(start, end) + "\n";
+                    ret += temp; //凭借最终的字符串  
+                }
+                return ret;
+            }
+            else {
+                return value;
+            }
+        },
+          },
+        },
+        yAxis: [{
+          name: "企业数量(家)",
+          nameTextStyle: {
+            color: "#C6CFCE",
+          },
+          type: "value",
+          axisLabel: {
+            formatter: '{value}'
+          },
+          splitLine: {
+            lineStyle: {
+              type: "dashed",
+              color: "grey",
+            },
+          },
+          axisLabel: {
             textStyle: {
               fontSize: 10,
               color: "#C6CFCE",
             },
           },
         },
-        yAxis: {
-          name: "次数",
+        {
+          name: "注册资本(亿元)",
           nameTextStyle: {
             color: "#C6CFCE",
+          },
+          axisLabel: {
+            formatter: '{value}'
           },
           type: "value",
           splitLine: {
@@ -133,18 +150,19 @@ export default {
               color: "#C6CFCE",
             },
           },
-        },
+        }],
         grid: {
           left: 35,
           top: 35,
-          right: 20,
+          right: 39,
           bottom: 30,
         },
         series: [
           {
-            name: "策划数量",
-            data: [45, 22, 50, 80, 52, 55, 46],
+            name: "企业数量",
+            data: [45, 47, 54, 50, 52, 55, 46, 55],
             type: "bar",
+            barWidth:20,
             itemStyle: {
               normal: {
                 color: new this.$echarts.graphic.LinearGradient(
@@ -170,14 +188,26 @@ export default {
                 ),
               }, // 2DFDBD
             },
+            tooltip: {
+              valueFormatter: function (value) {
+                return value;
+              }
+            },
             animationDelay: function (idx) {
               return idx * 500;
             }
           },
           {
-            name: "活动数量",
-            data: [67, 89, 50, 36, 72, 22, 38],
-            type: "bar",
+            name: "注册资本",
+            data: [40, 50, 67,72, 76, 65, 62,58],
+            type: "line",
+            yAxisIndex: 1,
+            tooltip: {
+              valueFormatter: function (value) {
+                return value;
+              }
+            },
+            symbol: 'none',
             itemStyle: {
               normal: {
                 color: new this.$echarts.graphic.LinearGradient(
@@ -188,24 +218,17 @@ export default {
                   [
                     {
                       offset: 0,
-                      color: "rgba(55, 133, 247, 0)", // 0% 处的颜色
-                    },
-                    {
-                      offset: 0.6,
-                      color: "rgba(55, 133, 247, 0.5)", // 60% 处的颜色
+                      color: "rgba(255,159,77,1)", // 0% 处的颜色
                     },
                     {
                       offset: 1,
-                      color: "rgb(55, 133, 247)", // 100% 处的颜色
+                      color: "rgba(255,159,77,1)", // 100% 处的颜色
                     },
                   ],
                   false
                 ),
               },
             },
-            animationDelay: function (idx) {
-              return idx * 500;
-            }
           },
         ],
         // animationEasing: 'elasticOut',

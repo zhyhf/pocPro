@@ -260,7 +260,7 @@ export default {
           content:'{nt}',
           style: {
             fontSize: 18,
-            fill: '#FFFFFF'
+            fill: '#fff'
           },
           animationFrame: 80,
         },
@@ -269,7 +269,7 @@ export default {
           content:'{nt}',
           style: {
             fontSize: 18,
-            fill: '#FFFFFF'
+            fill: '#fff'
           },
           animationFrame: 80,
         },
@@ -278,7 +278,7 @@ export default {
           content:'{nt}',
           style: {
             fontSize: 18,
-            fill: '#FFFFFF'
+            fill: '#fff'
           },
          animationFrame: 80,
         }
