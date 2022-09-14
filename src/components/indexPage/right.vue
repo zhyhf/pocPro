@@ -4,6 +4,7 @@
       <div class="panel-item">
         <div class="panel-title">园区安全</div>
         <div class="panel-item-body">
+            <img src="@/assets/img/panel-bg-bodyCan.png" class="panelBodyCan">
           <div class="panel-item-content industry-safety">
             <div
               class="safety-item"
@@ -45,6 +46,7 @@
       <div class="panel-item">
         <div class="panel-title">企业资质分析</div>
         <div class="panel-item-body company-zzfx">
+            <img src="@/assets/img/panel-bg-bodyCan.png" class="panelBodyCan">
               <div class="zzImg">
                <div
                 v-for="(item, index) in imgArr"
@@ -58,6 +60,7 @@
       <div class="panel-item">
         <div class="panel-title">优质企业Top10</div>
         <div class="panel-item-body">
+            <img src="@/assets/img/panel-bg-bodyCan.png" class="panelBodyCan">
           <div class="panel-item-content intelligent-work">
              <dv-scroll-board :config="configTable" ref="scrollBoard" />
             <!-- <div

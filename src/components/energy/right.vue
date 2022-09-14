@@ -4,6 +4,7 @@
       <div class="panel-item">
         <div class="panel-title">光伏充能</div>
         <div class="panel-item-body">
+            <img src="@/assets/img/panel-bg-bodyCan.png" class="panelBodyCan">
           <div class="panel-item-content light-charger">
             <div class="light-pic">
             </div>
@@ -43,6 +44,7 @@
       <div class="panel-item">
         <div class="panel-title">能耗统计</div>
         <div class="panel-item-body">
+            <img src="@/assets/img/panel-bg-bodyCan.png" class="panelBodyCan">
           <div class="time-options">
             <div
               v-for="(item, index) in timeOptions"
@@ -70,6 +72,7 @@
       <div class="panel-item">
         <div class="panel-title">故障设备统计</div>
         <div class="panel-item-body">
+            <img src="@/assets/img/panel-bg-bodyCan.png" class="panelBodyCan">
           <div class="panel-item-content" ref="brokenChart"></div>
         </div>
       </div>

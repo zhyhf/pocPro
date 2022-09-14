@@ -84,6 +84,7 @@
       <div class="panel-item broken">
         <div class="panel-title">设备故障分析</div>
         <div class="panel-item-body">
+            <img src="@/assets/img/panel-bg-bodyCan.png" class="panelBodyCan">
           <div class="panel-item-content broken-wrapper" ref="brokenWrapper">
             <div v-for="(ele, index) in electricityInfo" :key="index" class="ele-item">
               <img src="@/assets/icon/property/ele-icon.svg" class="ele-icon">
@@ -120,6 +121,7 @@
       <div class="panel-item equipment">
         <div class="panel-title">设备设施</div>
         <div class="panel-item-body">
+            <img src="@/assets/img/panel-bg-bodyCan.png" class="panelBodyCan">
           <div class="panel-item-content device">
             <div
               class="device-item"
@@ -144,6 +146,7 @@
       <div class="panel-item extra-service">
         <div class="panel-title">园区增值服务</div>
         <div class="panel-item-body">
+            <img src="@/assets/img/panel-bg-bodyCan.png" class="panelBodyCan">
           <div class="panel-item-content service">
             <div
               class="service-item"

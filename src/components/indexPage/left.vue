@@ -4,6 +4,7 @@
       <div class="panel-item zhibiaocontext">
         <div class="panel-title">综合指标</div>
         <div class="panel-item-body contextZhibiao">
+            <img src="@/assets/img/panel-bg-bodyCan.png" class="panelBodyCan">
           <div class="panel-item-content" ref="radarChart"></div>
           <!-- <div>
             <img
@@ -17,12 +18,14 @@
       <div class="panel-item chanyeContent">
         <div class="panel-title">各产业分布情况</div>
         <div class="panel-item-body">
+            <img src="@/assets/img/panel-bg-bodyCan.png" class="panelBodyCan">
             <Charts />
         </div>
       </div>
       <div class="panel-item panelYuanqu">
         <div class="panel-title">园区运营概况</div>
         <div class="panel-item-body industry-operate">
+            <img src="@/assets/img/panel-bg-bodyCan.png" class="panelBodyCan">
           <div class="top">
             <div
               class="top-item"
@@ -57,6 +60,7 @@
       <div class="panel-item">
         <div class="panel-title">园区产值</div>
         <div class="panel-item-body">
+            <img src="@/assets/img/panel-bg-bodyCan.png" class="panelBodyCan">
           <div class="panel-item-content" ref="outputChart"></div>
         </div>
       </div>
@@ -430,28 +434,17 @@ export default {
 
 <style lang="less" scoped>
 @import "../../style/panel.less";
-.contextZhibiao{
-    height: calc(100% - 2vh) !important;
-    .panel-item-content{
-       height: calc(100% - 2vh) !important;
-    }
-}
 .zhibiaocontext{
-  margin-bottom: 0vh !important;
+  flex: 1.2 !important;
 }
-.chanyeContent{
-  margin-top: 3vh;
-}
-.panelYuanqu{
-    margin-top: 2px !important;
-    margin-bottom: -18px !important;
+.panelYuanqu{ 
+    flex: 0.9 !important;
 }
 .industry-operate {
   display: flex;
   padding: 5px 10px;
   padding-left: 6px;
   flex-direction: column;
-  height: calc(100% - 7vh) !important;
   .top {
     flex: 1;
     display: flex;

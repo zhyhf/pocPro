@@ -4,6 +4,7 @@
       <div class="panel-item conclusion">
         <div class="panel-title">物业概况</div>
         <div class="panel-item-body">
+            <img src="@/assets/img/panel-bg-bodyCan.png" class="panelBodyCan">
           <div class="introduce">
             <div class="intro-building">建筑概况</div>
             <div class="intro-property">物业运营</div>
@@ -36,6 +37,7 @@
       <div class="panel-item parking">
         <div class="panel-title">智慧停车</div>
         <div class="panel-item-body">
+            <img src="@/assets/img/panel-bg-bodyCan.png" class="panelBodyCan">
           <div class="jump-to-login">
             <a :href="loginPage" target="_blank">
               <img src="../../assets/img/jump-arrow.png" />
@@ -85,6 +87,7 @@
       <div class="panel-item energy-consume">
         <div class="panel-title">能耗统计</div>
         <div class="panel-item-body">
+            <img src="@/assets/img/panel-bg-bodyCan.png" class="panelBodyCan">
           <div class="panel-item-content">
             <el-tabs v-model="activeName" @tab-click="tabClick">
               <el-tab-pane label="水用量" name="first"></el-tab-pane>
@@ -807,7 +810,7 @@ export default {
   }
 }
 .energy-consume {
-  flex: 2.78 !important;
+  flex: 3 !important;
   .energy-chart {
     width: 100%;
     /*height: calc(100% - 35px);*/

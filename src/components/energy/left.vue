@@ -4,6 +4,7 @@
       <div class="panel-item">
         <div class="panel-title">运营概况</div>
         <div class="panel-item-body">
+            <img src="@/assets/img/panel-bg-bodyCan.png" class="panelBodyCan">
           <div class="panel-item-content condition">
             <div
               v-for="(item, index) in iconArray"
@@ -27,6 +28,7 @@
       <div class="panel-item">
         <div class="panel-title">节能目标完成情况</div>
         <div class="panel-item-body">
+            <img src="@/assets/img/panel-bg-bodyCan.png" class="panelBodyCan">
             <div class="wave-echart" id='waveEchart' ref='waveEchart'></div>
             <!-- <div
               ref="COChart"
@@ -38,6 +40,7 @@
       <div class="panel-item">
         <div class="panel-title">能耗分析</div>
         <div class="panel-item-body">
+            <img src="@/assets/img/panel-bg-bodyCan.png" class="panelBodyCan">
           <div class="panel-item-content">
             <el-table
               :header-cell-class-name="'tableHeaderCell'"

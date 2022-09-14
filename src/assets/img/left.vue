@@ -4,6 +4,7 @@
       <div class="panel-item">
         <div class="panel-title">综合指标</div>
         <div class="panel-item-body">
+            <img src="@/assets/img/panel-bg-bodyCan.png" class="panelBodyCan">
           <div class="panel-item-content" ref="radarChart"></div>
           <!-- <div>
             <img
@@ -17,6 +18,7 @@
       <div class="panel-item">
         <div class="panel-title">园区运营概况</div>
         <div class="panel-item-body industry-operate">
+            <img src="@/assets/img/panel-bg-bodyCan.png" class="panelBodyCan">
           <!-- <Charts /> -->
           <div class="top">
             <div
@@ -52,6 +54,7 @@
       <div class="panel-item">
         <div class="panel-title">园区产值(近5年)</div>
         <div class="panel-item-body">
+            <img src="@/assets/img/panel-bg-bodyCan.png" class="panelBodyCan">
           <div class="panel-item-content" ref="outputChart"></div>
         </div>
       </div>

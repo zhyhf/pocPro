@@ -3,7 +3,8 @@
     <div class="panel-wrapper">
       <div class="panel-item panelZhaoshang">
         <div class="panel-title">招商企业</div>
-                 <div class="panel-item-body">
+          <div class="panel-item-body">
+          <img src="@/assets/img/panel-bg-bodyCan.png" class="panelBodyCan">
           <div class="panel-item-content">
             <dv-scroll-board :config="config" ref="scrollBoard" />
           </div>
@@ -12,12 +13,14 @@
       <div class="panel-item">
         <div class="panel-title">当月招商趋势分析</div>
         <div class="panel-item-body">
+            <img src="@/assets/img/panel-bg-bodyCan.png" class="panelBodyCan">
            <div class="panel-item-content" ref="enterpriseChart"></div>
         </div>
       </div>
       <div class="panel-item mainCharts">
         <div class="panel-title">招商流程</div>
         <div class="panel-item-body">
+            <img src="@/assets/img/panel-bg-bodyCan.png" class="panelBodyCan">
           <div class="panel-item-content">
             <img
               src="../../assets/img/echarts/funnelContent.png"

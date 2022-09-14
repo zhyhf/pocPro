@@ -4,18 +4,21 @@
       <div class="panel-item">
         <div class="panel-title">产业现状分析</div>
         <div class="panel-item-body">
+            <img src="@/assets/img/panel-bg-bodyCan.png" class="panelBodyCan">
               <div class="panel-item-content" ref="eventChart"></div>
         </div>
       </div>  
       <div class="panel-item zhishuAnalysis">
         <div class="panel-title">竞争力指数分析</div>
         <div class="panel-item-body">
+            <img src="@/assets/img/panel-bg-bodyCan.png" class="panelBodyCan">
           <div class="panel-item-content" ref="radarComCharts"></div>
         </div>
       </div>
       <div class="panel-item companyDevelop">
         <div class="panel-title">企业发展<div class="updateC">更新时间: <span class="innerDate">2022/09/09</span></div></div> 
           <div class="panel-item-body">
+              <img src="@/assets/img/panel-bg-bodyCan.png" class="panelBodyCan">
           <div class="panel-item-content condition">
             <div
               v-for="(item, index) in iconArray"
@@ -42,6 +45,7 @@
        <div class="panel-item new">
         <div class="panel-title">创新能力(近12个月)</div>
         <div class="panel-item-body">
+          <img src="@/assets/img/panel-bg-bodyCan.png" class="panelBodyCan">
           <div class="panel-item-content device">
             <div
               class="device-item"
@@ -685,15 +689,9 @@ export default {
 @import "../../style/element.less";
 .companyDevelop{
    flex: 0.69 !important;
-    .panel-item-body {
-      background-image: url("~@/assets/img/panel-bg-bodyShort.png") !important;
-    }
 }
 .new{
      flex: 0.52 !important;
-    .panel-item-body {
-      background-image: url("~@/assets/img/panel-bg-bodyShort.png") !important;
-    }
 }
 .device {
   display: flex;
