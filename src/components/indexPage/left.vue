@@ -185,6 +185,7 @@ export default {
           {
             data: [200, 240, 230, 290, 360,250,200,270,340,300],
             type: "line",
+            showSymbol: false,
             areaStyle: {
                  color: new this.$echarts.graphic.LinearGradient(
                   0,
@@ -243,6 +244,43 @@ export default {
                 },
               },
             },
+           },
+            {
+            showSymbol: false,
+            type: "lines",
+            polyline: true,
+            smooth: false,
+            coordinateSystem: "cartesian2d",
+            zlevel: 1,
+            effect: {
+              show: true,
+              smooth: true,
+              period: 6,
+              symbolSize: 4,
+            },
+            lineStyle: {
+              color: "#fff",
+              width: 1,
+              opacity: 0,
+              curveness: 0,
+              cap: "round",
+            },
+            data: [
+              {
+                coords: [
+                  ['2013', 200],
+                  ["2014", 240],
+                  ["2015", 230],
+                  ["2016", 290],
+                  ["2017", 360],
+                  ["2018", 250],
+                  ["2019", 200],
+                  ["2020", 270],
+                  ["2021", 340],
+                  ["2022", 300],
+                ],
+              },
+            ]
           },
         ],
       },

@@ -414,7 +414,7 @@ export default {
       }, 1000)
       setInterval(() => {
       this.deviceActiveNum = (++this.deviceActiveNum) % 4
-    }, 2000)
+    }, 1500)
   },
   methods: {
     // 鼠标移入图片
