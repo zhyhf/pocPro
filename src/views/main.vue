@@ -94,9 +94,8 @@ export default {
           qtum3d.layer.createLayer(
             {
               type: "3dtiles",
-              // url:'static/data/Scene/Production_1.json', // 本地模型数据
               // url: "http://124.71.153.0:31080/mmodel/model/Scene1/Production_2.json",
-              url:'http://218.94.58.222:32080/zl/Scene/Scene1/Production_2.json',
+              // url:'http://218.94.58.222:32080/zl/Scene/Scene1/Production_2.json',
               offset: { z: -12 },
               visible: !0,
               flyTo: true,

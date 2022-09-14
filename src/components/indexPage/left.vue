@@ -80,7 +80,7 @@ export default {
           center: ['50%', '54%'],
           name: {
             color: 'rgba(255,255,255,0.8)',
-            fontSize: 10,
+            fontSize: 11,
             formatter: (value, indicator) => {
               if (value === '创新能力和创业活跃度') return value
               const arr = value.split('')

@@ -76,6 +76,7 @@ export default {
           nameTextStyle: {
             color: "#C6CFCE",
           },
+          padding:[2,3],
           nameLocation: "start", // x轴name处于x轴的什么位置
           type: "category",
           data: [

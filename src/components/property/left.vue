@@ -578,7 +578,7 @@ export default {
 }
 
 .conclusion {
-  flex: 2.26 !important;
+  flex: 2.3 !important;
   .small-panel-center {
     height: 102% !important;
   }
