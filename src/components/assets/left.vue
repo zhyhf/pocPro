@@ -15,14 +15,14 @@
            <div class="panel-item-content" ref="enterpriseChart"></div>
         </div>
       </div>
-      <div class="panel-item">
+      <div class="panel-item mainCharts">
         <div class="panel-title">招商流程</div>
         <div class="panel-item-body">
           <div class="panel-item-content">
             <img
               src="../../assets/img/echarts/funnelContent.png"
               alt=""
-              style="height: 100%; display: block; margin-top: 1vh;margin-left: 5vh"
+              style="height: 96%; display: block; margin-top: 1.5vh;margin-left: 3vh"
             />
           </div>
         </div>
@@ -46,11 +46,21 @@ export default {
           right: 0,
           padding: [10, 10, 0, 0],
           itemHeight: 6,
-          data: ["意向单位数", "已签约数"],
+          data: ["意向数", "签约数"],
           textStyle: {
             color: "#C6CFCE",
             fontSize: "10",
           },
+        },
+        tooltip: {
+            trigger: "axis",
+            backgroundColor: 'rgba(0,0,0,0.65)',
+            color: '#fff',
+            textStyle:{
+              color: '#fff',
+              fontSize: '12px'
+            },
+            borderWidth: "0",
         },
         grid: {
           left: 35,
@@ -110,59 +120,8 @@ export default {
         },
         series: [
           {
-            name: "意向单位数",
-            data: [23, 25, 38, 32, 22, 35, 36,30,23,22,20],
-            type: "line",
-            stack: 'Total',
-            symbol: 'none',
-            areaStyle: {
-              normal: {
-                color: new echarts.graphic.LinearGradient(0, 0, 0, 1, [{
-                  offset: 0,
-                  color: 'rgba(84,251,200,1)'
-                },
-                {
-                  offset: 0.2,
-                  color: 'rgba(84,251,200,0.3)'
-                },
-                 {
-                  offset: 1,
-                  color: 'rgba(84,251,200,0)'
-                }]),
-              }
-            },
-            itemStyle: {  
-              normal: {
-                color: new this.$echarts.graphic.LinearGradient(
-                  0,
-                  1,
-                  0,
-                  0,
-                  [
-                    {
-                      offset: 0,
-                      color: "rgba(96, 224, 249, 0)", // 0% 处的颜色
-                    },
-                    {
-                      offset: 0.6,
-                      color: "rgba(96, 224, 249, 0.5)", // 60% 处的颜色
-                    },
-                    {
-                      offset: 1,
-                      color: "rgb(96, 224, 249)", // 100% 处的颜色
-                    },
-                  ],
-                  false
-                ),
-              }, // 2DFDBD
-            },
-            animationDelay: function (idx) {
-              return idx * 500;
-            }
-          },
-          {
-            name: "已签约数",
-            data: [17, 20, 18, 16, 15, 15, 12, 13,20,12,20],
+            name: "签约数",
+            data: [10, 12, 9, 16, 15, 15, 12, 13,16,9,12],
             type: "line",
             stack: 'Total',
             symbol: 'none',
@@ -176,15 +135,11 @@ export default {
                   [
                     {
                       offset: 0,
-                      color: "rgba(42, 150, 222, 0)", // 0% 处的颜色
-                    },
-                    {
-                      offset: 0.6,
-                      color: "rgba(42, 150, 222, 0.5)", // 60% 处的颜色
+                      color: "rgba(84,251,200,1)", // 0% 处的颜色
                     },
                     {
                       offset: 1,
-                      color: "rgb(42, 150, 222)", // 100% 处的颜色
+                      color: "rgba(84,251,200,1)", // 100% 处的颜色
                     },
                   ],
                   false
@@ -195,17 +150,101 @@ export default {
               normal: {
                 color: new echarts.graphic.LinearGradient(0, 0, 0, 1, [{
                   offset: 0,
-                  color: 'rgba(56,183,253,1)'
+                  color: 'rgba(84,251,200,1)'
                 },
                  {
                   offset: 0.2,
-                  color: 'rgba(56,183,253,0.3)'
+                  color: 'rgba(84,251,200,0.3)'
                 },
                 {
+                  offset: 1,
+                  color: 'rgba(84,251,200,0)'
+                }]),
+              }
+            },
+            animationDelay: function (idx) {
+              return idx * 500;
+            }
+          },
+          // {
+          //   showSymbol: false,
+          //   type: "lines",
+          //   polyline: true,
+          //   smooth: false,
+          //   coordinateSystem: "cartesian2d",
+          //   zlevel: 1,
+          //   effect: {
+          //     show: true,
+          //     smooth: true,
+          //     period: 6,
+          //     symbolSize: 4,
+          //   },
+          //   lineStyle: {
+          //     color: "#fff",
+          //     width: 1,
+          //     opacity: 0,
+          //     curveness: 0,
+          //     cap: "round",
+          //   },
+          //   data: [
+          //     {
+          //       coords: [
+          //         ['2013', 200],
+          //         ["2014", 240],
+          //         ["2015", 230],
+          //         ["2016", 290],
+          //         ["2017", 360],
+          //         ["2018", 250],
+          //         ["2019", 200],
+          //         ["2020", 270],
+          //         ["2021", 340],
+          //         ["2022", 300],
+          //       ],
+          //     },
+          //   ]
+          // },
+          {
+            name: "意向数",
+            data: [6, 9, 11, 5, 6, 8, 10,12, 4,9, 7],
+            type: "line",
+            stack: 'Total',
+            symbol: 'none',
+            areaStyle: {
+              normal: {
+                color: new echarts.graphic.LinearGradient(0, 0, 0, 1, [{
+                  offset: 0,
+                  color: 'rgba(56,183,253,1)'
+                },
+                {
+                  offset: 0.2,
+                  color: 'rgba(56,183,253,0.3)'
+                },
+                 {
                   offset: 1,
                   color: 'rgba(56,183,253,0)'
                 }]),
               }
+            },
+            itemStyle: {  
+              normal: {
+                color: new this.$echarts.graphic.LinearGradient(
+                  0,
+                  1,
+                  0,
+                  0,
+                  [
+                    {
+                      offset: 0,
+                      color: "rgba(56,183,253,1)", // 0% 处的颜色
+                    },
+                    {
+                      offset: 1,
+                      color: "rgba(56,183,253,1)", // 100% 处的颜色
+                    },
+                  ],
+                  false
+                ),
+              }, // 2DFDBD
             },
             animationDelay: function (idx) {
               return idx * 500;
@@ -220,11 +259,12 @@ export default {
         config:{
           // header: ['企业', '招商状态', '时间'],
           data: [
-            ['中东科技有限公司', '完成资产合同', '2022.08'],
-            ['DXC Technology', '完成物业合同', '2022.08'],
-            ['KFC', '完成资产合同', '2022.09'],
-            ['温州才华智能网络', '已入驻', '2022.04'],
-            ['龙湾农村商业银行', '完成物业合同', '2022.05']
+            ['中东科技有限公司', '完成资产合同', '2022.08.02'],
+            ['DXC Technology', '完成物业合同', '2022.08.02'],
+            ['KFC', '完成资产合同', '2022.09.02'],
+            ['温州才华智能网络', '已入驻', '2022.04.02'],
+            ['龙湾农村商业银行', '完成物业合同', '2022.05.02'],
+            ['农村商业银行', '完成物业合同', '2022.02.02']
           ],
           rowNum: 5,
           headerBGC: 'transparent',
@@ -274,6 +314,12 @@ export default {
 <style lang="less" scoped>
 @import "../../style/panel.less";
 @import "../../style/element.less";
+.panelZhaoshang{
+  flex: 0.9 !important
+}
+.mainCharts{
+  flex: 1.4 !important
+}
 .jump-to-login {
   width: 20px;
   height: 20px;

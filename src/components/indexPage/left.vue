@@ -71,7 +71,7 @@ export default {
     return {
       outputChart: {},
       isHighLight: false,
-       radarOptions: {
+      radarOptions: {
         radar: {
           center: ['50%', '54%'],
           name: {
@@ -210,7 +210,6 @@ export default {
                 ),
             },
             symbol: 'none',
-            smooth: true,
             itemStyle: {
               normal: {
                 color: new this.$echarts.graphic.LinearGradient(
