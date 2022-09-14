@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="249px" height="32px" viewBox="0 0 249 32" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>节能目标完成情况/上</title>
+    <defs>
+        <linearGradient x1="14.9038462%" y1="50%" x2="100%" y2="50%" id="linearGradient-1">
+            <stop stop-color="#38B7FD" offset="0%"></stop>
+            <stop stop-color="#056BA3" stop-opacity="0" offset="100%"></stop>
+        </linearGradient>
+    </defs>
+    <g id="控件" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="节能目标完成情况/上" transform="translate(0.000000, 0.000668)">
+            <path d="M249,0.000335695569 L249,32.0003357 L25.0997292,32.0008394 C20.7321056,18.8669808 11.7154489,7.85597396 0,0.919284921 L0,0.000335695569 L249,0.000335695569 Z" id="路径" fill="url(#linearGradient-1)" opacity="0.393996466"></path>
+            <path d="M4.17856836,0 C15.4875097,7.51938101 24.0993423,18.7731697 28.2535968,32.0008966 L25.0997292,32.0008966 C20.7321056,18.8669808 11.7154489,7.85597396 0.00122498886,0.919284921 L0,0.000335695569 L4.17856836,0 Z" id="路径" fill="#38B7FD" fill-rule="nonzero"></path>
+        </g>
+    </g>
+</svg>

@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="249px" height="100px" viewBox="0 0 249 100" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>形状结合</title>
+    <defs>
+        <linearGradient x1="14.9038462%" y1="50%" x2="100%" y2="50%" id="linearGradient-1">
+            <stop stop-color="#38B7FD" offset="0%"></stop>
+            <stop stop-color="#056BA3" stop-opacity="0" offset="100%"></stop>
+        </linearGradient>
+    </defs>
+    <g id="页面" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" opacity="0.393996466">
+        <g id="能耗" transform="translate(-1619.000000, -154.000000)" fill="url(#linearGradient-1)">
+            <g id="1" transform="translate(1520.000000, 80.000000)">
+                <path d="M348,142 L348,174 L99,174 L99.001225,173.081051 C110.715151,166.144538 119.731647,155.133915 124.099396,142.000498 L348,142 Z M348,108 L348,140 L124.723464,140.001059 C126.205329,134.92463 127,129.555118 127,124 C127,118.445247 126.205433,113.076074 124.723756,107.99994 L348,108 Z M348,74 L348,106 L124.099729,106.000504 C119.732106,92.8666451 110.715449,81.8556383 99.001225,74.9189492 L99,74 L348,74 Z" id="形状结合"></path>
+            </g>
+        </g>
+    </g>
+</svg>

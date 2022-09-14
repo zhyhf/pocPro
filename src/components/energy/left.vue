@@ -1,153 +1,183 @@
 <template>
   <div>
     <div class="panel-wrapper">
-      <div class="panel-item">
-        <div class="panel-title">运营概况</div>
+<!--      <div class="panel-item">-->
+<!--        <div class="panel-title">运营概况</div>-->
+<!--        <div class="panel-item-body">-->
+<!--          <div class="panel-item-content condition">-->
+<!--            <div-->
+<!--              v-for="(item, index) in iconArray"-->
+<!--              :key="index"-->
+<!--              class="condition-item"-->
+<!--            >-->
+<!--              <div class="detail-img-wrapper">-->
+<!--                <img :src="item.icon" alt="" class="detail-img" />-->
+<!--              </div>-->
+<!--              <div class="detail-box">-->
+<!--                <div class="detail-title">{{ item.title }}</div>-->
+<!--                <div class="item-detail">-->
+<!--                  <span class="detail-data">{{ item.value }}</span>-->
+<!--                  <span class="item-unit">{{ item.unit }}</span>-->
+<!--                </div>-->
+<!--              </div>-->
+<!--            </div>-->
+<!--          </div>-->
+<!--        </div>-->
+<!--      </div>-->
+      <div class="panel-item rank">
+        <div class="panel-title">能耗排行</div>
         <div class="panel-item-body">
-            <img src="@/assets/img/panel-bg-bodyCan.png" class="panelBodyCan">
-          <div class="panel-item-content condition">
-            <div
-              v-for="(item, index) in iconArray"
-              :key="index"
-              class="condition-item"
-            >
-              <div class="detail-img-wrapper">
-                <img :src="item.icon" alt="" class="detail-img" />
-              </div>
-              <div class="detail-box">
-                <div class="detail-title">{{ item.title }}</div>
-                <div class="item-detail">
-                  <span class="detail-data">{{ item.value }}</span>
-                  <span class="item-unit">{{ item.unit }}</span>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="panel-item">
-        <div class="panel-title">节能目标完成情况</div>
-        <div class="panel-item-body">
-            <img src="@/assets/img/panel-bg-bodyCan.png" class="panelBodyCan">
-            <div class="wave-echart" id='waveEchart' ref='waveEchart'></div>
-            <!-- <div
-              ref="COChart"
-              id="COChart"
-              style="width: 100%; height: 100%"
-            ></div> -->
-        </div>
-      </div>
-      <div class="panel-item">
-        <div class="panel-title">能耗分析</div>
-        <div class="panel-item-body">
-            <img src="@/assets/img/panel-bg-bodyCan.png" class="panelBodyCan">
+          <img src="@/assets/img/panel-bg-bodyCan.png" class="panelBodyCan">
           <div class="panel-item-content">
-            <el-table
-              :header-cell-class-name="'tableHeaderCell'"
-              class="box-table"
-              :data="tableData"
-              :fit="true"
-            >
-              <el-table-column
-                prop="target"
-                label="企业"
-                min-width="20%"
-                show-overflow-tooltip
-              />
-              <el-table-column
-                prop="waterYear"
-                label="用水量同比"
-                min-width="15%"
-                show-overflow-tooltip
-              >
-                <template slot-scope="scope">
-                  <span v-if="scope.row.waterYear.indexOf('-') !== -1"
-                    >{{ scope.row.waterYear
-                    }}<span class="iconRed">↓</span></span
-                  >
-                  <span v-else>
-                    {{ scope.row.waterYear }}<span class="iconGreen">↑</span>
-                  </span>
-                </template>
-              </el-table-column>
-              <el-table-column
-                prop="waterMonth"
-                label="用水量环比"
-                min-width="15%"
-                show-overflow-tooltip
-              >
-                <template slot-scope="scope">
-                  <span v-if="scope.row.waterMonth.indexOf('-') !== -1"
-                    >{{ scope.row.waterMonth
-                    }}<span class="iconRed">↓</span></span
-                  >
-                  <span v-else>
-                    {{ scope.row.waterMonth }}<span class="iconGreen">↑</span>
-                  </span>
-                </template>
-              </el-table-column>
-              <el-table-column
-                prop="electricYear"
-                label="用电量同比"
-                min-width="15%"
-                show-overflow-tooltip
-              >
-                <template slot-scope="scope">
-                  <span v-if="scope.row.electricYear.indexOf('-') !== -1"
-                    >{{ scope.row.electricYear
-                    }}<span class="iconRed">↓</span></span
-                  >
-                  <span v-else>
-                    {{ scope.row.electricYear }}<span class="iconGreen">↑</span>
-                  </span>
-                </template>
-              </el-table-column>
-              <el-table-column
-                prop="electricMonth"
-                label="用电量环比"
-                min-width="15%"
-                show-overflow-tooltip
-              >
-                <template slot-scope="scope">
-                  <span v-if="scope.row.electricMonth.indexOf('-') !== -1"
-                    >{{ scope.row.electricMonth
-                    }}<span class="iconRed">↓</span></span
-                  >
-                  <span v-else>
-                    {{ scope.row.electricMonth
-                    }}<span class="iconGreen">↑</span>
-                  </span>
-                </template>
-              </el-table-column>
-              <el-table-column
-                label="操作"
-                min-width="20%"
-                show-overflow-tooltip
-              >
-                <template slot-scope="scope">
-                  <el-link
-                    :underline="false"
-                    :class="{
-                      line: true,
-                      operation: true,
-                      active: activeIndex === scope.row.target,
-                    }"
-                    @click="analysisEnergy(scope.row)"
-                    >分析</el-link
-                  >
-                </template>
-              </el-table-column>
-            </el-table>
-            <div class="table-buttons">
-              <el-pagination
-                :total="4"
-                :page-size="5"
-                @currentChange="currentChange"
-              />
-            </div>
+            <dv-scroll-board :config="configTable"/>
           </div>
         </div>
       </div>
+
+      <div class="panel-item analysis">
+        <div class="panel-title">设备能耗成本分析</div>
+        <div class="panel-item-body">
+          <div class="panel-item-content"></div>
+        </div>
+      </div>
+
+      <div class="panel-item ring">
+        <div class="panel-title">耗能环比分析</div>
+        <div class="panel-item-body">
+          <img src="@/assets/img/panel-bg-bodyCan.png" class="panelBodyCan">
+          <div class="panel-item-content" ref="analysisChart"></div>
+        </div>
+      </div>
+
+      <div class="panel-item carbon">
+        <div class="panel-title">碳排放构成</div>
+        <div class="panel-item-body">
+          <img src="@/assets/img/panel-bg-bodyCan.png" class="panelBodyCan">
+          <div class="panel-item-content" ref="carbonChart"></div>
+        </div>
+      </div>
+
+<!--      <div class="panel-item">-->
+<!--        <div class="panel-title">节能目标完成情况</div>-->
+<!--        <div class="panel-item-body">-->
+<!--            <div class="wave-echart" id='waveEchart' ref='waveEchart'></div>-->
+<!--            &lt;!&ndash; <div-->
+<!--              ref="COChart"-->
+<!--              id="COChart"-->
+<!--              style="width: 100%; height: 100%"-->
+<!--            ></div> &ndash;&gt;-->
+<!--        </div>-->
+<!--      </div>-->
+<!--      <div class="panel-item">-->
+<!--        <div class="panel-title">能耗分析</div>-->
+<!--        <div class="panel-item-body">-->
+<!--          <div class="panel-item-content">-->
+<!--            <el-table-->
+<!--              :header-cell-class-name="'tableHeaderCell'"-->
+<!--              class="box-table"-->
+<!--              :data="tableData"-->
+<!--              :fit="true"-->
+<!--            >-->
+<!--              <el-table-column-->
+<!--                prop="target"-->
+<!--                label="企业"-->
+<!--                min-width="20%"-->
+<!--                show-overflow-tooltip-->
+<!--              />-->
+<!--              <el-table-column-->
+<!--                prop="waterYear"-->
+<!--                label="用水量同比"-->
+<!--                min-width="15%"-->
+<!--                show-overflow-tooltip-->
+<!--              >-->
+<!--                <template slot-scope="scope">-->
+<!--                  <span v-if="scope.row.waterYear.indexOf('-') !== -1"-->
+<!--                    >{{ scope.row.waterYear-->
+<!--                    }}<span class="iconRed">↓</span></span-->
+<!--                  >-->
+<!--                  <span v-else>-->
+<!--                    {{ scope.row.waterYear }}<span class="iconGreen">↑</span>-->
+<!--                  </span>-->
+<!--                </template>-->
+<!--              </el-table-column>-->
+<!--              <el-table-column-->
+<!--                prop="waterMonth"-->
+<!--                label="用水量环比"-->
+<!--                min-width="15%"-->
+<!--                show-overflow-tooltip-->
+<!--              >-->
+<!--                <template slot-scope="scope">-->
+<!--                  <span v-if="scope.row.waterMonth.indexOf('-') !== -1"-->
+<!--                    >{{ scope.row.waterMonth-->
+<!--                    }}<span class="iconRed">↓</span></span-->
+<!--                  >-->
+<!--                  <span v-else>-->
+<!--                    {{ scope.row.waterMonth }}<span class="iconGreen">↑</span>-->
+<!--                  </span>-->
+<!--                </template>-->
+<!--              </el-table-column>-->
+<!--              <el-table-column-->
+<!--                prop="electricYear"-->
+<!--                label="用电量同比"-->
+<!--                min-width="15%"-->
+<!--                show-overflow-tooltip-->
+<!--              >-->
+<!--                <template slot-scope="scope">-->
+<!--                  <span v-if="scope.row.electricYear.indexOf('-') !== -1"-->
+<!--                    >{{ scope.row.electricYear-->
+<!--                    }}<span class="iconRed">↓</span></span-->
+<!--                  >-->
+<!--                  <span v-else>-->
+<!--                    {{ scope.row.electricYear }}<span class="iconGreen">↑</span>-->
+<!--                  </span>-->
+<!--                </template>-->
+<!--              </el-table-column>-->
+<!--              <el-table-column-->
+<!--                prop="electricMonth"-->
+<!--                label="用电量环比"-->
+<!--                min-width="15%"-->
+<!--                show-overflow-tooltip-->
+<!--              >-->
+<!--                <template slot-scope="scope">-->
+<!--                  <span v-if="scope.row.electricMonth.indexOf('-') !== -1"-->
+<!--                    >{{ scope.row.electricMonth-->
+<!--                    }}<span class="iconRed">↓</span></span-->
+<!--                  >-->
+<!--                  <span v-else>-->
+<!--                    {{ scope.row.electricMonth-->
+<!--                    }}<span class="iconGreen">↑</span>-->
+<!--                  </span>-->
+<!--                </template>-->
+<!--              </el-table-column>-->
+<!--              <el-table-column-->
+<!--                label="操作"-->
+<!--                min-width="20%"-->
+<!--                show-overflow-tooltip-->
+<!--              >-->
+<!--                <template slot-scope="scope">-->
+<!--                  <el-link-->
+<!--                    :underline="false"-->
+<!--                    :class="{-->
+<!--                      line: true,-->
+<!--                      operation: true,-->
+<!--                      active: activeIndex === scope.row.target,-->
+<!--                    }"-->
+<!--                    @click="analysisEnergy(scope.row)"-->
+<!--                    >分析</el-link-->
+<!--                  >-->
+<!--                </template>-->
+<!--              </el-table-column>-->
+<!--            </el-table>-->
+<!--            <div class="table-buttons">-->
+<!--              <el-pagination-->
+<!--                :total="4"-->
+<!--                :page-size="5"-->
+<!--                @currentChange="currentChange"-->
+<!--              />-->
+<!--            </div>-->
+<!--          </div>-->
+<!--        </div>-->
+<!--      </div>-->
     </div>
   </div>
 </template>
@@ -163,7 +193,7 @@ export default {
   },
   data() {
     return {
-      waveOptions:{   
+      waveOptions:{
         title: {// 标题
             text: '能耗使用情况',
             textStyle: {// 标题的样式
@@ -354,17 +384,325 @@ export default {
         //   electricMonth: "5%",
         // },
       ],
-    };
+      configTable:{
+        header: ['区域', '总电量(kW.h)', '功率因素'],
+        data: [
+          ['华北区域', '12000', '85.5%'],
+          ['苏皖区域', '12100', '85.8'],
+          ['西南区域', '11000', '83.2%'],
+          ['东南区域', '13000', '87.7%'],
+          ['西北区域', '12000', '85.5%'],
+          ['华东区域', '11000', '83.2%']
+        ],
+        rowNum: 5,
+        headerBGC: 'transparent',
+        columnWidth: [110],
+        align: ['left'],
+        waitTime: 1000
+      },
+      analysisChart: null,
+      analysisOption: {
+        legend: {
+          right: 0,
+          padding: [10, 10, 0, 0],
+          itemHeight: 6,
+          data: ["2021", "2020"],
+          textStyle: {
+            color: "#C6CFCE",
+            fontSize: "10",
+          },
+        },
+        grid: {
+          left: 35,
+          top: 35,
+          right: 20,
+          bottom: 30,
+        },
+        xAxis: {
+          boundaryGap: true,
+          nameTextStyle: {
+            color: "#C6CFCE",
+          },
+          nameLocation: "start", // x轴name处于x轴的什么位置
+          type: "category",
+          data: [
+            "5月",
+            "6月",
+            "7月",
+            "8月",
+            "9月",
+            "10月",
+            "11月",
+            "12月"
+          ],
+          axisTick: {
+            interval: 0,
+            alignWithLabel: true
+          },
+          axisLabel: {
+            interval: 0,
+            textStyle: {
+              fontSize: 10,
+              color: "#C6CFCE",
+            }
+          },
+        },
+        yAxis: {
+          name: "产值(亿元)",
+          nameTextStyle: {
+            color: "#C6CFCE",
+          },
+          type: "value",
+          splitLine: {
+            lineStyle: {
+              type: "dashed",
+              color: "grey",
+            },
+          },
+          axisLabel: {
+            textStyle: {
+              fontSize: 10,
+              color: "#C6CFCE",
+            },
+          },
+        },
+        series: [
+          {
+            name: "2021",
+            data: [23, 25, 38, 32, 22, 35, 36,30],
+            type: "line",
+            stack: 'Total',
+            symbol: 'none',
+            areaStyle: {
+              normal: {
+                color: new this.$echarts.graphic.LinearGradient(0, 0, 0, 1, [{
+                  offset: 0,
+                  color: 'rgba(84,251,200,1)'
+                },
+                  {
+                    offset: 0.2,
+                    color: 'rgba(84,251,200,0.3)'
+                  },
+                  {
+                    offset: 1,
+                    color: 'rgba(84,251,200,0)'
+                  }]),
+              }
+            },
+            itemStyle: {
+              normal: {
+                color: new this.$echarts.graphic.LinearGradient(
+                        0,
+                        1,
+                        0,
+                        0,
+                        [
+                          {
+                            offset: 0,
+                            color: "rgba(96, 224, 249, 0)", // 0% 处的颜色
+                          },
+                          {
+                            offset: 0.6,
+                            color: "rgba(96, 224, 249, 0.5)", // 60% 处的颜色
+                          },
+                          {
+                            offset: 1,
+                            color: "rgb(96, 224, 249)", // 100% 处的颜色
+                          },
+                        ],
+                        false
+                ),
+              }, // 2DFDBD
+            },
+            animationDelay: function (idx) {
+              return idx * 500;
+            }
+          },
+          {
+            name: "2020",
+            data: [17, 20, 18, 16, 15, 15, 12, 13],
+            type: "line",
+            stack: 'Total',
+            symbol: 'none',
+            itemStyle: {
+              normal: {
+                color: new this.$echarts.graphic.LinearGradient(
+                        0,
+                        1,
+                        0,
+                        0,
+                        [
+                          {
+                            offset: 0,
+                            color: "rgba(42, 150, 222, 0)", // 0% 处的颜色
+                          },
+                          {
+                            offset: 0.6,
+                            color: "rgba(42, 150, 222, 0.5)", // 60% 处的颜色
+                          },
+                          {
+                            offset: 1,
+                            color: "rgb(42, 150, 222)", // 100% 处的颜色
+                          },
+                        ],
+                        false
+                ),
+              },
+            },
+            areaStyle: {
+              normal: {
+                color: new this.$echarts.graphic.LinearGradient(0, 0, 0, 1, [{
+                  offset: 0,
+                  color: 'rgba(56,183,253,1)'
+                },
+                  {
+                    offset: 0.2,
+                    color: 'rgba(56,183,253,0.3)'
+                  },
+                  {
+                    offset: 1,
+                    color: 'rgba(56,183,253,0)'
+                  }]),
+              }
+            },
+            animationDelay: function (idx) {
+              return idx * 500;
+            }
+          },
+        ],
+        animationEasing: 'elasticOut',
+        animationDelayUpdate: function (idx) {
+          return idx * 200;
+        }
+      },
+      carbonChart: null,
+      carbonOption: {
+        color:['#65E1DF','#139AFF','#33FEBF','#FFAE76','#D1DEEE'],
+        tooltip: {
+          trigger:"item",
+          backgroundColor: 'rgba(0,0,0,0.65)',
+          color:'#fff',
+          textStyle:{
+            color:'#fff',
+            fontSize:'12px'
+          },
+          borderWidth:"0",
+        },
+        legend: {
+          data: [
+            {
+              name: '电力',
+              icon: 'rect'
+            },
+            {
+              name: '燃料',
+              icon: 'rect'
+            },
+            {
+              name: '热力',
+              icon: 'rect'
+            },
+            {
+              name: '生产工艺',
+              icon: 'rect'
+            },
+            {
+              name: '其他',
+              icon: 'rect'
+            }
+          ],
+          orient: 'vertical',  //垂直显示
+          right: '10%',
+          align: 'left',
+          itemHeight: 6,
+          itemWidth: 6,
+          textStyle: {
+            color: '#fff',
+            fontSize: '11',
+            fontWeight: 300,
+          },
+          formatter: function (name) {  //图例后添加数值
+            let data =  [
+              { value: 24.72, name: '电力' },
+              { value: 11.39, name: '燃料' },
+              { value: 13.61, name: '热力' },
+              { value: 13.33, name: '生产工艺' },
+              { value: 6.95, name: '其他' }
+            ];
+            let tarValue;
+            for (let i = 0; i < data.length; i++) {
+              if (data[i].name === name) {
+                tarValue = data[i].value;
+              }
+            }
+            return name  + '  '+ tarValue+ '%';
+          }
+        },
+        series: [
+          {
+            type: 'pie',
+            radius: ['60%', '83%'],
+            center: ['26.4%', '50%'],
+            avoidLabelOverlap: false,
+            label: {
+              show: false,
+            },
+            labelLine: {
+              show: false,
+            },
+            data: [
+              { value: 24.72, name: '电力' },
+              { value: 11.39, name: '燃料' },
+              { value: 13.61, name: '热力' },
+              { value: 13.33, name: '生产工艺' },
+              { value: 6.95, name: '其他' }
+            ]
+          }
+        ],
+        graphic: {
+          id:'image1',
+          elements:[
+            {
+              type: 'image', // 图形元素类型
+              z: 40,  // 层叠
+              style: {
+                image: require('@/assets/img/echarts/nQuan.png'),
+                width: 57,
+                height: 57
+              },
+              left: '17.4%',
+              top: 'middle'
+            },
+            {
+              type: 'image', // 图形元素类型
+              //   z: 40,  // 层叠
+              style: {
+                image: require('@/assets/img/echarts/wquan.png'),
+                width: 100,
+                height: 100
+              },
+              left: '10.5%',
+              top: 'middle'
+            }
+          ]
+        }
+      }
+    }
   },
   mounted() {
+    this.analysisChart = this.$echarts.init(this.$refs.analysisChart)
+    this.analysisChart.setOption(this.analysisOption)
+    this.carbonChart = this.$echarts.init(this.$refs.carbonChart)
+    this.carbonChart.setOption(this.carbonOption)
       // this.COElementChart = this.$echarts.init(this.$refs.COChart);
       // this.COElementChart.setOption(this.COElementOptions);
-      this.waveEchart = this.$echarts.init(this.$refs.waveEchart)
-      this.waveEchart.setOption(this.waveOptions)
+      // this.waveEchart = this.$echarts.init(this.$refs.waveEchart)
+      // this.waveEchart.setOption(this.waveOptions)
     this.$nextTick(() => {
       window.addEventListener("resize", () => {
+        this.analysisChart.resize()
         // this.COElementChart.resize();
-        this.waveEchart.resize();
+        // this.waveEchart.resize();
       });
     });
   },
@@ -483,5 +821,29 @@ export default {
 .active {
   color: #38b7fd !important;
   text-decoration: underline !important;
+}
+
+
+/deep/ .dv-scroll-board {
+  .header{
+    color: rgba(255,255,255,0.64) !important;
+    font-weight: 400;
+    font-size: 12px !important;
+  }
+}
+.rank {
+  flex: 1 !important;
+}
+
+.analysis {
+  flex: 0.8 !important;
+}
+
+.ring {
+  flex: 1 !important;
+}
+
+.carbon {
+  flex: 0.8 !important;
 }
 </style>

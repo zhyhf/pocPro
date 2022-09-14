@@ -540,7 +540,7 @@ export default {
           time = (time + 1) > item.percent ? item.percent : (time + 1)
           item.current = time * 0.01 * (this.$refs.brokenWrapper.clientWidth - 40)
           if (time >= item.percent) clearInterval(barTimer)
-        }, 15)
+        }, 40)
       }
     },
     initFlippers() {

@@ -90,7 +90,7 @@
             <img src="@/assets/img/panel-bg-bodyCan.png" class="panelBodyCan">
           <div class="panel-item-content">
             <el-tabs v-model="activeName" @tab-click="tabClick">
-              <el-tab-pane label="水用量" name="first"></el-tab-pane>
+              <el-tab-pane label="用水量" name="first"></el-tab-pane>
               <el-tab-pane label="电用量" name="second"></el-tab-pane>
               <el-tab-pane label="碳排放" name="third"></el-tab-pane>
             </el-tabs>
