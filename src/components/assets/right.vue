@@ -28,7 +28,10 @@
               <div class="detail-box">
                 <div class="detail-title">{{ item.title }}</div>
                 <div class="item-detail">
-                  <span class="detail-data">{{ item.value }}</span>
+                  <!-- <span class="detail-data">{{ item.value }}</span> -->
+                  <dv-digital-flop :config="item.config"  style="width:6rem;height:1.7rem;"/>
+                <!-- <dv-digital-flop v-if="index !== 3" :config="item.config" style="height: 30px; position: relative; left: 0px"/>
+                <dv-digital-flop v-else :config="item.config" style="height: 30px; position: relative; left: -10px"/> -->
                   <span class="item-unit">{{ item.unit }}</span>
                 </div>
               </div>
@@ -129,24 +132,64 @@ export default {
               title: "总量",
               value: 92813,
               unit: "家",
+              config: {
+                number:[0],
+                textAlign: 'left',
+                animationFrame: 90, 
+                style: {
+                  fontSize: 18,
+                  fontWeight: 600,
+                  fill: '#FFFFFF'
+                }
+             },
             },
             {
               icon: require("@/assets/img/enegy.png"),
               title: "规模企业(注册资本3000万以上)",
               value: 320,
               unit: "家",
+              config: {
+                number:[0],
+                textAlign: 'left',
+                animationFrame: 90, 
+                style: {
+                  fontSize: 18,
+                  fontWeight: 600,
+                  fill: '#FFFFFF'
+                }
+             },
             },
             {
               icon: require("@/assets/img/enegy.png"),
               title: "总量",
               value: 5,
               unit: "家",
+              config: {
+                number:[0],
+                textAlign: 'left',
+                animationFrame: 90, 
+                style: {
+                  fontSize: 18,
+                  fontWeight: 600,
+                  fill: '#FFFFFF'
+                }
+             },
             },
             {
               icon: require("@/assets/img/enegy.png"),
               title: "新注册企业(近12个月)",
               value: 8520,
               unit: "家",
+              config: {
+                number:[0],
+                textAlign: 'left',
+                animationFrame: 90, 
+                style: {
+                  fontSize: 18,
+                  fontWeight: 600,
+                  fill: '#FFFFFF'
+                }
+             },
             },
           ],
         isHighLight: false,
@@ -409,10 +452,6 @@ export default {
             },
           },
         ],
-        // animationEasing: 'elasticOut',
-        // animationDelayUpdate: function (idx) {
-        //   return idx * 200;
-        // }
       },
       enterpriseChart: {},
       enterpriseOptions: {
@@ -605,6 +644,16 @@ export default {
     };
   },
   mounted() {
+    setTimeout(() => {
+      this.iconArray[0].config.number[0] = 1005
+      this.iconArray[1].config.number[0] = 2000
+      this.iconArray[2].config.number[0] = 350
+      this.iconArray[3].config.number[0] = 250
+      this.iconArray[0].config = {...this.iconArray[0].config}
+      this.iconArray[1].config = {...this.iconArray[1].config}
+      this.iconArray[2].config = {...this.iconArray[2].config}
+      this.iconArray[3].config = {...this.iconArray[3].config}
+    }, 1000)
     this.radarChart = this.$echarts.init(this.$refs.radarComCharts)
     this.radarChart.setOption(this.radartComOptions)
     setInterval(() => {
@@ -751,6 +800,8 @@ export default {
         color: rgba(255,255,255,0.64)
       }
       .item-detail {
+        margin-top: 4px;
+        position: relative;
         .detail-data {
           font-weight: 700;
           font-size: 19px;
@@ -758,7 +809,10 @@ export default {
         .item-unit {
           margin-left: 4px;
           font-size: 12px;
-          color: rgba(255,255,255,0.64)
+          color: rgba(255,255,255,0.64);
+          position: absolute;
+          left: 72%;
+          top: 5%;
         }
       }
     }
