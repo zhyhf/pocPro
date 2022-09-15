@@ -94,6 +94,7 @@ export default {
           ],
           axisTick: {
             interval: 0,
+            alignWithLabel: true
           },
           axisLabel: {
             interval: 0,
@@ -170,43 +171,44 @@ export default {
               return idx * 500;
             }
           },
-          // {
-          //   showSymbol: false,
-          //   type: "lines",
-          //   polyline: true,
-          //   smooth: false,
-          //   coordinateSystem: "cartesian2d",
-          //   zlevel: 1,
-          //   effect: {
-          //     show: true,
-          //     smooth: true,
-          //     period: 6,
-          //     symbolSize: 4,
-          //   },
-          //   lineStyle: {
-          //     color: "#fff",
-          //     width: 1,
-          //     opacity: 0,
-          //     curveness: 0,
-          //     cap: "round",
-          //   },
-          //   data: [
-          //     {
-          //       coords: [
-          //         ['2013', 200],
-          //         ["2014", 240],
-          //         ["2015", 230],
-          //         ["2016", 290],
-          //         ["2017", 360],
-          //         ["2018", 250],
-          //         ["2019", 200],
-          //         ["2020", 270],
-          //         ["2021", 340],
-          //         ["2022", 300],
-          //       ],
-          //     },
-          //   ]
-          // },
+            {
+            showSymbol: false,
+            type: "lines",
+            polyline: true,
+            smooth: false,
+            coordinateSystem: "cartesian2d",
+            zlevel: 1,
+            effect: {
+              show: true,
+              smooth: true,
+              period: 6,
+              symbolSize: 4,
+            },
+            lineStyle: {
+              color: "#fff",
+              width: 1,
+              opacity: 0,
+              curveness: 0,
+              cap: "round",
+            },
+            data: [
+              {  
+                coords: [
+                  ['1', 10],
+                  ["4", 12],
+                  ["7", 9],
+                  ["10", 16],
+                  ["13", 15],
+                  ["16", 15],
+                  ["19", 12],
+                  ["22", 13],
+                  ["25", 16],
+                  ["28", 9],
+                  ["30", 12],
+                ],
+              },
+            ]
+          },
           {
             name: "意向数",
             data: [6, 9, 11, 5, 6, 8, 10,12, 4,9, 7],
@@ -253,6 +255,45 @@ export default {
             animationDelay: function (idx) {
               return idx * 500;
             }
+          },
+             {
+            showSymbol: false,
+            type: "lines",
+            stack: 'Total',
+            polyline: true,
+            smooth: false,
+            coordinateSystem: "cartesian2d",
+            zlevel: 1,
+            effect: {
+              show: true,
+              smooth: true,
+              period: 6,
+              symbolSize: 4,
+            },
+            lineStyle: {
+              color: "#fff",
+              width: 1,
+              opacity: 0,
+              curveness: 0,
+              cap: "round",
+            },
+            data: [
+              {  
+                coords: [
+                  ['1', 16],
+                  ["4", 21],
+                  ["7", 20],
+                  ["10", 21],
+                  ["13", 21],
+                  ["16", 23],
+                  ["19", 22],
+                  ["22", 25],
+                  ["25", 20],
+                  ["28", 18],
+                  ["30", 19],
+                ],
+              },
+            ]
           },
         ],
         animationEasing: 'elasticOut',

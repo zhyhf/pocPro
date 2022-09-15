@@ -382,6 +382,16 @@ export default {
       },
       analysisChart: null,
       analysisOption: {
+         tooltip: {
+            trigger: "axis",
+            backgroundColor: 'rgba(0,0,0,0.65)',
+            color: '#fff',
+            textStyle:{
+              color: '#fff',
+              fontSize: '12px'
+            },
+            borderWidth: "0",
+        },
         legend: {
           right: 0,
           padding: [10, 10, 0, 0],
@@ -499,6 +509,41 @@ export default {
             }
           },
           {
+            showSymbol: false,
+            type: "lines",
+            polyline: true,
+            smooth: false,
+            coordinateSystem: "cartesian2d",
+            zlevel: 1,
+            effect: {
+              show: true,
+              smooth: true,
+              period: 6,
+              symbolSize: 4,
+            },
+            lineStyle: {
+              color: "#fff",
+              width: 1,
+              opacity: 0,
+              curveness: 0,
+              cap: "round",
+            },
+            data: [
+              {  
+                coords: [
+                  ['5月', 23],
+                  ["6月", 25],
+                  ["7月", 38],
+                  ["8月", 32],
+                  ["9月", 22],
+                  ["10月", 35],
+                  ["11月", 36],
+                  ["12月", 30],
+                ],
+              },
+            ]
+          },
+          {
             name: "2020",
             data: [17, 20, 18, 16, 15, 15, 12, 13],
             type: "line",
@@ -548,6 +593,42 @@ export default {
             animationDelay: function (idx) {
               return idx * 500;
             }
+          },
+                {
+            showSymbol: false,
+            type: "lines",
+            stack: 'Total',
+            polyline: true,
+            smooth: false,
+            coordinateSystem: "cartesian2d",
+            zlevel: 1,
+            effect: {
+              show: true,
+              smooth: true,
+              period: 6,
+              symbolSize: 4,
+            },
+            lineStyle: {
+              color: "#fff",
+              width: 1,
+              opacity: 0,
+              curveness: 0,
+              cap: "round",
+            },
+            data: [
+              {  
+                coords: [
+                  ['5月', 40],
+                  ["6月", 45],
+                  ["7月", 56],
+                  ["8月", 48],
+                  ["9月", 37],
+                  ["10月", 50],
+                  ["11月", 48],
+                  ["12月", 43],
+                ],
+              },
+            ]
           },
         ],
         animationEasing: 'elasticOut',

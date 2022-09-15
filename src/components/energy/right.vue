@@ -293,6 +293,16 @@
                 activeIndex: 2,
                 greenChart: null,
                 greenOption: {
+                     tooltip: {
+                        trigger: "axis",
+                        backgroundColor: 'rgba(0,0,0,0.65)',
+                        color: '#fff',
+                        textStyle:{
+                        color: '#fff',
+                        fontSize: '12px'
+                        },
+                        borderWidth: "0",
+                    },
                     legend: {
                         right: 0,
                         padding: [10, 10, 0, 0],
@@ -359,7 +369,7 @@
                     series: [
                         {
                             name: "光伏发电量",
-                            data: [23, 25, 38, 32, 22, 35, 36,30],
+                            data: [23, 25, 38, 32, 22, 35, 36],
                             type: "line",
                             stack: 'Total',
                             symbol: 'none',
@@ -408,9 +418,43 @@
                                 return idx * 500;
                             }
                         },
+                          {
+                            showSymbol: false,
+                            type: "lines",
+                            polyline: true,
+                            smooth: false,
+                            coordinateSystem: "cartesian2d",
+                            zlevel: 1,
+                            effect: {
+                            show: true,
+                            smooth: true,
+                            period: 6,
+                            symbolSize: 4,
+                            },
+                            lineStyle: {
+                            color: "#fff",
+                            width: 1,
+                            opacity: 0,
+                            curveness: 0,
+                            cap: "round",
+                            },
+                            data: [
+                            {  
+                                coords: [
+                                ['12/15', 23],
+                                ["12/16", 25],
+                                ["12/17", 38],
+                                ["12/18", 32],
+                                ["12/19", 22],
+                                ["12/20", 35],
+                                ["12/21", 36],
+                                ],
+                            },
+                            ]
+                        },
                         {
                             name: "减排量",
-                            data: [17, 20, 18, 16, 15, 15, 12, 13],
+                            data: [17, 20, 18, 16, 15, 15, 12],
                             type: "line",
                             stack: 'Total',
                             symbol: 'none',
@@ -458,6 +502,41 @@
                             animationDelay: function (idx) {
                                 return idx * 500;
                             }
+                        },
+                            {
+                            showSymbol: false,
+                            type: "lines",
+                            stack: 'Total',
+                            polyline: true,
+                            smooth: false,
+                            coordinateSystem: "cartesian2d",
+                            zlevel: 1,
+                            effect: {
+                            show: true,
+                            smooth: true,
+                            period: 6,
+                            symbolSize: 4,
+                            },
+                            lineStyle: {
+                            color: "#fff",
+                            width: 1,
+                            opacity: 0,
+                            curveness: 0,
+                            cap: "round",
+                            },
+                            data: [
+                            {  
+                                coords: [
+                                ['12/15', 40],
+                                ["12/16", 45],
+                                ["12/17", 56],
+                                ["12/18", 48],
+                                ["12/19", 37],
+                                ["12/20", 50],
+                                ["12/21", 48],
+                                ],
+                            },
+                            ]
                         },
                     ],
                     animationEasing: 'elasticOut',
@@ -578,11 +657,14 @@
                 ],
                 usedChart: null,
                 usedOption: {
-                    tooltip: {
-                        trigger: 'axis',
-                        axisPointer: {
-                            animation: false
-                        }
+                   tooltip: {
+                        trigger: "axis",
+                        backgroundColor: 'rgba(0,0,0,0.65)',
+                        textStyle:{
+                        color: '#fff',
+                        fontSize: '12px'
+                        },
+                        borderWidth: "0",
                     },
                     legend: {
                         data: ['用水', '用电'],
