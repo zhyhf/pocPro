@@ -2,27 +2,30 @@
   <div class="bottom">
     <div class="bottomFunc">
       <div
-        :class="{ bottomContainer: true, selectLight: activeNum === index }"
+        :class="{ bottomContainer: true }"
         v-for="(item, index) in bottomPicUrl"
         :key="index"
       >
         <div class="bottomPicContainer">
-          <div class="circle-bg" @click="flyTo(index)">
+          <div class="circle-bg" @click="flyTo(index)" :class="index === 4 ? 'circle-bg-last' : ''">
             <img
-              v-show="activeNum !== index"
-              :src="item.picUrl"
+              :src="
+                item.isHover ? item.hoverPic
+                : activeNum !== index ? item.picUrl : item.checkedPic
+              "
               class="bottomPic"
-            />
-            <img
-              v-show="activeNum === index"
-              :src="item.checkedPicUrl"
-              class="bottomPic"
-            />
+              @mouseenter="onMouseEnter(index)"
+              @mouseleave="onMouseLeave(index)"
+            >
+            <div v-show="index === 4" class="selected-industry">{{ selectedIndustry }}</div>
+            <div v-show="showOptions && index === 4" class="industry-option-bg">
+              <div v-for="(name, index) in industryOptions" class="industry-item" @click.stop="select(name)">{{ name }}</div>
+            </div>
           </div>
         </div>
-        <div :class="{ bottomFont: true, activeColor: activeNum === index }">
-          {{ item.name }}
-        </div>
+<!--        <div :class="{ bottomFont: true, activeColor: activeNum === index }">-->
+<!--          {{ item.name }}-->
+<!--        </div>-->
       </div>
     </div>
   </div>
@@ -36,24 +39,40 @@ export default {
       bottomPicUrl: [
         {
           name: "园区全貌",
-          picUrl: require("@/assets/icon/all.svg"),
-          checkedPicUrl: require("@/assets/icon/active-all.svg"),
+          picUrl: require("@/assets/icon/bottom/whole.svg"),
+          checkedPic: require("@/assets/icon/bottom/whole-active.svg"),
+          hoverPic: require("@/assets/icon/bottom/whole-hover.svg"),
+          isHover: false
         },
           {
           name: "楼栋信息",
-          picUrl: require("@/assets/icon/houseP.svg"),
-          checkedPicUrl: require("@/assets/icon/houseS.svg"),
+          picUrl: require("@/assets/icon/bottom/building.svg"),
+          checkedPic: require("@/assets/icon/bottom/building-active.svg"),
+          hoverPic: require("@/assets/icon/bottom/building-hover.svg"),
+          isHover: false
         },
         {
           name: "智慧停车",
-          picUrl: require("@/assets/icon/parking.svg"),
-          checkedPicUrl: require("@/assets/icon/active-parking.svg"),
+          picUrl: require("@/assets/icon/bottom/parking.svg"),
+          checkedPic: require("@/assets/icon/bottom/parking-active.svg"),
+          hoverPic: require("@/assets/icon/bottom/parking-hover.svg"),
+          isHover: false
         },
         {
           name: "预警事件",
-          picUrl: require("@/assets/icon/list.svg"),
-          checkedPicUrl: require("@/assets/icon/active-event.svg"),
+          picUrl: require("@/assets/icon/bottom/alert.svg"),
+          checkedPic: require("@/assets/icon/bottom/alert-active.svg"),
+          hoverPic: require("@/assets/icon/bottom/alert-hover.svg"),
+          isHover: false
         },
+        {
+          name: "预警事件",
+          picUrl: require("@/assets/icon/bottom/industry.svg"),
+          checkedPic: require("@/assets/icon/bottom/industry-active.svg"),
+          // checkedPicArrowRight: require("@/assets/icon/bottom/industry-active-right.svg"),
+          hoverPic: require("@/assets/icon/bottom/industry-hover.svg"),
+          isHover: false
+        }
       ],
       position: [
          {
@@ -107,7 +126,25 @@ export default {
         [120.726250, 27.975980, 65.5]
       ],
       points: {},
+      industryOptions: [
+        '电子商务',
+        '房地产',
+        '物业',
+        '保险',
+        '物流',
+        '人力资源',
+        '广告',
+        '策划'
+      ],
+      selectedIndustry: '选择产业',
+      showOptions: false
     };
+  },
+  watch: {
+    showOptions(val) {
+      this.bottomPicUrl[this.bottomPicUrl.length - 1].checkedPic =
+              val ? require("@/assets/icon/bottom/industry-active.svg") : require("@/assets/icon/bottom/industry-active-right.svg")
+    }
   },
   created() {
       this.areaPositions.forEach((item, index) => {
@@ -115,6 +152,16 @@ export default {
       })
   },
   methods: {
+    select(name) {
+      this.selectedIndustry = name
+      this.showOptions = false
+    },
+    onMouseEnter(index) {
+      this.bottomPicUrl[index].isHover = true
+    },
+    onMouseLeave(index) {
+      this.bottomPicUrl[index].isHover = false
+    },
     // cleanUpWrapper(arr) {
     //   const list = new Array(arr.length)
     //   for (let i = 0; i < list.length; i++) {
@@ -143,8 +190,9 @@ export default {
       this.$store.commit("DigitalTwin/changeCheckBtnNum", index);
     },
     flyTo(index) {
+      this.showOptions = index === 4
       if (this.activeNum === index) return
-      $viewer.qtum.centerAt(this.position[index]); // 飞行到指定位置
+      $viewer.qtum.centerAt(this.position[index]); // 飞行到指定位
       if (index === 3) {
         this.$store.commit("DigitalTwin/changeEnterPriseShow", false);
         this.$store.commit("DigitalTwin/changeEnterPriseDetailShow", false);
@@ -288,21 +336,21 @@ export default {
   z-index: 99;
   .bottomFunc {
     position: absolute;
-    width: 40%;
+    width: 47%;
     height: 100%;
-    top: 0;
-    left: 50%;
+    top: 23%;
+    left: 48.5%;
     transform: translateX(-50%);
     display: flex;
     justify-content: space-between;
-    .select-light {
-      width: 20%;
-      height: 100%;
-    }
-    .selectLight {
-      background: url("../assets/img/select-light.svg") no-repeat;
-      background-size: 100% 130%;
-    }
+    /*.select-light {*/
+    /*  width: 20%;*/
+    /*  height: 100%;*/
+    /*}*/
+    /*.selectLight {*/
+    /*  background: url("../assets/img/select-light.svg") no-repeat;*/
+    /*  background-size: 100% 130%;*/
+    /*}*/
     .bottomContainer {
       width: 20%;
       height: 100%;
@@ -311,13 +359,47 @@ export default {
         text-align: center;
 
         .circle-bg {
-          width: 5.7rem;
-          height: 5.7rem;
+          width: 11rem;
+          height: auto;
           margin: 0 auto;
+          position: relative;
           .bottomPic {
             cursor: pointer;
             width: 100%;
           }
+          .selected-industry {
+            position: absolute;
+            left: 50%;
+            transform: translateX(-60%);
+            top: 21%;
+            font-size: 18px;
+          }
+          .industry-option-bg {
+            width: 100%;
+            height: 27rem;
+            position: absolute;
+            top: -26.5rem;
+            background-image: url("../assets/img/bottom/industry-options-bg.png");
+            background-size: 100% 100%;
+            background-repeat: no-repeat;
+            display: flex;
+            flex-wrap: wrap;
+            padding: 1rem 0;
+            .industry-item {
+              margin: 0 0.5rem;
+              width: 100%;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              &:hover {
+                background-color: #00486E;
+              }
+            }
+          }
+        }
+        .circle-bg-last {
+          width: 18rem;
+          margin-left: 15%;
         }
         .bgShow {
           background: url("../assets/img/circle-bg.svg") no-repeat;

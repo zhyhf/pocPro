@@ -90,7 +90,7 @@
                         <img :src="item.bgImg" class="right-pic" @load="imgLoaded('WAVE')">
                         <div class="right-text">
                             <span class="right-text-title" :class="index === 1 ? 'right-text-title-middle' : ''">{{ item.title }}</span>
-                            <dv-digital-flop :config="item.config" style="height: 30px; position: relative; top: -0.5rem; left: -4rem"/>
+                            <dv-digital-flop :config="item.config" style="height: 30px; position: absolute; top: -0.5rem; right: 5.2rem"/>
                             <span style="position: absolute; right: 0.7rem">万 kW.h</span>
 <!--                            <span class="right-text-value">{{ item.value }}</span>-->
                         </div>
@@ -941,7 +941,7 @@
                 this.setFlipper(waveVals, this.waveRight)
             },
             setFlipper(arr, data) {
-                setTimeout(() => {
+                setInterval(() => {
                     data.forEach((item, index) => {
                         item.config.number[0] = arr[index]
                         item.config = {...item.config}
@@ -1097,6 +1097,7 @@
           .wave-right {
               display: flex;
               flex-direction: column;
+              transform: translateX(-1.7rem);
               .right-item {
                   margin-bottom: 0.2rem;
                   position: relative;
@@ -1122,6 +1123,8 @@
                       margin-left: 12%;
                   }
                   .right-text-title-middle {
+                      width: 20%;
+                      flex: 1;
                       margin-left: 3%;
                   }
                   .right-text-value {

@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="128px" height="71px" viewBox="0 0 128 71" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>沉浸式/切换/1园区全貌-默认</title>
+    <defs>
+        <linearGradient x1="50%" y1="0%" x2="50%" y2="100%" id="linearGradient-1">
+            <stop stop-color="#25F0FF" offset="0%"></stop>
+            <stop stop-color="#33AAEC" offset="51.7007041%"></stop>
+            <stop stop-color="#25F0FF" offset="99.9475012%"></stop>
+        </linearGradient>
+        <linearGradient x1="50%" y1="0%" x2="50%" y2="100%" id="linearGradient-2">
+            <stop stop-color="#25F0FF" offset="0%"></stop>
+            <stop stop-color="#33AAEC" offset="51.7007041%"></stop>
+            <stop stop-color="#25F0FF" offset="99.9475012%"></stop>
+        </linearGradient>
+        <linearGradient x1="50%" y1="0%" x2="50%" y2="100%" id="linearGradient-3">
+            <stop stop-color="#25F0FF" offset="0%"></stop>
+            <stop stop-color="#33AAEC" offset="51.7007041%"></stop>
+            <stop stop-color="#25F0FF" offset="99.9475012%"></stop>
+        </linearGradient>
+    </defs>
+    <g id="控件" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="3.导航/区域/0" transform="translate(-476.000000, -154.000000)">
+            <g id="编组-8" transform="translate(476.000000, 154.000000)">
+                <g id="背景备份">
+                    <polygon id="路径" fill="#00334E" opacity="0.561774844" points="79 6.98209965 86 0 116 0 122 5.98465684 122 45.8823691 98 69.8209965 30 69.8209965 6 45.8823691 6 5.98465684 12 0 42 0 49 6.98209965"></polygon>
+                    <path d="M18.896634,0.25 L25.896634,7.23209965 L31.1046478,7.23209965 L24.1046478,0.25 L27.396634,0.25 L34.396634,7.23209965 L39.6046478,7.23209965 L32.6046478,0.25 L41.896634,0.25 L48.896634,7.23209965 L79.103366,7.23209965 L86.103366,0.25 L95.3953522,0.25 L88.3953522,7.23209965 L93.603366,7.23209965 L100.603366,0.25 L103.895352,0.25 L96.8953522,7.23209965 L102.103366,7.23209965 L109.103366,0.25 L115.896634,0.25 L121.75,6.08839777 L121.75,45.7786282 L97.896634,69.5709965 L30.103366,69.5709965 L6.25,45.7786282 L6.25,6.08839777 L12.103366,0.25 L18.896634,0.25 Z M81.3953052,0.25 L77.3966421,4.238 L50.6033579,4.238 L46.6046948,0.25 L81.3953052,0.25 Z" id="形状" stroke="url(#linearGradient-1)" stroke-width="0.5"></path>
+                    <path d="M23.1794624,70 L2.5,49.3734189 L2.5,38.9002695" id="路径" stroke="url(#linearGradient-2)" stroke-width="0.5"></path>
+                    <path d="M125.5,70 L104.820538,49.3734189 L104.820538,38.9002695" id="路径" stroke="url(#linearGradient-2)" stroke-width="0.5" transform="translate(115.160269, 54.450135) scale(-1, 1) translate(-115.160269, -54.450135) "></path>
+                    <path d="M2.75,10.2244281 L2.75,34.6604982 L0.25,34.6604982 L0.25,10.2244281 L2.75,10.2244281 Z M127.75,10.2244281 L127.75,34.6604982 L125.25,34.6604982 L125.25,10.2244281 L127.75,10.2244281 Z" id="形状结合" stroke="url(#linearGradient-3)" stroke-width="0.5"></path>
+                </g>
+                <g id="区域icon" transform="translate(52.000000, 16.000000)" fill="#FFFFFF" fill-rule="nonzero">
+                    <g id="1.图标/2.设计/">
+                        <path d="M11.25,12.75 L11.25,21.75 C11.25,22.9926407 10.2426407,24 9,24 L2.25,24 C1.00735931,24 0,22.9926407 0,21.75 L0,15 C0,13.7573593 1.00735931,12.75 2.25,12.75 L11.25,12.75 Z M21.75,12.75 C22.9926407,12.75 24,13.7573593 24,15 L24,21.75 C24,22.9926407 22.9926407,24 21.75,24 L15,24 C13.7573593,24 12.75,22.9926407 12.75,21.75 L12.75,12.75 L21.75,12.75 Z M9,0 C10.2426407,0 11.25,1.00735931 11.25,2.25 L11.25,11.25 L2.25,11.25 C1.00735931,11.25 0,10.2426407 0,9 L0,2.25 C0,1.00735931 1.00735931,0 2.25,0 L9,0 Z M18.375,0 C21.4816017,0 24,2.51839828 24,5.62500001 C24,8.73160173 21.4816017,11.25 18.375,11.25 C15.2683983,11.25 12.75,8.73160173 12.75,5.62500001 C12.75,2.51839828 15.2683983,0 18.375,0 Z" id="形状"></path>
+                    </g>
+                </g>
+                <text id="区域切换" font-family="PingFangSC-Regular, PingFang SC" font-size="14" font-weight="normal" fill="#FFFFFF">
+                    <tspan x="36" y="61">园区全貌</tspan>
+                </text>
+            </g>
+        </g>
+    </g>
+</svg>

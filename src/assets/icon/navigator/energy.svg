@@ -8,8 +8,8 @@
         </linearGradient>
     </defs>
     <g id="页面" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
-        <g id="一些切图" transform="translate(-625.000000, -328.000000)">
-            <g id="能耗-默认" transform="translate(625.020531, 328.000000)">
+        <g id="一些切图" transform="translate(-531.000000, -328.000000)">
+            <g id="能耗-默认" transform="translate(531.020531, 328.000000)">
                 <path d="M78.9121407,0.5 L87.8563106,43.5 L19.6477792,43.5 L0.765642573,0.5 L78.9121407,0.5 Z" id="矩形" stroke="#38B7FD" fill="url(#linearGradient-1)" transform="translate(44.235507, 22.000000) scale(-1, 1) translate(-44.235507, -22.000000) "></path>
                 <path d="M74.2342995,8 C75.3575453,8 76.2681159,7.1045695 76.2681159,6 C76.2681159,4.8954305 75.3575453,4 74.2342995,4 C73.1110537,4 72.2004831,4.8954305 72.2004831,6 C72.2004831,7.1045695 73.1110537,8 74.2342995,8 Z" id="椭圆形" stroke="#38B7FD"></path>
                 <g id="-mockplus-" transform="translate(33.557971, 12.000000)" fill="#38B7FD" fill-rule="nonzero">
