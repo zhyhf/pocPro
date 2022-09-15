@@ -53,7 +53,7 @@
       }
       series.push(seriesItem)
     }
-  
+
     // 使用上一次遍历时，计算出的数据和 sumValue，调用 getParametricEquation 函数，
     // 向每个 series-surface 传入不同的参数方程 series-surface.parametricEquation，也就是实现每一个扇形。
     legendData = []
@@ -81,7 +81,7 @@
         value: bfb
       })
     }
-    const boxHeight = 20    
+    const boxHeight = 20
     // const boxHeight = getHeight3D(series, pieHeight) // 通过pieHeight设定3d饼/环的高度，单位是px
     // 准备待返回的配置项，把准备好的 legendData、series 传入。
     const option = {
@@ -179,8 +179,8 @@
       grid3D: {
         show: false,
         boxHeight: 12, // 圆环的高度
-        top: "-22.5%",
-        left: "-22%",
+        top: "-23%",
+        left: "-21.2%",
         viewControl: {
           // 3d效果可以放大、旋转等，请自己去查看官方配置
           alpha, // 角度
@@ -203,14 +203,14 @@
                 height: 74
             },
             left: '7%',
-            top: '14%'
+            top: '15%'
         }
         ]
     }
     }
     return option
   }
-  
+
   /**
    * 生成扇形的曲面参数方程，用于 series-surface.parametricEquation
    */
@@ -282,7 +282,7 @@
       }
     }
   }
-  
+
   /**
    * 获取3d丙图的最高扇区的高度
    */
@@ -292,7 +292,7 @@
     })
     return (height * 25) / series[0].pieData.value
   }
-  
+
   /**
    * 格式化浮点数
    */
@@ -314,5 +314,5 @@
     }
     return s
   }
-  
+
   export { getPie3D, getParametricEquation }

@@ -515,7 +515,7 @@ export default {
 
     },
     initFlippers() {
-      const propertyVals = [350, 1560, 3642, 1503, 15, 25]
+      const propertyVals = [31, 1560, 3642, 310, 15, 25]
       const parkingVals = [15, 1650, 1504, 35, 560]
       const pandemicVals = [26, 500]
       this.setFlipper(propertyVals, this.propertyConclusion)

@@ -55,7 +55,7 @@
               </div>
             </div>
           </div>
-        </div> 
+        </div>
       </div>
       <div class="panel-item">
         <div class="panel-title">园区产值</div>
@@ -113,7 +113,7 @@ export default {
         series: [
           {
             type: 'radar',
-            // tooltip: 
+            // tooltip:
             //   {
             //     trigger: 'item',
             //     confine: true
@@ -290,7 +290,7 @@ export default {
       industryArray: [
         {
           title: "已入驻企业",
-          value: "1503",
+          value: "292",
           unit: "家",
         },
         {
@@ -405,7 +405,7 @@ export default {
       this.radarChart.setOption(this.radarOptions)
     }, 500)
     setTimeout(() => {
-      this.config.config1.number[0] = 1503
+      this.config.config1.number[0] = 292
       this.config.config2.number[0] = 23
       this.config.config3.number[0] = 3642
       this.config.config1 = {...this.config.config1}
@@ -437,7 +437,7 @@ export default {
 .zhibiaocontext{
   flex: 1.2 !important;
 }
-.panelYuanqu{ 
+.panelYuanqu{
     flex: 0.9 !important;
 }
 .industry-operate {

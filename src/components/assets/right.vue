@@ -7,7 +7,7 @@
             <img src="@/assets/img/panel-bg-bodyCan.png" class="panelBodyCan">
               <div class="panel-item-content" ref="eventChart"></div>
         </div>
-      </div>  
+      </div>
       <div class="panel-item zhishuAnalysis">
         <div class="panel-title">竞争力指数分析</div>
         <div class="panel-item-body">
@@ -16,7 +16,7 @@
         </div>
       </div>
       <div class="panel-item companyDevelop">
-        <div class="panel-title">企业发展<div class="updateC">更新时间: <span class="innerDate">2022/09/09</span></div></div> 
+        <div class="panel-title">企业发展<div class="updateC">更新时间: <span class="innerDate">2022/09/09</span></div></div>
           <div class="panel-item-body">
               <img src="@/assets/img/panel-bg-bodyCan.png" class="panelBodyCan">
           <div class="panel-item-content condition">
@@ -31,8 +31,8 @@
               <div class="detail-box">
                 <div class="detail-title">{{ item.title }}</div>
                 <div class="item-detail">
-                  <!-- <span class="detail-data">{{ item.value }}</span> -->  
-                  <dv-digital-flop :config="item.config"  style="width:5.9rem;height:2rem;"/>
+                  <!-- <span class="detail-data">{{ item.value }}</span> -->
+                  <dv-digital-flop :config="item.config"  style="width:7rem;height:2rem;"/>
                 <!-- <dv-digital-flop v-if="index !== 3" :config="item.config" style="height: 30px; position: relative; left: 0px"/>
                 <dv-digital-flop v-else :config="item.config" style="height: 30px; position: relative; left: -10px"/> -->
                   <span class="item-unit">{{ item.unit }}</span>
@@ -139,9 +139,9 @@ export default {
               config: {
                 number:[0],
                 textAlign: 'left',
-                animationFrame: 90, 
+                animationFrame: 90,
                 style: {
-                  fontSize: 18,
+                  fontSize: 15,
                   fontWeight: 600,
                   fill: '#FFFFFF'
                 }
@@ -155,9 +155,9 @@ export default {
               config: {
                 number:[0],
                 textAlign: 'left',
-                animationFrame: 90, 
+                animationFrame: 90,
                 style: {
-                  fontSize: 18,
+                  fontSize: 15,
                   fontWeight: 600,
                   fill: '#FFFFFF'
                 }
@@ -171,9 +171,9 @@ export default {
               config: {
                 number:[0],
                 textAlign: 'left',
-                animationFrame: 90, 
+                animationFrame: 90,
                 style: {
-                  fontSize: 18,
+                  fontSize: 15,
                   fontWeight: 600,
                   fill: '#FFFFFF'
                 }
@@ -187,9 +187,9 @@ export default {
               config: {
                 number:[0],
                 textAlign: 'left',
-                animationFrame: 90, 
+                animationFrame: 90,
                 style: {
-                  fontSize: 18,
+                  fontSize: 15,
                   fontWeight: 600,
                   fill: '#FFFFFF'
                 }
@@ -301,14 +301,17 @@ export default {
         xAxis: {
           type: "category",
           data: [
-            "电子商务",
-            "房地产",
-            "物业",
-            "保险",
-            "物流",
-            "人力资源",
-            "广告",
-            "策划",
+            "批发零售",
+            "信息技术",
+            "租赁商务",
+            "金融",
+            "建筑",
+            "物流运输",
+            "科学研究",
+            "制造业",
+                  "设施管理",
+                  "文体娱乐"
+
           ],
           axisTick: {
             interval: 0,
@@ -320,19 +323,19 @@ export default {
               color: "#C6CFCE",
             },
             formatter: function (value) {
-            var ret = "";//拼接加\n返回的类目项  
-            var maxLength = 2;//每项显示文字个数  
-            var valLength = value.length;//X轴类目项的文字个数  
-            var rowN = Math.ceil(valLength / maxLength); //类目项需要换行的行数  
-            if (rowN > 1)//如果类目项的文字大于4,  
+            var ret = "";//拼接加\n返回的类目项
+            var maxLength = 2;//每项显示文字个数
+            var valLength = value.length;//X轴类目项的文字个数
+            var rowN = Math.ceil(valLength / maxLength); //类目项需要换行的行数
+            if (rowN > 1)//如果类目项的文字大于4,
             {
                 for (var i = 0; i < rowN; i++) {
-                    var temp = "";//每次截取的字符串  
-                    var start = i * maxLength;//开始截取的位置  
-                    var end = start + maxLength;//结束截取的位置  
-                    //这里也可以加一个是否是最后一行的判断，但是不加也没有影响，那就不加吧  
+                    var temp = "";//每次截取的字符串
+                    var start = i * maxLength;//开始截取的位置
+                    var end = start + maxLength;//结束截取的位置
+                    //这里也可以加一个是否是最后一行的判断，但是不加也没有影响，那就不加吧
                     temp = value.substring(start, end) + "\n";
-                    ret += temp; //凭借最终的字符串  
+                    ret += temp; //凭借最终的字符串
                 }
                 return ret;
             }
@@ -395,7 +398,7 @@ export default {
         series: [
           {
             name: "企业数量",
-            data: [45, 47, 54, 50, 52, 55, 46, 55],
+            data: [95, 65, 62, 14, 13, 9, 8, 7, 6, 5],
             type: "bar",
             barWidth:20,
             itemStyle: {
@@ -429,7 +432,7 @@ export default {
           },
           {
             name: "注册资本",
-            data: [40, 50, 67,72, 76, 65, 62,58],
+            data: [16256, 29250, 27633, 50021, 13150, 1220, 1181, 2366, 2200, 1400],
             type: "line",
             yAxisIndex: 1,
             symbol: 'none',
@@ -649,10 +652,10 @@ export default {
   },
   mounted() {
     setTimeout(() => {
-      this.iconArray[0].config.number[0] = 1005
-      this.iconArray[1].config.number[0] = 2000
+      this.iconArray[0].config.number[0] = 310
+      this.iconArray[1].config.number[0] = 10
       this.iconArray[2].config.number[0] = 350
-      this.iconArray[3].config.number[0] = 250
+      this.iconArray[3].config.number[0] = 7
       this.iconArray[0].config = {...this.iconArray[0].config}
       this.iconArray[1].config = {...this.iconArray[1].config}
       this.iconArray[2].config = {...this.iconArray[2].config}
@@ -704,7 +707,7 @@ export default {
     width: 24%;
     box-sizing: border-box;
     border: 1px solid rgba(255,255,255,0.30);
-    box-shadow: 0px 0px 8px 3px rgba(255,255,255,0.12) inset; 
+    box-shadow: 0px 0px 8px 3px rgba(255,255,255,0.12) inset;
     // background-image: url("../../assets/img/device-midium-bg.png");
     // background-size: 100% 100%;
     margin-left: 4px;
@@ -773,7 +776,7 @@ export default {
   padding: 0 10px 10px;
   .condition-item,.condition-itemL {
     margin-top: 12px;
-    width: 31%;
+    width: 30%;
     box-sizing: border-box;
     display: flex;
     align-items: center;
@@ -805,18 +808,17 @@ export default {
           font-size: 19px;
         }
         .item-unit {
-          margin-left: 4px;
           font-size: 12px;
           color: rgba(255,255,255,0.64);
           position: absolute;
-          left: 72%;
+          left: 55%;
           top: 5%;
         }
       }
     }
   }
   .condition-itemL{
-      width: 66%;
+      width: 70%;
   }
 }
 .zhishuAnalysis{
