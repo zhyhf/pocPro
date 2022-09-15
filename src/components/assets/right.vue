@@ -31,8 +31,8 @@
               <div class="detail-box">
                 <div class="detail-title">{{ item.title }}</div>
                 <div class="item-detail">
-                  <!-- <span class="detail-data">{{ item.value }}</span> -->
-                  <dv-digital-flop :config="item.config"  style="width:6rem;height:1.7rem;"/>
+                  <!-- <span class="detail-data">{{ item.value }}</span> -->  
+                  <dv-digital-flop :config="item.config"  style="width:5.9rem;height:2rem;"/>
                 <!-- <dv-digital-flop v-if="index !== 3" :config="item.config" style="height: 30px; position: relative; left: 0px"/>
                 <dv-digital-flop v-else :config="item.config" style="height: 30px; position: relative; left: -10px"/> -->
                   <span class="item-unit">{{ item.unit }}</span>
@@ -237,7 +237,7 @@ export default {
         series: [
           {
             type: 'radar',
-            symbol: 'image://http://localhost:8080/rardar-default.png',
+            symbol: window.location.href.indexOf('localhost')>-1?'image://http://localhost:8080/rardar-default.png':'image://http://117.174.152.90:28090/rardar-default.png',
             symbolSize: 50,
             data: [
               {
@@ -661,7 +661,7 @@ export default {
     this.radarChart = this.$echarts.init(this.$refs.radarComCharts)
     this.radarChart.setOption(this.radartComOptions)
     setInterval(() => {
-      this.radartComOptions.series[0].symbol = `image://http://localhost:8080/rardar-${this.isHighLight ? 'default' : 'active'}.png`
+      this.radartComOptions.series[0].symbol = window.location.href.indexOf('localhost')>-1?`image://http://localhost:8080/rardar-${this.isHighLight ? 'default' : 'active'}.png`:`image://http://117.174.152.90:28090/rardar-${this.isHighLight ? 'default' : 'active'}.png`
       this.isHighLight = !this.isHighLight
       this.radarChart.setOption(this.radartComOptions)
     }, 500)
@@ -773,7 +773,7 @@ export default {
   padding: 0 10px 10px;
   .condition-item,.condition-itemL {
     margin-top: 12px;
-    width: 36%;
+    width: 31%;
     box-sizing: border-box;
     display: flex;
     align-items: center;
@@ -816,7 +816,7 @@ export default {
     }
   }
   .condition-itemL{
-      width: 64%;
+      width: 66%;
   }
 }
 .zhishuAnalysis{

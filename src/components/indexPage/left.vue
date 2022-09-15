@@ -118,7 +118,7 @@ export default {
             //     trigger: 'item',
             //     confine: true
             //  },
-            symbol: 'image://http://localhost:8080/rardar-default.png',
+            symbol: window.location.href.indexOf('localhost')>-1?'image://http://localhost:8080/rardar-default.png':'image://http://117.174.152.90:28090/rardar-default.png',
             symbolSize: 50,
             data: [
               {
@@ -400,7 +400,7 @@ export default {
     this.radarChart = this.$echarts.init(this.$refs.radarChart)
     this.radarChart.setOption(this.radarOptions)
     setInterval(() => {
-      this.radarOptions.series[0].symbol = `image://http://localhost:8080/rardar-${this.isHighLight ? 'default' : 'active'}.png`
+      this.radarOptions.series[0].symbol = window.location.href.indexOf('localhost')>-1?`image://http://localhost:8080/rardar-${this.isHighLight ? 'default' : 'active'}.png`:`image://http://117.174.152.90:28090/rardar-${this.isHighLight ? 'default' : 'active'}.png`
       this.isHighLight = !this.isHighLight
       this.radarChart.setOption(this.radarOptions)
     }, 500)
