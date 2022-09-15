@@ -43,7 +43,7 @@
           </div>
         </div>
       </div>
-      <div class="panel-item">
+      <div class="panel-item companyContent">
         <div class="panel-title">企业资质分析</div>
         <div class="panel-item-body company-zzfx">
             <img src="@/assets/img/panel-bg-bodyCan.png" class="panelBodyCan">
@@ -469,10 +469,13 @@ export default {
 </style>
 <style scoped lang="less">
 @import "../../style/panel.less";
+.companyContent{
+  flex: 1.4 !important;
+}
 .zzImg{
   display: flex;
   justify-content: space-between;
-  margin:6px 12px 13px 12px;
+  padding: 6px 12px 13px 12px;
   height: 100px;
 }
 .zzImg1{
@@ -482,11 +485,7 @@ export default {
 .panel-item-contentZ{
     width: 100%;
      height: 180px;
-    // height: calc(100% - 4vh - 100px);
-    margin-top: 8px;
-}
-.company-zzfx{
-   height: 300px;
+    margin-top: 20px;
 }
 .industry-safety {
   display: flex;

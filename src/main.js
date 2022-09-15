@@ -5,6 +5,7 @@ import store from './store'
 import ElementUI from 'element-ui'
 import 'element-ui/lib/theme-chalk/index.css';
 import * as echarts from 'echarts'
+import 'echarts-gl'
 import 'echarts-liquidfill'
 import '@/assets/iconfont/iconfont.css' // 引入iconfont'
 import './util/rem'

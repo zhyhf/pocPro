@@ -21,7 +21,7 @@
       />
     </div>
     <div class="top">
-<!--      <div class="left-group">浙江省温州市龙湾区文昌创客小镇</div>-->
+<!--      <div class="left-group">浙江省温州市龙湾区宿迁电商产业大脑</div>-->
       <div class="name">宿迁电商产业大脑</div>
       <div class="time">
         <div class="titleContent">

@@ -10,6 +10,7 @@
     "@jiaminghi/data-view": "^2.10.0",
     "core-js": "^3.20.2",
     "echarts": "^5.0.0",
+    "echarts-gl": "^2.0.9",
     "echarts-liquidfill": "3",
     "element-ui": "^2.15.6",
     "flv.js": "^1.6.2",
