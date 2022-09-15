@@ -87,12 +87,12 @@ export default {
       this.show = !this.show
       const weizhi = 
         {
-          y: 27.976653,
-          x: 120.726969,
-          z: 42.88,
-          heading: 231.9,
-          pitch: -12,
-          roll: 0.1,
+          y: 33.948273,
+          x: 118.341745,
+          z: 490.37,
+          heading: 0.3,
+          pitch: -28.7,
+          roll: 360,
        }
       if(this.show){
        $viewer.qtum.centerAt(weizhi);
@@ -137,12 +137,12 @@ export default {
 
       const weizhi = 
        {
-          y: 27.976681,
-          x: 120.727478,
-          z: 42.45,
-          heading: 231.9,
-          pitch: -12,
-          roll: 0.1,
+          y: 33.948273,
+          x: 118.341745,
+          z: 490.37,
+          heading: 0.3,
+          pitch: -28.7,
+          roll: 360,
        }
       $viewer.qtum.centerAt(weizhi);
     }
