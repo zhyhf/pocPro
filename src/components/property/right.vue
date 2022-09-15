@@ -538,7 +538,7 @@ export default {
         let time = 0
         const barTimer = setInterval(() => {
           time = (time + 1) > item.percent ? item.percent : (time + 1)
-          item.current = time * 0.01 * (this.$refs.brokenWrapper.clientWidth - 40)
+          item.current = time * 0.01 * (this.$refs.brokenWrapper && (this.$refs.brokenWrapper.clientWidth - 40))
           if (time >= item.percent) clearInterval(barTimer)
         }, 40)
       }
