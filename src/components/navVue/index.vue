@@ -176,6 +176,7 @@ export default {
         .topImg {
             width: 100%;
         }
+
     }
     .middle-pic-wrapper:nth-child(1) {
         margin-right: -10px;
@@ -184,11 +185,10 @@ export default {
         width: 80.5px;
         margin-right: -1px;
     }
-    .middle-pic-wrapper:nth-child(4) {
+    .middle-pic-wrapper:nth-child(3) {
         width: 80.5px;
-        margin-left: -2px;
     }
-    .middle-pic-wrapper:last-child {
+    .middle-pic-wrapper:nth-child(4) {
         margin-left: -10px;
     }
   div{

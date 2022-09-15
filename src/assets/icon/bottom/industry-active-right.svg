@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="216px" height="70px" viewBox="0 0 216 70" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>3.导航/区域/产业-选中</title>
+    <defs>
+        <linearGradient x1="50%" y1="0%" x2="50%" y2="100%" id="linearGradient-1">
+            <stop stop-color="#38B7FD" offset="0%"></stop>
+            <stop stop-color="#21668E" stop-opacity="0" offset="53.7086327%"></stop>
+            <stop stop-color="#38B7FD" offset="100%"></stop>
+        </linearGradient>
+        <linearGradient x1="50%" y1="0%" x2="50%" y2="100%" id="linearGradient-2">
+            <stop stop-color="#25F0FF" offset="0%"></stop>
+            <stop stop-color="#33AAEC" offset="51.7007041%"></stop>
+            <stop stop-color="#25F0FF" offset="99.9475012%"></stop>
+        </linearGradient>
+    </defs>
+    <g id="3.导航/区域/产业-选中" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="背景">
+            <path d="M151,6.98209965 L158,0 L204,0 L210,5.98465684 L210,45.8823691 L186,69.8209965 L30,69.8209965 L6,45.8823691 L6,5.98465684 L12,0 L58,0 L65,6.98209965 L151,6.98209965 Z" id="形状结合" fill="#167BB0"></path>
+            <path d="M22.896634,0.25 L29.896634,7.23209965 L35.6046478,7.23209965 L28.6046478,0.25 L31.896634,0.25 L38.896634,7.23209965 L44.6046478,7.23209965 L37.6046478,0.25 L57.896634,0.25 L64.896634,7.23209965 L151.103366,7.23209965 L158.103366,0.25 L178.395352,0.25 L171.395352,7.23209965 L177.103366,7.23209965 L184.103366,0.25 L187.395352,0.25 L180.395352,7.23209965 L186.103366,7.23209965 L193.103366,0.25 L203.896634,0.25 L209.75,6.08839777 L209.75,45.7786282 L185.896634,69.5709965 L167.119964,69.5709965 L163.119964,64.5837825 L146.880036,64.5837825 L142.880036,69.5709965 L73.119964,69.5709965 L69.119964,64.5837825 L52.880036,64.5837825 L48.880036,69.5709965 L30.103366,69.5709965 L6.25,45.7786282 L6.25,6.08839777 L12.103366,0.25 L22.896634,0.25 Z M77.5895454,0.25 L81.5873925,4.238 L66.6033579,4.238 L62.6046948,0.25 L77.5895454,0.25 Z M153.395305,0.25 L149.396642,4.238 L134.412607,4.238 L138.410455,0.25 L153.395305,0.25 Z" id="形状结合" stroke="url(#linearGradient-2)" stroke-width="0.5" fill="url(#linearGradient-1)"></path>
+            <polyline id="路径" stroke="#0188CF" stroke-linejoin="round" points="23.1794624 70 2.5 49.3734189 2.5 38.9002695"></polyline>
+            <polyline id="路径" stroke="#0188CF" stroke-linejoin="round" transform="translate(203.160269, 54.450135) scale(-1, 1) translate(-203.160269, -54.450135) " points="213.5 70 192.820538 49.3734189 192.820538 38.9002695"></polyline>
+            <path d="M2.75,10.2244281 L2.75,34.6604982 L0.25,34.6604982 L0.25,10.2244281 L2.75,10.2244281 Z M215.75,10.2244281 L215.75,34.6604982 L213.25,34.6604982 L213.25,10.2244281 L215.75,10.2244281 Z" id="形状结合" stroke="#0188CF" stroke-width="0.5" fill="#003D5E" fill-rule="nonzero"></path>
+        </g>
+        <text id="产业分布" font-family="PingFangSC-Regular, PingFang SC" font-size="14" font-weight="normal" fill="#FFFFFF">
+            <tspan x="80" y="61">产业分布</tspan>
+        </text>
+        <path d="M148.001226,18.0003295 L158.00033,27.9994332 L148.000092,37.9996705 L147.999744,35.7757739 L155.777706,27.9978116 L148.000625,20.220731 L148,18.001 L148.001226,18.0003295 Z M148.000659,22.4443126 L153.555717,28 L148.000685,33.5557137 L148.000659,22.4443126 Z" id="形状结合" fill="#FFFFFF" fill-rule="nonzero"></path>
+    </g>
+</svg>
