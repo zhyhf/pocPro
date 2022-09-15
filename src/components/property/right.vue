@@ -91,7 +91,8 @@
               <div class="ele-content">
                 <div class="content-header">
                   <span class="header-detail content-title">{{ ele.title }}</span>
-                  <span class="header-detail" :style="{ left: ele.percent + '%' }">{{ ele.value }}</span>
+                  <dv-digital-flop class="header-detail content-value" :config="ele.config" :style="{ left: ele.percent + '%', height: '30px' }"/>
+<!--                  <span class="header-detail" :style="{ left: ele.percent + '%', height: '30px' }">{{ ele.value }}</span>-->
                   <span class="header-detail content-percent">{{ ele.percent + '%' }}</span>
                 </div>
                 <svg width="100%" height="10" class="svg-wrapper">
@@ -289,7 +290,7 @@ export default {
           title: "电梯",
           config: {
             number:[0],
-            animationFrame: 50,
+            animationFrame: 90,
             style: {
               fontSize: 18,
               fontWeight: 600,
@@ -303,7 +304,7 @@ export default {
           title: "空调",
           config: {
             number:[0],
-            animationFrame: 50,
+            animationFrame: 90,
             style: {
               fontSize: 18,
               fontWeight: 600,
@@ -317,7 +318,7 @@ export default {
           title: "给排水",
           config: {
             number:[0],
-            animationFrame: 50,
+            animationFrame: 90,
             style: {
               fontSize: 18,
               fontWeight: 600,
@@ -331,7 +332,7 @@ export default {
           title: "绿化面积",
           config: {
             number:[0],
-            animationFrame: 50,
+            animationFrame: 90,
             style: {
               fontSize: 18,
               fontWeight: 600,
@@ -348,7 +349,7 @@ export default {
           value: 165,
           config: {
             number:[0],
-            animationFrame: 50,
+            animationFrame: 90,
             style: {
               fontSize: 18,
               fontWeight: 600,
@@ -363,7 +364,7 @@ export default {
           value: 35,
           config: {
             number:[0],
-            animationFrame: 50,
+            animationFrame: 90,
             style: {
               fontSize: 18,
               fontWeight: 600,
@@ -378,7 +379,7 @@ export default {
           value: 3,
           config: {
             number:[0],
-            animationFrame: 50,
+            animationFrame: 90,
             style: {
               fontSize: 18,
               fontWeight: 600,
@@ -393,7 +394,7 @@ export default {
           value: 50,
           config: {
             number:[0],
-            animationFrame: 50,
+            animationFrame: 90,
             style: {
               fontSize: 18,
               fontWeight: 600,
@@ -421,7 +422,7 @@ export default {
           // value: 1354
           config: {
             number:[0],
-            animationFrame: 50,
+            animationFrame: 90,
             style: {
               fontSize: 20,
               fontWeight: 600,
@@ -436,7 +437,7 @@ export default {
           // value: 1638254.34
           config: {
             number:[0],
-            animationFrame: 50,
+            animationFrame: 90,
             style: {
               fontSize: 20,
               fontWeight: 600,
@@ -451,7 +452,7 @@ export default {
           // value: 5544
           config: {
             number:[0],
-            animationFrame: 50,
+            animationFrame: 90,
             style: {
               fontSize: 20,
               fontWeight: 600,
@@ -466,7 +467,7 @@ export default {
           // value: 468
           config: {
             number:[0],
-            animationFrame: 50,
+            animationFrame: 90,
             style: {
               fontSize: 18,
               fontWeight: 600,
@@ -483,36 +484,90 @@ export default {
         {
           title: '工厂用电',
           value: 2169,
+          config: {
+            number:[0],
+            animationFrame: 90,
+            style: {
+              fontSize: 12,
+              fontWeight: 400,
+              fill: '#fff'
+            }
+          },
           percent: 70.53,
           current: 0
         },
         {
           title: '工厂用煤',
           value: 1892,
+          config: {
+            number:[0],
+            animationFrame: 90,
+            style: {
+              fontSize: 12,
+              fontWeight: 400,
+              fill: '#fff'
+            }
+          },
           percent: 65.02,
           current: 0
         },
         {
           title: '员工充电',
           value: 1600,
+          config: {
+            number:[0],
+            animationFrame: 90,
+            style: {
+              fontSize: 12,
+              fontWeight: 400,
+              fill: '#fff'
+            }
+          },
           percent: 54.98,
           current: 0
         },
         {
           title: '日常照明',
           value: 1339,
+          config: {
+            number:[0],
+            animationFrame: 90,
+            style: {
+              fontSize: 12,
+              fontWeight: 400,
+              fill: '#fff'
+            }
+          },
           percent: 46.01,
           current: 0
         },
         {
           title: '设备未关',
           value: 1105,
+          config: {
+            number:[0],
+            animationFrame: 90,
+            style: {
+              fontSize: 12,
+              fontWeight: 400,
+              fill: '#fff'
+            }
+          },
           percent: 37.97,
           current: 0
         },
         {
           title: '光伏充电',
           value: 873,
+          config: {
+            number:[0],
+            animationFrame: 90,
+            style: {
+              fontSize: 12,
+              fontWeight: 400,
+              fill: '#fff'
+            }
+          },
           percent: 30,
           current: 0
         }
@@ -547,9 +602,11 @@ export default {
       const varietyVals = [1354, 1638254, 5544, 468]
       const deviceVals = [15, 342, 5, 1542]
       const serviceVals = [50, 3, 5, 8]
+      const eleVals = [2169, 1892, 1600, 1339, 1105, 873]
       this.setFlipper(deviceVals, this.deviceArray)
       this.setFlipper(serviceVals, this.extraService)
       this.setFlipper(varietyVals, this.varieties)
+      this.setFlipper(eleVals, this.electricityInfo)
     },
     setFlipper(arr, data) {
       setTimeout(() => {
@@ -730,6 +787,10 @@ export default {
         }
         .content-title {
           left: 2px;
+        }
+        .content-value {
+          transform: translateX(-30%);
+          margin-top: 2px;
         }
         .content-percent {
           right: 0;

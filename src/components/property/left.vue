@@ -206,7 +206,7 @@ export default {
           title: "楼宇数量",
           config: {
             number:[0],
-            animationFrame: 50,
+            animationFrame: 90,
             style: {
               fontSize: 20,
               fontWeight: 600,
@@ -219,7 +219,7 @@ export default {
           title: "企业数量",
           config: {
             number:[0],
-            animationFrame: 50,
+            animationFrame: 90,
             style: {
               fontSize: 20,
               fontWeight: 600,
@@ -232,7 +232,7 @@ export default {
           title: "物业人员数",
           config: {
             number:[0],
-            animationFrame: 50,
+            animationFrame: 90,
             style: {
               fontSize: 20,
               fontWeight: 600,
@@ -245,7 +245,7 @@ export default {
           title: "已入驻企业",
           config: {
             number:[0],
-            animationFrame: 50,
+            animationFrame: 90,
             style: {
               fontSize: 20,
               fontWeight: 600,
@@ -258,7 +258,7 @@ export default {
           title: "物业收入",
           config: {
             number:[0],
-            animationFrame: 50,
+            animationFrame: 90,
             style: {
               fontSize: 20,
               fontWeight: 600,
@@ -271,7 +271,7 @@ export default {
           title: "待建项目",
           config: {
             number:[0],
-            animationFrame: 50,
+            animationFrame: 90,
             style: {
               fontSize: 20,
               fontWeight: 600,
@@ -287,7 +287,7 @@ export default {
           className: 'parking-num',
           config: {
             number:[0],
-            animationFrame: 50,
+            animationFrame: 90,
             style: {
               fontSize: 18,
               fontWeight: 400,
@@ -301,7 +301,7 @@ export default {
           className: 'carport',
           config: {
             number:[0],
-            animationFrame: 50,
+            animationFrame: 90,
             style: {
               fontSize: 18,
               fontWeight: 400,
@@ -315,7 +315,7 @@ export default {
           className: 'charger',
           config: {
             number:[0],
-            animationFrame: 50,
+            animationFrame: 90,
             style: {
               fontSize: 18,
               fontWeight: 400,
@@ -329,7 +329,7 @@ export default {
           className: 'used-charger',
           config: {
             number:[0],
-            animationFrame: 50,
+            animationFrame: 90,
             style: {
               fontSize: 18,
               fontWeight: 400,
@@ -343,7 +343,7 @@ export default {
           className: 'temp-car',
           config: {
             number:[0],
-            animationFrame: 50,
+            animationFrame: 90,
             style: {
               fontSize: 18,
               fontWeight: 400,
@@ -358,7 +358,7 @@ export default {
           title: '临时隔离点',
           config: {
             number:[0],
-            animationFrame: 50,
+            animationFrame: 90,
             style: {
               fontSize: 18,
               fontWeight: 400,
@@ -372,7 +372,7 @@ export default {
           title: '测温点',
           config: {
             number:[0],
-            animationFrame: 50,
+            animationFrame: 90,
             style: {
               fontSize: 18,
               fontWeight: 400,
@@ -528,7 +528,7 @@ export default {
           item.config.number[0] = arr[index]
           item.config = {...item.config}
         })
-      }, 1000)
+      }, 1500)
     },
     handleFly(item) {
       this.activeIndex = item.id;
