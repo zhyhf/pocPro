@@ -13,6 +13,16 @@
 
       <div class="panel-item analysis">
         <div class="panel-title">设备能耗成本分析</div>
+        <div class="analysis-opts">
+          <span
+            v-for="(item, index) in detailOptions"
+            :key="index"
+            :class="detailActiveIndex === index ? 'opts-item select-opt' : 'opts-item'"
+            @click="changeIndex(index, 'detailActiveIndex')"
+          >
+            {{ item }}
+          </span>
+        </div>
         <div class="panel-item-body">
           <img src="@/assets/img/panel-bg-bodyCan.png" class="panelBodyCan">
           <div class="panel-item-content" id="threeD-pieChart" ref="threeDPieChart"  style="width: 100%; height: 188px"></div>
@@ -21,6 +31,16 @@
 
       <div class="panel-item ring">
         <div class="panel-title">耗能环比分析</div>
+        <div class="time-opts">
+          <span
+            v-for="(item, index) in timeOptions"
+            :key="index"
+            :class="activeOptIndex === index ? 'opts-item select-opt' : 'opts-item'"
+            @click="changeIndex(index, 'activeOptIndex')"
+          >
+            {{ item }}
+          </span>
+        </div>
         <div class="panel-item-body">
           <img src="@/assets/img/panel-bg-bodyCan.png" class="panelBodyCan">
           <div class="panel-item-content" ref="analysisChart"></div>
@@ -34,128 +54,6 @@
           <div class="panel-item-content" ref="carbonChart"></div>
         </div>
       </div>
-
-<!--      <div class="panel-item">-->
-<!--        <div class="panel-title">节能目标完成情况</div>-->
-<!--        <div class="panel-item-body">-->
-<!--            <div class="wave-echart" id='waveEchart' ref='waveEchart'></div>-->
-<!--            &lt;!&ndash; <div-->
-<!--              ref="COChart"-->
-<!--              id="COChart"-->
-<!--              style="width: 100%; height: 100%"-->
-<!--            ></div> &ndash;&gt;-->
-<!--        </div>-->
-<!--      </div>-->
-<!--      <div class="panel-item">-->
-<!--        <div class="panel-title">能耗分析</div>-->
-<!--        <div class="panel-item-body">-->
-<!--          <div class="panel-item-content">-->
-<!--            <el-table-->
-<!--              :header-cell-class-name="'tableHeaderCell'"-->
-<!--              class="box-table"-->
-<!--              :data="tableData"-->
-<!--              :fit="true"-->
-<!--            >-->
-<!--              <el-table-column-->
-<!--                prop="target"-->
-<!--                label="企业"-->
-<!--                min-width="20%"-->
-<!--                show-overflow-tooltip-->
-<!--              />-->
-<!--              <el-table-column-->
-<!--                prop="waterYear"-->
-<!--                label="用水量同比"-->
-<!--                min-width="15%"-->
-<!--                show-overflow-tooltip-->
-<!--              >-->
-<!--                <template slot-scope="scope">-->
-<!--                  <span v-if="scope.row.waterYear.indexOf('-') !== -1"-->
-<!--                    >{{ scope.row.waterYear-->
-<!--                    }}<span class="iconRed">↓</span></span-->
-<!--                  >-->
-<!--                  <span v-else>-->
-<!--                    {{ scope.row.waterYear }}<span class="iconGreen">↑</span>-->
-<!--                  </span>-->
-<!--                </template>-->
-<!--              </el-table-column>-->
-<!--              <el-table-column-->
-<!--                prop="waterMonth"-->
-<!--                label="用水量环比"-->
-<!--                min-width="15%"-->
-<!--                show-overflow-tooltip-->
-<!--              >-->
-<!--                <template slot-scope="scope">-->
-<!--                  <span v-if="scope.row.waterMonth.indexOf('-') !== -1"-->
-<!--                    >{{ scope.row.waterMonth-->
-<!--                    }}<span class="iconRed">↓</span></span-->
-<!--                  >-->
-<!--                  <span v-else>-->
-<!--                    {{ scope.row.waterMonth }}<span class="iconGreen">↑</span>-->
-<!--                  </span>-->
-<!--                </template>-->
-<!--              </el-table-column>-->
-<!--              <el-table-column-->
-<!--                prop="electricYear"-->
-<!--                label="用电量同比"-->
-<!--                min-width="15%"-->
-<!--                show-overflow-tooltip-->
-<!--              >-->
-<!--                <template slot-scope="scope">-->
-<!--                  <span v-if="scope.row.electricYear.indexOf('-') !== -1"-->
-<!--                    >{{ scope.row.electricYear-->
-<!--                    }}<span class="iconRed">↓</span></span-->
-<!--                  >-->
-<!--                  <span v-else>-->
-<!--                    {{ scope.row.electricYear }}<span class="iconGreen">↑</span>-->
-<!--                  </span>-->
-<!--                </template>-->
-<!--              </el-table-column>-->
-<!--              <el-table-column-->
-<!--                prop="electricMonth"-->
-<!--                label="用电量环比"-->
-<!--                min-width="15%"-->
-<!--                show-overflow-tooltip-->
-<!--              >-->
-<!--                <template slot-scope="scope">-->
-<!--                  <span v-if="scope.row.electricMonth.indexOf('-') !== -1"-->
-<!--                    >{{ scope.row.electricMonth-->
-<!--                    }}<span class="iconRed">↓</span></span-->
-<!--                  >-->
-<!--                  <span v-else>-->
-<!--                    {{ scope.row.electricMonth-->
-<!--                    }}<span class="iconGreen">↑</span>-->
-<!--                  </span>-->
-<!--                </template>-->
-<!--              </el-table-column>-->
-<!--              <el-table-column-->
-<!--                label="操作"-->
-<!--                min-width="20%"-->
-<!--                show-overflow-tooltip-->
-<!--              >-->
-<!--                <template slot-scope="scope">-->
-<!--                  <el-link-->
-<!--                    :underline="false"-->
-<!--                    :class="{-->
-<!--                      line: true,-->
-<!--                      operation: true,-->
-<!--                      active: activeIndex === scope.row.target,-->
-<!--                    }"-->
-<!--                    @click="analysisEnergy(scope.row)"-->
-<!--                    >分析</el-link-->
-<!--                  >-->
-<!--                </template>-->
-<!--              </el-table-column>-->
-<!--            </el-table>-->
-<!--            <div class="table-buttons">-->
-<!--              <el-pagination-->
-<!--                :total="4"-->
-<!--                :page-size="5"-->
-<!--                @currentChange="currentChange"-->
-<!--              />-->
-<!--            </div>-->
-<!--          </div>-->
-<!--        </div>-->
-<!--      </div>-->
     </div>
   </div>
 </template>
@@ -529,7 +427,7 @@ export default {
               cap: "round",
             },
             data: [
-              {  
+              {
                 coords: [
                   ['5月', 23],
                   ["6月", 25],
@@ -616,7 +514,7 @@ export default {
               cap: "round",
             },
             data: [
-              {  
+              {
                 coords: [
                   ['5月', 40],
                   ["6月", 45],
@@ -674,6 +572,7 @@ export default {
           ],
           orient: 'vertical',  //垂直显示
           right: '10%',
+          top: 'middle',
           align: 'left',
           itemHeight: 6,
           itemWidth: 6,
@@ -783,14 +682,19 @@ export default {
         },
       ],
       statusChart:null,
-      option:{}
+      option:{},
+      timeOptions: ['年', '月', '日'],
+      detailOptions: ['耗能占比', '成本占比'],
+      activeOptIndex: 0,
+      detailActiveIndex: 0
     }
   },
    created () {
     // this.setLabel()
   },
   mounted() {
-     this.initChart()
+    this.initPosition()
+    this.initChart()
     this.analysisChart = this.$echarts.init(this.$refs.analysisChart)
     this.analysisChart.setOption(this.analysisOption)
     this.carbonChart = this.$echarts.init(this.$refs.carbonChart)
@@ -809,6 +713,26 @@ export default {
     });
   },
   methods: {
+    changeIndex(index, property) {
+      this[property] = index
+    },
+    initPosition() {
+      if (window.innerWidth >= 1920) {
+        const innerCircle = this.carbonOption.graphic.elements[0]
+        const outerCircle = this.carbonOption.graphic.elements[1]
+        innerCircle.style.width = innerCircle.style.height = 85
+        innerCircle.left = '16.3%'
+        outerCircle.style.width = outerCircle.style.height = 150
+        outerCircle.left = '8.7%'
+      } else {
+        const innerCircle = this.carbonOption.graphic.elements[0]
+        const outerCircle = this.carbonOption.graphic.elements[1]
+        innerCircle.style.width = innerCircle.style.height = 57
+        innerCircle.left = '17.4%'
+        outerCircle.style.width = outerCircle.style.height = 100
+        outerCircle.left = '10.5%'
+      }
+    },
     // 图表初始化
     initChart () {
       this.statusChart = this.$echarts.init(this.$refs.threeDPieChart)
@@ -1104,10 +1028,54 @@ export default {
 
 .analysis {
   flex: 0.8 !important;
+  position: relative;
+  .analysis-opts {
+    position: absolute;
+    right: 2rem;
+    top: 0.25rem;
+    .opts-item {
+      display: inline-block;
+      font-size: 12px;
+      color: #fff;
+      padding: 0 0.5rem;
+      height: 2.2rem;
+      border: 1px solid #fff;
+      border-radius: 5px;
+      text-align: center;
+      vertical-align: middle;
+      margin-left: 1rem;
+    }
+    .select-opt {
+      border: 1px solid #38B7FD;
+      color: #38B7FD;
+    }
+  }
 }
 
 .ring {
   flex: 1 !important;
+  position: relative;
+  .time-opts {
+    position: absolute;
+    right: 2rem;
+    top: 0.25rem;
+    .opts-item {
+      display: inline-block;
+      font-size: 12px;
+      color: #fff;
+      width: 2.2rem;
+      height: 2.2rem;
+      border: 1px solid #fff;
+      border-radius: 5px;
+      text-align: center;
+      vertical-align: middle;
+      margin-left: 1rem;
+    }
+    .select-opt {
+      border: 1px solid #38B7FD;
+      color: #38B7FD;
+    }
+  }
 }
 
 .carbon {

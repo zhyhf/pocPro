@@ -1,7 +1,7 @@
 <template>
   <div>
     <div class="panel-wrapper">
-      <div class="panel-item">
+      <div class="panel-item safety">
         <div class="panel-title">园区安全</div>
         <div class="panel-item-body">
             <img src="@/assets/img/panel-bg-bodyCan.png" class="panelBodyCan">
@@ -51,13 +51,13 @@
                <div
                 v-for="(item, index) in imgArr"
                :key="index" >
-                <img :src="deviceActiveNum === index ?item.new : item.old"  class="zzImg1"/>
+                <img :src="deviceActiveNum === index ?item.new : item.old"  class="zzImg1" :style="index === 3 ? { width: '100.5%' } : {}"/>
               </div>
               </div>
               <div class="panel-item-contentZ" ref="outputChart"></div>
         </div>
       </div>
-      <div class="panel-item">
+      <div class="panel-item top-enterprise">
         <div class="panel-title">优质企业Top10</div>
         <div class="panel-item-body">
             <img src="@/assets/img/panel-bg-bodyCan.png" class="panelBodyCan">
@@ -91,39 +91,39 @@ export default {
         deviceActiveNum: 0,
         imgArr: [
           {
-            new:require('@/assets/img/echarts/zzIMgLight1.png'),
-            old:require("@/assets/img/echarts/zzIMg1.png")
+            new:require('@/assets/img/echarts/enterprise-active.png'),
+            old:require("@/assets/img/echarts/enterprise.png")
           },
-            {
-            new:require('@/assets/img/echarts/zzIMgLight2.png'),
-            old:require("@/assets/img/echarts/zzIMg2.png")
+          {
+            new:require('@/assets/img/echarts/new-active.png'),
+            old:require("@/assets/img/echarts/new.png")
           },
-            {
-            new:require('@/assets/img/echarts/zzIMgLight3.png'),
-            old:require("@/assets/img/echarts/zzIMg3.png")
+          {
+            new:require('@/assets/img/echarts/excellent-active.png'),
+            old:require("@/assets/img/echarts/excellent.png")
           },
-            {
-            new:require('@/assets/img/echarts/zzIMgLight4.png'),
-            old:require("@/assets/img/echarts/zzIMg4.png")
+          {
+            new:require('@/assets/img/echarts/three-active.png'),
+            old:require("@/assets/img/echarts/three.png")
           }
         ],
         configTable:{
-          header: ['企业名称', '高新人才数', '注册资本(亿元)'],
+          header: ['企业名称', '高新人才', '注册资本'],
           data: [
-            ['宿迁千山易融股权投资管理合伙企业(有限合伙)', '70', '10001'],
-            ['江苏京世大数据管理有限公司', '100', '10000'],
-            ['江苏首达建设有限公司', '80', '8000'],
-            ['宿迁九核明哲股权投资合伙企业(有限合伙)', '60', '5000'],
-            ['宿迁长富投资管理合伙企业(有限合伙)', '25', '5000'],
-            ['宿迁九核星资股权投资合伙企业', '50', '5000'],
-            ['宿迁亨信投资管理合伙企业', '50', '5000'],
-            ['宿迁水木知一投资管理合伙企业(有限合伙)', '50', '5000'],
-            ['宿迁圣本投资管理合伙企业(有限合伙)', '40', '5000'],
-            ['宿迁创赢投资管理合伙企业(有限合伙)', '25', '5000']
+            ['千山易融股权投资管理合伙企业', '70', '10001万元'],
+            ['京世大数据管理有限公司', '100', '10000万元'],
+            ['首达建设有限公司', '80', '8000万元'],
+            ['九核明哲股权投资合伙企业', '60', '5000万元'],
+            ['长富投资管理合伙企业', '25', '5000万元'],
+            ['九核星资股权投资合伙企业', '50', '5000万元'],
+            ['亨信投资管理合伙企业', '50', '5000万元'],
+            ['水木知一投资管理合伙企业', '50', '5000万元'],
+            ['圣本投资管理合伙企业', '40', '5000万元'],
+            ['创赢投资管理合伙企业', '25', '5000万元']
           ],
           rowNum: 4,
           headerBGC: 'transparent',
-          columnWidth: [150, 90, 110],
+          columnWidth: [190, 70, 85],
           align: ['center'],
           waitTime: 1000
       },
@@ -398,6 +398,7 @@ export default {
     };
   },
   mounted() {
+    this.initValue()
      this.$nextTick(() => {
           this.outputChart = this.$echarts.init(this.$refs.outputChart);
           this.outputChart.setOption(this.outputOptions);
@@ -418,6 +419,11 @@ export default {
     }, 1500)
   },
   methods: {
+    initValue() {
+      if (window.innerWidth >= 1920) {
+        this.$refs.outputChart.style.height = '270px'
+      }
+    },
     // 鼠标移入图片
     mouseenterImage(i){
       this.safetyArray.map((item,index)=>{
@@ -467,8 +473,14 @@ export default {
 </style>
 <style scoped lang="less">
 @import "../../style/panel.less";
+.safety {
+  flex: 1 !important;
+}
 .companyContent{
-  flex: 1.4 !important;
+  flex: 2 !important;
+}
+.top-enterprise {
+  flex: 1.2 !important;
 }
 .zzImg{
   display: flex;
@@ -482,7 +494,7 @@ export default {
 }
 .panel-item-contentZ{
     width: 100%;
-     height: 180px;
+     height: 240px;
     margin-top: 20px;
 }
 .industry-safety {

@@ -1,77 +1,10 @@
 <template>
   <div>
     <div class="panel-wrapper">
-<!--      <div class="panel-item energy-consume">-->
-<!--        <div class="panel-title">能耗统计</div>-->
-<!--        <div class="panel-item-body">-->
-<!--          <div class="time-options">-->
-<!--            <div-->
-<!--              v-for="(item, index) in timeOptions"-->
-<!--              :key="index"-->
-<!--              :class="-->
-<!--                index === activeIndex-->
-<!--                  ? 'time-options-item time-options-active'-->
-<!--                  : 'time-options-item'-->
-<!--              "-->
-<!--              @click="handleIndexChange(index)"-->
-<!--            >-->
-<!--              {{ item }}-->
-<!--            </div>-->
-<!--          </div>-->
-<!--          <div class="panel-item-content" ref="outputChart">-->
-<!--            <el-tabs v-model="activeName" @tab-click="tabClick">-->
-<!--              <el-tab-pane label="水用量" name="first"></el-tab-pane>-->
-<!--              <el-tab-pane label="电用量" name="second"></el-tab-pane>-->
-<!--              <el-tab-pane label="碳排放" name="third"></el-tab-pane>-->
-<!--            </el-tabs>-->
-<!--            <div ref="energyChart" class="energy-chart"></div>-->
-<!--          </div>-->
-<!--        </div>-->
-<!--      </div>-->
-
-<!--      <div class="panel-item safety">-->
-<!--        <div class="panel-title">园区安全</div>-->
-<!--        <div class="panel-item-body">-->
-<!--          <div class="panel-item-content industry-safety">-->
-<!--            <div-->
-<!--              class="safety-item"-->
-<!--              v-for="(item, index) in safetyArray"-->
-<!--              :key="index"-->
-<!--            >-->
-<!--              <div style="display: flex">-->
-<!--                <div-->
-<!--                    style="-->
-<!--                    display: flex;-->
-<!--                    flex-direction: column;-->
-<!--                    justify-content: center;-->
-<!--                    align-items: center;-->
-<!--                  "-->
-<!--                >-->
-<!--                  <img-->
-<!--                      :src="item.pic"-->
-<!--                      class="pic"-->
-<!--                      v-if="index === 0 || index === 2"-->
-<!--                  />-->
-<!--                  <div class="theme">{{ item.theme }}</div>-->
-<!--                  <div class="item-detail">-->
-<!--                    <dv-digital-flop :config="config['config' + (index + 1)]" />-->
-<!--&lt;!&ndash;                    <span class="item-value">{{ item.value }}</span>&ndash;&gt;-->
-<!--&lt;!&ndash;                    <span class="item-unit">{{ item.unit }}</span>&ndash;&gt;-->
-<!--                  </div>-->
-<!--                  <img :src="item.pic" v-if="index === 1" class="pic" />-->
-<!--                </div>-->
-<!--                <div v-show="index===0" class="line"></div>-->
-<!--                <div v-show="index===1" class="lineInfo"></div>-->
-<!--              </div>-->
-<!--            </div>-->
-<!--          </div>-->
-<!--        </div>-->
-<!--      </div>-->
-
       <div class="info">
         <img :src="activeBg" class="info-bg">
         <div class="bg-item" v-for="(item, index) in varieties">
-          <div class="variety-content" :style="index === 2 || index === 3 ? varietyStyle: {}">
+          <div class="variety-content" :style="varietyStyle[index]">
             <div class="variety-head">
               <img :src="index === varietyIndex ? item.activeIcon: item.icon">
               <span class="variety-title">{{ item.title }}</span>
@@ -175,6 +108,7 @@
 export default {
   data() {
     return {
+      count: 0,
       // deviceActiveNum: 0,
       activeName: "first",
       energyChart: {},
@@ -476,9 +410,22 @@ export default {
           }
         }
       ],
-      varietyStyle: {
-        top: '60%'
-      },
+      varietyStyle: [
+        {
+          left: '45%',
+          top: '50%'
+        },
+        {
+          left: '50%'
+        },
+        {
+          top: '60%'
+        },
+        {
+          left: '50%',
+          top: '60%'
+        }
+      ],
       varietyIndex: 0,
       electricityInfo: [
         {
@@ -575,19 +522,17 @@ export default {
     };
   },
   mounted() {
+    this.initValue()
     this.initProgressBar()
     this.initFlippers()
     this.setBackgroundInterval()
-    // this.$nextTick(() => {
-      // this.energyChart = this.$echarts.init(this.$refs.energyChart);
-      // this.energyChart.setOption(this.energyOptions);
-      //
-      // window.addEventListener("resize", () => {
-      //   this.energyChart.resize();
-      // });
-    // });
   },
   methods: {
+    initValue() {
+      if (window.innerWidth >= 1920) {
+        this.varietyStyle[2].top = this.varietyStyle[3].top = '40%'
+      }
+    },
     initProgressBar() {
       for (const item of this.electricityInfo) {
         let time = 0
@@ -620,12 +565,14 @@ export default {
       const infoBg = [
         require('@/assets/img/property/left-top.svg'),
         require('@/assets/img/property/right-top.svg'),
-        require('@/assets/img/property/left-bottom.svg'),
-        require('@/assets/img/property/right-bottom.svg')
+        require('@/assets/img/property/right-bottom.svg'),
+        require('@/assets/img/property/left-bottom.svg')
       ]
+      let index = 0
       this.varietyIndex = 0
       setInterval(() => {
-        this.activeBg = infoBg[this.varietyIndex = (this.varietyIndex + 1) % 4]
+        this.activeBg = infoBg[index = (index + 1) % 4]
+        this.varietyIndex = index === 2 ? 3 :(index === 3 ? 2 : index)
       }, 1000)
     },
     handleIndexChange(index) {
@@ -735,11 +682,12 @@ export default {
   .bg-item {
     flex-basis: 49.5%;
     z-index: 99;
+
     position: relative;
     .variety-content {
       position: absolute;
       width: 100%;
-      left: 50%;
+      left: 45%;
       top: 50%;
       transform: translate3d(-50%, -50%, 0);
     }
@@ -747,6 +695,11 @@ export default {
       text-align: center;
       font-size: 12px;
       color: #fff;
+    }
+    .variety-title {
+      position: relative;
+      left: 0.7rem;
+      top: 0.1rem;
     }
   }
 }
