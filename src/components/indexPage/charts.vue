@@ -48,43 +48,44 @@
                                 name: '科学研究',
                                 icon: 'rect'
                             },
-                            {
-                                name: '金融业',
-                                icon: 'rect'
-                            },
+                            // {
+                            //     name: '金融业',
+                            //     icon: 'rect'
+                            // },
                             {
                                name: '制造业',
                                icon: 'rect'
                             },
-                            {
-                               name: '公共设施管理',
-                               icon: 'rect'
-                            },
-                            {
-                               name: '文体娱乐',
-                               icon: 'rect'
-                            },
+                            // {
+                            //    name: '公共设施管理',
+                            //    icon: 'rect'
+                            // },
+                            // {
+                            //    name: '文体娱乐',
+                            //    icon: 'rect'
+                            // },
                             // {
                             //    name: '住宿餐饮',
                             //    icon: 'rect'
                             // },
-                            {
-                               name: '教育类',
-                               icon: 'rect'
-                            },
-                            {
-                               name: '房地产',
-                               icon: 'rect'
-                            },
+                            // {
+                            //    name: '教育类',
+                            //    icon: 'rect'
+                            // },
+                            // {
+                            //    name: '房地产',
+                            //    icon: 'rect'
+                            // },
                             ],
                         orient: 'vertical',  //垂直显示
+                        top: '18%',
                         right: '1%',
                         align: 'left',
                         itemHeight: 6,
                         itemWidth: 6,
                         textStyle: {
                             color: '#fff',
-                            fontSize: '9',
+                            fontSize: '10',
                             fontWeight: 300,
                                overflow: 'ellipese'
                         },
@@ -98,12 +99,12 @@
                                 { value: 3.08, name: '物流运输' },
                                 { value: 2.73, name: '科学研究' },
                                 { value: 2.4, name: '制造业' },
-                                { value: 2.05, name: '公共设施管理' },
-                                { value: 1.71, name: '文体娱乐' },
+                                // { value: 2.05, name: '公共设施管理' },
+                                // { value: 1.71, name: '文体娱乐' },
                                 // { value: 0.68, name: '机械设备修理' },
                                 // { value: 0.68, name: '住宿餐饮' },
-                                { value: 0.68, name: '教育类' },
-                                { value: 0.68, name: '房地产' }
+                                // { value: 0.68, name: '教育类' },
+                                // { value: 0.68, name: '房地产' }
                             ];
                             let tarValue;
                             for (let i = 0; i < data.length; i++) {
@@ -135,12 +136,12 @@
                                    { value: 3.08, name: '物流运输' },
                                    { value: 2.73, name: '科学研究' },
                                    { value: 2.4, name: '制造业' },
-                                   { value: 2.05, name: '公共设施管理' },
-                                   { value: 1.71, name: '文体娱乐' },
+                                   // { value: 2.05, name: '公共设施管理' },
+                                   // { value: 1.71, name: '文体娱乐' },
                                    // { value: 0.68, name: '机械设备修理' },
                                    // { value: 0.68, name: '住宿餐饮' },
-                                   { value: 0.68, name: '教育类' },
-                                   { value: 0.68, name: '房地产' }
+                                   // { value: 0.68, name: '教育类' },
+                                   // { value: 0.68, name: '房地产' }
                             ]
                         }
                     ],
