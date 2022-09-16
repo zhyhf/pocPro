@@ -165,7 +165,7 @@ export default {
             },
             {
               icon: require("@/assets/img/enegy.png"),
-              title: "总量",
+              title: "上市企业",
               value: 5,
               unit: "家",
               config: {
