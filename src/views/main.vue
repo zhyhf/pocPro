@@ -37,6 +37,7 @@ import CheckDXCVue from "../components/closeBtn/CheckDXC.vue";
 import ParkAllListClose from "../components/closeBtn/ParkAllListClose.vue";
 // import Introduction from '../components/introductionList/Introduction.vue';
 import ParkAllList from "../components/park/ParkAllList.vue";
+import parkImg from '../components/park/parkImg.vue'
 import {addCircleAnimation} from "@/util/utils";
 export default {
   components: {
@@ -63,7 +64,8 @@ export default {
     // ParkingStatisticsVue,
     // Introduction,
     ParkAllList,
-    ParkAllListClose
+    ParkAllListClose,
+    parkImg
   },
   created() {
     this.init();
