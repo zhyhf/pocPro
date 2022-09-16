@@ -638,3 +638,22 @@ const flyTo = (center) => {
 // }
 
 export { createBillboard };
+
+// 创建多边形实体 添加图片填充  imageValue: 填充图片路径
+export const materialImgFn = (pointArr,imageValue) => {
+  // 材质修改
+ const entity = $viewer.entities.add(
+   {
+      name:'polygon',
+      polygon: {
+        hierarchy: Cesium.Cartesian3.fromDegreesArray(pointArr),
+         material: Cesium.Color.RED.withAlpha(0.5),
+      }
+    }
+  )
+   // 实体上添加传入的图片覆盖
+   entity.polygon.material = new Cesium.ImageMaterialProperty({
+     image : imageValue,
+     transparent : false
+   })
+}

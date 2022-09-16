@@ -33,9 +33,11 @@
 
 <script>
 import { mapState } from "vuex";
+import { materialImgFn } from '@/util/createBillboard.js'
 export default {
   data() {
     return {
+      imageValue:require('@/assets/innerC/park1Back.png'),
       bottomPicUrl: [
         {
           name: "园区全貌",
@@ -194,6 +196,18 @@ export default {
         }
       })
     },
+    // 停车场高亮区域
+    addParkArea(){
+      const pointArr = [118.340862,33.956594,
+          118.341182, 33.956699,
+          118.341309, 33.956895,
+          118.342634, 33.956839,
+          118.342625, 33.955923,
+          118.342022, 33.955702,
+          118.340841, 33.95578
+          ]
+     materialImgFn(pointArr,this.imageValue)
+    },
     changeActive(index) {
       this.$store.commit("DigitalTwin/changeCheckBtnNum", index);
     },
@@ -264,6 +278,7 @@ export default {
               this.$store.commit("DigitalTwin/changeEnterPriseShow", true);
         }, 1000);
        }else if(index===2){
+        this.addParkArea()
         this.$store.commit("DigitalTwin/changeEventListShow", false);
         this.$store.commit("DigitalTwin/changeEventDetailShow", false);
         this.$store.commit("DigitalTwin/changeEnterPriseShow", false);
