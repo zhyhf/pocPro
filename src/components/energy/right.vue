@@ -1,96 +1,22 @@
 <template>
   <div>
     <div class="panel-wrapper">
-<!--      <div class="wave-echart" id='waveEchart' ref='waveEchart'></div>-->
-<!--      <div class="panel-item">-->
-<!--        <div class="panel-title">光伏充能</div>-->
-<!--        <div class="panel-item-body">-->
-<!--          <div class="panel-item-content light-charger">-->
-<!--            <div class="light-pic">-->
-<!--            </div>-->
-<!--            <div class="light-flex-info">-->
-<!--              <div class="light-data" style="margin-left: -8rem">-->
-<!--                <div class="light-total light-flex">-->
-<!--                  <div class="light-value">260GWp</div>-->
-<!--                  <div class="light-theme">光伏装机量</div>-->
-<!--                </div>-->
-<!--                <div class="transform-light light-flex">-->
-<!--                  <div class="light-value">1GWh</div>-->
-<!--                  <div class="light-theme">储能装机量</div>-->
-<!--                </div>-->
-<!--                <div class="light-fix light-flex">-->
-<!--                  <div class="light-value">25%</div>-->
-<!--                  <div class="light-theme">绿电占比</div>-->
-<!--                </div>-->
-<!--              </div>-->
-<!--              <div class="light-data" style="margin-left: 1.2rem">-->
-<!--                <div class="light-total light-flex">-->
-<!--                  <div class="light-value">50.2Gwh</div>-->
-<!--                  <div class="light-theme">累计发电量</div>-->
-<!--                </div>-->
-<!--                <div class="transform-light light-flex">-->
-<!--                  <div class="light-value">1.5GWh</div>-->
-<!--                  <div class="light-theme">累积转移电量</div>-->
-<!--                </div>-->
-<!--                <div class="light-fix light-flex">-->
-<!--                  <div class="light-value">10%</div>-->
-<!--                  <div class="light-theme">绿电设备维修率</div>-->
-<!--                </div>-->
-<!--              </div>-->
-<!--            </div>-->
-<!--          </div>-->
-<!--        </div>-->
-<!--      </div>-->
-<!--      <div class="panel-item">-->
-<!--        <div class="panel-title">能耗统计</div>-->
-<!--        <div class="panel-item-body">-->
-<!--          <div class="time-options">-->
-<!--            <div-->
-<!--              v-for="(item, index) in timeOptions"-->
-<!--              :key="index"-->
-<!--              :class="-->
-<!--                index === activeIndex-->
-<!--                  ? 'time-options-item time-options-active'-->
-<!--                  : 'time-options-item'-->
-<!--              "-->
-<!--              @click="handleIndexChange(index)"-->
-<!--            >-->
-<!--              {{ item }}-->
-<!--            </div>-->
-<!--          </div>-->
-<!--          <div class="panel-item-content">-->
-<!--            <el-tabs v-model="activeName" @tab-click="tabClick">-->
-<!--              <el-tab-pane label="用水量" name="first"></el-tab-pane>-->
-<!--              <el-tab-pane label="用电量" name="second"></el-tab-pane>-->
-<!--              <el-tab-pane label="碳排放" name="third"></el-tab-pane>-->
-<!--            </el-tabs>-->
-<!--            <div ref="energyChart" class="energy-chart"></div>-->
-<!--          </div>-->
-<!--        </div>-->
-<!--      </div>-->
-<!--      <div class="panel-item">-->
-<!--        <div class="panel-title">故障设备统计</div>-->
-<!--        <div class="panel-item-body">-->
-<!--          <div class="panel-item-content" ref="brokenChart"></div>-->
-<!--        </div>-->
-<!--      </div>-->
-
       <div class="panel-item goal">
         <div class="panel-title">节能目标完成情况</div>
         <div class="panel-item-body">
           <img src="@/assets/img/panel-bg-bodyCan.png" class="panelBodyCan">
-          <div class="panel-item-content">
+          <div class="panel-item-content goal-content">
             <div class="goal-title-wrapper">
                 <span class="goal-title">能耗使用情况</span>
             </div>
-            <div class="wave-content">
+            <div class="wave-content" ref="waveContent">
                 <div class="wave-chart" id='waveEchart' ref='waveEchart'></div>
                 <div class="wave-right">
                     <div class="right-item" v-for="(item, index) in waveRight" :key="index">
                         <img :src="item.bgImg" class="right-pic" @load="imgLoaded('WAVE')">
                         <div class="right-text">
                             <span class="right-text-title" :class="index === 1 ? 'right-text-title-middle' : ''">{{ item.title }}</span>
-                            <dv-digital-flop :config="item.config" style="height: 30px; position: absolute; top: -0.5rem; right: 5.2rem"/>
+                            <dv-digital-flop v-if="counterRender" :config="item.config" style="height: 30px; position: absolute; top: -0.5rem; right: 5.2rem"/>
                             <span style="position: absolute; right: 0.7rem">万 kW.h</span>
 <!--                            <span class="right-text-value">{{ item.value }}</span>-->
                         </div>
@@ -134,6 +60,7 @@
     export default {
         data() {
             return {
+                counterRender: false,
                 activeName: 'first',
                 brokenChart: {},
                 brokenOptions: {
@@ -439,7 +366,7 @@
                             cap: "round",
                             },
                             data: [
-                            {  
+                            {
                                 coords: [
                                 ['12/15', 23],
                                 ["12/16", 25],
@@ -525,7 +452,7 @@
                             cap: "round",
                             },
                             data: [
-                            {  
+                            {
                                 coords: [
                                 ['12/15', 40],
                                 ["12/16", 45],
@@ -667,7 +594,7 @@
                         borderWidth: "0",
                     },
                     legend: {
-                        data: ['用水', '用电'],
+                        data: ['用水 (单位:kT)', '用电 (单位:kW.h)'],
                         itemWidth: 10,
                         itemHeight: 10,
                         textStyle: {
@@ -719,6 +646,10 @@
                         {
                             type: 'category',
                             name: '环比',
+                            nameTextStyle:{
+                                color: '#fff',
+                                padding:[0,0,-12,36]
+                            },
                             data: ['8%', '13%', '14%'],
                             position: 'right',
                             axisLabel: {
@@ -761,6 +692,10 @@
                             gridIndex: 1,
                             type: 'category',
                             name: '环比',
+                            nameTextStyle:{
+                                color: '#fff',
+                                padding:[0,40,-12, 0]
+                            },
                             data: ['8%', '12%', '11%'],
                             position: 'left',
                             axisLabel: {
@@ -834,7 +769,7 @@
                     ],
                     series: [
                         {
-                            name: '用电',
+                            name: '用电 (单位:kW.h)',
                             type: 'bar',
                             color: new this.$echarts.graphic.LinearGradient(0, 0, 1, 0, [{
                                 offset: 0,
@@ -862,7 +797,7 @@
                             }
                         },
                         {
-                            name: '用水',
+                            name: '用水 (单位:kT)',
                             type: 'bar',
                             xAxisIndex: 1,
                             yAxisIndex: 1,
@@ -924,6 +859,10 @@
             // this.brokenChart = this.$echarts.init(this.$refs.brokenChart)
             // this.brokenChart.setOption(this.brokenOptions)
 
+            if (window.innerWidth >= 1920) {
+                this.$refs.waveContent.style.marginTop = '5%'
+            }
+
             this.initFlippers()
 
             this.usedChart = this.$echarts.init(this.$refs.usedChart)
@@ -949,7 +888,7 @@
                 }, 1000)
             },
             imgLoaded(type) {
-                type === 'GREEN' && (this.timeToInitGreenChart = true)
+                type === 'GREEN' && (this.timeToInitGreenChart = true, this.counterRender = true)
                 type === 'WAVE' && (this.timeToInitWaveChart = true)
             },
             handleIndexChange(index) {
@@ -1077,6 +1016,9 @@
 
   .goal {
     flex: 1 !important;
+      .goal-content {
+          position: relative;
+      }
       .goal-title-wrapper {
           margin-left: 5%;
           margin-bottom: 0.2rem;
@@ -1088,6 +1030,7 @@
       .wave-content {
           display: flex;
           justify-content: space-between;
+          align-items: center;
           .wave-chart{
               flex: 1;
               height: 9.6rem;
@@ -1136,11 +1079,14 @@
           }
       }
       .wave-bottom {
-          margin: 1.5% 4% 0;
+          width: 95%;
           font-size: 14px;
           display: flex;
           justify-content: space-between;
           background-color: rgba(50,249,194,0.1);
+          position: absolute;
+          bottom: 5%;
+          left: 2.5%;
 
           .bottom-title {
               display: inline-block;

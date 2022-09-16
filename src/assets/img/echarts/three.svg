@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="112px" height="96px" viewBox="0 0 112 96" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>资质/3-默认</title>
+    <defs>
+        <linearGradient x1="50%" y1="16.8295716%" x2="50%" y2="100%" id="linearGradient-1">
+            <stop stop-color="#1D55A5" stop-opacity="0" offset="0%"></stop>
+            <stop stop-color="#3889FF" offset="100%"></stop>
+        </linearGradient>
+        <linearGradient x1="50%" y1="0%" x2="50%" y2="75.229458%" id="linearGradient-2">
+            <stop stop-color="#3889FF" offset="0%"></stop>
+            <stop stop-color="#1D55A5" stop-opacity="0" offset="74.4236233%"></stop>
+        </linearGradient>
+        <linearGradient x1="50%" y1="0%" x2="50%" y2="100%" id="linearGradient-3">
+            <stop stop-color="#3889FF" offset="0%"></stop>
+            <stop stop-color="#1D55A5" stop-opacity="0" offset="100%"></stop>
+        </linearGradient>
+        <radialGradient cx="50%" cy="50%" fx="50%" fy="50%" r="84.5898438%" id="radialGradient-4">
+            <stop stop-color="#8FD7FF" offset="0%"></stop>
+            <stop stop-color="#38B7FD" offset="100%"></stop>
+        </radialGradient>
+        <linearGradient x1="50%" y1="0%" x2="50%" y2="100%" id="linearGradient-5">
+            <stop stop-color="#38B7FD" stop-opacity="0" offset="0%"></stop>
+            <stop stop-color="#38B7FD" offset="49.8060533%"></stop>
+            <stop stop-color="#38B7FD" stop-opacity="0" offset="100%"></stop>
+        </linearGradient>
+    </defs>
+    <g id="控件" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="编组备份" transform="translate(-154.000000, 0.000000)">
+            <g id="资质/3-默认" transform="translate(154.000000, 0.000000)">
+                <g id="3" transform="translate(-24.000000, 0.000000)">
+                    <path d="M136,0 L135.310613,11.2271535 C133.806708,35.71932 133.806708,60.28068 135.310613,84.7728465 L135.310613,84.7728465 L136,96 L24,96 L24.6893866,84.7728465 C26.1932916,60.28068 26.1932916,35.71932 24.6893866,11.2271535 L24.6893866,11.2271535 L24,0 L136,0 Z M80,5 C78.3431458,5 77,6.34314575 77,8 C77,9.65685425 78.3431458,11 80,11 C81.6568542,11 83,9.65685425 83,8 C83,6.34314575 81.6568542,5 80,5 Z" id="形状结合" fill="url(#linearGradient-1)" opacity="0.372512091"></path>
+                    <path d="M136,0 L135.310613,11.2271535 C133.806708,35.71932 133.806708,60.28068 135.310613,84.7728465 L136,96 L24,96 L24.6893866,84.7728465 C26.1932916,60.28068 26.1932916,35.71932 24.6893866,11.2271535 L24,0 L136,0 Z M80,5 C78.3431458,5 77,6.34314575 77,8 C77,9.65685425 78.3431458,11 80,11 C81.6568542,11 83,9.65685425 83,8 C83,6.34314575 81.6568542,5 80,5 Z" id="形状结合" fill="url(#linearGradient-2)" opacity="0.372512091"></path>
+                    <polygon id="矩形" fill="url(#linearGradient-3)" opacity="0.372512091" transform="translate(80.000000, 90.000000) scale(1, -1) translate(-80.000000, -90.000000) " points="24 84 136 84 136 96 24 96"></polygon>
+                    <polygon id="矩形" fill="#38B7FD" transform="translate(80.000000, 95.000000) scale(1, -1) translate(-80.000000, -95.000000) " points="24 94 136 94 136 96 24 96"></polygon>
+                    <path d="M130,0 L136,0 L136,6 L130,0 Z M30,0 L24,0 L24,6 L30,0 Z" id="形状结合" fill="#38B7FD"></path>
+                    <g id="编组" transform="translate(59.000000, 5.000000)">
+                        <path d="M21,6 C22.6568542,6 24,4.65685425 24,3 C24,1.34314575 22.6568542,0 21,0 C19.3431458,0 18,1.34314575 18,3 C18,4.65685425 19.3431458,6 21,6 Z" id="椭圆形" stroke="#38B7FD" stroke-width="0.5"></path>
+                        <path d="M21,5.5 C22.3807119,5.5 23.5,4.38071187 23.5,3 C23.5,1.61928813 22.3807119,0.5 21,0.5 C19.6192881,0.5 18.5,1.61928813 18.5,3 C18.5,4.38071187 19.6192881,5.5 21,5.5 Z" id="椭圆形" fill="url(#radialGradient-4)"></path>
+                    </g>
+                    <path d="M128,15 L128.221457,17.6574839 C128.405462,19.8655413 129.009104,22.0182079 130,24 L130,24 L130,24 C129.009104,25.9817921 128.405462,28.1344587 128.221457,30.3425161 L128,33 L128,33 L128,15 Z" id="矩形" fill="url(#linearGradient-5)" transform="translate(129.000000, 24.000000) scale(-1, 1) translate(-129.000000, -24.000000) "></path>
+                    <text id="上市公司" font-family="SourceHanSansCN-Regular, Source Han Sans CN" font-size="12" font-weight="normal" fill="#FFFFFF">
+                        <tspan x="56" y="29">规模企业</tspan>
+                        <tspan x="26" y="45">（注资三千万以上）</tspan>
+                    </text>
+                    <path d="M30,15 L30.221457,17.6574839 C30.4054618,19.8655413 31.0091039,22.0182079 32,24 L32,24 L32,24 C31.0091039,25.9817921 30.4054618,28.1344587 30.221457,30.3425161 L30,33 L30,33 L30,15 Z" id="矩形" fill="url(#linearGradient-5)"></path>
+                </g>
+                <g id="数" transform="translate(45.000000, 56.000000)" fill="#38B7FD">
+                    <path d="M9,2.5 L11,4.5 L11,11.5 L7,13.5 L7,3.5 L9,2.5 Z M20,2.5 L22,3.5 L22,13.5 L18,11.5 L18,4.5 L20,2.5 Z M18.5,0 L19.5,2 L18,4 L11,4 L9.5,2 L10.5,0 L18.5,0 Z M18,24 L19.5,26 L18.5,28 L10.5,28 L9.5,26 L11,24 L18,24 Z M7,14.5 L11,16.5 L11,23.5 L9,25.5 L7,24.5 L7,14.5 Z M22,14.5 L22,24.5 L20,25.5 L18,23.5 L18,16.5 L22,14.5 Z" id="3"></path>
+                    <path d="M4,3.5 L2,2.5 L0,4.5 L0,11.5 L4,13.5 L4,3.5 Z M4,24.5 L2,25.5 L0,23.5 L0,16.5 L4,14.5 L4,24.5 Z" id="2"></path>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>
