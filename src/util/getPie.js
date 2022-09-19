@@ -37,7 +37,7 @@
           hovered: false,
           k: k
         },
-        center: ['10%', '50%']
+        center: ['8%', '50%']
       }
       if (typeof pieData[i].itemStyle !== 'undefined') {
         const itemStyle = {}
@@ -105,9 +105,9 @@
               }
             ],
             orient: 'vertical',  //垂直显示
-            right: '8%',
+            right: '10%',
             align: 'left',
-            top:'5%',
+            top:'7.5%',
             itemHeight: 6,
             itemWidth: 6,
             textStyle: {
@@ -117,7 +117,7 @@
             },
             formatter: function (name) {  //图例后添加数值
               let data =  [
-                { value: 12, name: '1楼楼宇空调' },
+                { value: 15, name: '1楼楼宇空调' },
                 { value: 20, name: '2楼楼宇空调' },
                 { value: 19, name: '3楼楼宇空调' },
                 { value: 20, name: '水冷机组' },
@@ -178,9 +178,9 @@
       },
       grid3D: {
         show: false,
-        boxHeight: 12, // 圆环的高度
-        top: "-23%",
-        left: "-21.2%",
+        boxHeight: 10, // 圆环的高度
+        top: "-22.5%",
+        left: "-22.2%",
         viewControl: {
           // 3d效果可以放大、旋转等，请自己去查看官方配置
           alpha, // 角度

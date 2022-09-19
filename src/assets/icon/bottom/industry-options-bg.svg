@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="216px" height="334px" viewBox="0 0 216 334" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>沉浸式/产业选择/背景</title>
+    <defs>
+        <linearGradient x1="50%" y1="0%" x2="50%" y2="100%" id="linearGradient-1">
+            <stop stop-color="#38B7FD" offset="0%"></stop>
+            <stop stop-color="#21668E" stop-opacity="0" offset="53.7086327%"></stop>
+            <stop stop-color="#38B7FD" offset="100%"></stop>
+        </linearGradient>
+        <linearGradient x1="50%" y1="0%" x2="50%" y2="100%" id="linearGradient-2">
+            <stop stop-color="#25F0FF" offset="0%"></stop>
+            <stop stop-color="#33AAEC" offset="51.7007041%"></stop>
+            <stop stop-color="#25F0FF" offset="99.9475012%"></stop>
+        </linearGradient>
+        <linearGradient x1="50%" y1="0%" x2="50%" y2="100%" id="linearGradient-3">
+            <stop stop-color="#38B7FD" offset="0%"></stop>
+            <stop stop-color="#21668E" stop-opacity="0" offset="53.7086327%"></stop>
+            <stop stop-color="#38B7FD" offset="100%"></stop>
+        </linearGradient>
+        <linearGradient x1="50%" y1="0%" x2="50%" y2="100%" id="linearGradient-4">
+            <stop stop-color="#25F0FF" offset="0%"></stop>
+            <stop stop-color="#33AAEC" offset="51.7007041%"></stop>
+            <stop stop-color="#25F0FF" offset="99.9475012%"></stop>
+        </linearGradient>
+        <path d="M5.10702591e-14,305.5 L1.55431223e-14,15.9744281 L3,15.9744281 L3,305.5 L5.10702591e-14,305.5 Z M216,305.5 L216,15.9744281 L213,15.9744281 L213,305.5 L216,305.5 Z" id="path-5"></path>
+        <linearGradient x1="50%" y1="0%" x2="50%" y2="100%" id="linearGradient-6">
+            <stop stop-color="#38B7FD" offset="0%"></stop>
+            <stop stop-color="#21668E" stop-opacity="0" offset="53.7086327%"></stop>
+            <stop stop-color="#38B7FD" offset="100%"></stop>
+        </linearGradient>
+        <linearGradient x1="50%" y1="0%" x2="50%" y2="100%" id="linearGradient-7">
+            <stop stop-color="#25F0FF" offset="0%"></stop>
+            <stop stop-color="#33AAEC" offset="51.7007041%"></stop>
+            <stop stop-color="#25F0FF" offset="99.9475012%"></stop>
+        </linearGradient>
+        <path d="M205,321.25 L216,308.5 L216,334 L205,321.25 Z M11,321.25 L0,308.5 L0,334 L11,321.25 Z" id="path-8"></path>
+    </defs>
+    <g id="控件" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="沉浸式/产业选择/背景" transform="translate(-0.000000, 0.000000)">
+            <polygon id="路径" fill="#167BB0" points="151 6.98209965 158 0 204 0 210 5.98465684 210 309.882369 198 323.833782 18 323.833782 6 309.882369 6 5.98465684 12 0 58 0 65 6.98209965"></polygon>
+            <path d="M22.896634,0.25 L29.896634,7.23209965 L35.6046478,7.23209965 L28.6046478,0.25 L31.896634,0.25 L38.896634,7.23209965 L44.6046478,7.23209965 L37.6046478,0.25 L57.896634,0.25 L64.896634,7.23209965 L151.103366,7.23209965 L158.103366,0.25 L178.395352,0.25 L171.395352,7.23209965 L177.103366,7.23209965 L184.103366,0.25 L187.395352,0.25 L180.395352,7.23209965 L186.103366,7.23209965 L193.103366,0.25 L203.896634,0.25 L209.75,6.08839777 L209.75,309.907519 L197.885016,323.75 L136.901459,323.75 L129.401459,330.75 L86.5985408,330.75 L79.0985408,323.75 L18.1149837,323.75 L6.25,309.907519 L6.25,6.08839777 L12.103366,0.25 L22.896634,0.25 Z M77.5895454,0.25 L81.5873925,4.238 L66.6033579,4.238 L62.6046948,0.25 L77.5895454,0.25 Z M153.395305,0.25 L149.396642,4.238 L134.412607,4.238 L138.410455,0.25 L153.395305,0.25 Z" id="形状" stroke="url(#linearGradient-2)" stroke-width="0.5" fill="url(#linearGradient-1)"></path>
+            <g id="形状结合">
+                <use fill="#4EC2FF" xlink:href="#path-5"></use>
+                <path stroke="url(#linearGradient-4)" stroke-width="0.5" d="M2.75,16.2244281 L2.75,305.25 L0.25,305.25 L0.25,16.2244281 L2.75,16.2244281 Z M215.75,16.2244281 L215.75,305.25 L213.25,305.25 L213.25,16.2244281 L215.75,16.2244281 Z" stroke-linejoin="square" fill="url(#linearGradient-3)"></path>
+            </g>
+            <g id="形状结合">
+                <use fill="#167BB0" xlink:href="#path-8"></use>
+                <path stroke="url(#linearGradient-7)" stroke-width="0.5" d="M215.75,309.172484 L215.75,333.327516 L205.330183,321.25 L215.75,309.172484 Z M0.25,309.172484 L10.6698174,321.25 L0.25,333.327516 L0.25,309.172484 Z" stroke-linejoin="square" fill="url(#linearGradient-6)"></path>
+            </g>
+        </g>
+    </g>
+</svg>

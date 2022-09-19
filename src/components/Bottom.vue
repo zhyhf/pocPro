@@ -402,7 +402,7 @@ export default {
             height: 27rem;
             position: absolute;
             top: -26.5rem;
-            background-image: url("../assets/img/bottom/industry-options-bg.png");
+            background-image: url("../assets/icon/bottom/industry-options-bg.svg");
             background-size: 100% 100%;
             background-repeat: no-repeat;
             display: flex;
