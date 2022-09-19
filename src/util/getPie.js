@@ -7,7 +7,7 @@
  * @param pieHeight 立体的高度
  * @param opacity 饼或者环的透明度
  */
- const getPie3D = (pieData, internalDiameterRatio, distance, alpha, pieHeight, opacity = 1) => {
+ const getPie3D = (pieData, internalDiameterRatio, distance, alpha, pieHeight, opacity = 1,graLeft) => {
     const series = []
     let sumValue = 0
     let startValue = 0
@@ -107,7 +107,7 @@
             orient: 'vertical',  //垂直显示
             right: '10%',
             align: 'left',
-            top:'7.5%',
+            top:'8%',
             itemHeight: 6,
             itemWidth: 6,
             textStyle: {
@@ -179,7 +179,7 @@
       grid3D: {
         show: false,
         boxHeight: 10, // 圆环的高度
-        top: "-22.5%",
+        top: "-21%",
         left: "-22.2%",
         viewControl: {
           // 3d效果可以放大、旋转等，请自己去查看官方配置
@@ -202,7 +202,7 @@
                 width: 140,
                 height: 74
             },
-            left: '7%',
+            left: graLeft,
             top: '15%'
         }
         ]

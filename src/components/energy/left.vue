@@ -737,7 +737,11 @@ export default {
     initChart () {
       this.statusChart = this.$echarts.init(this.$refs.threeDPieChart)
       // 传入数据生成 option, 构建3d饼状图, 参数工具文件已经备注的很详细
-      this.option = getPie3D(this.optionData, 0.8, 240, 28, 20, 1)
+      if (window.innerWidth >= 1920) {
+      this.option = getPie3D(this.optionData, 0.8, 250, 28, 20, 1 ,'11%')
+      }else{
+      this.option = getPie3D(this.optionData, 0.8, 250, 28, 20, 1, '7%')
+      }
       this.statusChart.setOption(this.option)
       // 是否需要label指引线，如果要就添加一个透明的2d饼状图并调整角度使得labelLine和3d的饼状图对齐，并再次setOption
       this.statusChart.setOption(this.option)
