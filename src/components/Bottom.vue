@@ -33,7 +33,7 @@
 
 <script>
 import { mapState } from "vuex";
-import { materialImgFn } from '@/util/createBillboard.js'
+import { materialImgFn, createBuilding } from '@/util/createBillboard.js'
 import { createParkBillboard} from '@/util/parkBillBoard'
 import {
     hyCoverAreas,
@@ -266,19 +266,19 @@ export default {
     //     $viewer.entities.removeById(`area${i + 1}`)
     //   }
     // },
-    addWrapper(arr) {
+    addWrapper(arr, name) {
       if ($viewer.entities.getById('area$1')) return
       let index = 0
       for (const points of arr) {
-        this.addArea(points, ++index)
+        this.addArea(points, ++index, name)
       }
     },
-    addArea(pointArr, index) {
+    addArea(pointArr, index, name) {
       $viewer.entities.add({
-        id: `area${index}`,
+        id: `${name}${index}`,
         polygon: {
           hierarchy: pointArr,
-          material: Cesium.Color.RED.withAlpha(0.3),
+          material: Cesium.Color.fromCssColorString('#0093FE').withAlpha(0.3),
           perPositionHeight: true,
           fill: true
         }
@@ -326,19 +326,19 @@ export default {
         }, 1000);
       } else if(index===1){
 
-                    createBuilding()
-                    this.addWrapper(hyCoverAreas, 'hy')
-                    this.addWrapper(ycCoverAreas, 'yc')
-                    this.addWrapper(rgCoverAreas, 'rg')
-                    this.addWrapper(ztCoverAreas, 'zt')
-                    this.addWrapper(ztaCoverAreas, 'zta')
-                    this.addWrapper(hrCoverAreas, 'hr')
-                    this.addWrapper(htCoverAreas, 'ht')
-                    this.addWrapper(sxCoverAreas, 'xs')
-                    this.addWrapper(qzCoverAreas, 'qz')
-                    this.addWrapper(yxCoverAreas, 'yx')
-                    this.addWrapper(hcCoverAreas, 'hc')
-                    this.addWrapper(tyCoverAreas, 'ty')
+        createBuilding()
+        this.addWrapper(hyCoverAreas, 'hy')
+        this.addWrapper(ycCoverAreas, 'yc')
+        this.addWrapper(rgCoverAreas, 'rg')
+        this.addWrapper(ztCoverAreas, 'zt')
+        this.addWrapper(ztaCoverAreas, 'zta')
+        this.addWrapper(hrCoverAreas, 'hr')
+        this.addWrapper(htCoverAreas, 'ht')
+        this.addWrapper(sxCoverAreas, 'xs')
+        this.addWrapper(qzCoverAreas, 'qz')
+        this.addWrapper(yxCoverAreas, 'yx')
+        this.addWrapper(hcCoverAreas, 'hc')
+        this.addWrapper(tyCoverAreas, 'ty')
 
         this.$store.commit("DigitalTwin/changeEventListShow", false);
         this.$store.commit("DigitalTwin/changeEventDetailShow", false);
