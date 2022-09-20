@@ -621,39 +621,44 @@ const addClickEvent = () => {
 const flyTo = (center) => {
   $viewer.qtum.centerAt(center);
 };
-// const warningCamera = () => {
-//   let pos = {
-//     "y": 27.976313,
-//     "x": 120.726635,
-//     "z": 70.17,
-//     "heading": 153.4,
-//     "pitch": -18,
-//     "roll": 360
-//   }
-//   setTimeout(() => {
-//     $viewer.entities.getById('camera002')._billboard.image = 'static/img/icon/camera-warning.svg'
-//     store.commit("DigitalTwin/changeEventShow", true);
-//     flyTo(pos)
-//   }, 30000);
-// }
 
 export { createBillboard };
 
 // 创建多边形实体 添加图片填充  imageValue: 填充图片路径
-export const materialImgFn = (pointArr,imageValue) => {
+export const materialImgFn = (pointArr,ifexclude,imageValue,height = 15) => {
   // 材质修改
  const entity = $viewer.entities.add(
    {
       name:'polygon',
       polygon: {
-        hierarchy: Cesium.Cartesian3.fromDegreesArray(pointArr),
-         material: Cesium.Color.RED.withAlpha(0.5),
+         height: height,
+         hierarchy: Cesium.Cartesian3.fromDegreesArray(pointArr),
+         material: Cesium.Color.fromBytes(56,183,253,100),
+         outlineColor: Cesium.Color.fromBytes(56,183,253,200),
+         outline: true,
+         outlineWidth: 10,
       }
     }
   )
+  ifexclude && (entity.polygon.extrudedHeight = 43)
+  // const positions = pointArrPolygon;
+  // entity.polyline = {
+  //   positions: positions,
+  //   width: 4,
+  //   material: Cesium.Color.fromBytes(56,183,253,100),
+  //   clampToGround: true
+  // }
+  // $viewer.entities.add({
+  //   position : pointArrPolygon,
+  //   polyline : {
+  //       width : 16,
+  //       material: Cesium.Color.fromBytes(56,183,253,100),
+  //       // clampToGround: true
+  //   }
+  //  });
    // 实体上添加传入的图片覆盖
-   entity.polygon.material = new Cesium.ImageMaterialProperty({
-     image : imageValue,
-     transparent : false
-   })
+  //  entity.polygon.material = new Cesium.ImageMaterialProperty({
+  //    image : imageValue,
+  //    transparent : true
+  //  })
 }

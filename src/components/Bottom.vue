@@ -34,10 +34,10 @@
 <script>
 import { mapState } from "vuex";
 import { materialImgFn } from '@/util/createBillboard.js'
+import { createParkBillboard} from '@/util/parkBillBoard'
 export default {
   data() {
     return {
-      imageValue:require('@/assets/innerC/park1Back.png'),
       bottomPicUrl: [
         {
           name: "园区全貌",
@@ -94,12 +94,12 @@ export default {
           roll: 0,
         },
         {
-          y: 33.954783,
-          x: 118.341786, 
-          z: 877.26,  
-          heading: 0.9,
-          pitch: -84.8,
-          roll: 0,
+          y: 33.956921,
+          x: 118.341915, 
+          z: 1022.69,  
+          heading: 180.8,
+          pitch: -83.2,
+          roll: 180.1,
         },
         {
           y: 33.954783,
@@ -117,6 +117,80 @@ export default {
           pitch: -84.8,
           roll: 0,
         },
+      ],
+      parkAreaDatas:[
+        {
+        areaPositions:[
+        118.340862,33.956594,
+        118.341187, 33.956602,
+        118.341309, 33.956709,
+        118.341639, 33.956729,
+        118.341803, 33.956861,
+        118.342644, 33.956839,
+        118.342649, 33.955918,
+        118.342022, 33.95568,
+        118.340841, 33.95578,
+        ],
+        ifexclude:false,
+        img: require('@/assets/innerC/park1Back.png'),
+        height: 8
+      },
+        {
+          areaPositions:[
+          118.339273,33.957069,
+          118.339874,33.956904,
+          118.339854,33.956407,
+          118.339115,33.956407,
+          118.339114,33.956484,
+          118.339253,33.956484,
+        ],
+        ifexclude:false,
+        img:require('@/assets/innerC/park2Back.png')
+      },
+         {
+        areaPositions:[
+          118.341089,33.955203,
+          118.341476,33.955205,
+          118.341471,33.954648,
+          118.340861,33.954648,
+          118.340861,33.955187,
+        ],
+        ifexclude:false,
+        img:''
+      },
+         {
+        areaPositions:[
+          118.339082,33.954115,
+          118.339827,33.954115,
+          118.339851,33.954709,
+          118.339276,33.954877,
+          118.339131,33.954875,
+        ],
+        ifexclude:false,
+        img:''
+      },
+        {
+        areaPositions:[
+          118.343621,33.955122,
+          118.344279,33.955122,
+          118.344294,33.954621,
+          118.34362,33.954627,
+        ],
+        ifexclude:true,
+        height: 1,
+        img:'',
+      },
+        {
+        areaPositions:[
+          118.343288,33.957001,
+          118.343668,33.957001,
+          118.343668,33.956750,
+          118.343288, 33.956750,
+        ],
+        ifexclude:true,
+        height: 1,
+        img:'',
+      },
       ],
       areaPositions: [
         [120.726150, 27.976038, 32.5],// 右下
@@ -197,16 +271,11 @@ export default {
       })
     },
     // 停车场高亮区域
-    addParkArea(){
-      const pointArr = [118.340862,33.956594,
-          118.341182, 33.956699,
-          118.341309, 33.956895,
-          118.342634, 33.956839,
-          118.342625, 33.955923,
-          118.342022, 33.955702,
-          118.340841, 33.95578
-          ]
-     materialImgFn(pointArr,this.imageValue)
+    addParkArea(data){
+    data.map(item=>{
+    materialImgFn(item.areaPositions,item.ifexclude,item.img,item.height)
+      })
+     createParkBillboard()
     },
     changeActive(index) {
       this.$store.commit("DigitalTwin/changeCheckBtnNum", index);
@@ -278,7 +347,7 @@ export default {
               this.$store.commit("DigitalTwin/changeEnterPriseShow", true);
         }, 1000);
        }else if(index===2){
-        this.addParkArea()
+        this.addParkArea(this.parkAreaDatas)
         this.$store.commit("DigitalTwin/changeEventListShow", false);
         this.$store.commit("DigitalTwin/changeEventDetailShow", false);
         this.$store.commit("DigitalTwin/changeEnterPriseShow", false);
@@ -300,10 +369,10 @@ export default {
         this.$store.commit("DigitalTwin/changeConduitShow", false);
         this.$store.commit("DigitalTwin/changePlanImgShow", false);
 
-         // 车位统计+告警显示
-        setTimeout(() => {
-             this.$store.commit("DigitalTwin/changeParkShow", true);
-        }, 1000);
+         // 车位统计+告警显示 点击对应图标显示 TODO
+        // setTimeout(() => {
+        //      this.$store.commit("DigitalTwin/changeParkShow", true);
+        // }, 1000);
        }
        else {
         this.$store.commit("DigitalTwin/changeEventListShow", false);
