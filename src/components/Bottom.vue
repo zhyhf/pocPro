@@ -35,6 +35,20 @@
 import { mapState } from "vuex";
 import { materialImgFn } from '@/util/createBillboard.js'
 import { createParkBillboard} from '@/util/parkBillBoard'
+import {
+    hyCoverAreas,
+    ycCoverAreas,
+    rgCoverAreas,
+    ztCoverAreas,
+    ztaCoverAreas,
+    hrCoverAreas,
+    htCoverAreas,
+    sxCoverAreas,
+    qzCoverAreas,
+    yxCoverAreas,
+    hcCoverAreas,
+    tyCoverAreas
+} from '@/assets/constant/building'
 export default {
   data() {
     return {
@@ -87,32 +101,32 @@ export default {
         },
         {
           y: 33.954783,
-          x: 118.341786, 
-          z: 877.26,  
+          x: 118.341786,
+          z: 877.26,
           heading: 0.9,
           pitch: -84.8,
           roll: 0,
         },
         {
           y: 33.956921,
-          x: 118.341915, 
-          z: 1022.69,  
+          x: 118.341915,
+          z: 1022.69,
           heading: 180.8,
           pitch: -83.2,
           roll: 180.1,
         },
         {
           y: 33.954783,
-          x: 118.341786, 
-          z: 877.26,  
+          x: 118.341786,
+          z: 877.26,
           heading: 0.9,
           pitch: -84.8,
           roll: 0,
         },
          {
           y: 33.954783,
-          x: 118.341786, 
-          z: 877.26,  
+          x: 118.341786,
+          z: 877.26,
           heading: 0.9,
           pitch: -84.8,
           roll: 0,
@@ -312,20 +326,19 @@ export default {
         }, 1000);
       } else if(index===1){
 
-        const points = this.points
-        const areasPointCollection = [
-          [points.p1, points.p4, points.p5, points.p6],
-          [points.p1, points.p6, points.p9, points.p10, points.p14],
-          [points.p9, points.p10, points.p12, points.p11],
-          [points.p10, points.p14, points.p13, points.p12],
-          [points.p2, points.p3, points.p15, points.p13],
-          [points.p1, points.p4, points.p15, points.p14],
-          [points.p3, points.p2, points.p8, points.p7],
-          [points.p3, points.p15, points.p4, points.p5, points.p7],
-          [points.p7, points.p5, points.p6, points.p9, points.p11, points.p8]
-        ]
-
-        this.addWrapper(areasPointCollection)
+                    createBuilding()
+                    this.addWrapper(hyCoverAreas, 'hy')
+                    this.addWrapper(ycCoverAreas, 'yc')
+                    this.addWrapper(rgCoverAreas, 'rg')
+                    this.addWrapper(ztCoverAreas, 'zt')
+                    this.addWrapper(ztaCoverAreas, 'zta')
+                    this.addWrapper(hrCoverAreas, 'hr')
+                    this.addWrapper(htCoverAreas, 'ht')
+                    this.addWrapper(sxCoverAreas, 'xs')
+                    this.addWrapper(qzCoverAreas, 'qz')
+                    this.addWrapper(yxCoverAreas, 'yx')
+                    this.addWrapper(hcCoverAreas, 'hc')
+                    this.addWrapper(tyCoverAreas, 'ty')
 
         this.$store.commit("DigitalTwin/changeEventListShow", false);
         this.$store.commit("DigitalTwin/changeEventDetailShow", false);

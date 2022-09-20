@@ -12,33 +12,47 @@ export default {
   // props: ["tableid"],
   data() {
     return {
-      tableData: [
-        {
-          name: "1",
-          industry: "943.29㎡",
-        },
-        {
-          name: "2",
-          industry: "941.29㎡",
-        },
-        {
-          name: "3",
-          industry: "922.29㎡",
-        },
-        {
-          name: "4",
-           industry: "922.29㎡",
-        },
-          {
-          name: "5",
-          industry: "902.29㎡",
-        },
-      ],
+      // tableData: [
+      //   {
+      //     name: "1",
+      //     industry: "943.29㎡",
+      //   },
+      //   {
+      //     name: "2",
+      //     industry: "941.29㎡",
+      //   },
+      //   {
+      //     name: "3",
+      //     industry: "922.29㎡",
+      //   },
+      //   {
+      //     name: "4",
+      //      industry: "922.29㎡",
+      //   },
+      //     {
+      //     name: "5",
+      //     industry: "902.29㎡",
+      //   },
+      // ],
       tableHead: ["楼层号", "楼层面积", "操作"],
-      actionName:['入驻详情','详情'],
-      title: "北航大厦",
+      actionName:['入驻详情','查看平面图'],
+      // title: "北航大厦",
       iconPath: require("../../assets/icon/houseIcon.svg"),
     };
+  },
+  computed: {
+    title() {
+      return this.$store.state.DigitalTwin.selectedBuilding.title || ''
+    },
+    tableData() {
+      const arr = this.$store.state.DigitalTwin.selectedBuilding.tableData.map(item => {
+        return {
+          name: item.name,
+          industry: item.industry
+        }
+      })
+      return arr || []
+    }
   },
   components: {
     ListVue,

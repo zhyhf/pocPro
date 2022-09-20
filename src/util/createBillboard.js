@@ -1,5 +1,67 @@
 import toBase64ForDefaultValue from "./html2base64";
 import store from "../store";
+import { buildingIcon, entityObj } from '@/assets/constant/building'
+
+function createBuilding() {
+  addBuildingIcon(buildingIcon)
+}
+
+// function addW() {
+
+// }
+
+function addBuildingIcon(buildingIcon) {
+  for (let index = 0; index < buildingIcon.length; index++) {
+    // 图标的通用大小位置等的处理
+    if (buildingIcon[index].width) {
+      $viewer.entities.add({
+        id: buildingIcon[index].id,
+        position: Cesium.Cartesian3.fromDegrees(...buildingIcon[index].position),
+        billboard: {
+          image: buildingIcon[index].image,
+          scale: 0.7,
+          width: 404,
+          height: 238,
+        },
+      });
+    } else {
+      $viewer.entities.add({
+        id: buildingIcon[index].id,
+        position: Cesium.Cartesian3.fromDegrees(...buildingIcon[index].position),
+        billboard: {
+          image: buildingIcon[index].image,
+          scale: buildingIcon[index].scale || 0.5,
+        },
+      });
+    }
+    // }
+  }
+
+  addBuildingIconEvent()
+}
+
+function addBuildingIconEvent() {
+  let handler = new Cesium.ScreenSpaceEventHandler($viewer.scene.canvas);
+  // 设置图标的单击事件的处理
+  handler.setInputAction(function (movement) {
+    let pick = $viewer.scene.pick(movement.position);
+    let id = pick && pick.id && pick.id.id;
+    if (pick) {
+      if (id) {
+        if (store.state.DigitalTwin.selectedIcon) {
+          addBuildingIcon([store.state.DigitalTwin.selectedIcon])
+          store.commit('DigitalTwin/changeSelectedIcon', null)
+          // selectedIcon = null
+        }
+        store.commit('DigitalTwin/changeSelectedBuilding', id)
+        flyTo(entityObj[id].perspective);
+        let selectedIcon = buildingIcon.find(item => item.id === id)
+        store.commit('DigitalTwin/changeSelectedIcon', selectedIcon)
+        $viewer.entities.removeById(id)
+      }
+    }
+  }, Cesium.ScreenSpaceEventType.LEFT_CLICK)
+}
 
 // 对应物体的信息内容，随鼠标移动转动方向的纵向广告牌
 
@@ -106,116 +168,60 @@ const addIcon = () => {
       scale: 0.7,
     },
     // 楼栋标记点
-    {
-      id: "housePositionIcon",
-      position: [120.725961, 27.975977, 65.5],
-      image: require("../assets/icon/housePosition.png"),
-      scale: 0.7,
-    },
-      // 右下
     // {
-    //   id: "housePositionIcon2",
-    //   position: [120.726150, 27.976038, 32.5],
+    //   id: "housePositionIcon",
+    //   position: [120.725961, 27.975977, 65.5],
     //   image: require("../assets/icon/housePosition.png"),
     //   scale: 0.7,
     // },
-    //   // 左下
-    // {
-    //   id: "housePositionIcon3",
-    //   position: [120.726135, 27.975545, 7.2],
+    // { // 前左上
+    //   id: 'yc1',
+    //   position: [118.343606, 33.955254, 36.5],
     //   image: require("../assets/icon/housePosition.png"),
     //   scale: 0.7,
     // },
-    //   // 左上
-    // {
-    //   id: "housePositionIcon4",
-    //   position: [120.726130, 27.975545, 65.5],
+    // { // 前右上
+    //   id: 'yc2',
+    //   position: [118.344266, 33.955254, 36.5],
     //   image: require("../assets/icon/housePosition.png"),
     //   scale: 0.7,
     // },
-    //   // 右上
-    // {
-    //   id: "housePositionIcon5",
-    //   position: [120.726150, 27.976038, 65.5],
+    // { // 前左下
+    //   id: 'yc5',
+    //   position: [118.343606, 33.955254, 6.46],
     //   image: require("../assets/icon/housePosition.png"),
     //   scale: 0.7,
     // },
-    //   // 侧右上
-    // {
-    //   id: "housePositionIcon6",
-    //   position: [120.725890, 27.976080, 65.5],
+    // { // 前右下
+    //   id: 'yc6',
+    //   position: [118.344266, 33.955254, 6.46],
     //   image: require("../assets/icon/housePosition.png"),
     //   scale: 0.7,
     // },
-    //   // 侧右下
-    // {
-    //   id: "housePositionIcon7",
-    //   position: [120.725905, 27.976080, 32.5],
+    // { // 后左上
+    //   id: 'yc3',
+    //   position: [118.343606, 33.955627, 36.5],
     //   image: require("../assets/icon/housePosition.png"),
     //   scale: 0.7,
     // },
-    //   // 侧左上
-    // {
-    //   id: "housePositionIcon8",
-    //   position: [120.725790, 27.975592, 65.5],
+    // { // 后右上
+    //   id: 'yc4',
+    //   position: [118.344266, 33.955627, 36.5],
     //   image: require("../assets/icon/housePosition.png"),
     //   scale: 0.7,
     // },
-    //   // 侧左下
-    // {
-    //   id: "housePositionIcon9",
-    //   position: [120.725790, 27.975590, 7.2],
+    // { // 后左下
+    //   id: 'yc7',
+    //   position: [118.343606, 33.955627, 6.64],
     //   image: require("../assets/icon/housePosition.png"),
     //   scale: 0.7,
     // },
-    //   // 1
-    // {
-    //   id: "housePositionIcon10",
-    //   position: [120.725905, 27.976210, 31.7],
+    // { // 后右下
+    //   id: 'yc8',
+    //   position: [118.344266, 33.955627, 6.64],
     //   image: require("../assets/icon/housePosition.png"),
     //   scale: 0.7,
     // },
-    //   // 2
-    // {
-    //   id: "housePositionIcon11",
-    //   position: [120.726105, 27.976170, 31.7],
-    //   image: require("../assets/icon/housePosition.png"),
-    //   scale: 0.7,
-    // },
-    //   // 3
-    // {
-    //   id: "housePositionIcon12",
-    //   position: [120.725905, 27.976210, 7.7],
-    //   image: require("../assets/icon/housePosition.png"),
-    //   scale: 0.7,
-    // },
-    //   // 4
-    // {
-    //   id: "housePositionIcon13",
-    //   position: [120.726105, 27.976180, 7.7],
-    //   image: require("../assets/icon/housePosition.png"),
-    //   scale: 0.7,
-    // },
-    //   // 5
-    // {
-    //   id: "housePositionIcon14",
-    //   position: [120.726250, 27.975980, 7.7],
-    //   image: require("../assets/icon/housePosition.png"),
-    //   scale: 0.7,
-    // },
-    // // 6
-    // {
-    //   id: "housePositionIcon15",
-    //   position: [120.726250, 27.975980, 32.7],
-    //   image: require("../assets/icon/housePosition.png"),
-    //   scale: 0.7,
-    // },
-    // {
-    //   id: "housePositionIcon16",
-    //   position: [120.726250, 27.975980, 65.5],
-    //   image: require("../assets/icon/housePosition.png"),
-    //   scale: 0.7,
-    // }
   ];
   for (let index = 0; index < billArr.length; index++) {
     // if (billArr[index].id.indexOf("road") !== -1) {
@@ -622,7 +628,7 @@ const flyTo = (center) => {
   $viewer.qtum.centerAt(center);
 };
 
-export { createBillboard };
+export { createBillboard, createBuilding };
 
 // 创建多边形实体 添加图片填充  imageValue: 填充图片路径
 export const materialImgFn = (pointArr,ifexclude,imageValue,height = 15) => {
