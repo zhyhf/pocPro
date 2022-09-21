@@ -33,22 +33,8 @@
 
 <script>
 import { mapState } from "vuex";
-import { materialImgFn, createBuilding } from '@/util/createBillboard.js'
+import { materialImgFn, createBuilding, resetSelectedIcon, clearBuildingEntities } from '@/util/createBillboard.js'
 import { createParkBillboard} from '@/util/parkBillBoard'
-import {
-    hyCoverAreas,
-    ycCoverAreas,
-    rgCoverAreas,
-    ztCoverAreas,
-    ztaCoverAreas,
-    hrCoverAreas,
-    htCoverAreas,
-    sxCoverAreas,
-    qzCoverAreas,
-    yxCoverAreas,
-    hcCoverAreas,
-    tyCoverAreas
-} from '@/assets/constant/building'
 export default {
   data() {
     return {
@@ -235,7 +221,8 @@ export default {
         '策划'
       ],
       selectedIndustry: '选择产业',
-      showOptions: false
+      showOptions: false,
+      shouldDraw: true
     };
   },
   watch: {
@@ -260,30 +247,6 @@ export default {
     onMouseLeave(index) {
       this.bottomPicUrl[index].isHover = false
     },
-    // cleanUpWrapper(arr) {
-    //   const list = new Array(arr.length)
-    //   for (let i = 0; i < list.length; i++) {
-    //     $viewer.entities.removeById(`area${i + 1}`)
-    //   }
-    // },
-    addWrapper(arr, name) {
-      if ($viewer.entities.getById('area$1')) return
-      let index = 0
-      for (const points of arr) {
-        this.addArea(points, ++index, name)
-      }
-    },
-    addArea(pointArr, index, name) {
-      $viewer.entities.add({
-        id: `${name}${index}`,
-        polygon: {
-          hierarchy: pointArr,
-          material: Cesium.Color.fromCssColorString('#0093FE').withAlpha(0.3),
-          perPositionHeight: true,
-          fill: true
-        }
-      })
-    },
     // 停车场高亮区域
     addParkArea(data){
     data.map(item=>{
@@ -296,9 +259,12 @@ export default {
     },
     flyTo(index) {
       this.showOptions = index === 4
-      if (this.activeNum === index) return
       $viewer.qtum.centerAt(this.position[index]); // 飞行到指定位
       if (index === 3) {
+        if (!this.shouldDraw) {
+          clearBuildingEntities()
+          this.shouldDraw = true
+        }
         this.$store.commit("DigitalTwin/changeEnterPriseShow", false);
         this.$store.commit("DigitalTwin/changeEnterPriseDetailShow", false);
         this.$store.commit("DigitalTwin/changeEventDetailShow", false);
@@ -326,19 +292,12 @@ export default {
         }, 1000);
       } else if(index===1){
 
-        createBuilding()
-        this.addWrapper(hyCoverAreas, 'hy')
-        this.addWrapper(ycCoverAreas, 'yc')
-        this.addWrapper(rgCoverAreas, 'rg')
-        this.addWrapper(ztCoverAreas, 'zt')
-        this.addWrapper(ztaCoverAreas, 'zta')
-        this.addWrapper(hrCoverAreas, 'hr')
-        this.addWrapper(htCoverAreas, 'ht')
-        this.addWrapper(sxCoverAreas, 'xs')
-        this.addWrapper(qzCoverAreas, 'qz')
-        this.addWrapper(yxCoverAreas, 'yx')
-        this.addWrapper(hcCoverAreas, 'hc')
-        this.addWrapper(tyCoverAreas, 'ty')
+        if (this.shouldDraw) {
+          createBuilding()
+          this.shouldDraw = false
+        } else {
+          resetSelectedIcon()
+        }
 
         this.$store.commit("DigitalTwin/changeEventListShow", false);
         this.$store.commit("DigitalTwin/changeEventDetailShow", false);
@@ -360,6 +319,10 @@ export default {
               this.$store.commit("DigitalTwin/changeEnterPriseShow", true);
         }, 1000);
        }else if(index===2){
+        if (!this.shouldDraw) {
+          clearBuildingEntities()
+          this.shouldDraw = true
+        }
         this.addParkArea(this.parkAreaDatas)
         this.$store.commit("DigitalTwin/changeEventListShow", false);
         this.$store.commit("DigitalTwin/changeEventDetailShow", false);
@@ -388,6 +351,10 @@ export default {
         // }, 1000);
        }
        else {
+        if (!this.shouldDraw) {
+          clearBuildingEntities()
+          this.shouldDraw = true
+        }
         this.$store.commit("DigitalTwin/changeEventListShow", false);
         this.$store.commit("DigitalTwin/changeEventDetailShow", false);
         this.$store.commit("DigitalTwin/changeEventShow", false);

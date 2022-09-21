@@ -1,14 +1,93 @@
 import toBase64ForDefaultValue from "./html2base64";
 import store from "../store";
 import { buildingIcon, entityObj } from '@/assets/constant/building'
+import {
+  hyCoverAreas,
+  ycCoverAreas,
+  rgCoverAreas,
+  ztCoverAreas,
+  ztaCoverAreas,
+  hrCoverAreas,
+  htCoverAreas,
+  sxCoverAreas,
+  qzCoverAreas,
+  yxCoverAreas,
+  hcCoverAreas,
+  tyCoverAreas
+} from '@/assets/constant/building'
 
+// ---- 楼栋相关
 function createBuilding() {
+  draw()
   addBuildingIcon(buildingIcon)
+  addBuildingIconEvent()
 }
 
-// function addW() {
+function draw() {
+  addWrapper(hyCoverAreas, 'hy')
+  addWrapper(ycCoverAreas, 'yc')
+  addWrapper(rgCoverAreas, 'rg')
+  addWrapper(ztCoverAreas, 'zt')
+  addWrapper(ztaCoverAreas, 'zta')
+  addWrapper(hrCoverAreas, 'hr')
+  addWrapper(htCoverAreas, 'ht')
+  addWrapper(sxCoverAreas, 'xs')
+  addWrapper(qzCoverAreas, 'qz')
+  addWrapper(yxCoverAreas, 'yx')
+  addWrapper(hcCoverAreas, 'hc')
+  addWrapper(tyCoverAreas, 'ty')
+}
 
-// }
+function addWrapper(arr, name) {
+  let index = 0
+  for (const points of arr) {
+    // this.addArea(points, ++index, name)
+    $viewer.entities.add({
+      id: `${name}${++index}`,
+      polygon: {
+        hierarchy: points,
+        material: Cesium.Color.fromCssColorString('#0093FE').withAlpha(0.3),
+        perPositionHeight: true,
+        fill: true
+      }
+    })
+  }
+}
+
+export function clearBuildingEntities() {
+  // 清除遮罩
+  cleanWrapper(hyCoverAreas, 'hy')
+  cleanWrapper(ycCoverAreas, 'yc')
+  cleanWrapper(rgCoverAreas, 'rg')
+  cleanWrapper(ztCoverAreas, 'zt')
+  cleanWrapper(ztaCoverAreas, 'zta')
+  cleanWrapper(hrCoverAreas, 'hr')
+  cleanWrapper(htCoverAreas, 'ht')
+  cleanWrapper(sxCoverAreas, 'xs')
+  cleanWrapper(qzCoverAreas, 'qz')
+  cleanWrapper(yxCoverAreas, 'yx')
+  cleanWrapper(hcCoverAreas, 'hc')
+  cleanWrapper(tyCoverAreas, 'ty')
+
+  // 清除楼栋标记
+  for (let index = 0; index < buildingIcon.length; index++) {
+    $viewer.entities.removeById(buildingIcon[index].id)
+  }
+}
+
+function cleanWrapper(arr, name) {
+  let index = 0
+  for (const points of arr) {
+    $viewer.entities.removeById(`${name}${++index}`)
+  }
+}
+
+export function resetSelectedIcon() {
+  if (store.state.DigitalTwin.selectedIcon) {
+    addBuildingIcon([store.state.DigitalTwin.selectedIcon])
+    store.commit('DigitalTwin/changeSelectedIcon', null)
+  }
+}
 
 function addBuildingIcon(buildingIcon) {
   for (let index = 0; index < buildingIcon.length; index++) {
@@ -34,10 +113,7 @@ function addBuildingIcon(buildingIcon) {
         },
       });
     }
-    // }
   }
-
-  addBuildingIconEvent()
 }
 
 function addBuildingIconEvent() {
@@ -48,12 +124,11 @@ function addBuildingIconEvent() {
     let id = pick && pick.id && pick.id.id;
     if (pick) {
       if (id) {
-        if (store.state.DigitalTwin.selectedIcon) {
-          addBuildingIcon([store.state.DigitalTwin.selectedIcon])
-          store.commit('DigitalTwin/changeSelectedIcon', null)
-          // selectedIcon = null
-        }
+        resetSelectedIcon()
         store.commit('DigitalTwin/changeSelectedBuilding', id)
+        console.log('-0');
+        console.log(entityObj[id]);
+        console.log(entityObj);
         flyTo(entityObj[id].perspective);
         let selectedIcon = buildingIcon.find(item => item.id === id)
         store.commit('DigitalTwin/changeSelectedIcon', selectedIcon)
