@@ -120,9 +120,6 @@ export default {
     changeSelectedIcon(state, value) {
       state.selectedIcon = value
     },
-    changebuidingInfo(state, value){
-      console.log(111111,state, value)
-    }
   },
   state: {
     controlBottomShow: true,

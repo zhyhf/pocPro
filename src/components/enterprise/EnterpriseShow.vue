@@ -46,7 +46,6 @@ export default {
     },
     tableData() {
       const arr = this.$store.state.DigitalTwin.selectedBuilding.tableData.map(item => {
-        console.log(49,item)
         return {
           name: item.name,
           industry: item.industry

@@ -124,7 +124,6 @@ function addBuildingIconEvent() {
     let id = pick && pick.id && pick.id.id;
     if (pick) {
       if (id) {
-        console.log(127,pick,id)
         resetSelectedIcon()
         store.commit('DigitalTwin/changeSelectedBuilding', id)
         flyTo(entityObj[id].perspective);
@@ -134,7 +133,6 @@ function addBuildingIconEvent() {
         //楼栋信息显示
           setTimeout(() => {
             store.commit("DigitalTwin/changeEnterPriseShow", true);
-            store.commit("DigitalTwin/changebuidingInfo", true);
         }, 1000);
       }
     }
