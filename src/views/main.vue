@@ -92,7 +92,7 @@ export default {
             Cesium.ScreenSpaceEventType.LEFT_DOUBLE_CLICK
           );
           $("#location_mars_jwd").hide();
-          //  加载模型数据
+          //  加载模型数据dddddd
           qtum3d.layer.createLayer(
             {
               type: "3dtiles",
