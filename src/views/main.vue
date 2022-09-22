@@ -109,7 +109,7 @@ export default {
           viewer.scene.screenSpaceCameraController.maximumZoomDistance = 40000;
           setTimeout(() => {
             let arr = this.$store.state.BubbleAndImmersChart.immersionChart;
-            // 创建广告牌实体标记
+            // 创建广告牌实体标记dddddd
             createBillboard(arr);
           }, 100);
           // 改变鼠标事件
