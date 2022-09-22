@@ -29,6 +29,7 @@
         >
         <span
           @click="queryImg(i, item)"
+          :style="{ width: '8rem' }"
           :class="{
             operation: true,
             active: activeIndex === i && indexAction === 1,
@@ -95,6 +96,8 @@ export default {
       this.$store.commit("DigitalTwin/changeConduitShow", false);
       this.$store.commit("DigitalTwin/changeEnterPriseDetailShow", true);
       this.$store.commit("DigitalTwin/changeEnterPriseDetailType", item.name);
+
+      this.$store.commit('DigitalTwin/changeSelectedBuildingIndex', index)
     },
     queryImg(index, item) {
       this.activeIndex = index;

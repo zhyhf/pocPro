@@ -6,7 +6,7 @@
   >
     <InfoTemplateVue
       :val="$store.state.DigitalTwin.EnterPriseDetailType"
-      :data="info.data"
+      :data="detailData"
       :tableHead="info.tableHead"
     ></InfoTemplateVue>
   </div>
@@ -61,6 +61,13 @@ export default {
         ],
       },
     };
+  },
+  computed: {
+    detailData() {
+      const tableData = this.$store.state.DigitalTwin.selectedBuilding.tableData;
+      const index = this.$store.state.DigitalTwin.selectedBuildingIndex
+      return tableData[index].enterprise || []
+    }
   },
   components: {
     InfoTemplateVue,

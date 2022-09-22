@@ -33,7 +33,7 @@
 
 <script>
 import { mapState } from "vuex";
-import { materialImgFn } from '@/util/createBillboard.js'
+import { materialImgFn, createBuilding, resetSelectedIcon, clearBuildingEntities } from '@/util/createBillboard.js'
 import { createParkBillboard} from '@/util/parkBillBoard'
 export default {
   data() {
@@ -87,32 +87,32 @@ export default {
         },
         {
           y: 33.954783,
-          x: 118.341786, 
-          z: 877.26,  
+          x: 118.341786,
+          z: 877.26,
           heading: 0.9,
           pitch: -84.8,
           roll: 0,
         },
         {
           y: 33.956921,
-          x: 118.341915, 
-          z: 1022.69,  
+          x: 118.341915,
+          z: 1022.69,
           heading: 180.8,
           pitch: -83.2,
           roll: 180.1,
         },
         {
           y: 33.954783,
-          x: 118.341786, 
-          z: 877.26,  
+          x: 118.341786,
+          z: 877.26,
           heading: 0.9,
           pitch: -84.8,
           roll: 0,
         },
          {
           y: 33.954783,
-          x: 118.341786, 
-          z: 877.26,  
+          x: 118.341786,
+          z: 877.26,
           heading: 0.9,
           pitch: -84.8,
           roll: 0,
@@ -221,7 +221,8 @@ export default {
         '策划'
       ],
       selectedIndustry: '选择产业',
-      showOptions: false
+      showOptions: false,
+      shouldDraw: true
     };
   },
   watch: {
@@ -246,30 +247,6 @@ export default {
     onMouseLeave(index) {
       this.bottomPicUrl[index].isHover = false
     },
-    // cleanUpWrapper(arr) {
-    //   const list = new Array(arr.length)
-    //   for (let i = 0; i < list.length; i++) {
-    //     $viewer.entities.removeById(`area${i + 1}`)
-    //   }
-    // },
-    addWrapper(arr) {
-      if ($viewer.entities.getById('area$1')) return
-      let index = 0
-      for (const points of arr) {
-        this.addArea(points, ++index)
-      }
-    },
-    addArea(pointArr, index) {
-      $viewer.entities.add({
-        id: `area${index}`,
-        polygon: {
-          hierarchy: pointArr,
-          material: Cesium.Color.RED.withAlpha(0.3),
-          perPositionHeight: true,
-          fill: true
-        }
-      })
-    },
     // 停车场高亮区域
     addParkArea(data){
     data.map(item=>{
@@ -282,9 +259,12 @@ export default {
     },
     flyTo(index) {
       this.showOptions = index === 4
-      if (this.activeNum === index) return
       $viewer.qtum.centerAt(this.position[index]); // 飞行到指定位
       if (index === 3) {
+        if (!this.shouldDraw) {
+          clearBuildingEntities()
+          this.shouldDraw = true
+        }
         this.$store.commit("DigitalTwin/changeEnterPriseShow", false);
         this.$store.commit("DigitalTwin/changeEnterPriseDetailShow", false);
         this.$store.commit("DigitalTwin/changeEventDetailShow", false);
@@ -312,20 +292,12 @@ export default {
         }, 1000);
       } else if(index===1){
 
-        const points = this.points
-        const areasPointCollection = [
-          [points.p1, points.p4, points.p5, points.p6],
-          [points.p1, points.p6, points.p9, points.p10, points.p14],
-          [points.p9, points.p10, points.p12, points.p11],
-          [points.p10, points.p14, points.p13, points.p12],
-          [points.p2, points.p3, points.p15, points.p13],
-          [points.p1, points.p4, points.p15, points.p14],
-          [points.p3, points.p2, points.p8, points.p7],
-          [points.p3, points.p15, points.p4, points.p5, points.p7],
-          [points.p7, points.p5, points.p6, points.p9, points.p11, points.p8]
-        ]
-
-        this.addWrapper(areasPointCollection)
+        if (this.shouldDraw) {
+          createBuilding()
+          this.shouldDraw = false
+        } else {
+          resetSelectedIcon()
+        }
 
         this.$store.commit("DigitalTwin/changeEventListShow", false);
         this.$store.commit("DigitalTwin/changeEventDetailShow", false);
@@ -347,6 +319,10 @@ export default {
               this.$store.commit("DigitalTwin/changeEnterPriseShow", true);
         }, 1000);
        }else if(index===2){
+        if (!this.shouldDraw) {
+          clearBuildingEntities()
+          this.shouldDraw = true
+        }
         this.addParkArea(this.parkAreaDatas)
         this.$store.commit("DigitalTwin/changeEventListShow", false);
         this.$store.commit("DigitalTwin/changeEventDetailShow", false);
@@ -375,6 +351,10 @@ export default {
         // }, 1000);
        }
        else {
+        if (!this.shouldDraw) {
+          clearBuildingEntities()
+          this.shouldDraw = true
+        }
         this.$store.commit("DigitalTwin/changeEventListShow", false);
         this.$store.commit("DigitalTwin/changeEventDetailShow", false);
         this.$store.commit("DigitalTwin/changeEventShow", false);

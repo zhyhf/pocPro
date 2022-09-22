@@ -1,3 +1,5 @@
+import { buildingInfo } from '@/assets/constant/building'
+
 export default {
   namespaced: true,
   actions: {
@@ -106,6 +108,18 @@ export default {
     changeConduitShow(state, value) {
       state.conduitShow = value
     },
+    changeSelectedBuilding(state, value) {
+      if (buildingInfo[value]) {
+        state.selectedBuilding = buildingInfo[value]
+        console.log(state.selectedBuilding);
+      }
+    },
+    changeSelectedBuildingIndex(state, value) {
+      state.selectedBuildingIndex = value
+    },
+    changeSelectedIcon(state, value) {
+      state.selectedIcon = value
+    }
   },
   state: {
     controlBottomShow: true,
@@ -142,7 +156,11 @@ export default {
     companyAnalysisShow: false,
     planImgShow: false,
     energyInfo: {},
-    conduitShow: false
+    conduitShow: false,
+
+    selectedBuilding: buildingInfo['hyBuilding'],
+    selectedBuildingIndex: 0,
+    selectedIcon: null
   },
   getters: {
 
