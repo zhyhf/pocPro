@@ -92,7 +92,7 @@ export default {
             Cesium.ScreenSpaceEventType.LEFT_DOUBLE_CLICK
           );
           $("#location_mars_jwd").hide();
-          //  加载模型数据dddddd
+          //  加载模型数据
           qtum3d.layer.createLayer(
             {
               type: "3dtiles",
@@ -109,7 +109,7 @@ export default {
           viewer.scene.screenSpaceCameraController.maximumZoomDistance = 40000;
           setTimeout(() => {
             let arr = this.$store.state.BubbleAndImmersChart.immersionChart;
-            // 创建广告牌实体标记dddddd
+            // 创建广告牌实体标记
             createBillboard(arr);
           }, 100);
           // 改变鼠标事件

@@ -37,13 +37,13 @@
           >{{ actionName[1] }}</span
         >
       </div>
-      <div class="table-buttons">
+      <!-- <div class="table-buttons">
         <el-pagination
           :total="9"
           :pageSize="5"
           @currentChange="currentChange"
         />
-      </div>
+      </div> -->
     </div>
   </div>
 </template>
@@ -79,6 +79,14 @@ export default {
         },
       ],
     };
+  },
+  watch:{
+     tableData:{
+       handler(val){
+           this.data = val;
+       },
+       immediate:true
+     }
   },
   methods: {
     currentChange(current) {

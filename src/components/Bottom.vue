@@ -291,7 +291,7 @@ export default {
           this.$store.commit("DigitalTwin/changeEventListShow", true);
         }, 1000);
       } else if(index===1){
-
+         
         if (this.shouldDraw) {
           createBuilding()
           this.shouldDraw = false
@@ -315,9 +315,9 @@ export default {
         this.$store.commit("DigitalTwin/changeEnvAnalysisShow", false);
         this.$store.commit("DigitalTwin/changeCompanyAnalysisShow", false);
         // 楼栋信息显示
-          setTimeout(() => {
-              this.$store.commit("DigitalTwin/changeEnterPriseShow", true);
-        }, 1000);
+        //   setTimeout(() => {
+        //       this.$store.commit("DigitalTwin/changeEnterPriseShow", true);
+        // }, 1000);
        }else if(index===2){
         if (!this.shouldDraw) {
           clearBuildingEntities()

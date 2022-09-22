@@ -385,6 +385,227 @@ const buildingInfo = {
                 industry: '1665㎡',
                 enterprise: [
                     {
+                        name: "江苏虎聚汽车租赁服务有限公司",
+                        type: "租赁和商务服务类",
+                        contacts: "王 娜",
+                        phone: "13951426929",
+                        area: "280㎡",
+                        contract: "2019.03.25",
+                    }
+                ]
+            },
+            {
+                name: "2",
+                industry: "1665㎡",
+                enterprise: [
+                    {
+                        name: "江苏九淼科技有限公司",
+                        type: "信息传输、软件和咨询技术服务业",
+                        contacts: "陈军周",
+                        phone: "13951426929",
+                        area: "46.5㎡",
+                        contract: "2019.04.03",
+                    }
+                ]
+            },
+            {
+                name: "3",
+                industry: "1665㎡",
+                enterprise: [
+                    {
+                        name: "江苏九淼科技有限公司",
+                        type: "信息传输、软件和咨询技术服务业",
+                        contacts: "陈军周",
+                        phone: "13951426929",
+                        area: "46.5㎡",
+                        contract: "2019.04.03",
+                    }
+                ]
+            },
+            {
+                name: "4",
+                industry: "1665㎡",
+                enterprise: [
+                    {
+                        name: "江苏九淼科技有限公司",
+                        type: "信息传输、软件和咨询技术服务业",
+                        contacts: "陈军周",
+                        phone: "13951426929",
+                        area: "46.5㎡",
+                        contract: "2019.04.03",
+                    }
+                ]
+            }
+        ]
+    },
+    qzBuilding: {
+        title: '齐智大厦',
+        tableData: [
+            {
+                name: '1',
+                industry: '1870㎡',
+                enterprise: [
+                    {
+                        name: "江苏虎聚汽车租赁服务有限公司",
+                        type: "租赁和商务服务类",
+                        contacts: "王 娜",
+                        phone: "13951426929",
+                        area: "280㎡",
+                        contract: "2019.03.25",
+                    },
+                    {
+                        name: "江苏九马进出口有限公司",
+                        type: "批发和零售业",
+                        contacts: "陈亚力",
+                        phone: "13951426929",
+                        area: "59㎡",
+                        contract: "2019.09.10",
+                    },
+                    {
+                        name: "江苏润宁商务秘书有限公司",
+                        type: "租赁和商务服务类",
+                        contacts: "王月兰",
+                        phone: "15651426921",
+                        area: "30㎡",
+                        contract: "2019.09.06",
+                    },
+                    {
+                        name: "江苏苏粤跨境电商综合服务有限公司",
+                        type: "批发和零售业",
+                        contacts: "孙镭",
+                        phone: "18951421924",
+                        area: "230㎡",
+                        contract: "2019.05.07",
+                    }
+                ]
+            },
+            {
+                name: "2",
+                industry: "1870㎡",
+                enterprise: [
+                    {
+                        name: "青松嘉创信息科技（宿迁）有限公司",
+                        type: "批发和零售业",
+                        contacts: "高潘潘",
+                        phone: "13951426929",
+                        area: "80㎡",
+                        contract: "2019.05.15",
+                    },
+                    {
+                        name: "宿迁晟通汽车技术服务有限公司",
+                        type: "批发和零售业",
+                        contacts: "潘咪",
+                        phone: "15651426921",
+                        area: "57㎡",
+                        contract: "2019.04.19",
+                    },
+                    {
+                        name: "宿迁高远国际贸易有限公司",
+                        type: "批发和零售业",
+                        contacts: "金水林",
+                        phone: "18951421924",
+                        area: "92㎡",
+                        contract: "2019.11.25",
+                    },
+                    {
+                        name: "宿迁恒芮通信工程有限公司",
+                        type: "建筑类",
+                        contacts: "蔡  旺",
+                        phone: "13351426929",
+                        area: "62㎡",
+                        contract: "2019.03.28",
+                    },
+                    {
+                        name: "宿迁神州易桥商务秘书有限公司",
+                        type: "租赁和商务服务类",
+                        contacts: "王函彬",
+                        phone: "13951426923",
+                        area: "80㎡",
+                        contract: "2019.05.15",
+                    },
+                    {
+                        name: "宿迁市博立威贸易有限公司",
+                        type: "批发和零售业",
+                        contacts: "赵广博",
+                        phone: "13951426921",
+                        area: "30㎡",
+                        contract: "2019.09.15",
+                    },
+                    {
+                        name: "宿迁市晟鑫泰供应链有限公司",
+                        type: "批发和零售业",
+                        contacts: "杜世康",
+                        phone: "13951426929",
+                        area: "30㎡",
+                        contract: "2019.12.06",
+                    }
+                ]
+            },
+            {
+                name: "3",
+                industry: "1870㎡",
+                enterprise: [
+                    {
+                        name: "宿迁市家家乐生鲜有限公司",
+                        type: "批发和零售业",
+                        contacts: "娄卓尔",
+                        phone: "137951426921",
+                        area: "1500㎡",
+                        contract: "2019.03.28",
+                    },
+                    {
+                        name: "宿迁市有元工艺品贸易有限公司",
+                        type: "批发和零售业",
+                        contacts: "张先军",
+                        phone: "15951426926",
+                        area: "140㎡",
+                        contract: "2020.03.01",
+                    },
+                    {
+                        name: "宿迁旭锦物流有限公司",
+                        type: "批发和零售业",
+                        contacts: "邵玉珍",
+                        phone: "15351426914",
+                        area: "60㎡",
+                        contract: "2021.01.15",
+                    },
+                    {
+                        name: "宿迁亿诚晟电子商务有限公司",
+                        type: "批发和零售业",
+                        contacts: "陈玲",
+                        phone: "13851426929",
+                        area: "34㎡",
+                        contract: "2019.03.02",
+                    },
+                    {
+                        name: "江苏国讯网络有限公司",
+                        type: "信息传输、软件和咨询技术服务业",
+                        contacts: "邬成龙",
+                        phone: "15951426929",
+                        area: "32㎡",
+                        contract: "2019.10.02",
+                    },
+                    {
+                        name: "江苏国讯网络有限公司",
+                        type: "信息传输、软件和咨询技术服务业",
+                        contacts: "杜世康",
+                        phone: "15951426929",
+                        area: "90㎡",
+                        contract: "2019.10.02",
+                    },
+                ]
+            },
+           
+        ]
+    },
+    sxBuilding: {
+        title: '盛祥大厦',
+        tableData: [
+            {
+                name: '1',
+                industry: '1665㎡',
+                enterprise: [
+                    {
                         name: "江苏九淼科技有限公司",
                         type: "信息传输、软件和咨询技术服务业",
                         contacts: "陈军周",
@@ -437,7 +658,224 @@ const buildingInfo = {
                 ]
             }
         ]
-    }
+    },
+    hrBuilding: {
+        title: '邗润大厦',
+        tableData: [
+            {
+                name: '1',
+                industry: '1665㎡',
+                enterprise: [
+                    {
+                        name: "江苏九淼科技有限公司",
+                        type: "信息传输、软件和咨询技术服务业",
+                        contacts: "陈军周",
+                        phone: "13951426929",
+                        area: "46.5㎡",
+                        contract: "2019.04.03",
+                    }
+                ]
+            },
+            {
+                name: "2",
+                industry: "1665㎡",
+                enterprise: [
+                    {
+                        name: "江苏九淼科技有限公司",
+                        type: "信息传输、软件和咨询技术服务业",
+                        contacts: "陈军周",
+                        phone: "13951426929",
+                        area: "46.5㎡",
+                        contract: "2019.04.03",
+                    }
+                ]
+            },
+            {
+                name: "3",
+                industry: "1665㎡",
+                enterprise: [
+                    {
+                        name: "江苏九淼科技有限公司",
+                        type: "信息传输、软件和咨询技术服务业",
+                        contacts: "陈军周",
+                        phone: "13951426929",
+                        area: "46.5㎡",
+                        contract: "2019.04.03",
+                    }
+                ]
+            },
+            {
+                name: "4",
+                industry: "1665㎡",
+                enterprise: [
+                    {
+                        name: "江苏九淼科技有限公司",
+                        type: "信息传输、软件和咨询技术服务业",
+                        contacts: "陈军周",
+                        phone: "13951426929",
+                        area: "46.5㎡",
+                        contract: "2019.04.03",
+                    }
+                ]
+            }
+        ]
+    },
+    ztaBuilding: {
+        title: '政泰大厦A',
+        tableData: [
+            {
+                name: '1',
+                industry: '1665㎡',
+                enterprise: [
+                    {
+                        name: "江苏九淼科技有限公司",
+                        type: "信息传输、软件和咨询技术服务业",
+                        contacts: "陈军周",
+                        phone: "13951426929",
+                        area: "46.5㎡",
+                        contract: "2019.04.03",
+                    }
+                ]
+            },
+            {
+                name: "2",
+                industry: "1665㎡",
+                enterprise: [
+                    {
+                        name: "江苏九淼科技有限公司",
+                        type: "信息传输、软件和咨询技术服务业",
+                        contacts: "陈军周",
+                        phone: "13951426929",
+                        area: "46.5㎡",
+                        contract: "2019.04.03",
+                    }
+                ]
+            },
+            {
+                name: "3",
+                industry: "1665㎡",
+                enterprise: [
+                    {
+                        name: "江苏九淼科技有限公司",
+                        type: "信息传输、软件和咨询技术服务业",
+                        contacts: "陈军周",
+                        phone: "13951426929",
+                        area: "46.5㎡",
+                        contract: "2019.04.03",
+                    }
+                ]
+            },
+            {
+                name: "4",
+                industry: "1665㎡",
+                enterprise: [
+                    {
+                        name: "江苏九淼科技有限公司",
+                        type: "信息传输、软件和咨询技术服务业",
+                        contacts: "陈军周",
+                        phone: "13951426929",
+                        area: "46.5㎡",
+                        contract: "2019.04.03",
+                    }
+                ]
+            }
+        ]
+    },
+    yx1: {
+        title: '豫信大厦',
+        tableData: [
+            {
+                name: '1',
+                industry: '1665㎡',
+                enterprise: [
+                    {
+                        name: "江苏九淼科技有限公司",
+                        type: "信息传输、软件和咨询技术服务业",
+                        contacts: "陈军周",
+                        phone: "13951426929",
+                        area: "46.5㎡",
+                        contract: "2019.04.03",
+                    }
+                ]
+            }
+        ]
+    },
+    hcBuilding: {
+        title: '汇成大厦',
+        tableData: [
+            {
+                name: '1',
+                industry: '1665㎡',
+                enterprise: [
+                    {
+                        name: "江苏九淼科技有限公司",
+                        type: "信息传输、软件和咨询技术服务业",
+                        contacts: "陈军周",
+                        phone: "13951426929",
+                        area: "46.5㎡",
+                        contract: "2019.04.03",
+                    }
+                ]
+            }
+        ]
+    },
+    tyBuilding: {
+        title: '通元大厦',
+        tableData: [
+            {
+                name: '1',
+                industry: '1665㎡',
+                enterprise: [
+                    {
+                        name: "江苏九淼科技有限公司",
+                        type: "信息传输、软件和咨询技术服务业",
+                        contacts: "陈军周",
+                        phone: "13951426929",
+                        area: "46.5㎡",
+                        contract: "2019.04.03",
+                    }
+                ]
+            }
+        ]
+    },
+    rgBuilding: {
+        title: '瑞谷大厦',
+        tableData: [
+            {
+                name: '1',
+                industry: '1665㎡',
+                enterprise: [
+                    {
+                        name: "江苏九淼科技有限公司",
+                        type: "信息传输、软件和咨询技术服务业",
+                        contacts: "陈军周",
+                        phone: "13951426929",
+                        area: "46.5㎡",
+                        contract: "2019.04.03",
+                    }
+                ]
+            }
+        ]
+    },
+    ycBuilding: {
+        title: '永成大厦',
+        tableData: [
+            {
+                name: '1',
+                industry: '1665㎡',
+                enterprise: [
+                    {
+                        name: "江苏九淼科技有限公司",
+                        type: "信息传输、软件和咨询技术服务业",
+                        contacts: "陈军周",
+                        phone: "13951426929",
+                        area: "46.5㎡",
+                        contract: "2019.04.03",
+                    }
+                ]
+            }
+        ]
+    },
 }
 
 export {

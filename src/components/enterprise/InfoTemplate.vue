@@ -17,7 +17,7 @@
           {{ item }}</span
         >
       </div>
-      <div class="rows" v-for="item in dataCurrent" :key="item.area">
+      <div class="rows" v-for="(item,index) in data" :key="index">
         <span
           :class="{ name: index === 0 }"
           v-for="(v, k, index) in item"
@@ -25,13 +25,13 @@
           >{{ item[k] }}
         </span>
       </div>
-      <div class="table-buttons">
+      <!-- <div class="table-buttons">
         <el-pagination
           :total="5"
           :pageSize="4"
           @currentChange="currentChange"
         />
-      </div>
+      </div> -->
     </div>
   </div>
 </template>
@@ -75,169 +75,170 @@ export default {
   },
   watch: {
     val(newVal, old) {
-      if (newVal === "2") {
-        this.dataCurrent = [
-          {
-            name: "易停易行智慧科技有限公司",
-            type: "公共设施",
-            contacts: "张梅",
-            phone: "13951426929",
-            area: "358.92㎡",
-            contract: "2021.1-2024.1",
-          },
-          {
-            name: "温州瓯业信息技术服务有限公司 ",
-            type: "服务领域",
-            contacts: "王华",
-            phone: "11351426929",
-            area: "634.6㎡",
-            contract: "2021.1-2024.1",
-          },
-          {
-            name: "温州市才华智能网络有限公司 ",
-            type: "软件行业",
-            contacts: "王聪",
-            phone: "11351426929",
-            area: "262.79㎡",
-            contract: "2021.1-2024.1",
-          },
-        ];
-      } else if (newVal === "3") {
-        this.dataCurrent = [
-          {
-            name: "温州欣悦贸易有限公司",
-            type: "企业入驻",
-            contacts: "李阳",
-            phone: "15932009221",
-            area: "643㎡",
-            contract: "2021.9-2024.9",
-          },
-          {
-            name: " 温州市鑫格科技有限公司",
-            type: "企业入驻",
-            contacts: "陈龙",
-            phone: "15932009221",
-            area: "338.77㎡",
-            contract: "2021.9-2024.9",
-          },
-          {
-            name: " 杭州桑美实业有限公司温州分公司",
-            type: "企业入驻",
-            contacts: "郑聪",
-            phone: "15932009221",
-            area: "168.25㎡",
-            contract: "2021.9-2024.9",
-          },
-        ];
-      } else if (newVal === "4") {
-        this.dataCurrent = [
-          {
-            name: "温州慧商教育科技有限公司",
-            type: "企业入驻",
-            contacts: "李栋",
-            phone: "18932009222",
-            area: "2047.57㎡",
-            contract: "2021.9-2024.9",
-          },
-        ];
-      } else if (newVal === "5") {
-        this.dataCurrent = [
-          {
-            name: "温州激光与光电子协同创新中心",
-            type: "企业入驻",
-            contacts: "李光",
-            phone: "11232009222",
-            area: "1513㎡",
-            contract: "2021.9-2024.9",
-          },
-          {
-            name: "法拉第激光科技有限公司",
-            type: "企业入驻",
-            contacts: "章杨",
-            phone: "11232009222",
-            area: "549㎡",
-            contract: "2021.9-2024.9",
-          },
-        ];
-      } else if (newVal === "6") {
-        this.dataCurrent = [
-          {
-            name: "首信工程项目管理有限公司",
-            type: "企业入驻",
-            contacts: "李光",
-            phone: "11232009222",
-            area: "1215㎡",
-            contract: "2021.9-2024.9",
-          },
-        ];
-      } else if (newVal === "7") {
-        this.dataCurrent = [
-          {
-            name: "龙脊文化产业发展有限公司",
-            type: "企业入驻",
-            contacts: "李栋",
-            phone: "11232009222",
-            area: "1215㎡",
-            contract: "2021.9-2024.9",
-          },
-          {
-            name: "温州市盛誉置业有限公司",
-            type: "企业入驻",
-            contacts: "王光",
-            phone: "11232009222",
-            area: "315㎡",
-            contract: "2021.9-2024.9",
-          },
-          {
-            name: "臻龙集团招商经营部",
-            type: "企业入驻",
-            contacts: "章红",
-            phone: "11232009222",
-            area: "215㎡",
-            contract: "2021.9-2024.9",
-          },
-          //    {
-          //   name:'温州龙湾科技投资管理公司',
-          //   type:'企业入驻',
-          //   contacts:'震龙',
-          //   phone:'11232009222',
-          //   area:'120㎡',
-          //   contract:'2021.9-2024.9'
-          // },
-        ];
-      } else if (newVal === "8") {
-        this.dataCurrent = [
-          {
-            name: "一拓（温州）软件信息技术有限公司",
-            type: "企业入驻",
-            contacts: "杨栋",
-            phone: "11232009222",
-            area: "1215㎡",
-            contract: "2021.9-2024.9",
-          },
-          {
-            name: "温州市视显电子科技有限公司",
-            type: "企业入驻",
-            contacts: "王光",
-            phone: "11232009222",
-            area: "315㎡",
-            contract: "2021.9-2024.9",
-          },
-        ];
-      } else if (newVal === "9") {
-        this.dataCurrent = [
-          {
-            name: "飞叶科技股份有限公司",
-            type: "企业入驻",
-            contacts: "刘栋",
-            phone: "11232009222",
-            area: "1215㎡",
-            contract: "2021.9-2024.9",
-          },
-        ];
-      } else {
-        this.dataCurrent = this.data;
-      }
+      this.dataCurrent = this.data;
+    //   if (newVal === "2") {
+    //     this.dataCurrent = [
+    //       {
+    //         name: "易停易行智慧科技有限公司",
+    //         type: "公共设施",
+    //         contacts: "张梅",
+    //         phone: "13951426929",
+    //         area: "358.92㎡",
+    //         contract: "2021.1-2024.1",
+    //       },
+    //       {
+    //         name: "温州瓯业信息技术服务有限公司 ",
+    //         type: "服务领域",
+    //         contacts: "王华",
+    //         phone: "11351426929",
+    //         area: "634.6㎡",
+    //         contract: "2021.1-2024.1",
+    //       },
+    //       {
+    //         name: "温州市才华智能网络有限公司 ",
+    //         type: "软件行业",
+    //         contacts: "王聪",
+    //         phone: "11351426929",
+    //         area: "262.79㎡",
+    //         contract: "2021.1-2024.1",
+    //       },
+    //     ];
+    //   } else if (newVal === "3") {
+    //     this.dataCurrent = [
+    //       {
+    //         name: "温州欣悦贸易有限公司",
+    //         type: "企业入驻",
+    //         contacts: "李阳",
+    //         phone: "15932009221",
+    //         area: "643㎡",
+    //         contract: "2021.9-2024.9",
+    //       },
+    //       {
+    //         name: " 温州市鑫格科技有限公司",
+    //         type: "企业入驻",
+    //         contacts: "陈龙",
+    //         phone: "15932009221",
+    //         area: "338.77㎡",
+    //         contract: "2021.9-2024.9",
+    //       },
+    //       {
+    //         name: " 杭州桑美实业有限公司温州分公司",
+    //         type: "企业入驻",
+    //         contacts: "郑聪",
+    //         phone: "15932009221",
+    //         area: "168.25㎡",
+    //         contract: "2021.9-2024.9",
+    //       },
+    //     ];
+    //   } else if (newVal === "4") {
+    //     this.dataCurrent = [
+    //       {
+    //         name: "温州慧商教育科技有限公司",
+    //         type: "企业入驻",
+    //         contacts: "李栋",
+    //         phone: "18932009222",
+    //         area: "2047.57㎡",
+    //         contract: "2021.9-2024.9",
+    //       },
+    //     ];
+    //   } else if (newVal === "5") {
+    //     this.dataCurrent = [
+    //       {
+    //         name: "温州激光与光电子协同创新中心",
+    //         type: "企业入驻",
+    //         contacts: "李光",
+    //         phone: "11232009222",
+    //         area: "1513㎡",
+    //         contract: "2021.9-2024.9",
+    //       },
+    //       {
+    //         name: "法拉第激光科技有限公司",
+    //         type: "企业入驻",
+    //         contacts: "章杨",
+    //         phone: "11232009222",
+    //         area: "549㎡",
+    //         contract: "2021.9-2024.9",
+    //       },
+    //     ];
+    //   } else if (newVal === "6") {
+    //     this.dataCurrent = [
+    //       {
+    //         name: "首信工程项目管理有限公司",
+    //         type: "企业入驻",
+    //         contacts: "李光",
+    //         phone: "11232009222",
+    //         area: "1215㎡",
+    //         contract: "2021.9-2024.9",
+    //       },
+    //     ];
+    //   } else if (newVal === "7") {
+    //     this.dataCurrent = [
+    //       {
+    //         name: "龙脊文化产业发展有限公司",
+    //         type: "企业入驻",
+    //         contacts: "李栋",
+    //         phone: "11232009222",
+    //         area: "1215㎡",
+    //         contract: "2021.9-2024.9",
+    //       },
+    //       {
+    //         name: "温州市盛誉置业有限公司",
+    //         type: "企业入驻",
+    //         contacts: "王光",
+    //         phone: "11232009222",
+    //         area: "315㎡",
+    //         contract: "2021.9-2024.9",
+    //       },
+    //       {
+    //         name: "臻龙集团招商经营部",
+    //         type: "企业入驻",
+    //         contacts: "章红",
+    //         phone: "11232009222",
+    //         area: "215㎡",
+    //         contract: "2021.9-2024.9",
+    //       },
+    //       //    {
+    //       //   name:'温州龙湾科技投资管理公司',
+    //       //   type:'企业入驻',
+    //       //   contacts:'震龙',
+    //       //   phone:'11232009222',
+    //       //   area:'120㎡',
+    //       //   contract:'2021.9-2024.9'
+    //       // },
+    //     ];
+    //   } else if (newVal === "8") {
+    //     this.dataCurrent = [
+    //       {
+    //         name: "一拓（温州）软件信息技术有限公司",
+    //         type: "企业入驻",
+    //         contacts: "杨栋",
+    //         phone: "11232009222",
+    //         area: "1215㎡",
+    //         contract: "2021.9-2024.9",
+    //       },
+    //       {
+    //         name: "温州市视显电子科技有限公司",
+    //         type: "企业入驻",
+    //         contacts: "王光",
+    //         phone: "11232009222",
+    //         area: "315㎡",
+    //         contract: "2021.9-2024.9",
+    //       },
+    //     ];
+    //   } else if (newVal === "9") {
+    //     this.dataCurrent = [
+    //       {
+    //         name: "飞叶科技股份有限公司",
+    //         type: "企业入驻",
+    //         contacts: "刘栋",
+    //         phone: "11232009222",
+    //         area: "1215㎡",
+    //         contract: "2021.9-2024.9",
+    //       },
+    //     ];
+    //   } else {
+    //     this.dataCurrent = this.data;
+    //   }
     },
   },
   methods: {

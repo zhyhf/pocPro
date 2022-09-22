@@ -124,15 +124,18 @@ function addBuildingIconEvent() {
     let id = pick && pick.id && pick.id.id;
     if (pick) {
       if (id) {
+        console.log(127,pick,id)
         resetSelectedIcon()
         store.commit('DigitalTwin/changeSelectedBuilding', id)
-        console.log('-0');
-        console.log(entityObj[id]);
-        console.log(entityObj);
         flyTo(entityObj[id].perspective);
         let selectedIcon = buildingIcon.find(item => item.id === id)
         store.commit('DigitalTwin/changeSelectedIcon', selectedIcon)
         $viewer.entities.removeById(id)
+        //楼栋信息显示
+          setTimeout(() => {
+            store.commit("DigitalTwin/changeEnterPriseShow", true);
+            store.commit("DigitalTwin/changebuidingInfo", true);
+        }, 1000);
       }
     }
   }, Cesium.ScreenSpaceEventType.LEFT_CLICK)
