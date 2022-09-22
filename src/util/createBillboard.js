@@ -375,6 +375,7 @@ const addClickEvent = () => {
         x: 120.727647,
         z: 132.44,
         heading: 249.8,
+        
         pitch: -27.9,
         roll: 0.2,
       },
