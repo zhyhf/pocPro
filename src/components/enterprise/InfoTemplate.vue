@@ -17,7 +17,7 @@
           {{ item }}</span
         >
       </div>
-      <div class="rows" v-for="(item,index) in data" :key="index">
+      <div class="rows" v-for="(item,index) in dataCurrent" :key="index">
         <span
           :class="{ name: index === 0 }"
           v-for="(v, k, index) in item"
@@ -25,13 +25,13 @@
           >{{ item[k] }}
         </span>
       </div>
-      <!-- <div class="table-buttons">
+      <div class="table-buttons" v-if="this.data.length>4">
         <el-pagination
-          :total="5"
-          :pageSize="4"
+          :total="total"
+          :pageSize="pageSize"
           @currentChange="currentChange"
         />
-      </div> -->
+      </div>
     </div>
   </div>
 </template>
@@ -46,7 +46,9 @@ export default {
   props: ["data", "tableHead", "val"],
   data() {
     return {
-      dataCurrent: this.data,
+      dataCurrent: [],
+      pageSize:1,
+      total:this.data.length,
       tableSecondData: [
         {
           name: "温州中航智慧科技有限公司",
@@ -74,8 +76,15 @@ export default {
     },
   },
   watch: {
+    data:{
+       handler(val){
+          let arr = JSON.parse(JSON.stringify(val))
+          this.dataCurrent = arr.splice(0,4);
+       },
+       immediate:true
+    },
     val(newVal, old) {
-      this.dataCurrent = this.data;
+     // this.dataCurrent = this.data;
     //   if (newVal === "2") {
     //     this.dataCurrent = [
     //       {
@@ -244,10 +253,11 @@ export default {
   methods: {
     handleClick() {},
     currentChange(current) {
-      if (current === 2) {
-        this.dataCurrent = this.tableSecondData;
-      } else if (current === 1) {
-        this.dataCurrent = this.data;
+      let arr = JSON.parse(JSON.stringify(this.data));
+      if (current === 1) {
+        this.dataCurrent = arr.splice(0,4);
+      } else if (current === 2) {
+        this.dataCurrent = arr.splice(4);
       }
     },
   },

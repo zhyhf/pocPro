@@ -37,13 +37,13 @@
           >{{ actionName[1] }}</span
         >
       </div>
-      <!-- <div class="table-buttons">
+      <div class="table-buttons" v-if="this.tableData.length>4">
         <el-pagination
-          :total="9"
-          :pageSize="5"
+          :total="total"
+          :pageSize="1"
           @currentChange="currentChange"
         />
-      </div> -->
+      </div>
     </div>
   </div>
 </template>
@@ -57,7 +57,8 @@ export default {
   props: ["tableData", "tableHead", "actionName"],
   data() {
     return {
-      data: this.tableData,
+      total: this.tableData.length,
+      data: [],
       activeIndex: 100,
       indexAction: 0,
       tableSecondData: [
@@ -83,17 +84,19 @@ export default {
   watch:{
      tableData:{
        handler(val){
-           this.data = val;
+          let arr = JSON.parse(JSON.stringify(val))
+          this.data = arr.splice(0,4);
        },
        immediate:true
      }
   },
   methods: {
     currentChange(current) {
-      if (current === 2) {
-        this.data = this.tableSecondData;
-      } else if (current === 1) {
-        this.data = this.tableData;
+      let arr = JSON.parse(JSON.stringify(this.tableData));
+      if (current === 1) {
+        this.data = arr.splice(0,4);
+      } else if (current === 2) {
+        this.data = arr.splice(4);
       }
     },
     flyTo(index, item) {
