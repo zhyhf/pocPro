@@ -1,6 +1,6 @@
 import toBase64ForDefaultValue from "./html2base64";
 import store from "../store";
-import { buildingIcon, entityObj } from '@/assets/constant/building'
+import { buildingIcon, entityObj,earlywarningIcon } from '@/assets/constant/building'
 import {
   hyCoverAreas,
   ycCoverAreas,
@@ -23,6 +23,55 @@ function createBuilding() {
   addBuildingIconEvent()
 }
 
+function drawIndustry(name){
+   switch(name){
+     case '电子商务':
+      clearBuildingEntities();
+      addWrapper(qzCoverAreas, 'qz');
+      addWrapper(htCoverAreas, 'ht');
+      addWrapper(hcCoverAreas, 'hc');
+      addWrapper(hyCoverAreas, 'hy');
+     break;
+     case '房地产':
+      clearBuildingEntities();
+      addWrapper(hyCoverAreas, 'zta');
+      addWrapper(sxCoverAreas, 'xs');
+     break;
+     case '物业':
+      clearBuildingEntities();
+      addWrapper(ztCoverAreas, 'zt');
+      addWrapper(sxCoverAreas, 'xs');
+     break;
+     case '物流':
+      clearBuildingEntities();
+      addWrapper(qzCoverAreas, 'qz');  
+      addWrapper(htCoverAreas, 'ht');
+      addWrapper(sxCoverAreas, 'xs'); 
+     break;
+     case '人力资源':
+      clearBuildingEntities();
+      addWrapper(htCoverAreas, 'ht');
+      addWrapper(ztCoverAreas, 'zt');
+      addWrapper(yxCoverAreas, 'yx');
+    break;
+    case '广告':
+      clearBuildingEntities();
+      addWrapper(htCoverAreas, 'ht');
+      addWrapper(tyCoverAreas, 'ty');
+      addWrapper(ycCoverAreas, 'yc');
+    break;
+    case '保险':
+      clearBuildingEntities();
+      addWrapper(ztaCoverAreas, 'zta');
+      addWrapper(rgCoverAreas, 'rg');
+    break;
+    case '策划':
+      clearBuildingEntities();
+      addWrapper(hyCoverAreas, 'hy');
+      addWrapper(rgCoverAreas, 'rg');
+   }
+}
+
 function draw() {
   addWrapper(hyCoverAreas, 'hy')
   addWrapper(ycCoverAreas, 'yc')
@@ -36,6 +85,77 @@ function draw() {
   addWrapper(yxCoverAreas, 'yx')
   addWrapper(hcCoverAreas, 'hc')
   addWrapper(tyCoverAreas, 'ty')
+}
+
+function createEarlyWaring(){
+   drawEarlyWaring();
+   iconEarlyWaring();
+}
+
+function drawEarlyWaring(){
+  addWrapper(qzCoverAreas, 'qz');
+  addWrapper(sxCoverAreas, 'xs');
+  addWrapper(htCoverAreas, 'ht');
+  addWrapper(yxCoverAreas, 'yx');
+  addWrapper(rgCoverAreas, 'rg');
+}
+
+function iconEarlyWaring(){
+   addEarlyWaring()
+   addEarlyWaringEvent()
+  // addBuildingIcon([store.state.DigitalTwin.selectedIcon])
+}
+
+function addEarlyWaring(){
+  for (let index = 0; index < earlywarningIcon.length; index++) {
+    // 图标的通用大小位置等的处理
+    if (earlywarningIcon[index].width) {
+      $viewer.entities.add({
+        id: earlywarningIcon[index].id,
+        position: Cesium.Cartesian3.fromDegrees(...earlywarningIcon[index].position),
+        billboard: {
+          image: earlywarningIcon[index].image,
+          scale: 0.7,
+          width: 404,
+          height: 238,
+        },
+      });
+    } else {
+      $viewer.entities.add({
+        id: earlywarningIcon[index].id,
+        position: Cesium.Cartesian3.fromDegrees(...earlywarningIcon[index].position),
+        billboard: {
+          image: earlywarningIcon[index].image,
+          scale: earlywarningIcon[index].scale || 0.5,
+        },
+      });
+    }
+  }
+}
+
+function addEarlyWaringEvent(){
+  let handler = new Cesium.ScreenSpaceEventHandler($viewer.scene.canvas);
+  // 设置图标的单击事件的处理
+  handler.setInputAction(function (movement) {
+    let pick = $viewer.scene.pick(movement.position);
+    let id = pick && pick.id && pick.id.id;
+    if (pick) {
+      if (id) {
+         // 事件处理显示
+        setTimeout(() => {
+          store.commit("DigitalTwin/changeEventListShow", true);
+        }, 1000);
+        // resetSelectedIcon()
+        // store.commit('DigitalTwin/changeSelectedBuilding', id)
+        // if(entityObj[id]&&entityObj[id].perspective){
+        //   flyTo(entityObj[id].perspective);
+        // }  
+        // let selectedIcon = buildingIcon.find(item => item.id === id)
+        // store.commit('DigitalTwin/changeSelectedIcon', selectedIcon)
+        // $viewer.entities.removeById(id)
+     }
+    }
+  }, Cesium.ScreenSpaceEventType.LEFT_CLICK)
 }
 
 function addWrapper(arr, name) {
@@ -709,7 +829,7 @@ const addClickEvent = () => {
 const flyTo = (center) => {
   $viewer.qtum.centerAt(center);
 };
-export { createBillboard, createBuilding };
+export { createBillboard, createBuilding, drawIndustry, createEarlyWaring };
 // 创建多边形实体 添加图片填充  imageValue: 填充图片路径
 export const materialImgFn = (id,pointArr,ifexclude,imageValue,height = 15) => {
  //材质修改

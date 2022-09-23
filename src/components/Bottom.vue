@@ -33,7 +33,7 @@
 
 <script>
 import { mapState } from "vuex";
-import {materialImgFn,createBuilding, resetSelectedIcon, clearBuildingEntities } from '@/util/createBillboard.js'
+import {materialImgFn,createBuilding, resetSelectedIcon, clearBuildingEntities,drawIndustry,createEarlyWaring } from '@/util/createBillboard.js'
 import { createParkBillboard,deleteParkBillboard} from '@/util/parkBillBoard'
 export default {
   data() {
@@ -245,7 +245,8 @@ export default {
   methods: {
     select(name) {
       this.selectedIndustry = name
-      this.showOptions = false
+      this.showOptions = false;
+      drawIndustry(name);
     },
     onMouseEnter(index) {
       this.bottomPicUrl[index].isHover = true
@@ -270,8 +271,15 @@ export default {
       // 点击下面的菜单栏飞到指定的位置
       $viewer.qtum.centerAt(this.position[index]); // 飞行到指定位
       if (index === 3) {
+        clearBuildingEntities();
+        deleteParkBillboard();
+        createEarlyWaring();
+        this.$store.state.DigitalTwin.EnterPriseShow = false;
+        this.$store.state.DigitalTwin.EnterPriseDetailShow = false;
+        this.$store.state.DigitalTwin.planImgShow = false;
+        
         if (!this.shouldDraw) {
-          clearBuildingEntities()
+          
           this.shouldDraw = true
         }
         this.$store.commit("DigitalTwin/changeEnterPriseShow", false);
@@ -296,11 +304,11 @@ export default {
         this.$store.commit("DigitalTwin/changePlanImgShow", false);
 
         // 事件处理显示
-        setTimeout(() => {
-          this.$store.commit("DigitalTwin/changeEventListShow", true);
-        }, 1000);
+        // setTimeout(() => {
+        //   this.$store.commit("DigitalTwin/changeEventListShow", true);
+        // }, 1000);
       } else if(index===1){
-
+        clearBuildingEntities();
         if (this.shouldDraw) {
           // 删除停车场的点位信息
           deleteParkBillboard()
@@ -396,6 +404,11 @@ export default {
         // 管道和楼栋平面图信息
         this.$store.commit("DigitalTwin/changeConduitShow", false);
         this.$store.commit("DigitalTwin/changePlanImgShow", false);
+        this.$store.state.DigitalTwin.EnterPriseShow = false;
+        this.$store.state.DigitalTwin.EnterPriseDetailShow = false;
+        this.$store.state.DigitalTwin.planImgShow = false;
+        deleteParkBillboard();
+        clearBuildingEntities()
       }
       this.changeActive(index);
     },
