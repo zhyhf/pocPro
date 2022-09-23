@@ -201,7 +201,7 @@ export default {
   // background-size: 100% 100%;
   padding: 1rem;
   padding-top: 2rem;
-  left: 64%;
+  left: 63.5%;
   top: 17%;
   font-size: 13px;
   transform: translateX(-50%);

@@ -97,7 +97,7 @@ export default {
   line-height: 100%;
   position: absolute;
   display: flex;
-  left: 24%;
+  left: 23.1%;
   top: 17%;
   flex-direction: column;
   z-index: 120;

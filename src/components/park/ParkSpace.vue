@@ -10,39 +10,40 @@
     </div>
     <div class="flex-1 content">
       <div class="top">
-        <img src="../../assets/icon/car.svg" alt=""/>
+        <!-- <img src="../../assets/icon/car-top.png" alt=""/> -->
         <div class="bold ">{{ $store.state.DigitalTwin.parkDetails.spareNum }}</div>
         <div class="top-distance enmptyPark">空余车位</div>
       </div>
       <div class="bottom">
-        <div class="bottom-distance enmptyPark">已用车位</div>
+        <div class="bottom-distance usedCar enmptyPark">已用车位</div>
         <div class="bold green bottom-distance">{{ $store.state.DigitalTwin.parkDetails.used }}</div>
-        <img src="../../assets/icon/car-green.svg" alt=""/>
+        <!-- <img src="../../assets/icon/green-car.png" alt=""/> -->
       </div>
     </div>
   </div>
   <div>
-    <el-divider />
+    <!-- <el-divider /> -->
+    <div class="line"></div>
        <div class="content-detail intelligent-work">
           <div class="intelligent-item0">
               <img src="../../assets/img/park3.svg"  style="width: 42px; height: 42px">
               <div class="contentTile">
-                <div class="name">烟感/个</div>
-                <div class="num">{{$store.state.DigitalTwin.parkDetails.smogNum}}</div>
+                <div class="name">烟感</div>
+                <div class="num">{{$store.state.DigitalTwin.parkDetails.smogNum}} <span class="name">个</span></div>
               </div>
           </div>
              <div :class="[this.showEvent?'intelligent-item-bg':'intelligent-item1']" @click="handleShowEvent">
               <img src="../../assets/img/park2.svg"  style="width: 42px; height: 42px">
               <div class="contentTile">
-                <div class="name">摄像头/个</div>
-                <div class="num">{{$store.state.DigitalTwin.parkDetails.camera}}</div>
+                <div class="name">摄像头</div>
+                <div class="num">{{$store.state.DigitalTwin.parkDetails.camera}} <span class="name">个</span></div>
               </div>
           </div>
           <div class="intelligent-item3">
                <img src="../../assets/img/park4.svg"  style="width: 42px; height: 42px">
               <div class="contentTile">
-                <div class="name">充电桩/个</div>
-                <div class="num">{{$store.state.DigitalTwin.parkDetails.eleNum}}</div>
+                <div class="name">充电桩</div>
+                <div class="num">{{$store.state.DigitalTwin.parkDetails.eleNum}} <span class="name">个</span></div>
               </div>
           </div>
         </div>
@@ -168,6 +169,12 @@ export default {
 </script>
 <style lang="less" scoped>
 @import "../../assets/css/globe.css";
+.line{
+  height: 1px;
+  margin-top: 15px;
+  margin-bottom: 10px;
+  border-top:1px dotted lightgrey ;
+}
 .intelligent-work {
       display: flex;
       margin-bottom: 10px;
@@ -191,7 +198,8 @@ export default {
             vertical-align: middle;
             margin: 12px 0px 12px 10px;
             .name{
-             color: #fff;
+              color: lightgrey;
+            // color: #fff;
              font-size: 14px;
             }
             .num{
@@ -307,29 +315,33 @@ export default {
   .top {
     width: 95%;
     height: 51px;
-    background: url("../../assets/img/park-top.png") no-repeat;
+    background: url("../../assets/icon/car-top.png") no-repeat;
     background-size: 100% 100%;
     display: flex;
-    justify-content: space-evenly;
+    // justify-content: space-evenly;
     align-items: center;
-    padding-bottom: 1.8rem;
+    padding-bottom: 1rem;
     .bold{
+    //height: 35px;
+     margin-left: 155px;
+    // line-height: 35px;
       margin-right: 4PX;
     }
     img {
        height: 70%;
-       margin-top: 20PX;
+       margin-top: 10PX;
     }
   }
   .bottom {
     width: 95%;
     height: 51px;
-    background: url("../../assets/img/park-bottom.png") no-repeat;
+    background: url("../../assets/icon/green-car.png") no-repeat;
     background-size: 100% 100%;
     display: flex;
-    justify-content: space-evenly;
+    //justify-content: space-evenly;
     align-items: center;
-    padding-top: 1.8rem;
+    padding-top: 1rem;
+    margin-top: -10px;
     img {
         height: 70%;
         margin-bottom: 12px;
@@ -345,6 +357,11 @@ export default {
   }
   .bottom-distance {
     align-self: auto;
+    // margin-left: 150px;
+  }
+  .usedCar{
+    margin-left: 100px;
+    padding-right:5px;
   }
   // .line {
   //   width: 1.5rem;
