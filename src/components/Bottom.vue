@@ -346,10 +346,13 @@ export default {
       //   // }, 1000);
       //  }
        else if(index===2){
+         // 删除停车场的点位信息
+        //  deleteParkBillboard()
         if (!this.shouldDraw) {
           clearBuildingEntities()
           this.shouldDraw = true
         }
+        this.$bus.$emit('closeOthers')
         this.addParkArea(this.parkAreaDatas)
         this.$store.commit("DigitalTwin/changeEventListShow", false);
         this.$store.commit("DigitalTwin/changeEventDetailShow", false);

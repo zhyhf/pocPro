@@ -243,7 +243,9 @@ function addBuildingIconEvent() {
     let pick = $viewer.scene.pick(movement.position);
     let id = pick && pick.id && pick.id.id;
     if (pick) {
+      console.log('图标id',id);
       if (id) {
+        if(id.indexOf('park') ==-1){
         resetSelectedIcon()
         store.commit('DigitalTwin/changeSelectedBuilding', id)
         console.log('-0');
@@ -260,7 +262,7 @@ function addBuildingIconEvent() {
             store.commit("DigitalTwin/changeEnterPriseShow", true);
         }, 1000);
       }
-    }
+      }}
   }, Cesium.ScreenSpaceEventType.LEFT_CLICK)
 }
 

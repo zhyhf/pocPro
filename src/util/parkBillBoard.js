@@ -235,6 +235,8 @@ const addClickEvent = (self) => {
     let id = pick && pick.id && pick.id.id;
     console.log('idddd0000',id);
     if (pick) {
+      if(id.indexOf("park") !== -1){
+        console.log('停车和');
       console.log('entityObj[id]',entityObj[id]);
       if(entityObj[id]&&entityObj[id].perspective){
         flyTo(entityObj[id].perspective)
@@ -297,7 +299,7 @@ const addClickEvent = (self) => {
         $viewer.entities.getById(entityObj[id].billboardId)._show=false
       }
     }
-  }, Cesium.ScreenSpaceEventType.LEFT_CLICK);
+     }}, Cesium.ScreenSpaceEventType.LEFT_CLICK);
 };
 const flyTo = (center) => {
   $viewer.qtum.centerAt(center);

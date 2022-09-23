@@ -83,6 +83,10 @@ export default {
         this.showEvent=false
     });
 
+    this.$bus.$on("closeOthers",()=>{
+      this.close()
+    });
+
   },
   methods: {
     handleClick(){
@@ -124,6 +128,7 @@ export default {
     },
 
    close() {
+    console.log('关闭');
    let points=['parkPosition1Icon','parkPosition2Icon','parkPosition3Icon',
               'parkPosition4Icon','parkPosition5Icon',
               'parkPosition6Icon']
