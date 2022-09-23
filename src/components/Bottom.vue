@@ -301,7 +301,7 @@ export default {
           this.$store.commit("DigitalTwin/changeEventListShow", true);
         }, 1000);
       } else if(index===1){
-
+        clearBuildingEntities();
         if (this.shouldDraw) {
           // 删除停车场的点位信息
           deleteParkBillboard()
