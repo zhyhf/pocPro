@@ -1,7 +1,7 @@
 <template>
   <div class="plan"  v-show="$store.state.DigitalTwin.planImgShow">
    <div class="title">
-     <div>{{ "北航大厦--"+$store.state.DigitalTwin.EnterPriseDetailType+"层平面图" }}</div>
+     <div>{{ $store.state.DigitalTwin.selectedBuilding.title +"--"+$store.state.DigitalTwin.EnterPriseDetailType+"层平面图" }}</div>
      <div class="closeTool" @click="showEventContainer"></div>
    </div>
   </div>

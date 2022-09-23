@@ -135,6 +135,10 @@ function addBuildingIconEvent() {
         let selectedIcon = buildingIcon.find(item => item.id === id)
         store.commit('DigitalTwin/changeSelectedIcon', selectedIcon)
         $viewer.entities.removeById(id)
+        //楼栋信息显示
+          setTimeout(() => {
+            store.commit("DigitalTwin/changeEnterPriseShow", true);
+        }, 1000);
       }
     }
   }, Cesium.ScreenSpaceEventType.LEFT_CLICK)

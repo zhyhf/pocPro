@@ -329,6 +329,11 @@ export default {
               this.$store.commit("DigitalTwin/changeEnterPriseShow", true);
         }, 1000);
        }
+      //  else if(index===2){
+      //   //   setTimeout(() => 
+      //   //       this.$store.commit("DigitalTwin/changeEnterPriseShow", true);
+      //   // }, 1000);
+      //  }
        else if(index===2){
         if (!this.shouldDraw) {
           clearBuildingEntities()

@@ -132,7 +132,7 @@ export default {
     },
     changeSelectedIcon(state, value) {
       state.selectedIcon = value
-    }
+    },
   },
   state: {
     // 停车场摄像头信息

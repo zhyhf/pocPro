@@ -59,7 +59,7 @@
     <EnterpriseShowVue />
     <EnterpriseVue />
     <plan-img />
-    <conduit />
+    <!-- <conduit /> -->
     <!-- 停车告警信息页面 -->
     <ParkingStatisticsVue />
     <!-- 智慧停车-摄像头告警页面 -->

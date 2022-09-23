@@ -76,8 +76,7 @@ export default {
 </script>
 <style lang="less" scoped>
 .enterprise-detail {
-  width: 730px;
-  height: 320px;
+  width: 650px;
   position: absolute;
   // background: url("../../assets/img/enterprise-bg.png") no-repeat;
   background-size: 100% 100%;
