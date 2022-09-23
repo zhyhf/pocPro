@@ -243,31 +243,31 @@ const buildingIcon = [
 
 const earlywarningIcon = [
     {
-        id: "rgBuilding",
+        id: "rgWarning",
         position: [118.342383, 33.954300, 64],
         image: require('@/assets/icon/warning/warning.png'),
         scale: 0.4,
     },
     {
-        id: "htBuilding",
+        id: "htWarning",
         position: [118.34117, 33.9548935, 47],
         image: require('@/assets/icon/warning/warning.png'),
         scale: 0.4,
     },
     {
-        id: "sxBuilding",
+        id: "sxWarning",
         position: [118.3395615, 33.955267, 83],
         image: require('@/assets/icon/warning/warning.png'),
         scale: 0.4,
     },
     {
-        id: "qzBuilding",
+        id: "qzWarning",
         position: [118.3401561, 33.9560485, 46],
         image: require('@/assets/icon/warning/warning.png'),
         scale: 0.4,
     },
     {
-        id: "yxBuilding",
+        id: "yxWarning",
         position: [118.343492, 33.9560545, 46],
         image: require('@/assets/icon/warning/warning.png'),
         scale: 0.4,
