@@ -23,6 +23,55 @@ function createBuilding() {
   addBuildingIconEvent()
 }
 
+function drawIndustry(name){
+   switch(name){
+     case '电子商务':
+      clearBuildingEntities();
+      addWrapper(qzCoverAreas, 'qz');
+      addWrapper(htCoverAreas, 'ht');
+      addWrapper(hcCoverAreas, 'hc');
+      addWrapper(hyCoverAreas, 'hy');
+     break;
+     case '房地产':
+      clearBuildingEntities();
+      addWrapper(hyCoverAreas, 'zta');
+      addWrapper(sxCoverAreas, 'xs');
+     break;
+     case '物业':
+      clearBuildingEntities();
+      addWrapper(ztCoverAreas, 'zt');
+      addWrapper(sxCoverAreas, 'xs');
+     break;
+     case '物流':
+      clearBuildingEntities();
+      addWrapper(qzCoverAreas, 'qz');  
+      addWrapper(htCoverAreas, 'ht');
+      addWrapper(sxCoverAreas, 'xs'); 
+     break;
+     case '人力资源':
+      clearBuildingEntities();
+      addWrapper(htCoverAreas, 'ht');
+      addWrapper(ztCoverAreas, 'zt');
+      addWrapper(yxCoverAreas, 'yx');
+    break;
+    case '广告':
+      clearBuildingEntities();
+      addWrapper(htCoverAreas, 'ht');
+      addWrapper(tyCoverAreas, 'ty');
+      addWrapper(ycCoverAreas, 'yc');
+    break;
+    case '保险':
+      clearBuildingEntities();
+      addWrapper(ztaCoverAreas, 'zta');
+      addWrapper(rgCoverAreas, 'rg');
+    break;
+    case '策划':
+      clearBuildingEntities();
+      addWrapper(hyCoverAreas, 'hy');
+      addWrapper(rgCoverAreas, 'rg');
+   }
+}
+
 function draw() {
   addWrapper(hyCoverAreas, 'hy')
   addWrapper(ycCoverAreas, 'yc')
@@ -709,7 +758,7 @@ const addClickEvent = () => {
 const flyTo = (center) => {
   $viewer.qtum.centerAt(center);
 };
-export { createBillboard, createBuilding };
+export { createBillboard, createBuilding, drawIndustry };
 // 创建多边形实体 添加图片填充  imageValue: 填充图片路径
 export const materialImgFn = (id,pointArr,ifexclude,imageValue,height = 15) => {
  //材质修改

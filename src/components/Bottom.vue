@@ -33,7 +33,7 @@
 
 <script>
 import { mapState } from "vuex";
-import {materialImgFn,createBuilding, resetSelectedIcon, clearBuildingEntities } from '@/util/createBillboard.js'
+import {materialImgFn,createBuilding, resetSelectedIcon, clearBuildingEntities,drawIndustry } from '@/util/createBillboard.js'
 import { createParkBillboard,deleteParkBillboard} from '@/util/parkBillBoard'
 export default {
   data() {
@@ -245,7 +245,8 @@ export default {
   methods: {
     select(name) {
       this.selectedIndustry = name
-      this.showOptions = false
+      this.showOptions = false;
+      drawIndustry(name);
     },
     onMouseEnter(index) {
       this.bottomPicUrl[index].isHover = true
@@ -396,6 +397,11 @@ export default {
         // 管道和楼栋平面图信息
         this.$store.commit("DigitalTwin/changeConduitShow", false);
         this.$store.commit("DigitalTwin/changePlanImgShow", false);
+        this.$store.state.DigitalTwin.EnterPriseShow = false;
+        this.$store.state.DigitalTwin.EnterPriseDetailShow = false;
+        this.$store.state.DigitalTwin.planImgShow = false;
+        deleteParkBillboard();
+        clearBuildingEntities()
       }
       this.changeActive(index);
     },
