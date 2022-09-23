@@ -89,6 +89,7 @@ const addIcon = (self) => {
   addClickEvent(self);
 };
 const addClickEvent = (self) => {
+  
   // entityObj图标对应的点位视口信息
   let entityObj = {
     parkPosition1Icon: {
@@ -235,7 +236,9 @@ const addClickEvent = (self) => {
     console.log('idddd0000',id);
     if (pick) {
       console.log('entityObj[id]',entityObj[id]);
-       flyTo(entityObj[id].perspective)
+      if(entityObj[id]&&entityObj[id].perspective){
+        flyTo(entityObj[id].perspective)
+      }
        points.map(item=>{
         // console.log('itemmm',item);
         $viewer.entities.getById(item)._show=true

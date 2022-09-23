@@ -300,6 +300,7 @@ export default {
           this.$store.commit("DigitalTwin/changeEventListShow", true);
         }, 1000);
       } else if(index===1){
+
         if (this.shouldDraw) {
           // 删除停车场的点位信息
           deleteParkBillboard()
@@ -308,7 +309,9 @@ export default {
         } else {
           resetSelectedIcon()
         }
-
+        this.$store.state.DigitalTwin.EnterPriseShow = false
+        this.$store.state.DigitalTwin.EnterPriseDetailShow = false
+        this.$store.state.DigitalTwin.planImgShow = false
         this.$store.commit("DigitalTwin/changeEventListShow", false);
         this.$store.commit("DigitalTwin/changeEventDetailShow", false);
         this.$store.commit("DigitalTwin/changeParkEventDetail", false);
@@ -325,9 +328,9 @@ export default {
         this.$store.commit("DigitalTwin/changeEnvAnalysisShow", false);
         this.$store.commit("DigitalTwin/changeCompanyAnalysisShow", false);
         // 楼栋信息显示
-          setTimeout(() => {
-              this.$store.commit("DigitalTwin/changeEnterPriseShow", true);
-        }, 1000);
+        //   setTimeout(() => {
+        //       this.$store.commit("DigitalTwin/changeEnterPriseShow", true);
+        // }, 1000);
        }
       //  else if(index===2){
       //   //   setTimeout(() => 

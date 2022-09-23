@@ -72,7 +72,7 @@ export default {
   created(){
     this.$bus.$on("changeStyle",()=>{
         console.log('changeStyle')
-        if(!$store.state.DigitalTwin.parkEventListShow){
+        if(!this.$store.state.DigitalTwin.parkEventListShow){
           this.showEvent=false
         }
     });
