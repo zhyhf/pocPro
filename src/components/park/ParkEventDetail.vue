@@ -160,8 +160,8 @@ export default {
 .park-space {
   width: 262px;
   position: absolute;
-  bottom: 12%;
-  left: 46%;
+  bottom: 10%;
+  left: 51.5%;
   display: flex;
   flex-direction: column;
   justify-content: space-between;

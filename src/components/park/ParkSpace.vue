@@ -1,7 +1,7 @@
 <template>
 <div>
   <div class="detail flex-1">
-    <!-- <closeToolVue @click.native="close"></closeToolVue> -->
+    <closeToolVue @click.native="close"></closeToolVue>
     <div class="chart" :id="chartId">
       <div class="center">
         <span class="num">85</span>
@@ -10,53 +10,39 @@
     </div>
     <div class="flex-1 content">
       <div class="top">
-        <img src="../../assets/icon/car.svg" alt="" />
-        <div class="bold ">{{ totalNum - usedNum }}</div>
+        <img src="../../assets/icon/car.svg" alt=""/>
+        <div class="bold ">{{ $store.state.DigitalTwin.parkDetails.spareNum }}</div>
         <div class="top-distance enmptyPark">空余车位</div>
       </div>
       <div class="bottom">
         <div class="bottom-distance enmptyPark">已用车位</div>
-        <div class="bold green bottom-distance">{{ usedNum }}</div>
-        <img src="../../assets/icon/car-green.svg" alt="" />
+        <div class="bold green bottom-distance">{{ $store.state.DigitalTwin.parkDetails.used }}</div>
+        <img src="../../assets/icon/car-green.svg" alt=""/>
       </div>
     </div>
-    <!-- <div class="rightWaring" @click="handleShowEvent">
-        <img src="../../assets/img/cameraImg.svg"  style="width: 60px;padding:6px">
-        <div class="name">摄像头</div>
-        <div class="num">550</div>
-    </div> -->
   </div>
   <div>
     <el-divider />
        <div class="content-detail intelligent-work">
-          <div class="intelligent-item0" @click="handleClick">
-              <img src="../../assets/img/park1.svg"  style="width: 42px; height: 42px">
-              <div class="contentTile">
-                <div class="name">停车场总数/个</div>
-                <div class="num">4</div>
-              </div>
-          </div>
-             <div class="intelligent-item1" @click="handleShowEvent">
-              <img src="../../assets/img/park2.svg"  style="width: 42px; height: 42px">
-              <div class="contentTile">
-                <div class="name">摄像头/个</div>
-                <div class="num">550</div>
-              </div>
-          </div>
-       </div>
-         <div class="content-detail intelligent-work">
-          <div class="intelligent-item3">
+          <div class="intelligent-item0">
               <img src="../../assets/img/park3.svg"  style="width: 42px; height: 42px">
               <div class="contentTile">
                 <div class="name">烟感/个</div>
-                <div class="num">280</div>
+                <div class="num">{{$store.state.DigitalTwin.parkDetails.smogNum}}</div>
+              </div>
+          </div>
+             <div :class="[this.showEvent?'intelligent-item-bg':'intelligent-item1']" @click="handleShowEvent">
+              <img src="../../assets/img/park2.svg"  style="width: 42px; height: 42px">
+              <div class="contentTile">
+                <div class="name">摄像头/个</div>
+                <div class="num">{{$store.state.DigitalTwin.parkDetails.camera}}</div>
               </div>
           </div>
           <div class="intelligent-item3">
                <img src="../../assets/img/park4.svg"  style="width: 42px; height: 42px">
               <div class="contentTile">
                 <div class="name">充电桩/个</div>
-                <div class="num">380</div>
+                <div class="num">{{$store.state.DigitalTwin.parkDetails.eleNum}}</div>
               </div>
           </div>
         </div>
@@ -81,6 +67,21 @@ export default {
       usedNum: 96,
       // vi: "$store.state.DigitalTwin.parkCamera",
     };
+  },
+
+  created(){
+    this.$bus.$on("changeStyle",()=>{
+        console.log('changeStyle')
+        if(!$store.state.DigitalTwin.parkEventListShow){
+          this.showEvent=false
+        }
+    });
+
+    this.$bus.$on("closeChangeStyle",()=>{
+        console.log('changeStylessssss');
+        this.showEvent=false
+    });
+
   },
   methods: {
     handleClick(){
@@ -113,28 +114,39 @@ export default {
       this.$store.commit("DigitalTwin/changeParkEventListShow", false);
       this.$store.commit("DigitalTwin/changeParkEventDetail", false);
     },
+
     initialChart() {
       // 基于准备好的dom，初始化echarts实例
       let chartDom = echarts.init(document.getElementById(this.chartId));
       // 绘制图表
       chartDom.setOption(this.option);
     },
-    close() {
+
+   close() {
+   let points=['parkPosition1Icon','parkPosition2Icon','parkPosition3Icon',
+              'parkPosition4Icon','parkPosition5Icon',
+              'parkPosition6Icon']
+        points.map(item=>{
+        console.log('itemmm',item);
+        $viewer.entities.getById(item)._show=true
+       })
+      this.$store.commit("DigitalTwin/changeParkShow", false);
+      console.log('6736246326453264532645326');
       this.$store.commit("DigitalTwin/changeParkCamera", false);
+      this.$store.commit("DigitalTwin/changeParkEventDetail", false);
+      // 关闭摄像头列表
+      this.$store.commit("DigitalTwin/changeParkEventListShow", false);
     },
+
     // 展示事件
     handleShowEvent(){
       this.showEvent = !this.showEvent
       if(this.showEvent){
-       document.getElementsByClassName('intelligent-item1')[0].style.backgroundColor = '#38B7FD'
-       document.getElementsByClassName('intelligent-item0')[0].style.backgroundColor = ''
        this.$store.commit("DigitalTwin/changeParkEventListShow", true);
        this.show = false
       }else{
-        document.getElementsByClassName('intelligent-item1')[0].style.backgroundColor = ''
         this.$store.commit("DigitalTwin/changeParkEventListShow", false);
       }
-
       const weizhi = 
        {
           y: 33.948273,
@@ -146,11 +158,6 @@ export default {
        }
       $viewer.qtum.centerAt(weizhi);
     }
-    // changeNum() {
-    //   timer = setInterval(() => {
-    //     this.usedNum += 1;
-    //   }, 8000);
-    // },
   },
   mounted() {
     // this.initialChart();
@@ -163,10 +170,41 @@ export default {
 @import "../../assets/css/globe.css";
 .intelligent-work {
       display: flex;
+      margin-bottom: 10px;
+      // .intelligent-item-bg{
+      //   background-color:#38B7FD;
+      // }
+      .intelligent-item-bg{
+          cursor: pointer;
+          margin-left: 4px;
+          padding-left: 5px;
+          width: 160px;
+          height: 62px;
+          border-radius: 5px;
+          display: flex;
+          background-color:#38B7FD;
+          img{
+            margin-top: 6px;
+          }
+          .contentTile{
+            text-align: left;
+            vertical-align: middle;
+            margin: 12px 0px 12px 10px;
+            .name{
+             color: #fff;
+             font-size: 14px;
+            }
+            .num{
+               color: #fff;
+               font-size: 21px;
+               margin-top: 5px;
+            }
+          }
+      }
       .intelligent-item0,.intelligent-item1,.intelligent-item3{
           margin-left: 4px;
           padding-left: 5px;
-          width: 180px;
+          width: 160px;
           height: 62px;
           border-radius: 5px;
           display: flex;
@@ -209,6 +247,7 @@ export default {
   .content{
     margin-top: 10px;
     margin-left: 12px;
+    // padding-bottom:20px;
   }
   .enmptyPark{
     opacity: 0.64;
@@ -266,7 +305,7 @@ export default {
     }
   }
   .top {
-    width: 190px;
+    width: 95%;
     height: 51px;
     background: url("../../assets/img/park-top.png") no-repeat;
     background-size: 100% 100%;
@@ -275,15 +314,15 @@ export default {
     align-items: center;
     padding-bottom: 1.8rem;
     .bold{
-      margin-left: 4px;
+      margin-right: 4PX;
     }
     img {
        height: 70%;
-       margin-top: 20px;
+       margin-top: 20PX;
     }
   }
   .bottom {
-    width: 190px;
+    width: 95%;
     height: 51px;
     background: url("../../assets/img/park-bottom.png") no-repeat;
     background-size: 100% 100%;

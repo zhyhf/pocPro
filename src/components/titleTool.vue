@@ -21,8 +21,10 @@ export default {
       }else if(this.type === 'parkEventList') {
         // 智慧停车 - 摄像头
         this.$store.commit("DigitalTwin/changeParkEventListShow", false);
+        this.$bus.$emit("closeChangeStyle");
       }else if(this.type === 'parkEventDetail') {
         // 智慧停车 - 摄像头实时监控
+        this.$bus.$emit("closeCameraStyle");
         this.$store.commit("DigitalTwin/changeParkEventDetail", false);
       }
       else if(this.type === 'EnterPriseShow') {

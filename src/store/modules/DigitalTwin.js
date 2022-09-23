@@ -30,6 +30,19 @@ export default {
     changeEventDetail(state, value) {
       state.eventDetailList = value
     },
+
+    // 停车场数据
+    changeParkDetails(state, value){
+      state.parkDetails = value
+      console.log('value',value);
+    },
+
+    // 停车场相机信息
+    changeParkCamera(state, value){
+      state.parktableData = value
+      console.log('value',value);
+    },
+
     changeParkDetail(state, value) {
       state.parkDetailList = value
     },
@@ -122,6 +135,8 @@ export default {
     }
   },
   state: {
+    // 停车场摄像头信息
+    parktableData:[],
     controlBottomShow: true,
     parkCamera: false,
     eventShow: false,
@@ -160,7 +175,8 @@ export default {
 
     selectedBuilding: buildingInfo['hyBuilding'],
     selectedBuildingIndex: 0,
-    selectedIcon: null
+    selectedIcon: null,
+    parkDetails:[],
   },
   getters: {
 

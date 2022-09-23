@@ -11,7 +11,7 @@ import '@/assets/iconfont/iconfont.css' // 引入iconfont'
 import './util/rem'
 // 将自动注册所有组件为全局组件
 import dataV from '@jiaminghi/data-view'
-
+Vue.prototype.$bus = new Vue()  // 增加事件总线
 Vue.prototype.$echarts = echarts
 Vue.use(ElementUI)
 Vue.use(dataV)

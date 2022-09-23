@@ -1,6 +1,6 @@
 <template>
   <div class="parking-statistics" id="ParkingStatistics"  v-show="$store.state.DigitalTwin.parkShow">
-    <titleToolVue :title="title" :iconPath="iconPath" :type="'parkShow'"></titleToolVue>
+    <titleToolVue :title="$store.state.DigitalTwin.parkDetails.parkName" :iconPath="iconPath" :type="'parkShow'"></titleToolVue>
     <ParkSpaceVue :chartId="chartId" :option="option"></ParkSpaceVue>
   </div>
 </template>
@@ -17,7 +17,6 @@ export default {
     return {
       s: "$store.state.DigitalTwin.parkCamera",
       chartId: "parking",
-      title: "智慧停车",
       iconPath: require("../../assets/icon/park.png"),
       option: {
         series: [

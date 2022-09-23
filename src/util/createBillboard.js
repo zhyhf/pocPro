@@ -129,7 +129,9 @@ function addBuildingIconEvent() {
         console.log('-0');
         console.log(entityObj[id]);
         console.log(entityObj);
-        flyTo(entityObj[id].perspective);
+        if(entityObj[id]&&entityObj[id].perspective){
+          flyTo(entityObj[id].perspective);
+        }  
         let selectedIcon = buildingIcon.find(item => item.id === id)
         store.commit('DigitalTwin/changeSelectedIcon', selectedIcon)
         $viewer.entities.removeById(id)
@@ -703,14 +705,13 @@ const addClickEvent = () => {
 const flyTo = (center) => {
   $viewer.qtum.centerAt(center);
 };
-
 export { createBillboard, createBuilding };
-
 // 创建多边形实体 添加图片填充  imageValue: 填充图片路径
-export const materialImgFn = (pointArr,ifexclude,imageValue,height = 15) => {
-  // 材质修改
+export const materialImgFn = (id,pointArr,ifexclude,imageValue,height = 15) => {
+ //材质修改
  const entity = $viewer.entities.add(
    {
+      id:id,
       name:'polygon',
       polygon: {
          height: height,

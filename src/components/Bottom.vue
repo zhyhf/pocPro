@@ -19,7 +19,7 @@
             >
             <div v-show="index === 4" class="selected-industry">{{ selectedIndustry }}</div>
             <div v-show="showOptions && index === 4" class="industry-option-bg">
-              <div v-for="(name, index) in industryOptions" class="industry-item" @click.stop="select(name)">{{ name }}</div>
+              <div v-for="(name, index) in industryOptions" :key="index" class="industry-item" @click.stop="select(name)">{{ name }}</div>
             </div>
           </div>
         </div>
@@ -33,8 +33,8 @@
 
 <script>
 import { mapState } from "vuex";
-import { materialImgFn, createBuilding, resetSelectedIcon, clearBuildingEntities } from '@/util/createBillboard.js'
-import { createParkBillboard} from '@/util/parkBillBoard'
+import {materialImgFn,createBuilding, resetSelectedIcon, clearBuildingEntities } from '@/util/createBillboard.js'
+import { createParkBillboard,deleteParkBillboard} from '@/util/parkBillBoard'
 export default {
   data() {
     return {
@@ -120,6 +120,7 @@ export default {
       ],
       parkAreaDatas:[
         {
+        id:'parkPosition1',
         areaPositions:[
         118.340862,33.956594,
         118.341187, 33.956602,
@@ -136,6 +137,7 @@ export default {
         height: 8
       },
         {
+          id:'parkPosition2',
           areaPositions:[
           118.339273,33.957069,
           118.339874,33.956904,
@@ -148,6 +150,7 @@ export default {
         img:require('@/assets/innerC/park2Back.png')
       },
          {
+          id:'parkPosition3',
         areaPositions:[
           118.341089,33.955203,
           118.341476,33.955205,
@@ -159,7 +162,8 @@ export default {
         img:''
       },
          {
-        areaPositions:[
+          id:'parkPosition4',
+         areaPositions:[
           118.339082,33.954115,
           118.339827,33.954115,
           118.339851,33.954709,
@@ -170,6 +174,7 @@ export default {
         img:''
       },
         {
+          id:'parkPosition5',
         areaPositions:[
           118.343621,33.955122,
           118.344279,33.955122,
@@ -180,7 +185,8 @@ export default {
         height: 1,
         img:'',
       },
-        {
+      {
+        id:'parkPosition6',
         areaPositions:[
           118.343288,33.957001,
           118.343668,33.957001,
@@ -250,15 +256,18 @@ export default {
     // 停车场高亮区域
     addParkArea(data){
     data.map(item=>{
-    materialImgFn(item.areaPositions,item.ifexclude,item.img,item.height)
+      materialImgFn(item.id,item.areaPositions,item.ifexclude,item.img,item.height)
       })
-     createParkBillboard()
+     createParkBillboard(this)
     },
+    
     changeActive(index) {
       this.$store.commit("DigitalTwin/changeCheckBtnNum", index);
     },
     flyTo(index) {
+      // 判断index是否为4,this.showOptions为true或者false
       this.showOptions = index === 4
+      // 点击下面的菜单栏飞到指定的位置
       $viewer.qtum.centerAt(this.position[index]); // 飞行到指定位
       if (index === 3) {
         if (!this.shouldDraw) {
@@ -291,8 +300,9 @@ export default {
           this.$store.commit("DigitalTwin/changeEventListShow", true);
         }, 1000);
       } else if(index===1){
-
         if (this.shouldDraw) {
+          // 删除停车场的点位信息
+          deleteParkBillboard()
           createBuilding()
           this.shouldDraw = false
         } else {
@@ -318,7 +328,8 @@ export default {
           setTimeout(() => {
               this.$store.commit("DigitalTwin/changeEnterPriseShow", true);
         }, 1000);
-       }else if(index===2){
+       }
+       else if(index===2){
         if (!this.shouldDraw) {
           clearBuildingEntities()
           this.shouldDraw = true

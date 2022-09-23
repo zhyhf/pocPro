@@ -10,21 +10,23 @@
     ></titleToolVue>
     <div class="content">
       <div class="header rows">
-        <span v-for="(item, index) in tableHead" :key="index"> {{ item }}</span>
+        <span v-for="(item, index) in tableHead" :key="index" class="names"> {{ item }}</span>
       </div>
-      <div class="rows" v-for="(item, i) in tableData" :key="i">
+      <div class="rows" v-for="(item, i) in $store.state.DigitalTwin.parktableData" :key="i">
         <div v-for="(v, k, index) in item" :key="index">
           <template v-if="k !== 'perspective'">
             <i class="redPoint" v-show="item[k] === '故障'"></i>
             <i class="greenPoint" v-show="item[k] === '正常'"></i>
-            {{ item[k] }}
+            <!-- {{ item[k] }} -->
+            <el-tooltip class="item" popper-class='my-tooltip' :enterable="false" effect="dark" :content="item[k]" placement="top">
+           <div class="show-msg">{{ item[k] }}</div>
+           </el-tooltip>
           </template>
         </div>
         <span
           :class="{ operation: true, active: activeIndex === i }"
-          @click="flyTo(i, tableData[i].perspective, item)"
-          >实时监控</span
-        >
+          @click="flyTo(i, $store.state.DigitalTwin.parktableData[i].perspective, item)"
+          >实时监控</span>
       </div>
       <div class="table-buttons">
         <el-pagination :total="5" :page-size="5" @currentChange="currentChange" />
@@ -46,88 +48,89 @@ export default {
   },
   data() {
     return {
-      activeIndex: 100,
+      activeIndex: -1,
       redColor: "red",
       whiteColor: "white",
       title: "摄像头",
       iconPath: require("../../assets/icon/cameraSvg.svg"),
-      tableData: [
-        {
-          name: "NH1472589251",
-          position: "17区球型机",
-          time: "负一层17区",
-          superName: "人员聚集",
-          status: "正常",
-          perspective: {
-            y: 33.962793,
-            x: 118.341834,
-            z: 107.97,
-            heading: 0.3,
-            pitch: -28.7,
-            roll: 0,
-          },
-        },
-        {
-          name: "NH1472589252",
-          position: "企业东门2号口",
-          time: "负一层28区",
-          superName: "人员入侵",
-          status: "正常",
-          perspective: {
-            y: 33.962793,
-            x: 118.341834,
-            z: 107.97,
-            heading: 0.3,
-            pitch: -28.7,
-            roll: 0,
-          },
-        },
-        {
-          name: "NH1472589253",
-          position: "28区球型机",
-          time: "负一层28区",
-          superName: "吸烟监测",
-          status: "故障",
-          perspective: {
-            y: 27.975375,
-            x: 120.726738,
-            z: 33.26,
-            heading: 108.6,
-            pitch: -20.2,
-            roll: 0,
-          },
-        },
-        {
-          name: "NH1472589254",
-          position: "22区球型机",
-          time: "负一层22区",
-          superName: "吸烟监测",
-          status: "正常",
-          perspective: {
-            y: 27.975563,
-            x: 120.726657,
-            z: 42,
-            heading: 239.8,
-            pitch: -26.6,
-            roll: 0,
-          },
-        },
-        {
-          name: "NH1472589255",
-          position: "28区球型机",
-          time: "负一层28区",
-          superName: "吸烟监测",
-          status: "正常",
-          perspective: {
-            y: 27.975282,
-            x: 120.73021,
-            z: 44.18,
-            heading: 203,
-            pitch: -17.3,
-            roll: 0.2,
-          },
-        },
-      ],
+      tableData:this.$store.state.DigitalTwin.parktableData,
+      // tableData: [
+      //   {
+      //     name: "NH1472589251",
+      //     position: "17区球型机",
+      //     time: "负一层17区",
+      //     superName: "人员聚集",
+      //     status: "正常",
+      //     perspective: {
+      //       y: 33.962793,
+      //       x: 118.341834,
+      //       z: 107.97,
+      //       heading: 0.3,
+      //       pitch: -28.7,
+      //       roll: 0,
+      //     },
+      //   },
+      //   {
+      //     name: "NH1472589252",
+      //     position: "企业东门2号口",
+      //     time: "负一层28区",
+      //     superName: "人员入侵",
+      //     status: "正常",
+      //     perspective: {
+      //       y: 33.962793,
+      //       x: 118.341834,
+      //       z: 107.97,
+      //       heading: 0.3,
+      //       pitch: -28.7,
+      //       roll: 0,
+      //     },
+      //   },
+      //   {
+      //     name: "NH1472589253",
+      //     position: "28区球型机",
+      //     time: "负一层28区",
+      //     superName: "吸烟监测",
+      //     status: "故障",
+      //     perspective: {
+      //       y: 27.975375,
+      //       x: 120.726738,
+      //       z: 33.26,
+      //       heading: 108.6,
+      //       pitch: -20.2,
+      //       roll: 0,
+      //     },
+      //   },
+      //   {
+      //     name: "NH1472589254",
+      //     position: "22区球型机",
+      //     time: "负一层22区",
+      //     superName: "吸烟监测",
+      //     status: "正常",
+      //     perspective: {
+      //       y: 27.975563,
+      //       x: 120.726657,
+      //       z: 42,
+      //       heading: 239.8,
+      //       pitch: -26.6,
+      //       roll: 0,
+      //     },
+      //   },
+      //   {
+      //     name: "NH1472589255",
+      //     position: "28区球型机",
+      //     time: "负一层28区",
+      //     superName: "吸烟监测",
+      //     status: "正常",
+      //     perspective: {
+      //       y: 27.975282,
+      //       x: 120.73021,
+      //       z: 44.18,
+      //       heading: 203,
+      //       pitch: -17.3,
+      //       roll: 0.2,
+      //     },
+      //   },
+      // ],
       tableHead: ["编号", "摄像头名称", "分布区域", "算法名称", "状态", "操作"],
       warningArr: [true, true, true],
       time1: 0,
@@ -146,6 +149,7 @@ export default {
       return this.$store.state.DigitalTwin.secondFloorWarning;
     },
   },
+
   watch: {
     eastGate(newVal) {
       this.tableData[0].status = "正常";
@@ -160,6 +164,14 @@ export default {
       this.warningArr[2] = false;
     },
   },
+
+  created(){
+    this.$bus.$on("closeCameraStyle",()=>{
+      console.log('hsgdhsagdhsa');
+      this.activeIndex=-1
+    });
+
+  },
   methods: {
     currentChange(current) {},
     flyTo(index, position, item) {
@@ -168,6 +180,7 @@ export default {
       $viewer.qtum.centerAt(position);
       setTimeout(() => {
         // 显示详情
+        console.log('显示摄像头');
         this.$store.commit("DigitalTwin/changeParkEventDetail", true);
         this.$store.commit("DigitalTwin/changeParkDetail", item);
       }, 2000);
@@ -188,7 +201,7 @@ export default {
   // background-size: 100% 100%;
   padding: 1rem;
   padding-top: 2rem;
-  left: 62%;
+  left: 64%;
   top: 17%;
   font-size: 13px;
   transform: translateX(-50%);
@@ -207,16 +220,25 @@ export default {
       white-space: nowrap;
       background-color: #0516306e;
       :nth-child(1) {
-        width: 11rem;
+        width:7rem;
       }
       :nth-child(2) {
-        width: 10rem;
+        width:9rem;
+        overflow: hidden;
+        white-space: nowrap;
+        text-overflow: ellipsis
       }
       :nth-child(3) {
-        width: 8.5rem;
+        width: 7rem;
+        overflow: hidden;
+        white-space: nowrap;
+        text-overflow: ellipsis
       }
       :nth-child(4) {
-        width: 7.5rem;
+        width: 8rem;
+        overflow: hidden;
+        white-space: nowrap;
+        text-overflow: ellipsis
       }
       :nth-child(5) {
         width: 4rem;
@@ -229,6 +251,10 @@ export default {
       background-color: transparent !important;
       color: rgb(206, 206, 206);
     }
+
+    // .names{
+    //    width: 30px;
+    // }
     .redPoint {
       position: relative;
       &::after {
