@@ -241,6 +241,40 @@ const buildingIcon = [
     },
 ]
 
+const earlywarningIcon = [
+    {
+        id: "rgBuilding",
+        position: [118.342383, 33.954300, 64],
+        image: require('@/assets/icon/warning/warning.png'),
+        scale: 0.4,
+    },
+    {
+        id: "htBuilding",
+        position: [118.34117, 33.9548935, 47],
+        image: require('@/assets/icon/warning/warning.png'),
+        scale: 0.4,
+    },
+    {
+        id: "sxBuilding",
+        position: [118.3395615, 33.955267, 83],
+        image: require('@/assets/icon/warning/warning.png'),
+        scale: 0.4,
+    },
+    {
+        id: "qzBuilding",
+        position: [118.3401561, 33.9560485, 46],
+        image: require('@/assets/icon/warning/warning.png'),
+        scale: 0.4,
+    },
+    {
+        id: "yxBuilding",
+        position: [118.343492, 33.9560545, 46],
+        image: require('@/assets/icon/warning/warning.png'),
+        scale: 0.4,
+    },
+
+]
+
 const entityObj = {
     hyBuilding: {
         billboardId: "hyBuilding",
@@ -1392,5 +1426,6 @@ export {
     // 每个建筑的相关信息
     buildingInfo,
     // 图标实体，用于设置点击事件
+    earlywarningIcon,
     entityObj
 }
