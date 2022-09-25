@@ -1,6 +1,7 @@
 import toBase64ForDefaultValue from "./html2base64";
 import store from "../store";
 import { buildingIcon, entityObj,earlywarningIcon } from '@/assets/constant/building'
+import {tableDatarg,tableDataht,tableDatasx,tableDatayx,tableDataqz,entityWarning} from '@/assets/constant/parkCamera'
 import {
   hyCoverAreas,
   ycCoverAreas,
@@ -101,12 +102,12 @@ function drawEarlyWaring(){
 }
 
 function iconEarlyWaring(){
-   addEarlyWaring()
+   addEarlyWaring(earlywarningIcon)
    addEarlyWaringEvent()
-  // addBuildingIcon([store.state.DigitalTwin.selectedIcon])
+  //addBuildingIcon([store.state.DigitalTwin.selectedIcon])
 }
 
-function addEarlyWaring(){
+function addEarlyWaring(earlywarningIcon){
   for (let index = 0; index < earlywarningIcon.length; index++) {
     // 图标的通用大小位置等的处理
     if (earlywarningIcon[index].width) {
@@ -141,20 +142,41 @@ function addEarlyWaringEvent(){
     let id = pick && pick.id && pick.id.id;
     if (pick) {
       if (id) {
+        console.log('id',id);
+        if(id.indexOf('Warning')!==-1){
          // 事件处理显示
         setTimeout(() => {
           store.commit("DigitalTwin/changeEventListShow", true);
         }, 1000);
-        // resetSelectedIcon()
+        reseWarningSelectedIcon()
         // store.commit('DigitalTwin/changeSelectedBuilding', id)
-        // if(entityObj[id]&&entityObj[id].perspective){
-        //   flyTo(entityObj[id].perspective);
-        // }  
-        // let selectedIcon = buildingIcon.find(item => item.id === id)
-        // store.commit('DigitalTwin/changeSelectedIcon', selectedIcon)
-        // $viewer.entities.removeById(id)
+        if(entityWarning[id]&&entityWarning[id].perspective){
+          flyTo(entityWarning[id].perspective);
+        }  
+         let selectedIcon =earlywarningIcon.find(item => item.id === id)
+        store.commit('DigitalTwin/changeWarningSelectedIcon', selectedIcon)
+         $viewer.entities.removeById(id)
+         switch (id) {
+          case "rgWarning":
+            store.commit('DigitalTwin/changeWarningData',tableDatarg)
+            break;
+          case "htWarning":
+            store.commit('DigitalTwin/changeWarningData',tableDataht)
+            break;
+          case "sxWarning":
+            store.commit('DigitalTwin/changeWarningData',tableDatasx)
+            break;
+          case "qzWarning":
+            store.commit('DigitalTwin/changeWarningData',tableDataqz)
+            break;
+          case "yxWarning":
+            store.commit('DigitalTwin/changeWarningData',tableDatayx)
+            break;
+          default:
+            break;
+        }
      }
-    }
+      }}
   }, Cesium.ScreenSpaceEventType.LEFT_CLICK)
 }
 
@@ -195,6 +217,22 @@ export function clearBuildingEntities() {
   }
 }
 
+// 清除预警事件遮罩
+export function clearWarningEntities() {
+  // 清除遮罩
+  console.log('清除预警事件遮罩');
+  cleanWrapper(qzCoverAreas, 'qz');
+  cleanWrapper(sxCoverAreas, 'xs');
+  cleanWrapper(htCoverAreas, 'ht');
+  cleanWrapper(yxCoverAreas, 'yx');
+  cleanWrapper(rgCoverAreas, 'rg');
+  for (let index = 0; index < earlywarningIcon.length; index++) {
+    console.log('earlywarningIcon[index].id',earlywarningIcon[index].id);
+    $viewer.entities.removeById(earlywarningIcon[index].id)
+  }
+}
+
+
 function cleanWrapper(arr, name) {
   let index = 0
   for (const points of arr) {
@@ -206,6 +244,13 @@ export function resetSelectedIcon() {
   if (store.state.DigitalTwin.selectedIcon) {
     addBuildingIcon([store.state.DigitalTwin.selectedIcon])
     store.commit('DigitalTwin/changeSelectedIcon', null)
+  }
+}
+
+export function reseWarningSelectedIcon() {
+  if (store.state.DigitalTwin.waringSelectedIcon) {
+    addBuildingIcon([store.state.DigitalTwin.waringSelectedIcon])
+    store.commit('DigitalTwin/changeWarningSelectedIcon', null)
   }
 }
 
@@ -245,7 +290,7 @@ function addBuildingIconEvent() {
     if (pick) {
       console.log('图标id',id);
       if (id) {
-        if(id.indexOf('park') ==-1){
+        if(id.indexOf('Building') !==-1){
         resetSelectedIcon()
         store.commit('DigitalTwin/changeSelectedBuilding', id)
         console.log('-0');

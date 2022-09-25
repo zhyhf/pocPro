@@ -45,9 +45,9 @@
       </div>
     </div>
     <div class="btn-group">
-      <div class="btn-item deal" @click="resolve">忽略</div>
-      <div class="btn-item ignore" @click="cancel">处理</div>
-      <div class="btn-item analysis" @click="analysis">分析</div>
+      <div :class="['btn-item deal',{activeDeal:mark===1}]"         @click="resolve">忽略</div>
+      <div :class="['btn-item ignore',{activeIgnore:mark===2}]"     @click="cancel">处理</div>
+      <div :class="['btn-item analysis',{activeAnalysis:mark===3}]" @click="analysis">分析</div>
     </div>
   </div>
 </template>
@@ -70,6 +70,7 @@ export default {
   },
   data() {
     return {
+      mark:0,
       listData: [
         {
           title: "报警事件",
@@ -129,6 +130,7 @@ export default {
   methods: {
     // 分析
     analysis() {
+      this.mark=3
       //隐藏预警事件列表
       this.$store.commit("DigitalTwin/changeEventListShow", false);
       // 显示具体分析详情 --
@@ -142,6 +144,7 @@ export default {
       this.$store.commit("DigitalTwin/changeAnalyseShow", true);
     },
     resolve() {
+      this.mark=1
       this.changeShow();
       this.status = "已忽略";
       this.$store.state.DigitalTwin.eventDetailList.status = "已忽略";
@@ -154,6 +157,7 @@ export default {
       }
     },
     cancel() {
+      this.mark=2
       this.changeShow();
       this.status = "已处理";
       this.$store.state.DigitalTwin.eventDetailList.status = "已处理";
@@ -253,15 +257,35 @@ export default {
       cursor: pointer;
     }
     .deal {
-      // background-color: tran;
+      color: #38b7fd;
+      border: 1px solid #38b7fd;
+    }
+    .activeDeal{
+      color: #fff;
       border: 1px solid #fff;
+      background-color: #38b7fd;
     }
     .ignore {
+      color: #38b7fd;
+      border: 1px solid #38b7fd;
+      // background-color: #38b7fd;
+      margin-left: 6px;
+    }
+    .activeIgnore{
+      color:#fff;
+      border: 1px solid #38b7fd;
       background-color: #38b7fd;
       margin-left: 6px;
     }
     .analysis {
       color: #38b7fd;
+      border: 1px solid #38b7fd;
+      border-radius: 2px;
+      margin-left: 6px;
+    }
+    .activeAnalysis{
+      background-color: #38b7fd;
+      color:#fff;
       border: 1px solid #38b7fd;
       border-radius: 2px;
       margin-left: 6px;

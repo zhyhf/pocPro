@@ -133,8 +133,21 @@ export default {
     changeSelectedIcon(state, value) {
       state.selectedIcon = value
     },
+
+    changeWarningSelectedIcon(state, value) {
+      state.waringSelectedIcon = value
+      console.log('store---waringSelectedIcon',value);
+    },
+
+    changeWarningData(state, value) {
+      state.tableDataWarning = value
+      console.log('store---tableDataWarning',value);
+    },
   },
   state: {
+    // 预警事件信息
+    tableDataWarning:[],
+    waringSelectedIcon:null,
     // 停车场摄像头信息
     parktableData:[],
     controlBottomShow: true,

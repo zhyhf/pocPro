@@ -33,7 +33,7 @@
 
 <script>
 import { mapState } from "vuex";
-import {materialImgFn,createBuilding, resetSelectedIcon, clearBuildingEntities,drawIndustry,createEarlyWaring } from '@/util/createBillboard.js'
+import {clearWarningEntities,materialImgFn,createBuilding, resetSelectedIcon, clearBuildingEntities,drawIndustry,createEarlyWaring } from '@/util/createBillboard.js'
 import { createParkBillboard,deleteParkBillboard} from '@/util/parkBillBoard'
 export default {
   data() {
@@ -266,20 +266,36 @@ export default {
       this.$store.commit("DigitalTwin/changeCheckBtnNum", index);
     },
     flyTo(index) {
+       //显示详情 
+       this.$store.commit("DigitalTwin/changeEventDetailShow", false);
+     //隐藏预警事件列表
+      this.$store.commit("DigitalTwin/changeEventListShow", false);
+      //周围环境
+      this.$store.commit("DigitalTwin/changeEnvironmentShow",false);
+      // 周围资料1
+      this.$store.commit("DigitalTwin/changeData1ComShow", false);
+      // 周围资料2
+      this.$store.commit("DigitalTwin/changeData2ComShow", false);
+      // 分析结果
+      this.$store.commit("DigitalTwin/changeAnalyseShow", false);
+        clearWarningEntities()
+        clearBuildingEntities()
+        deleteParkBillboard()
+        this.$store.commit('DigitalTwin/changeWarningSelectedIcon',null)
       // 判断index是否为4,this.showOptions为true或者false
       this.showOptions = index === 4
       // 点击下面的菜单栏飞到指定的位置
       $viewer.qtum.centerAt(this.position[index]); // 飞行到指定位
       if (index === 3) {
-        clearBuildingEntities();
-        deleteParkBillboard();
+        // clearWarningEntities()
+        // clearBuildingEntities();
+        // deleteParkBillboard();
         createEarlyWaring();
+        this.$bus.$emit('changeWarningStyle')
         this.$store.state.DigitalTwin.EnterPriseShow = false;
         this.$store.state.DigitalTwin.EnterPriseDetailShow = false;
         this.$store.state.DigitalTwin.planImgShow = false;
-        
         if (!this.shouldDraw) {
-          
           this.shouldDraw = true
         }
         this.$store.commit("DigitalTwin/changeEnterPriseShow", false);
@@ -308,14 +324,14 @@ export default {
         //   this.$store.commit("DigitalTwin/changeEventListShow", true);
         // }, 1000);
       } else if(index===1){
-        clearBuildingEntities();
+        // clearBuildingEntities();
+        // deleteParkBillboard()
         if (this.shouldDraw) {
           // 删除停车场的点位信息
-          deleteParkBillboard()
           createBuilding()
           this.shouldDraw = false
         } else {
-          resetSelectedIcon()
+          // resetSelectedIcon()
         }
         this.$store.state.DigitalTwin.EnterPriseShow = false
         this.$store.state.DigitalTwin.EnterPriseDetailShow = false
@@ -346,13 +362,9 @@ export default {
       //   // }, 1000);
       //  }
        else if(index===2){
-         // 删除停车场的点位信息
-        //  deleteParkBillboard()
         if (!this.shouldDraw) {
-          clearBuildingEntities()
           this.shouldDraw = true
         }
-        this.$bus.$emit('closeOthers')
         this.addParkArea(this.parkAreaDatas)
         this.$store.commit("DigitalTwin/changeEventListShow", false);
         this.$store.commit("DigitalTwin/changeEventDetailShow", false);
@@ -382,7 +394,7 @@ export default {
        }
        else {
         if (!this.shouldDraw) {
-          clearBuildingEntities()
+          // clearBuildingEntities()
           this.shouldDraw = true
         }
         this.$store.commit("DigitalTwin/changeEventListShow", false);
@@ -410,8 +422,8 @@ export default {
         this.$store.state.DigitalTwin.EnterPriseShow = false;
         this.$store.state.DigitalTwin.EnterPriseDetailShow = false;
         this.$store.state.DigitalTwin.planImgShow = false;
-        deleteParkBillboard();
-        clearBuildingEntities()
+        // deleteParkBillboard();
+        // clearBuildingEntities()
       }
       this.changeActive(index);
     },

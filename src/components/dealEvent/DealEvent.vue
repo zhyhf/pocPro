@@ -12,7 +12,7 @@
       <div class="header rows">
         <span v-for="(item, index) in tableHead" :key="index"> {{ item }}</span>
       </div>
-      <div class="rows" v-for="(item, i) in tableData" :key="i">
+      <div class="rows" v-for="(item, i) in $store.state.DigitalTwin.tableDataWarning" :key="i">
         <div v-for="(v, k, index) in item" :key="index">
           <template v-if="k !== 'perspective'">
             <i class="redPoint" v-show="item[k] === '报警中'"></i>
@@ -25,7 +25,7 @@
         </div>
         <span
           :class="{ operation: true, active: activeIndex === i }"
-          @click="flyTo(i, tableData[i].perspective, item)"
+          @click="flyTo(i, $store.state.DigitalTwin.tableDataWarning[i].perspective, item)"
           >查看</span
         >
       </div>
@@ -51,85 +51,18 @@ export default {
     List,
     ElPagination,
   },
+  created(){
+    this.$bus.$on('changeWarningStyle',()=>{
+      this.activeIndex=-1
+    })
+  },
   data() {
     return {
-      activeIndex: 100,
+      activeIndex: -1,
       redColor: "red",
       whiteColor: "white",
       title: "预警事件",
       iconPath: require("../../assets/icon/event-blue.svg"),
-      tableData: [
-        {
-          name: "人员聚集",
-          position: "企业东门1号口",
-          time: "2020.3.9 9:47:34",
-          status: "报警中",
-          perspective: {
-            y: 27.9756,
-            x: 120.730413,
-            z: 63.75,
-            heading: 214.1,
-            pitch: -21,
-            roll: 360,
-          },
-        },
-        {
-          name: "吸烟",
-          position: "企业东门2号口",
-          time: "2020.3.9 9:47:34",
-          status: "报警中",
-          perspective: {
-            y: 27.974512,
-            x: 120.725423,
-            z: 91.01,
-            heading: 60.2,
-            pitch: -23.2,
-            roll: 0.3,
-          },
-        },
-        {
-          name: "打架",
-          position: "企业东门3号口",
-          time: "2020.3.9 9:47:34",
-          status: "已处理",
-          perspective: {
-            y: 27.976782,
-            x: 120.725823,
-            z: 91.01,
-            heading: 60.2,
-            pitch: -23.2,
-            roll: 0.3,
-          },
-        },
-        {
-          name: "打架",
-          position: "企业南门2号口",
-          time: "2020.3.10 9:47:34",
-          status: "报警中",
-          perspective: {
-            y: 27.976282,
-            x: 120.725823,
-            z: 91.01,
-            heading: 60.2,
-            pitch: -23.2,
-            roll: 0.3,
-          },
-        },
-        {
-          name: "打架",
-          position: "2楼广场",
-          time: "2020.3.11 9:47:34",
-          status: "报警中",
-          perspective: {
-            y: 27.975886,
-            x: 120.72701,
-            z: 59.1,
-            heading: 239.6,
-            pitch: -25.7,
-            roll: 0.1,
-          },
-        },
-      ],
       tableHead: ["报警事件", "报警位置", "报警时间", "当前状态", "操作"],
       warningArr: [true, true, true],
       time1: 0,
