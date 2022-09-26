@@ -4,6 +4,7 @@
     <titleToolVue
       :title="title"
       :iconPath="iconPath"
+      :rzShow="rzShow"
       type="eventContainer"
     ></titleToolVue>
     <div class="title"></div>
@@ -48,6 +49,7 @@ export default {
     return {
       dataCurrent: [],
       pageSize:1,
+      rzShow:false,
       total:this.data.length,
       tableSecondData: [
         {

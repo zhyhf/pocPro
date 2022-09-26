@@ -17,7 +17,7 @@ export default {
     return {
       s: "$store.state.DigitalTwin.parkCamera",
       chartId: "parking",
-      iconPath: require("../../assets/icon/park.png"),
+      iconPath: require("../../assets/icon/park-icon.png"),
       option: {
         series: [
           {
@@ -90,7 +90,7 @@ export default {
 @import "../../assets/css/globe.css";
 .parking-statistics {
   // width: 360px;
-  background: url("../../assets/img/list-bg.png") no-repeat;
+  background: url("../../assets/img/list-parkbg.png") no-repeat;
   background-size: 100% 100%;
   padding: 14px;
   // height: 192px;

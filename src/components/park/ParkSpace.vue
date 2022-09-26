@@ -11,11 +11,11 @@
     <div class="flex-1 content">
       <div class="top">
         <!-- <img src="../../assets/icon/car-top.png" alt=""/> -->
-        <div class="bold ">{{ $store.state.DigitalTwin.parkDetails.spareNum }}</div>
+        <div class="bold">{{ $store.state.DigitalTwin.parkDetails.spareNum }}</div>&nbsp;
         <div class="top-distance enmptyPark">空余车位</div>
       </div>
       <div class="bottom">
-        <div class="bottom-distance usedCar enmptyPark">已用车位</div>
+        <div class="bottom-distance usedCar enmptyPark">已用车位</div>&nbsp;&nbsp;
         <div class="bold green bottom-distance">{{ $store.state.DigitalTwin.parkDetails.used }}</div>
         <!-- <img src="../../assets/icon/green-car.png" alt=""/> -->
       </div>
@@ -251,6 +251,7 @@ export default {
   height: 100%;
   display: flex;
   color: #fff;
+  margin-top:5px;
   justify-content: space-between;
   .content{
     margin-top: 10px;
@@ -323,7 +324,7 @@ export default {
     padding-bottom: 1rem;
     .bold{
     //height: 35px;
-     margin-left: 155px;
+     margin-left: 160px;
     // line-height: 35px;
       margin-right: 4PX;
     }
@@ -360,7 +361,7 @@ export default {
     // margin-left: 150px;
   }
   .usedCar{
-    margin-left: 100px;
+    margin-left: 95px;
     padding-right:5px;
   }
   // .line {

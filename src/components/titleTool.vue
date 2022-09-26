@@ -2,13 +2,31 @@
   <div class="title">
     <img v-show="iconPath" :src="iconPath" class="icon" />
     <div class="text">{{ title }}</div>
-    <div class="closeTool" @click="showEventContainer"></div>
+    <div class="closeTool" :class="rzShow ? '' : 'closeTools'" @click="showEventContainer"></div>
   </div>
 </template>
 
 <script>
 export default {
-  props: ["title", "iconPath", "type"],
+  props: {
+    title: {
+      type: String,
+      default: ''
+    },
+    iconPath: {
+      type: String,
+      default: ''
+    },
+    type: {
+      type: String,
+      default: ''
+    },
+    rzShow: {
+      type: Boolean,
+      default: true
+    }
+  },
+  //["title", "iconPath", "type"],
   components: {},
   data() {
     return {};
@@ -75,6 +93,9 @@ export default {
 .title {
   width: 100%;
   height:2.5rem;
+  margin-left: 5px;
+  margin-top: 3px;
+  padding-bottom: 3px;
   line-height: 2.5rem;
   display: flex;
   .icon {
@@ -84,14 +105,25 @@ export default {
   }
   .text {
     font-size: 20px;
-    color: #38b7fd;
+    color: #fff;
   }
   .closeTool {
     width: 16px;
     height: 16px;
     position: absolute;
-    top: 0.7rem;
+    top: 1.2rem;
     right: 0.6rem;
+    cursor: pointer;
+    background: url(../assets/icon/close.png) no-repeat;
+    background-size: 100% 100%;
+    z-index: 210;
+  }
+  .closeTools{
+    width: 16px;
+    height: 16px;
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
     background: url(../assets/icon/close.png) no-repeat;
     background-size: 100% 100%;
     z-index: 210;
