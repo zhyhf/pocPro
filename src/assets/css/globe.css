@@ -19,6 +19,7 @@
 }
 .bgScond{
   background: url(../img/backSecond.svg) no-repeat;
+  background-size: 100% 100%;
   padding: 1.5rem;
 }
 .flex-1{

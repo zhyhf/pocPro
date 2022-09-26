@@ -71,7 +71,7 @@ export default {
   }
   .text {
     font-size: 20px;
-    color: #38b7fd;
+    color:#fff;
     margin-top: 20px;
   }
   .closeTool {
