@@ -111,7 +111,7 @@ export default {
     width: 16px;
     height: 16px;
     position: absolute;
-    top: 1.2rem;
+    top: 0.7rem;
     right: 0.6rem;
     cursor: pointer;
     background: url(../assets/icon/close.png) no-repeat;
