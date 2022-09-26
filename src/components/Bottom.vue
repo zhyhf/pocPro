@@ -326,14 +326,15 @@ export default {
       } else if(index===1){
         // clearBuildingEntities();
         // deleteParkBillboard()
-        // createBuilding()
-        if (this.shouldDraw) {
-          // 删除停车场的点位信息
-          createBuilding()
-          this.shouldDraw = false
-        } else {
-          resetSelectedIcon()
-        }
+         createBuilding()
+         resetSelectedIcon()
+        // if (this.shouldDraw) {
+        //   // 删除停车场的点位信息
+        //   createBuilding()
+        //   this.shouldDraw = false
+        // } else {
+        //   resetSelectedIcon()
+        // }
         this.$store.state.DigitalTwin.EnterPriseShow = false
         this.$store.state.DigitalTwin.EnterPriseDetailShow = false
         this.$store.state.DigitalTwin.planImgShow = false

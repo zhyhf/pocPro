@@ -142,8 +142,7 @@ function addEarlyWaringEvent(){
     let id = pick && pick.id && pick.id.id;
     if (pick) {
       if (id) {
-        console.log('id',id);
-        if(id.indexOf('Warning')!==-1){
+        if(id&&id.indexOf('Warning')!==-1){
          // 事件处理显示
         setTimeout(() => {
           store.commit("DigitalTwin/changeEventListShow", true);
@@ -220,14 +219,12 @@ export function clearBuildingEntities() {
 // 清除预警事件遮罩
 export function clearWarningEntities() {
   // 清除遮罩
-  console.log('清除预警事件遮罩');
   cleanWrapper(qzCoverAreas, 'qz');
   cleanWrapper(sxCoverAreas, 'xs');
   cleanWrapper(htCoverAreas, 'ht');
   cleanWrapper(yxCoverAreas, 'yx');
   cleanWrapper(rgCoverAreas, 'rg');
   for (let index = 0; index < earlywarningIcon.length; index++) {
-    console.log('earlywarningIcon[index].id',earlywarningIcon[index].id);
     $viewer.entities.removeById(earlywarningIcon[index].id)
   }
 }
@@ -242,7 +239,7 @@ function cleanWrapper(arr, name) {
 
 export function resetSelectedIcon() {
   if (store.state.DigitalTwin.selectedIcon) {
-    addBuildingIcon([store.state.DigitalTwin.selectedIcon])
+   // addBuildingIcon([store.state.DigitalTwin.selectedIcon])
     store.commit('DigitalTwin/changeSelectedIcon', null)
   }
 }
@@ -288,14 +285,10 @@ function addBuildingIconEvent() {
     let pick = $viewer.scene.pick(movement.position);
     let id = pick && pick.id && pick.id.id;
     if (pick) {
-      console.log('图标id',id);
       if (id) {
-        if(id.indexOf('Building') !==-1){
+        if(id&&id.indexOf('Building') !==-1){
         resetSelectedIcon()
         store.commit('DigitalTwin/changeSelectedBuilding', id)
-        console.log('-0');
-        console.log(entityObj[id]);
-        console.log(entityObj);
         if(entityObj[id]&&entityObj[id].perspective){
           flyTo(entityObj[id].perspective);
         }  

@@ -167,7 +167,6 @@ export default {
 
   created(){
     this.$bus.$on("closeCameraStyle",()=>{
-      console.log('hsgdhsagdhsa');
       this.activeIndex=-1
     });
 
@@ -180,7 +179,6 @@ export default {
       $viewer.qtum.centerAt(position);
       setTimeout(() => {
         // 显示详情
-        console.log('显示摄像头');
         this.$store.commit("DigitalTwin/changeParkEventDetail", true);
         this.$store.commit("DigitalTwin/changeParkDetail", item);
       }, 2000);

@@ -34,13 +34,11 @@ export default {
     // 停车场数据
     changeParkDetails(state, value){
       state.parkDetails = value
-      console.log('value',value);
     },
 
     // 停车场相机信息
     changeParkCamera(state, value){
       state.parktableData = value
-      console.log('value',value);
     },
 
     changeParkDetail(state, value) {
@@ -124,7 +122,6 @@ export default {
     changeSelectedBuilding(state, value) {
       if (buildingInfo[value]) {
         state.selectedBuilding = buildingInfo[value]
-        console.log(state.selectedBuilding);
       }
     },
     changeSelectedBuildingIndex(state, value) {
@@ -136,12 +133,10 @@ export default {
 
     changeWarningSelectedIcon(state, value) {
       state.waringSelectedIcon = value
-      console.log('store---waringSelectedIcon',value);
     },
 
     changeWarningData(state, value) {
       state.tableDataWarning = value
-      console.log('store---tableDataWarning',value);
     },
   },
   state: {

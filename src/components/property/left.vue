@@ -505,7 +505,6 @@ export default {
   mounted() {
     this.initFlippers()
     this.$nextTick(() => {
-      // console.log(this.$refs.energyChart);
       this.energyChart = this.$echarts.init(this.$refs.energyChart);
       this.energyChart.setOption(this.energyOptions);
     })

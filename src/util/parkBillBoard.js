@@ -4,7 +4,6 @@ import {tableDataA1,tableDataA6,tableDataB4,tableDataC4D1,tableDataC8,tableDataD
 function createParkBillboard(self) {
   // 添加图标实体
   addIcon(self);
-  console.log('self',self);
 }
 
 // 删除停车场的所有点位信息
@@ -233,16 +232,12 @@ const addClickEvent = (self) => {
   handler.setInputAction(function (movement) {
     let pick = $viewer.scene.pick(movement.position);
     let id = pick && pick.id && pick.id.id;
-    console.log('idddd0000',id);
     if (pick) {
-      if(id.indexOf("park") !== -1){
-        console.log('停车和');
-      console.log('entityObj[id]',entityObj[id]);
+      if(id&&id.indexOf("park") !== -1){
       if(entityObj[id]&&entityObj[id].perspective){
         flyTo(entityObj[id].perspective)
       }
        points.map(item=>{
-        // console.log('itemmm',item);
         $viewer.entities.getById(item)._show=true
        })
        store.commit("DigitalTwin/changeParkEventDetail", false);
@@ -250,10 +245,6 @@ const addClickEvent = (self) => {
       if(entityObj[id] && entityObj[id].billboardId == "parkPosition1Icon"){
         store.commit("DigitalTwin/changeParkShow", true);
         store.commit("DigitalTwin/changeParkCamera", tableDataC4D1);
-        // this.$bus.$on("updateEvents", () => {
-        //   // console.log('this.update');
-        //   this.fetchData(this.form);
-        // });
         let parkDetail={parkName:'电商园区停车场',smogNum:5,camera:9,eleNum:74,used:84,spareNum:32,parkNum:4}
         store.commit("DigitalTwin/changeParkDetails",parkDetail);
         $viewer.entities.getById(entityObj[id].billboardId)._show=false

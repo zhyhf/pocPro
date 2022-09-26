@@ -72,14 +72,12 @@ export default {
 
   created(){
     this.$bus.$on("changeStyle",()=>{
-        console.log('changeStyle')
         if(!this.$store.state.DigitalTwin.parkEventListShow){
           this.showEvent=false
         }
     });
 
     this.$bus.$on("closeChangeStyle",()=>{
-        console.log('changeStylessssss');
         this.showEvent=false
     });
 
@@ -128,16 +126,13 @@ export default {
     },
 
    close() {
-    console.log('关闭');
    let points=['parkPosition1Icon','parkPosition2Icon','parkPosition3Icon',
               'parkPosition4Icon','parkPosition5Icon',
               'parkPosition6Icon']
         points.map(item=>{
-        console.log('itemmm',item);
         $viewer.entities.getById(item)._show=true
        })
       this.$store.commit("DigitalTwin/changeParkShow", false);
-      console.log('6736246326453264532645326');
       this.$store.commit("DigitalTwin/changeParkCamera", false);
       this.$store.commit("DigitalTwin/changeParkEventDetail", false);
       // 关闭摄像头列表
