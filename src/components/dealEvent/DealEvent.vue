@@ -14,7 +14,7 @@
       </div>
       <div class="rows" v-for="(item, i) in $store.state.DigitalTwin.tableDataWarning" :key="i">
         <div v-for="(v, k, index) in item" :key="index">
-          <template v-if="k !== 'perspective'">
+          <template v-if="k !== 'perspective'&& k !=='analysis'">
             <i class="redPoint" v-show="item[k] === '报警中'"></i>
             <i
               class="whitePoint"
