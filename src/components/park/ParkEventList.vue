@@ -261,7 +261,7 @@ export default {
         content: " ";
         position: absolute;
         left: -1rem;
-        top: 35%;
+        top: 6PX;
         width: 7px;
         height: 7px;
         background-color: #ff4848;
@@ -274,7 +274,7 @@ export default {
         content: " ";
         position: absolute;
         left: -1rem;
-        top: 35%;
+        top: 6PX;
         width: 7px;
         height: 7px;
         background-color: #2affaa;
