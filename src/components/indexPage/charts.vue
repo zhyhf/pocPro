@@ -7,7 +7,7 @@
             return {
                 brokenChart: {},
                 brokenOptions: {
-                    color: ['#65E1DF', '#33FEBF', '#D1DEEE', '#FFAE76', '#139AFF', '#8F3AFF', '#1563FF', '#FFD265'],
+                    color: ['#139AFF', '#33FEBF', '#D1DEEE', '#FFAE76', '#65E1DF', '#8F3AFF', '#1563FF', '#FFD265'],
                     tooltip: {
                         trigger: "item",
                         backgroundColor: 'rgba(0,0,0,0.65)',

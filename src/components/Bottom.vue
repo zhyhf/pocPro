@@ -109,14 +109,14 @@ export default {
           pitch: -84.8,
           roll: 0,
         },
-         {
-          y: 33.954783,
-          x: 118.341786,
-          z: 877.26,
-          heading: 0.9,
-          pitch: -84.8,
-          roll: 0,
-        },
+        {  
+          y:33.950798,
+          x:118.344772,
+          z:739.92,
+          heading:331.2,
+          pitch:-51.2,
+          roll:6.7
+        }
       ],
       parkAreaDatas:[
         {
@@ -287,6 +287,7 @@ export default {
       // 点击下面的菜单栏飞到指定的位置
       $viewer.qtum.centerAt(this.position[index]); // 飞行到指定位
       if (index === 3) {
+        this.selectedIndustry = '选择产业';
         // clearWarningEntities()
         // clearBuildingEntities();
         // deleteParkBillboard();
@@ -324,6 +325,7 @@ export default {
         //   this.$store.commit("DigitalTwin/changeEventListShow", true);
         // }, 1000);
       } else if(index===1){
+        this.selectedIndustry = '选择产业';
         // clearBuildingEntities();
         // deleteParkBillboard()
          createBuilding()
@@ -364,6 +366,7 @@ export default {
       //   // }, 1000);
       //  }
        else if(index===2){
+         this.selectedIndustry = '选择产业';
         if (!this.shouldDraw) {
           this.shouldDraw = true
         }
@@ -393,6 +396,8 @@ export default {
         // setTimeout(() => {
         //      this.$store.commit("DigitalTwin/changeParkShow", true);
         // }, 1000);
+       }else if(index === 0){
+         this.selectedIndustry = '选择产业';
        }
        else {
         if (!this.shouldDraw) {

@@ -746,7 +746,8 @@
                             },
                             splitLine: {
                                 lineStyle: {
-                                    type: 'dashed'
+                                    type: 'dashed',
+                                    color:'grey'
                                 }
                             }
                         },
@@ -762,7 +763,8 @@
                             inverse: true,
                             splitLine: {
                                 lineStyle: {
-                                    type: 'dashed'
+                                    type: 'dashed',
+                                    color:'grey'
                                 }
                             }
                         }

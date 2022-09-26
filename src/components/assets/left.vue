@@ -25,7 +25,7 @@
             <img
               src="../../assets/img/echarts/funnelContent.png"
               alt=""
-              style="height: 96%; display: block; margin-top: 1.5vh;margin-left: 3vh"
+              style="height: 96%; width:95%; display: block; margin: 0 auto; margin-top: 1.5vh;"
             />
           </div>
         </div>
