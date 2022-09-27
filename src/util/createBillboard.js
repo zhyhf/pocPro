@@ -128,6 +128,8 @@ function addEarlyWaring(earlywarningIcon){
         billboard: {
           image: earlywarningIcon[index].image,
           scale: earlywarningIcon[index].scale || 0.5,
+          width: 65,
+          height: 65,
         },
       });
     }
@@ -272,6 +274,8 @@ function addBuildingIcon(buildingIcon) {
         billboard: {
           image: buildingIcon[index].image,
           scale: buildingIcon[index].scale || 0.5,
+          width: 60,
+          height: 60,
         },
       });
     }
