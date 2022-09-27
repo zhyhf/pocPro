@@ -94,11 +94,11 @@ function createEarlyWaring(){
 }
 
 function drawEarlyWaring(){
-  addWrapper(qzCoverAreas, 'qz');
-  addWrapper(sxCoverAreas, 'xs');
-  addWrapper(htCoverAreas, 'ht');
-  addWrapper(yxCoverAreas, 'yx');
-  addWrapper(rgCoverAreas, 'rg');
+  addWarningWrapper(qzCoverAreas, 'qz');
+  addWarningWrapper(sxCoverAreas, 'xs');
+  addWarningWrapper(htCoverAreas, 'ht');
+  addWarningWrapper(yxCoverAreas, 'yx');
+  addWarningWrapper(rgCoverAreas, 'rg');
 }
 
 function iconEarlyWaring(){
@@ -196,6 +196,23 @@ function addWrapper(arr, name) {
     })
   }
 }
+
+function addWarningWrapper(arr, name) {
+  let index = 0
+  for (const points of arr) {
+    // this.addArea(points, ++index, name)
+    $viewer.entities.add({
+      id: `${name}${++index}`,
+      polygon: {
+        hierarchy: points,
+        material: Cesium.Color.fromCssColorString('#FF4848').withAlpha(0.3),
+        perPositionHeight: true,
+        fill: true
+      }
+    })
+  }
+}
+
 
 export function clearBuildingEntities() {
   // 清除遮罩

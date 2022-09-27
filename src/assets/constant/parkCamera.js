@@ -480,41 +480,43 @@ export const tableDatarg=[
       parkPhone:'12151618911',
       },
       perspective: {
-        y: 27.9756,
-        x: 120.730413,
-        z: 63.75,
-        heading: 214.1,
-        pitch: -21,
-        roll: 360,
-      },
+        y:33.954864,
+        x:118.342673,
+        z:389.68,
+        heading:0.9,
+        pitch:-84.6,
+        roll:0
+      }
     },
     {
       name: "吸烟",
       position: "企业东门2号口",
       time: "2020.3.9 9:47:34",
       status: "报警中",
-      perspective: {
-        y: 27.974512,
-        x: 120.725423,
-        z: 91.01,
-        heading: 60.2,
-        pitch: -23.2,
-        roll: 0.3,
-      },
+      perspective: 
+      { 
+        y:33.954864,
+        x:118.342673,
+        z:389.68,
+        heading:0.9,
+        pitch:-84.6,
+        roll:0
+     }
     },
     {
       name: "打架",
       position: "企业东门3号口",
       time: "2020.3.9 9:47:34",
       status: "已处理",
-      perspective: {
-        y: 27.976782,
-        x: 120.725823,
-        z: 91.01,
-        heading: 60.2,
-        pitch: -23.2,
-        roll: 0.3,
-      },
+      perspective: 
+      { 
+        y:33.954864,
+        x:118.342673,
+        z:389.68,
+        heading:0.9,
+        pitch:-84.6,
+        roll:0
+     }
     },
     {
       name: "打架",
@@ -522,12 +524,12 @@ export const tableDatarg=[
       time: "2020.3.10 9:47:34",
       status: "报警中",
       perspective: {
-        y: 27.976282,
-        x: 120.725823,
-        z: 91.01,
-        heading: 60.2,
-        pitch: -23.2,
-        roll: 0.3,
+        y:33.954864,
+        x:118.342673,
+        z:389.68,
+        heading:0.9,
+        pitch:-84.6,
+        roll:0
       },
     },
     {
@@ -536,12 +538,12 @@ export const tableDatarg=[
       time: "2020.3.11 9:47:34",
       status: "报警中",
       perspective: {
-        y: 27.975886,
-        x: 120.72701,
-        z: 59.1,
-        heading: 239.6,
-        pitch: -25.7,
-        roll: 0.1,
+        y:33.954864,
+        x:118.342673,
+        z:389.68,
+        heading:0.9,
+        pitch:-84.6,
+        roll:0
       },
     },
   ]
@@ -565,13 +567,13 @@ export const tableDataht=[
         parkPhone:'12151618911',
         },
       perspective: {
-        y: 27.9756,
-        x: 120.730413,
-        z: 63.75,
-        heading: 214.1,
-        pitch: -21,
-        roll: 360,
-      },
+        y:33.955664,
+        x:118.341486,
+        z:487.13,
+        heading:0.9,
+        pitch:-84.8,
+        roll:360
+      }
     },
     {
       name: "吸烟",
@@ -592,12 +594,12 @@ export const tableDataht=[
         parkPhone:'12151618911',
         },
       perspective: {
-        y: 27.974512,
-        x: 120.725423,
-        z: 91.01,
-        heading: 60.2,
-        pitch: -23.2,
-        roll: 0.3,
+        y:33.955664,
+        x:118.341486,
+        z:487.13,
+        heading:0.9,
+        pitch:-84.8,
+        roll:360
       },
     },
     {
@@ -619,12 +621,12 @@ export const tableDataht=[
         parkPhone:'12151618911',
         },
       perspective: {
-        y: 27.976782,
-        x: 120.725823,
-        z: 91.01,
-        heading: 60.2,
-        pitch: -23.2,
-        roll: 0.3,
+        y:33.955664,
+        x:118.341486,
+        z:487.13,
+        heading:0.9,
+        pitch:-84.8,
+        roll:360
       },
     },
     {
@@ -646,12 +648,12 @@ export const tableDataht=[
         parkPhone:'12151618911',
         },
       perspective: {
-        y: 27.976282,
-        x: 120.725823,
-        z: 91.01,
-        heading: 60.2,
-        pitch: -23.2,
-        roll: 0.3,
+        y:33.955664,
+        x:118.341486,
+        z:487.13,
+        heading:0.9,
+        pitch:-84.8,
+        roll:360
       },
     },
     {
@@ -673,12 +675,12 @@ export const tableDataht=[
         parkPhone:'12151618911',
         },
       perspective: {
-        y: 27.975886,
-        x: 120.72701,
-        z: 59.1,
-        heading: 239.6,
-        pitch: -25.7,
-        roll: 0.1,
+        y:33.955664,
+        x:118.341486,
+        z:487.13,
+        heading:0.9,
+        pitch:-84.8,
+        roll:360
       },
     },
   ]
@@ -702,13 +704,13 @@ export const tableDatasx=[
         parkPhone:'12151618911',
         },
       perspective: {
-        y: 27.9756,
-        x: 120.730413,
-        z: 63.75,
-        heading: 214.1,
-        pitch: -21,
-        roll: 360,
-      },
+         y:33.955498,
+         x:118.339684,
+         z:271.77,
+         heading:1.5,
+         pitch:-84.8,
+         roll:360
+      }
     },
     {
       name: "吸烟",
@@ -729,12 +731,12 @@ export const tableDatasx=[
         parkPhone:'12151618911',
         },
       perspective: {
-        y: 27.974512,
-        x: 120.725423,
-        z: 91.01,
-        heading: 60.2,
-        pitch: -23.2,
-        roll: 0.3,
+        y:33.955498,
+        x:118.339684,
+        z:271.77,
+        heading:1.5,
+        pitch:-84.8,
+        roll:360
       },
     },
     {
@@ -756,12 +758,12 @@ export const tableDatasx=[
         parkPhone:'12151618911',
         },
       perspective: {
-        y: 27.976782,
-        x: 120.725823,
-        z: 91.01,
-        heading: 60.2,
-        pitch: -23.2,
-        roll: 0.3,
+        y:33.955498,
+        x:118.339684,
+        z:271.77,
+        heading:1.5,
+        pitch:-84.8,
+        roll:360
       },
     },
     {
@@ -783,12 +785,12 @@ export const tableDatasx=[
         parkPhone:'12151618911',
         },
       perspective: {
-        y: 27.976282,
-        x: 120.725823,
-        z: 91.01,
-        heading: 60.2,
-        pitch: -23.2,
-        roll: 0.3,
+        y:33.955498,
+        x:118.339684,
+        z:271.77,
+        heading:1.5,
+        pitch:-84.8,
+        roll:360
       },
     },
     {
@@ -810,12 +812,12 @@ export const tableDatasx=[
         parkPhone:'12151618911',
         },
       perspective: {
-        y: 27.975886,
-        x: 120.72701,
-        z: 59.1,
-        heading: 239.6,
-        pitch: -25.7,
-        roll: 0.1,
+         y:33.955643,
+         x:118.339749,
+         z:339.05,
+         heading:0.9,
+         pitch:-84.8,
+         roll:360
       },
     },
   ]
@@ -838,14 +840,15 @@ export const tableDataqz=[
         parkLeaders:'赵总',
         parkPhone:'12151618911',
         },
-      perspective: {
-        y: 27.9756,
-        x: 120.730413,
-        z: 63.75,
-        heading: 214.1,
-        pitch: -21,
-        roll: 360,
-      },
+      perspective:
+        { 
+          y:33.956474,
+          x:118.340241,
+          z:339.34,
+          heading:0.9,
+          pitch:-84.8,
+          roll:360
+        }
     },
     {
       name: "吸烟",
@@ -865,14 +868,14 @@ export const tableDataqz=[
         parkLeaders:'赵总',
         parkPhone:'12151618911',
         },
-      perspective: {
-        y: 27.974512,
-        x: 120.725423,
-        z: 91.01,
-        heading: 60.2,
-        pitch: -23.2,
-        roll: 0.3,
-      },
+      perspective:  { 
+        y:33.956474,
+        x:118.340241,
+        z:339.34,
+        heading:0.9,
+        pitch:-84.8,
+        roll:360
+      }
     },
     {
       name: "打架",
@@ -892,14 +895,14 @@ export const tableDataqz=[
         parkLeaders:'赵总',
         parkPhone:'12151618911',
         },
-      perspective: {
-        y: 27.976782,
-        x: 120.725823,
-        z: 91.01,
-        heading: 60.2,
-        pitch: -23.2,
-        roll: 0.3,
-      },
+      perspective:  { 
+        y:33.956474,
+        x:118.340241,
+        z:339.34,
+        heading:0.9,
+        pitch:-84.8,
+        roll:360
+      }
     },
     {
       name: "打架",
@@ -919,14 +922,14 @@ export const tableDataqz=[
         parkLeaders:'赵总',
         parkPhone:'12151618911',
         },
-      perspective: {
-        y: 27.976282,
-        x: 120.725823,
-        z: 91.01,
-        heading: 60.2,
-        pitch: -23.2,
-        roll: 0.3,
-      },
+      perspective:  { 
+        y:33.956474,
+        x:118.340241,
+        z:339.34,
+        heading:0.9,
+        pitch:-84.8,
+        roll:360
+      }
     },
     {
       name: "打架",
@@ -946,14 +949,14 @@ export const tableDataqz=[
         parkLeaders:'赵总',
         parkPhone:'12151618911',
         },
-      perspective: {
-        y: 27.975886,
-        x: 120.72701,
-        z: 59.1,
-        heading: 239.6,
-        pitch: -25.7,
-        roll: 0.1,
-      },
+      perspective: { 
+        y:33.956474,
+        x:118.340241,
+        z:339.34,
+        heading:0.9,
+        pitch:-84.8,
+        roll:360
+      }
     },
   ]
 export const tableDatayx=[
@@ -975,13 +978,13 @@ export const tableDatayx=[
         parkLeaders:'赵总',
         parkPhone:'12151618911',
         },
-      perspective: {
-        y: 27.9756,
-        x: 120.730413,
-        z: 63.75,
-        heading: 214.1,
-        pitch: -21,
-        roll: 360,
+      perspective:{
+        y:33.95677,
+        x:118.343737,
+        z:417.25,
+        heading:0.9,
+        pitch:-84.8,
+        roll:0
       },
     },
     {
@@ -1003,12 +1006,12 @@ export const tableDatayx=[
         parkPhone:'12151618911',
         },
       perspective: {
-        y: 27.974512,
-        x: 120.725423,
-        z: 91.01,
-        heading: 60.2,
-        pitch: -23.2,
-        roll: 0.3,
+        y:33.95677,
+        x:118.343737,
+        z:417.25,
+        heading:0.9,
+        pitch:-84.8,
+        roll:0
       },
     },
     {
@@ -1030,12 +1033,12 @@ export const tableDatayx=[
         parkPhone:'12151618911',
         },
       perspective: {
-        y: 27.976782,
-        x: 120.725823,
-        z: 91.01,
-        heading: 60.2,
-        pitch: -23.2,
-        roll: 0.3,
+        y:33.95677,
+        x:118.343737,
+        z:417.25,
+        heading:0.9,
+        pitch:-84.8,
+        roll:0
       },
     },
     {
@@ -1057,12 +1060,12 @@ export const tableDatayx=[
         parkPhone:'12151618911',
         },
       perspective: {
-        y: 27.976282,
-        x: 120.725823,
-        z: 91.01,
-        heading: 60.2,
-        pitch: -23.2,
-        roll: 0.3,
+        y:33.95677,
+        x:118.343737,
+        z:417.25,
+        heading:0.9,
+        pitch:-84.8,
+        roll:0
       },
     },
     {
@@ -1084,12 +1087,12 @@ export const tableDatayx=[
         parkPhone:'12151618911',
         },
       perspective: {
-        y: 27.975886,
-        x: 120.72701,
-        z: 59.1,
-        heading: 239.6,
-        pitch: -25.7,
-        roll: 0.1,
+        y:33.95677,
+        x:118.343737,
+        z:417.25,
+        heading:0.9,
+        pitch:-84.8,
+        roll:0
       },
     },
   ]

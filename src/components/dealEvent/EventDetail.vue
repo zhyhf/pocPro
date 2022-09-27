@@ -172,8 +172,8 @@ export default {
   width: 305px;
   // height: 300px;
   position: absolute;
-  bottom: 14%;
-  left: 57%;
+  bottom:30%;
+  left: 40%;
   display: flex;
   flex-direction: column;
   justify-content: space-between;

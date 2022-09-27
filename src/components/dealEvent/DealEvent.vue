@@ -100,6 +100,7 @@ export default {
     flyTo(index, position, item) {
       this.$store.commit("DigitalTwin/changeEventDetailShow", false);
       this.activeIndex = index;
+      this.$store.state.DigitalTwin.eventListShow = false;
       $viewer.qtum.centerAt(position);
       this.$store.commit("DigitalTwin/changeEventDetail", item);
       setTimeout(() => {

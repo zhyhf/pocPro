@@ -4,12 +4,12 @@
       <div class="info">
         <img :src="activeBg" class="info-bg">
         <div class="bg-item" v-for="(item, index) in varieties" :key="index">
-          <div class="variety-content" :style="varietyStyle[index]">
+          <div :class="[`variety-content-${index}`,'variety-content']">
             <div class="variety-head">
               <img :src="index === varietyIndex ? item.activeIcon: item.icon">
               <span class="variety-title">{{ item.title }}</span>
             </div>
-            <dv-digital-flop :config="item.config" style="height: 30px; position: relative;"/>
+            <dv-digital-flop :config="item.config"  class="flop-right"></dv-digital-flop>
           </div>
         </div>
       </div>
@@ -412,18 +412,16 @@ export default {
       ],
       varietyStyle: [
         {
-          left: '45%',
-          top: '50%'
+          bottom: 'calc(50% - 24px)'
         },
         {
-          left: '50%'
+          bottom: 'calc(50% - 24px)'
         },
         {
-          top: '60%'
+          top: 'calc(50% - 24px)'
         },
         {
-          left: '50%',
-          top: '60%'
+          top: 'calc(50% - 24px)'
         }
       ],
       varietyIndex: 0,
@@ -529,9 +527,9 @@ export default {
   },
   methods: {
     initValue() {
-      if (window.innerWidth >= 1920) {
-        this.varietyStyle[2].top = this.varietyStyle[3].top = '40%'
-      }
+      // if (window.innerWidth >= 1920) {
+      //   this.varietyStyle[2].top = this.varietyStyle[3].top = '40%'
+      // }
     },
     initProgressBar() {
       for (const item of this.electricityInfo) {
@@ -622,6 +620,10 @@ export default {
 <style lang="less" scoped>
 @import "../../style/panel.less";
 @import "../../style/element.less";
+.flop-right{
+  height: 30PX; 
+  position: relative;
+}
 .energy-consume {
   width: 100%;
   flex: 2.12 !important;
@@ -670,31 +672,155 @@ export default {
 .info {
   flex: 1.1;
   width: 100%;
-  margin-bottom: 20px;
+  margin-bottom:20px;
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
   position: relative;
   .info-bg {
+    // height: 100%;
     width: 100%;
     position: absolute;
   }
   .bg-item {
     flex-basis: 49.5%;
     z-index: 99;
-
     position: relative;
-    .variety-content {
+    .variety-content{
       position: absolute;
       width: 100%;
-      left: 45%;
-      top: 50%;
-      transform: translate3d(-50%, -50%, 0);
+    }
+   @media screen and (min-width:1921px) and (max-width:2570px) {
+      .variety-content-0{
+        top:30% !important;           
+      // transform: translate3d(-50%, -50%, 0);
+    }
+    .variety-content-1{
+        top:30%;           
+      // transform: translate3d(-50%, -50%, 0);
+    }
+    .variety-content-2{
+        top:50%;           
+      // transform: translate3d(-50%, -50%, 0);
+    }
+    .variety-content-3{
+        top:50%;           
+      // transform: translate3d(-50%, -50%, 0);
+    }
+    }
+    @media screen and (min-width:1601px) and (max-width:1920px) {
+      .variety-content-0{
+        top:20%;           
+      // transform: translate3d(-50%, -50%, 0);
+    }
+    .variety-content-1{
+        top:20%;           
+      // transform: translate3d(-50%, -50%, 0);
+    }
+    .variety-content-2{
+        top:38%;           
+      // transform: translate3d(-50%, -50%, 0);
+    }
+    .variety-content-3{
+        top:38%;           
+      // transform: translate3d(-50%, -50%, 0);
+    }
+    }
+    @media screen and (min-width:1401px) and (max-width:1600px) {
+      .variety-content-0{
+        top:20%;           
+      // transform: translate3d(-50%, -50%, 0);
+    }
+    .variety-content-1{
+        top:20%;           
+      // transform: translate3d(-50%, -50%, 0);
+    }
+    .variety-content-2{
+        top:20%;           
+      // transform: translate3d(-50%, -50%, 0);
+    }
+    .variety-content-3{
+        top:20%;           
+      // transform: translate3d(-50%, -50%, 0);
+    }
+    }
+    @media screen and (min-width:1280px) and (max-width:1400px) {
+      .variety-content-0{
+        top:20%;           
+      // transform: translate3d(-50%, -50%, 0);
+    }
+    .variety-content-1{
+        top:20%;           
+      // transform: translate3d(-50%, -50%, 0);
+    }
+    .variety-content-2{
+        top:5%;           
+      // transform: translate3d(-50%, -50%, 0);
+    }
+    .variety-content-3{
+        top:5%;           
+      // transform: translate3d(-50%, -50%, 0);
+    }
+    }
+    @media screen and (min-width:1001px) and (max-width:1279px) {
+      .variety-content-0{
+        top:10%;           
+      // transform: translate3d(-50%, -50%, 0);
+    }
+    .variety-content-1{
+        top:10%;           
+      // transform: translate3d(-50%, -50%, 0);
+    }
+    .variety-content-2{
+        top:-10%;           
+      // transform: translate3d(-50%, -50%, 0);
+    }
+    .variety-content-3{
+        top:-10%;           
+      // transform: translate3d(-50%, -50%, 0);
+    }
+    }
+    @media screen and (min-width:951px) and (max-width:1000px) {
+      .variety-content-0{
+        top:3%;           
+      // transform: translate3d(-50%, -50%, 0);
+    }
+    .variety-content-1{
+        top:0%;           
+      // transform: translate3d(-50%, -50%, 0);
+    }
+    .variety-content-2{
+        top:-40%;           
+      // transform: translate3d(-50%, -50%, 0);
+    }
+    .variety-content-3{
+        top:-40%;           
+      // transform: translate3d(-50%, -50%, 0);
+    }
+    }
+    @media screen and (max-width:950px){
+      .variety-content-0{
+        top:0%;           
+      // transform: translate3d(-50%, -50%, 0);
+    }
+    .variety-content-1{
+        top:0%;           
+      // transform: translate3d(-50%, -50%, 0);
+    }
+    .variety-content-2{
+        top:-48%;           
+      // transform: translate3d(-50%, -50%, 0);
+    }
+    .variety-content-3{
+        top:-48%;           
+      // transform: translate3d(-50%, -50%, 0);
+    }
     }
     .variety-head {
       text-align: center;
       font-size: 12px;
       color: #fff;
+      line-height: 18PX;
     }
     .variety-title {
       position: relative;
