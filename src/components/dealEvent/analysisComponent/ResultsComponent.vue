@@ -10,19 +10,19 @@
               class="text-item flex"
             >
               <div class="text-title">物业负责人</div>
-              <div class="text-content">{{$store.state.DigitalTwin.eventDetailList.analysis.propertyHead}} - {{$store.state.DigitalTwin.eventDetailList.analysis.propertyPhone}}</div>
+              <div class="text-content" v-if="$store.state.DigitalTwin.eventDetailList.analysis">{{$store.state.DigitalTwin.eventDetailList.analysis.propertyHead}} - {{$store.state.DigitalTwin.eventDetailList.analysis.propertyPhone}}</div>
             </div>
               <div
               class="text-item flex"
             >
               <div class="text-title">企业联系人</div>
-              <div class="text-content">{{$store.state.DigitalTwin.eventDetailList.analysis.businessLeaders}} - {{$store.state.DigitalTwin.eventDetailList.analysis.businessPhone}}</div>
+              <div class="text-content" v-if="$store.state.DigitalTwin.eventDetailList.analysis">{{$store.state.DigitalTwin.eventDetailList.analysis.businessLeaders}} - {{$store.state.DigitalTwin.eventDetailList.analysis.businessPhone}}</div>
             </div>
               <div
               class="text-item flex"
             >
               <div class="text-title">园区领导</div>
-              <div class="text-content">{{$store.state.DigitalTwin.eventDetailList.analysis.parkLeaders}} - {{$store.state.DigitalTwin.eventDetailList.analysis.parkPhone}}</div>
+              <div class="text-content" v-if="$store.state.DigitalTwin.eventDetailList.analysis">{{$store.state.DigitalTwin.eventDetailList.analysis.parkLeaders}} - {{$store.state.DigitalTwin.eventDetailList.analysis.parkPhone}}</div>
             </div>
           </div>
           <el-divider />

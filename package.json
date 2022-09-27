@@ -4,7 +4,8 @@
   "private": true,
   "scripts": {
     "serve": "vue-cli-service serve",
-    "build": "vue-cli-service build"
+    "build": "vue-cli-service build",
+    "postinstall": "patch-package"
   },
   "dependencies": {
     "@jiaminghi/data-view": "^2.10.0",
@@ -12,6 +13,7 @@
     "echarts": "^5.0.0",
     "echarts-gl": "^2.0.9",
     "echarts-liquidfill": "3",
+    "element-resize-detector": "^1.2.4",
     "element-ui": "^2.15.6",
     "flv.js": "^1.6.2",
     "html2canvas": "^1.4.0",
@@ -28,6 +30,7 @@
     "@vue/cli-service": "~4.5.0",
     "less": "^3.0.4",
     "less-loader": "^5.0.0",
+    "patch-package": "^6.4.7",
     "script-ext-html-webpack-plugin": "^2.1.5",
     "vue-template-compiler": "^2.6.11"
   },

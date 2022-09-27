@@ -3,12 +3,12 @@
     <titleToolVue :title="title" :type="'dataComponet2'"></titleToolVue> 
          <div class="data_content">
            <div>
-            <div class="titleContent">百度舆情分析<span class="inner">{{$store.state.DigitalTwin.eventDetailList.analysis.baidu}}</span></div>
-            <div class="titleContent">知乎舆情分析<span class="inner">{{$store.state.DigitalTwin.eventDetailList.analysis.zhihu}}</span></div>
+            <div class="titleContent">百度舆情分析<span class="inner" v-if="$store.state.DigitalTwin.eventDetailList.analysis">{{$store.state.DigitalTwin.eventDetailList.analysis.baidu}}</span></div>
+            <div class="titleContent">知乎舆情分析<span class="inner" v-if="$store.state.DigitalTwin.eventDetailList.analysis">{{$store.state.DigitalTwin.eventDetailList.analysis.zhihu}}</span></div>
            </div>
             <div>
-            <div class="titleContent">新浪舆情分析<span class="inner">{{$store.state.DigitalTwin.eventDetailList.analysis.xinlang}}</span></div>
-            <div class="titleContent">其他舆情分析<span class="inner">{{$store.state.DigitalTwin.eventDetailList.analysis.others}}</span></div>
+            <div class="titleContent">新浪舆情分析<span class="inner" v-if="$store.state.DigitalTwin.eventDetailList.analysis">{{$store.state.DigitalTwin.eventDetailList.analysis.xinlang}}</span></div>
+            <div class="titleContent">其他舆情分析<span class="inner" v-if="$store.state.DigitalTwin.eventDetailList.analysis">{{$store.state.DigitalTwin.eventDetailList.analysis.others}}</span></div>
             </div>
         </div>
     </div>

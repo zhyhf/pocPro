@@ -3,7 +3,7 @@
     <div class="panel-wrapper">
       <div class="info">
         <img :src="activeBg" class="info-bg">
-        <div class="bg-item" v-for="(item, index) in varieties">
+        <div class="bg-item" v-for="(item, index) in varieties" :key="index">
           <div class="variety-content" :style="varietyStyle[index]">
             <div class="variety-head">
               <img :src="index === varietyIndex ? item.activeIcon: item.icon">

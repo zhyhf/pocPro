@@ -1,0 +1,36 @@
+diff --git a/node_modules/zrender/lib/canvas/Layer.js b/node_modules/zrender/lib/canvas/Layer.js
+index fad33f7..2cc1dc9 100644
+--- a/node_modules/zrender/lib/canvas/Layer.js
++++ b/node_modules/zrender/lib/canvas/Layer.js
+@@ -238,7 +238,9 @@ var Layer = (function (_super) {
+                 this.createBackBuffer();
+             }
+             this.ctxBack.globalCompositeOperation = 'copy';
+-            this.ctxBack.drawImage(dom, 0, 0, width / dpr, height / dpr);
++            if(width && height){
++                 this.ctxBack.drawImage(dom, 0, 0, width / dpr, height / dpr);
++            }          
+         }
+         var domBack = this.domBack;
+         function doClear(x, y, width, height) {
+@@ -265,13 +267,18 @@ var Layer = (function (_super) {
+                 }
+                 ctx.save();
+                 ctx.fillStyle = clearColorGradientOrPattern || clearColor;
+-                ctx.fillRect(x, y, width, height);
++                if(width && height){
++                    ctx.fillRect(x, y, width, height);
++                }
++                
+                 ctx.restore();
+             }
+             if (haveMotionBLur) {
+                 ctx.save();
+                 ctx.globalAlpha = lastFrameAlpha;
+-                ctx.drawImage(domBack, x, y, width, height);
++                if(width && height){
++                   ctx.drawImage(domBack, x, y, width, height); 
++                }   
+                 ctx.restore();
+             }
+         }
