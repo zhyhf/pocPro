@@ -150,10 +150,15 @@ function addEarlyWaringEvent(){
           store.commit("DigitalTwin/changeEventListShow", true);
         }, 1000);
         reseWarningSelectedIcon()
+        store.state.DigitalTwin.environmentShow = false;
+        store.state.DigitalTwin.data1ComShow = false;
+        store.state.DigitalTwin.data2ComShow = false;
+        store.state.DigitalTwin.analyseShow = false;
         // store.commit('DigitalTwin/changeSelectedBuilding', id)
         if(entityWarning[id]&&entityWarning[id].perspective){
           flyTo(entityWarning[id].perspective);
         }  
+        store.state.DigitalTwin.eventDetailShow = false;
          let selectedIcon =earlywarningIcon.find(item => item.id === id)
         store.commit('DigitalTwin/changeWarningSelectedIcon', selectedIcon)
          $viewer.entities.removeById(id)
@@ -197,6 +202,7 @@ function addWrapper(arr, name) {
   }
 }
 
+
 function addWarningWrapper(arr, name) {
   let index = 0
   for (const points of arr) {
@@ -212,7 +218,6 @@ function addWarningWrapper(arr, name) {
     })
   }
 }
-
 
 export function clearBuildingEntities() {
   // 清除遮罩

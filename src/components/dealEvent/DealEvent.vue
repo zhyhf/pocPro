@@ -43,7 +43,8 @@
 import titleToolVue from "../titleTool.vue";
 import closeToolVue from "../closeTool.vue";
 import List from "../List.vue";
-import ElPagination from "../../components/page/index.vue";
+import ElPagination from "../page/index.vue";
+import {clearWarningEntities,createEarlyWaring,reseWarningSelectedIcon} from '@/util/createBillboard.js'
 export default {
   components: {
     titleToolVue,
@@ -101,6 +102,7 @@ export default {
       this.$store.commit("DigitalTwin/changeEventDetailShow", false);
       this.activeIndex = index;
       this.$store.state.DigitalTwin.eventListShow = false;
+      reseWarningSelectedIcon();
       $viewer.qtum.centerAt(position);
       this.$store.commit("DigitalTwin/changeEventDetail", item);
       setTimeout(() => {
