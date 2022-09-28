@@ -31,7 +31,7 @@
               <div class="detail-box">
                 <div class="detail-title">{{ item.title }}</div>
                 <div class="item-detail">
-                  <!-- <span class="detail-data">{{ item.value }}</span> -->
+                 
                   <dv-digital-flop :config="item.config"  style="width:7rem;height:2rem;"/>
                 <!-- <dv-digital-flop v-if="index !== 3" :config="item.config" style="height: 30px; position: relative; left: 0px"/>
                 <dv-digital-flop v-else :config="item.config" style="height: 30px; position: relative; left: -10px"/> -->
@@ -53,11 +53,12 @@
               :key="index"
             >
               <div class="card-head">
-                <img :src="item.pic" class="card-icon" />
+                <img :src="item.pic" class="card-icon" v-if="item.detail !== ''"/>
+                <div class="point"></div>
                 <div class="card-title">{{ item.title }}</div>
               </div>
               <div class="card-detail">
-                <span class="card-value">暂无</span>
+                <span class="card-value">{{item.detail?item.detail:'暂无'}}</span>
                 <!-- <span class="card-unit" :style="index === 3 ? { right: 0 } : {}">{{ item.unit }}</span> -->
               </div>
             </div>
@@ -80,6 +81,7 @@ export default {
         {
           pic: require("@/assets/img/elevator.png"),
           title: "商标",
+          detail:'',
           config: {
             number:[0],
             style: {
@@ -93,6 +95,7 @@ export default {
         {
           pic: require("@/assets/img/AC.png"),
           title: "专利",
+          detail:'',
           config: {
             number:[0],
             style: {
@@ -106,6 +109,7 @@ export default {
         {
           pic: require("@/assets/img/water.png"),
           title: "著作权",
+          detail:'',
           config: {
             number:[0],
             style: {
@@ -119,6 +123,7 @@ export default {
         {
           pic: require("@/assets/img/plant.png"),
           title: "软件著作权",
+          detail:'',
           config: {
             number:[0],
             style: {
@@ -726,9 +731,20 @@ export default {
 .card-head {
   display: flex;
   margin-top: 6px;
+  // justify-items: center;
+  // align-items: center;
   .card-icon {
     width: 12px;
     height: 12px;
+    // margin-top: 4px;
+    // margin-left: 5px;
+    // margin-right: 5px;
+  }
+  .point{
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background-color: #fff;
     margin-top: 4px;
     margin-left: 5px;
     margin-right: 5px;
@@ -737,6 +753,10 @@ export default {
     font-size: 12px;
     color: #c6cfce;
   }
+  .card-title-none{
+    margin-left:7px;
+  }
+  
 }
 .card-detail {
   display: flex;
