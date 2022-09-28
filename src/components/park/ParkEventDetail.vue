@@ -17,13 +17,13 @@
         class="text-item flex"
       >
         <div class="text-title">摄像头名称</div>
-        <div class="text-content">{{ $store.state.DigitalTwin.parkDetailList.name}}</div>
+        <div class="text-content">{{ $store.state.DigitalTwin.parkDetailList.position}}</div>
       </div>
       <div
         class="text-item flex"
       >
         <div class="text-title">分布区域</div>
-        <div class="text-content">{{ $store.state.DigitalTwin.parkDetailList.position }}</div>
+        <div class="text-content">{{ $store.state.DigitalTwin.parkDetailList.time}}</div>
       </div>
        <div
         class="text-item flex"
@@ -31,9 +31,7 @@
         <div class="text-title">算法名称</div>
         <div class="text-content">{{ $store.state.DigitalTwin.parkDetailList.superName }}</div>
       </div>
-      <div
-        class="text-item flex"
-      >
+      <div class="text-item flex">
         <div class="text-title">状态</div>
         <div class="text-content">{{ $store.state.DigitalTwin.parkDetailList.status }}</div>
       </div>
@@ -99,6 +97,7 @@ export default {
     };
   },
   mounted(){
+    console.log('dsdasdsad',this.$store.state.DigitalTwin.parkDetailList);
       const videoElement = document.querySelectorAll('.myvideo')[0]
       const url  = 'https://rtmp01open.ys7.com:9188/v3/openlive/J28106733_1_1.flv?expire=1678091049&id=422429536487223296&t=c36660de8ed3c3bd8f7b839d6072dd117badc89e7416ded4403f27074904599a&ev=100'
       this.createPlayer(videoElement, url)

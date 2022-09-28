@@ -26,47 +26,47 @@ function createBuilding() {
 
 function drawIndustry(name){
    switch(name){
-     case '电子商务':
+     case '批发和零售':
       clearBuildingEntities();
       addWrapper(qzCoverAreas, 'qz');
       addWrapper(htCoverAreas, 'ht');
       addWrapper(hcCoverAreas, 'hc');
       addWrapper(hyCoverAreas, 'hy');
      break;
-     case '房地产':
+     case '信息技术服务':
       clearBuildingEntities();
       addWrapper(hyCoverAreas, 'zta');
       addWrapper(sxCoverAreas, 'xs');
      break;
-     case '物业':
+     case '租赁商务服务':
       clearBuildingEntities();
       addWrapper(ztCoverAreas, 'zt');
       addWrapper(sxCoverAreas, 'xs');
      break;
-     case '物流':
+     case '金融':
       clearBuildingEntities();
       addWrapper(qzCoverAreas, 'qz');  
       addWrapper(htCoverAreas, 'ht');
       addWrapper(sxCoverAreas, 'xs'); 
      break;
-     case '人力资源':
+     case '建筑':
       clearBuildingEntities();
       addWrapper(htCoverAreas, 'ht');
       addWrapper(ztCoverAreas, 'zt');
       addWrapper(yxCoverAreas, 'yx');
     break;
-    case '广告':
+    case '物流运输':
       clearBuildingEntities();
       addWrapper(htCoverAreas, 'ht');
       addWrapper(tyCoverAreas, 'ty');
       addWrapper(ycCoverAreas, 'yc');
     break;
-    case '保险':
+    case '制造业':
       clearBuildingEntities();
       addWrapper(ztaCoverAreas, 'zta');
       addWrapper(rgCoverAreas, 'rg');
     break;
-    case '策划':
+    case '科学研究':
       clearBuildingEntities();
       addWrapper(hyCoverAreas, 'hy');
       addWrapper(rgCoverAreas, 'rg');

@@ -90,7 +90,8 @@
             <img src="@/assets/img/panel-bg-bodyCan.png" class="panelBodyCan">
           <div class="panel-item-content">
             <el-tabs v-model="activeName" @tab-click="tabClick">
-              <el-tab-pane label="用水量" name="first"></el-tab-pane>
+              <el-tab-pane label="用水量" name="first">
+              </el-tab-pane>
               <el-tab-pane label="电用量" name="second"></el-tab-pane>
               <el-tab-pane label="碳排放" name="third"></el-tab-pane>
             </el-tabs>
@@ -387,6 +388,7 @@ export default {
       energyOptions: {
         xAxis: {
           type: 'category',
+          // name:'2022',
           boundaryGap: true,
           data: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12],
           axisTick: {
@@ -397,9 +399,10 @@ export default {
             }
           }
         },
-        yAxis: {
+        yAxis:
+         {
           type: 'value',
-          name: '能耗(吨)'
+          name:'能耗(吨)',
         },
         grid: {
           top: '18%',
@@ -408,7 +411,8 @@ export default {
         },
         series: [
           {
-            data: [195, 270, 265, 300, 318, 360, 360, 390, 385, 395, 300, 260],
+            // data: [195, 270, 265, 300, 318, 360, 360, 390, 385, 395, 300, 260],
+            data: [195, 270, 265, 300, 300, 360, 360, 390, 385, 395, 300, 258],
             type: 'line',
             // smooth: true,
             showSymbol: false,
@@ -498,7 +502,25 @@ export default {
           },
         ]
       },
+      // 能耗数据
+      x_data:[1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12],
+      y_name:'能耗(吨)',
+      series_data:[195, 270, 265, 300, 318, 360, 360, 390, 385, 395, 300, 260],
+      coords:[['1', 195],
+              ["2", 270],
+              ["3", 265],
+              ["4", 300],
+              ["5", 318],
+              ["6", 360],
+              ["7", 360],
+              ["8", 390],
+              ["9", 385],
+              ["10", 395],
+              ["11", 300],
+              ["12", 260],
+                ],
       activeName: "first",
+      names:'能耗(吨)',
       loginPage: "https://park.keytop.cn/unityp/login",
     };
   },
@@ -506,12 +528,172 @@ export default {
     this.initFlippers()
     this.$nextTick(() => {
       this.energyChart = this.$echarts.init(this.$refs.energyChart);
-      this.energyChart.setOption(this.energyOptions);
+      // this.energyChart.setOption(this.energyOptions);
+      this.getEnergyChart()
     })
   },
   methods: {
+    getEnergyChart(){
+      this.energyChart = this.$echarts.init(this.$refs.energyChart);
+      let energyOptions={
+        xAxis: {
+          type: 'category',
+          // name:'2022',
+          boundaryGap: true,
+          data: this.x_data,
+          axisTick: {
+            length: 3,
+            alignWithLabel: true,
+            lineStyle: {
+              type: 'dash',
+            }
+          }
+        },
+        yAxis:
+         {
+          type: 'value',
+          name:this.y_name,
+        },
+        grid: {
+          top: '18%',
+          left: '13%',
+          right: '7%'
+        },
+        series: [
+          {
+            data:this.series_data,
+            // data: [195, 270, 265, 300, 300, 360, 360, 390, 385, 395, 300, 258],
+            type: 'line',
+            // smooth: true,
+            showSymbol: false,
+            color: new this.$echarts.graphic.LinearGradient(
+              0,
+              1,
+              0,
+              0,
+              [
+                {
+                  offset: 0,
+                  color: "rgba(2,247,183,1)", // 0% 处的颜色
+                },
+                {
+                  offset: 0.4,
+                  color: "rgba(19,154,255,1)", // 60% 处的颜色
+                },
+                {
+                  offset: 1,
+                  color: "rgba(148,67,252,1)", // 100% 处的颜色
+                },
+              ],
+              false
+            ),
+            areaStyle: {
+              color: new this.$echarts.graphic.LinearGradient(
+                0,
+                1,
+                0,
+                0,
+                [
+                  {
+                    offset: 0,
+                    color: "rgba(2,247,183,0)", // 0% 处的颜色
+                  },
+                  {
+                    offset: 0.7,
+                    color: "rgba(148,67,252,0.2)", // 60% 处的颜色
+                  },
+                  {
+                    offset: 1,
+                    color: "rgba(148,67,252,0.6)", // 100% 处的颜色
+                  },
+                ],
+                false
+              )
+            }
+          },
+          {
+            showSymbol: false,
+            type: "lines",
+            polyline: true,
+            smooth: false,
+            coordinateSystem: "cartesian2d",
+            zlevel: 1,
+            effect: {
+              show: true,
+              smooth: true,
+              period: 6,
+              symbolSize: 4,
+            },
+            lineStyle: {
+              color: "#fff",
+              width: 1,
+              opacity: 0,
+              curveness: 0,
+              cap: "round",
+            },
+            data: [
+              {
+                coords: this.coords
+              },
+            ]
+          },
+        ]
+      }
+      this.energyChart.setOption(energyOptions);
+      // this.energyChart = this.$echarts.init(this.$refs.energyChart);
+    },
     tabClick() {
-
+      if(this.activeName==="first"){
+         this.y_name='能耗(吨)'
+         this.series_data=[195, 270, 265, 300, 318, 360, 360, 390, 385, 395, 300, 260]
+         this.coords=[['1', 195],
+              ["2", 270],
+              ["3", 265],
+              ["4", 300],
+              ["5", 318],
+              ["6", 360],
+              ["7", 360],
+              ["8", 390],
+              ["9", 385],
+              ["10", 395],
+              ["11", 300],
+              ["12", 260],
+                ]
+      } else if(this.activeName==="second"){
+        this.y_name='能耗(度)'
+        this.series_data=[200, 270, 260, 45, 329, 348, 400, 280, 85, 320, 300, 600]
+        this.coords=[['1', 200],
+              ["2", 270],
+              ["3", 260],
+              ["4", 45],
+              ["5", 329],
+              ["6", 348],
+              ["7", 400],
+              ["8", 280],
+              ["9", 85],
+              ["10", 320],
+              ["11", 300],
+              ["12", 600],
+                ]
+      } else{
+        this.y_name='能耗(吨)'
+        this.series_data=[300, 270, 260, 450, 100, 320, 400, 280, 85, 320, 300, 600]
+        this.coords=[['1', 300],
+              ["2", 270],
+              ["3", 260],
+              ["4", 450],
+              ["5", 100],
+              ["6", 320],
+              ["7", 400],
+              ["8", 280],
+              ["9", 85],
+              ["10", 320],
+              ["11", 300],
+              ["12", 600],
+                ]
+      }
+       this.getEnergyChart()
+       console.log('actinbe',this.activeName,this.energyOptions);
     },
     initFlippers() {
       const propertyVals = [31, 1560, 3642, 310, 15, 25]

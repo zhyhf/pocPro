@@ -33,9 +33,10 @@
               </div>
           </div>
              <div :class="[this.showEvent?'intelligent-item-bg':'intelligent-item1']" @click="handleShowEvent">
-              <img src="../../assets/img/park2.svg"  style="width: 42px; height: 42px">
+              <img  v-if="!this.showEvent" src="../../assets/img/park2.svg"  style="width: 42px; height: 42px">
+              <img  v-else src="../../assets/img/checkCamera.png"  style="width: 42px; height: 42px">
               <div class="contentTile">
-                <div class="name">摄像头</div>
+                <div :class="[this.showEvent?'checked-name':'name']">摄像头</div>
                 <div class="num">{{$store.state.DigitalTwin.parkDetails.camera}} <span class="name">个</span></div>
               </div>
           </div>
@@ -188,6 +189,7 @@ export default {
           width: 160px;
           height: 62px;
           border-radius: 5px;
+          color:#fff;
           display: flex;
           background-color:#38B7FD;
           img{
@@ -201,6 +203,9 @@ export default {
               color: lightgrey;
             // color: #fff;
              font-size: 14px;
+            }
+            .check-name{
+              color: #fff;
             }
             .num{
                color: #fff;

@@ -93,135 +93,51 @@ const addClickEvent = (self) => {
   let entityObj = {
     parkPosition1Icon: {
       billboardId: "parkPosition1Icon",
-      perspective: {
-        y: 33.952407,
-        x: 118.34257,
-        z: 457.43,
-        heading: 0.5,
-        pitch: -48.4,
-        roll: 0,
-      },
+      perspective:{y:33.951978,x:118.347336,z:484.17,heading:317.3,pitch:-32.5,roll:6.8}
     },
     parkPosition2Icon: {
       billboardId: "parkPosition2Icon",
-      perspective: {
-        y: 33.955052,
-        x: 118.340433,
-        z: 622.97,
-        heading: 0.3,
-        pitch: -75.2,
-        roll: 0,
-      },
+      perspective: {y:33.955534,x:118.340463,z:623.14,heading:0.3,pitch:-75.2,roll:0}
     },
     parkPosition3Icon: {
       billboardId: "parkPosition3Icon",
-      perspective: {
-        y: 33.953341,
-        x: 118.34145,
-        z: 300.01,
-        heading: 2.6,
-        pitch: -57.2,
-        roll: 0,
-      },
+      perspective: {y:33.951044,x:118.347176,z:483.85,heading:317.3,pitch:-32.5,roll:6.8}
     },
     parkPosition4Icon: {
       billboardId: "parkPosition4Icon",
-      perspective: {
-        y: 33.952615,
-        x: 118.340012,
-        z: 379.75,
-        heading: 2.6,
-        pitch: -57.2,
-        roll: 0,
-      },
+      perspective: {y:33.95098,x:118.345313,z:483.83,heading:317.3,pitch:-32.5,roll:6.8}
     },
     parkPosition5Icon: {
       billboardId: "parkPosition5Icon",
-      perspective: {
-        y: 33.953309,
-        x: 118.3424255,
-        z: 331.97,
-        heading: 2.3,
-        pitch: -57.2,
-        roll: 0,
-      },
+      perspective: {y:33.951165,x:118.349801,z:483.89,heading:317.3,pitch:-32.5,roll:6.8}
     },
     parkPosition6Icon: {
       billboardId: "parkPosition6Icon",
-      perspective: {
-        y: 33.955417,
-        x: 118.343727,
-        z: 308,
-        heading: 1.6,
-        pitch: -56.9,
-        roll: 0,
-      },
+      perspective:{y:33.952954,x:118.349572,z:484.51,heading:317.3,pitch:-32.5,roll:6.8}
     },
     parkPosition1: {
       billboardId: "parkPosition1Icon",
-      perspective: {
-        y: 33.952407,
-        x: 118.34257,
-        z: 457.43,
-        heading: 0.5,
-        pitch: -48.4,
-        roll: 0,
-      },
+      perspective:{y:33.951978,x:118.347336,z:484.17,heading:317.3,pitch:-32.5,roll:6.8}
     },
     parkPosition2: {
       billboardId: "parkPosition2Icon",
-      perspective: {
-        y: 33.955052,
-        x: 118.340433,
-        z: 622.97,
-        heading: 0.3,
-        pitch: -75.2,
-        roll: 0,
-      },
+      perspective: {y:33.955534,x:118.340463,z:623.14,heading:0.3,pitch:-75.2,roll:0}
     },
     parkPosition3: {
       billboardId: "parkPosition3Icon",
-      perspective: {
-        y: 33.953341,
-        x: 118.34145,
-        z: 300.01,
-        heading: 2.6,
-        pitch: -57.2,
-        roll: 0,
-      },
+      perspective: {y:33.951044,x:118.347176,z:483.85,heading:317.3,pitch:-32.5,roll:6.8}
     },
     parkPosition4: {
       billboardId: "parkPosition4Icon",
-      perspective: {
-        y: 33.952615,
-        x: 118.340012,
-        z: 379.75,
-        heading: 2.6,
-        pitch: -57.2,
-        roll: 0,
-      },
+      perspective: {y:33.95098,x:118.345313,z:483.83,heading:317.3,pitch:-32.5,roll:6.8}
     },
     parkPosition5: {
       billboardId: "parkPosition5Icon",
-      perspective: {
-        y: 33.953309,
-        x: 118.3424255,
-        z: 331.97,
-        heading: 2.3,
-        pitch: -57.2,
-        roll: 0,
-      },
+      perspective: {y:33.951165,x:118.349801,z:483.89,heading:317.3,pitch:-32.5,roll:6.8}
     },
     parkPosition6: {
       billboardId: "parkPosition6Icon",
-      perspective: {
-        y: 33.955417,
-        x: 118.343727,
-        z: 308,
-        heading: 1.6,
-        pitch: -56.9,
-        roll: 0,
-      },
+      perspective:{y:33.952954,x:118.349572,z:484.51,heading:317.3,pitch:-32.5,roll:6.8}
     },
   };
   let points=['parkPosition1Icon','parkPosition2Icon',

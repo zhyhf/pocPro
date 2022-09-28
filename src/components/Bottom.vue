@@ -218,14 +218,22 @@ export default {
       ],
       points: {},
       industryOptions: [
-        '电子商务',
-        '房地产',
-        '物业',
-        '保险',
-        '物流',
-        '人力资源',
-        '广告',
-        '策划'
+        // '电子商务',
+        // '房地产',
+        // '物业',
+        // '保险',
+        // '物流',
+        // '人力资源',
+        // '广告',
+        // '策划'
+        '批发和零售',
+        '信息技术服务',
+        '租赁商务服务',
+        '金融',
+        '建筑',
+        '物流运输',
+        '制造业',
+        '科学研究'
       ],
       selectedIndustry: '选择产业',
       showOptions: false,
@@ -262,11 +270,12 @@ export default {
       })
      createParkBillboard(this)
     },
-    
     changeActive(index) {
       this.$store.commit("DigitalTwin/changeCheckBtnNum", index);
     },
     flyTo(index) {
+      // 停车场列表
+      this.$store.commit("DigitalTwin/changeParkShow", false);
        //显示详情 
        this.$store.commit("DigitalTwin/changeEventDetailShow", false);
      //隐藏预警事件列表

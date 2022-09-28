@@ -583,11 +583,11 @@ export default {
           },
           formatter: function (name) {  //图例后添加数值
             let data =  [
-              { value: 24.72, name: '电力' },
-              { value: 11.39, name: '燃料' },
-              { value: 13.61, name: '热力' },
+              { value: 28.96, name: '电力' },
+              { value: 21.39, name: '燃料' },
+              { value: 30.61, name: '热力' },
               { value: 13.33, name: '生产工艺' },
-              { value: 6.95, name: '其他' }
+              { value: 5.71, name: '其他' }
             ];
             let tarValue;
             for (let i = 0; i < data.length; i++) {
@@ -611,11 +611,11 @@ export default {
               show: false,
             },
             data: [
-              { value: 24.72, name: '电力' },
-              { value: 11.39, name: '燃料' },
-              { value: 13.61, name: '热力' },
+              { value: 28.96, name: '电力' },
+              { value: 21.39, name: '燃料' },
+              { value: 30.61, name: '热力' },
               { value: 13.33, name: '生产工艺' },
-              { value: 6.95, name: '其他' }
+              { value: 5.71, name: '其他' }
             ]
           }
         ],
