@@ -380,7 +380,7 @@ export default {
               fill: '#38b7fd'
             }
           },
-          pic: require('@/assets/img/quarantine.png'),
+          pic: require('@/assets/img/temperature.png'),
           unit: '个'
         }
       ],
