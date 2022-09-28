@@ -220,7 +220,7 @@ export default {
       ],
       deviceArray: [
         {
-          pic: require("@/assets/img/elevator.png"),
+          pic: require("@/assets/img/elevator-1.png"),
           title: "电梯",
           config: {
             number:[0],
@@ -234,7 +234,7 @@ export default {
           unit: "个",
         },
         {
-          pic: require("@/assets/img/AC.png"),
+          pic: require("@/assets/img/AC1.png"),
           title: "空调",
           config: {
             number:[0],
@@ -248,7 +248,7 @@ export default {
           unit: "个",
         },
         {
-          pic: require("@/assets/img/water.png"),
+          pic: require("@/assets/img/water1.png"),
           title: "给排水",
           config: {
             number:[0],
@@ -262,7 +262,7 @@ export default {
           unit: "个",
         },
         {
-          pic: require("@/assets/img/plant.png"),
+          pic: require("@/assets/img/plant1.png"),
           title: "绿化面积",
           config: {
             number:[0],
@@ -278,7 +278,7 @@ export default {
       ],
       extraService: [
         {
-          pic: require("@/assets/img/message.png"),
+          pic: require("@/assets/img/message1.png"),
           title: "信息发布",
           value: 165,
           config: {
@@ -293,7 +293,7 @@ export default {
           unit: "条",
         },
         {
-          pic: require("@/assets/img/laundry.png"),
+          pic: require("@/assets/img/laundry1.png"),
           title: "智慧洗衣房",
           value: 35,
           config: {
@@ -308,7 +308,7 @@ export default {
           unit: "个",
         },
         {
-          pic: require("@/assets/img/dinning.png"),
+          pic: require("@/assets/img/dinning1.png"),
           title: "食堂",
           value: 3,
           config: {
@@ -323,7 +323,7 @@ export default {
           unit: "个",
         },
         {
-          pic: require("@/assets/img/package.png"),
+          pic: require("@/assets/img/package1.png"),
           title: "快递驿站",
           value: 50,
           config: {
