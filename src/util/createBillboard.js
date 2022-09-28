@@ -147,7 +147,7 @@ function addEarlyWaringEvent(){
         if(id&&id.indexOf('Warning')!==-1){
          // 事件处理显示
         setTimeout(() => {
-          store.commit("DigitalTwin/changeEventListShow", true);
+          // store.commit("DigitalTwin/changeEventListShow", true);
         }, 1000);
         reseWarningSelectedIcon()
         store.state.DigitalTwin.environmentShow = false;

@@ -32,6 +32,7 @@
 </template>
 
 <script>
+import {tableDatarg,tableDataht,tableDatasx,tableDatayx,tableDataqz,entityWarning} from '@/assets/constant/parkCamera'
 import { mapState } from "vuex";
 import {clearWarningEntities,materialImgFn,createBuilding, resetSelectedIcon, clearBuildingEntities,drawIndustry,createEarlyWaring } from '@/util/createBillboard.js'
 import { createParkBillboard,deleteParkBillboard} from '@/util/parkBillBoard'
@@ -78,44 +79,44 @@ export default {
       ],
       position: [
          {
-          y: 33.948273,
-          x: 118.341745,
-          z: 490.37,
-          heading: 0.3,
-          pitch: -28.7,
-          roll: 360,
+          y:33.950485,
+          x:118.347155,
+          z:483.66,
+          heading:317.3,
+          pitch:-32.5,
+          roll:6.8
         },
         {
-          y: 33.954783,
-          x: 118.341786,
-          z: 877.26,
-          heading: 0.9,
-          pitch: -84.8,
-          roll: 0,
+          y:33.950485,
+          x:118.347155,
+          z:483.66,
+          heading:317.3,
+          pitch:-32.5,
+          roll:6.8
         },
         {
-          y: 33.956921,
-          x: 118.341915,
-          z: 1022.69,
-          heading: 180.8,
-          pitch: -83.2,
-          roll: 180.1,
+          y:33.950485,
+          x:118.347155,
+          z:483.66,
+          heading:317.3,
+          pitch:-32.5,
+          roll:6.8
         },
         {
-          y: 33.954783,
-          x: 118.341786,
-          z: 877.26,
-          heading: 0.9,
-          pitch: -84.8,
-          roll: 0,
+          y:33.950485,
+          x:118.347155,
+          z:483.66,
+          heading:317.3,
+          pitch:-32.5,
+          roll:6.8
         },
         {  
-          y:33.950798,
-          x:118.344772,
-          z:739.92,
-          heading:331.2,
-          pitch:-51.2,
-          roll:6.7
+          y:33.950485,
+          x:118.347155,
+          z:483.66,
+          heading:317.3,
+          pitch:-32.5,
+          roll:6.8
         }
       ],
       parkAreaDatas:[
@@ -292,6 +293,8 @@ export default {
         // clearBuildingEntities();
         // deleteParkBillboard();
         createEarlyWaring();
+        this.$store.commit("DigitalTwin/changeEventListShow", true);
+        this.$store.commit('DigitalTwin/changeWarningData',tableDataht)
         this.$bus.$emit('changeWarningStyle')
         this.$store.state.DigitalTwin.EnterPriseShow = false;
         this.$store.state.DigitalTwin.EnterPriseDetailShow = false;

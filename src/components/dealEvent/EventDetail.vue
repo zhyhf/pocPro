@@ -173,7 +173,7 @@ export default {
   // height: 300px;
   position: absolute;
   bottom:30%;
-  left: 40%;
+  left: 50%;
   display: flex;
   flex-direction: column;
   justify-content: space-between;

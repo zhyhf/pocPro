@@ -567,14 +567,13 @@ export const tableDataht=[
         parkPhone:'12151618911',
         },
       perspective: {
-        y:33.95331,
-        x:118.342251,
-        z:246.48,
+        y:33.951532,
+        x:118.340789,
+        z:497.97,
         heading:337.6,
         pitch:-36.9,
-        roll:0.1
-      }
-    },
+        roll:0.1}
+      },
     {
       name: "吸烟",
       position: "企业东门2号口",
@@ -593,14 +592,13 @@ export const tableDataht=[
         parkLeaders:'赵总',
         parkPhone:'12151618911',
         },
-      perspective: {
-        y:33.95331,
-        x:118.342251,
-        z:246.48,
+      perspective:{
+        y:33.954083,
+        x:118.34087,
+        z:273.71,
         heading:337.6,
         pitch:-36.9,
-        roll:0.1
-      },
+        roll:0.1}
     },
     {
       name: "打架",
@@ -621,13 +619,12 @@ export const tableDataht=[
         parkPhone:'12151618911',
         },
       perspective: {
-        y:33.95331,
-        x:118.342251,
-        z:246.48,
+        y:33.950925,
+        x:118.342546,
+        z:497.76,
         heading:337.6,
         pitch:-36.9,
-        roll:0.1
-      },
+        roll:0.1}
     },
     {
       name: "打架",
@@ -647,14 +644,7 @@ export const tableDataht=[
         parkLeaders:'赵总',
         parkPhone:'12151618911',
         },
-      perspective: {
-        y:33.95331,
-        x:118.342251,
-        z:246.48,
-        heading:337.6,
-        pitch:-36.9,
-        roll:0.1
-      },
+      perspective: {y:33.949756,x:118.344081,z:572.57,heading:337.6,pitch:-36.9,roll:0.1}
     },
     {
       name: "打架",
@@ -674,14 +664,7 @@ export const tableDataht=[
         parkLeaders:'赵总',
         parkPhone:'12151618911',
         },
-      perspective: {
-        y:33.95331,
-        x:118.342251,
-        z:246.48,
-        heading:337.6,
-        pitch:-36.9,
-        roll:0.1
-      },
+      perspective:{y:33.952022,x:118.344925,z:498.14,heading:337.6,pitch:-36.9,roll:0.1}
     },
   ]
 export const tableDatasx=[
