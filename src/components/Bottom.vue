@@ -274,6 +274,7 @@ export default {
       this.$store.commit("DigitalTwin/changeCheckBtnNum", index);
     },
     flyTo(index) {
+      this.$store.state.DigitalTwin.industryListShow=false
       // 停车场列表
       this.$store.commit("DigitalTwin/changeParkShow", false);
        //显示详情 

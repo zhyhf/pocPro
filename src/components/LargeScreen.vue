@@ -78,6 +78,8 @@
     <DataComponent2 />
     <!-- 告警 - 周围分析结果页面 -->
     <AnalyseCom />
+    <!-- 产业列表 -->
+    <industryList/>
     <!-- 底部页面 -->
     <div class="bottom-mask"></div>
   </div>
@@ -88,6 +90,7 @@ import HeaderVue from "./Header.vue";
 import Bottom from "./Bottom.vue";
 import ParkSpace from "./park/ParkSpace.vue";
 import DealEvent from "./dealEvent/DealEvent.vue";
+import industryList  from "./industry/industryList.vue";
 import EventDetail from "./dealEvent/EventDetail.vue";
 import IndexLeft from "./indexPage/left.vue";
 import IndexRight from "./indexPage/right.vue";
@@ -145,6 +148,7 @@ export default {
     AnalyseCom,
     PlanImg,
     Conduit,
+    industryList
   },
   data() {
     return {

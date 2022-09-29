@@ -140,6 +140,10 @@ export default {
     },
   },
   state: {
+    // 产业列表数据
+    tableDataIndustry:[],
+    // 产业列表是否展示
+    industryListShow:false,
     // 预警事件信息
     tableDataWarning:[],
     waringSelectedIcon:null,

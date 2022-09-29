@@ -46,5 +46,5 @@ export default {
 <style lang="less" scoped>
 .car {
   position: absolute;
-}
+} 
 </style>

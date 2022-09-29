@@ -1,7 +1,10 @@
 import toBase64ForDefaultValue from "./html2base64";
 import store from "../store";
 import { buildingIcon, entityObj,earlywarningIcon } from '@/assets/constant/building'
-import {tableDatarg,tableDataht,tableDatasx,tableDatayx,tableDataqz,entityWarning} from '@/assets/constant/parkCamera'
+import {tableDatarg,tableDataht,tableDatasx,tableDatayx,tableDataqz,entityWarning,
+tableDatapf,tableDataxx,tableDatazl,tableDatajr,tableDatawl,tableDatazc,tableDatakx
+
+} from '@/assets/constant/parkCamera'
 import {
   hyCoverAreas,
   ycCoverAreas,
@@ -27,6 +30,8 @@ function createBuilding() {
 function drawIndustry(name){
    switch(name){
      case '批发和零售':
+      store.state.DigitalTwin.industryListShow=true
+      store.state.DigitalTwin.tableDataIndustry=tableDatapf
       clearBuildingEntities();
       addWrapper(qzCoverAreas, 'qz');
       addWrapper(htCoverAreas, 'ht');
@@ -34,39 +39,53 @@ function drawIndustry(name){
       addWrapper(hyCoverAreas, 'hy');
      break;
      case '信息技术服务':
+      store.state.DigitalTwin.industryListShow=true
+      store.state.DigitalTwin.tableDataIndustry=tableDataxx
       clearBuildingEntities();
       addWrapper(hyCoverAreas, 'zta');
       addWrapper(sxCoverAreas, 'xs');
      break;
      case '租赁商务服务':
+      store.state.DigitalTwin.industryListShow=true
+      store.state.DigitalTwin.tableDataIndustry=tableDatazl
       clearBuildingEntities();
       addWrapper(ztCoverAreas, 'zt');
       addWrapper(sxCoverAreas, 'xs');
      break;
      case '金融':
+      store.state.DigitalTwin.industryListShow=true
+      store.state.DigitalTwin.tableDataIndustry=tableDatajr
       clearBuildingEntities();
       addWrapper(qzCoverAreas, 'qz');  
       addWrapper(htCoverAreas, 'ht');
       addWrapper(sxCoverAreas, 'xs'); 
      break;
      case '建筑':
+      store.state.DigitalTwin.industryListShow=true
+      store.state.DigitalTwin.tableDataIndustry=tableDatajz
       clearBuildingEntities();
       addWrapper(htCoverAreas, 'ht');
       addWrapper(ztCoverAreas, 'zt');
       addWrapper(yxCoverAreas, 'yx');
     break;
     case '物流运输':
+      store.state.DigitalTwin.industryListShow=true
+      store.state.DigitalTwin.tableDataIndustry=tableDatawl
       clearBuildingEntities();
       addWrapper(htCoverAreas, 'ht');
       addWrapper(tyCoverAreas, 'ty');
       addWrapper(ycCoverAreas, 'yc');
     break;
     case '制造业':
+      store.state.DigitalTwin.industryListShow=true
+      store.state.DigitalTwin.tableDataIndustry=tableDatazc
       clearBuildingEntities();
       addWrapper(ztaCoverAreas, 'zta');
       addWrapper(rgCoverAreas, 'rg');
     break;
     case '科学研究':
+      store.state.DigitalTwin.industryListShow=true
+      store.state.DigitalTwin.tableDataIndustry=tableDatakx
       clearBuildingEntities();
       addWrapper(hyCoverAreas, 'hy');
       addWrapper(rgCoverAreas, 'rg');

@@ -83,7 +83,9 @@ export default {
       }else if(this.type === 'analyseCom'){
          // 报警事件 - 分析结果
          this.$store.commit("DigitalTwin/changeAnalyseShow", false);
-      }
+      }else if(this.type==='industryListShow'){
+        this.$store.state.DigitalTwin.industryListShow=false   
+      } 
     },
   },
 };

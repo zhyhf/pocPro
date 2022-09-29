@@ -538,7 +538,14 @@ export default {
       let energyOptions={
         xAxis: {
           type: 'category',
-          // name:'2022',
+           name:'2022',
+          nameLocation:'middle',
+          boundaryGap: true,
+           nameTextStyle: { // x轴name的样式调整
+//            color: '#000', 
+//            fontSize: 22,
+           padding:[-10,323,0,0,0]  // 加上padding可以调整其位置
+         },
           boundaryGap: true,
           data: this.x_data,
           axisTick: {
