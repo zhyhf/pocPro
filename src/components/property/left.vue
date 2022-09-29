@@ -780,6 +780,7 @@ export default {
     right: 10px;
     font-size: 12px;
     color: #c6cfce;
+
     .intro-building {
       height: 3vh;
     }
@@ -788,9 +789,10 @@ export default {
       display: inline-block;
       width: 8px;
       height: 8px;
+      // top:-3px;
       border-radius: 50%;
       background-color: #38b7fd;
-      margin: 0 3px;
+      margin: 1.5px 3px;
     }
     .intro-property {
       height: 3vh;
@@ -802,7 +804,7 @@ export default {
       height: 8px;
       border-radius: 50%;
       background-color: #2dffbf;
-      margin: 0 3px;
+      margin: 1.5px 3px;
     }
   }
   .property {
@@ -832,7 +834,7 @@ export default {
         height: 8px;
         border-radius: 50%;
         background-color: #38b7fd;
-        margin: 0 4px;
+        margin: 1.5px 4px;
       }
       .item-title-bottom::before {
         content: "";
@@ -841,7 +843,7 @@ export default {
         height: 8px;
         border-radius: 50%;
         background-color: #2dffbf;
-        margin: 0 4px;
+        margin: 1.5px 4px;
       }
       .item-detail {
         display: flex;

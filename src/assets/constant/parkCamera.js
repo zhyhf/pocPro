@@ -1570,10 +1570,10 @@ export const tableDatazl=[
 export const tableDatajz=[
   {
     name: "江苏仁达项目管理咨询有限公司",
-    position: "批发和零售业",
-    time: "1000万",
+    position: "建筑类",
+    time: "600万",
     status: "小微企业",
-    atposition:'邗润大厦-1',
+    atposition:'华益大厦A-1',
     analysis:{
       baidu:12,
       xinlang:11,
@@ -1597,11 +1597,11 @@ export const tableDatajz=[
     }
   },
   {
-    name: "宿迁贵昌茂电子商务有限公司",
-    position: "批发和零售业",
-    time: "20万",
+    name: "宿迁市百通规划设计有限公司",
+    position: "建筑类",
+    time: "470万",
     status: "小微企业",
-    atposition:'恒通大厦-5',
+    atposition:'汇成大厦-2',
     analysis:{
       baidu:12,
       xinlang:11,
@@ -1625,11 +1625,39 @@ export const tableDatajz=[
     },
   },
   {
-    name: "江苏九马进出口有限公司",
-    position: "批发和零售业",
+    name: "宿迁恒芮通信工程有限公司",
+    position: "建筑类",
+    time: "780万",
+    status: "小微企业",
+    atposition:'齐智大厦-2',
+    analysis:{
+      baidu:12,
+      xinlang:11,
+      zhihu:5,
+      others:27,
+      level:'低等级事件',
+      propertyHead:'张三',
+      propertyPhone:'12124551235',
+      businessLeaders:'李四',
+      businessPhone:'13141515111',
+      parkLeaders:'赵总',
+      parkPhone:'12151618911',
+      },
+    perspective: {
+      y:33.954234,
+      x:118.344476,
+      z:246.8,
+      heading:337.6,
+      pitch:-36.9,
+      roll:0.1
+    },
+  },
+  {
+    name: "宿迁宏境环保科技有限公司",
+    position: "建筑类",
     time: "1000万",
     status: "小微企业",
-    atposition:'齐智大厦-1',
+    atposition:'瑞谷大厦-2',
     analysis:{
       baidu:12,
       xinlang:11,
@@ -1653,39 +1681,11 @@ export const tableDatajz=[
     },
   },
   {
-    name: "江苏苏粤跨境电商综合服务有限公司",
-    position: "批发和零售业",
-    time: "1000万",
+    name: "宿迁文和装饰设计有限公司",
+    position: "建筑类",
+    time: "720万",
     status: "小微企业",
-    atposition:'齐智大厦-1',
-    analysis:{
-      baidu:12,
-      xinlang:11,
-      zhihu:5,
-      others:27,
-      level:'低等级事件',
-      propertyHead:'张三',
-      propertyPhone:'12124551235',
-      businessLeaders:'李四',
-      businessPhone:'13141515111',
-      parkLeaders:'赵总',
-      parkPhone:'12151618911',
-      },
-    perspective: {
-      y:33.954234,
-      x:118.344476,
-      z:246.8,
-      heading:337.6,
-      pitch:-36.9,
-      roll:0.1
-    },
-  },
-  {
-    name: "宿迁盛洋科技有限公司",
-    position: "批发和零售业",
-    time: "100万",
-    status: "小微企业",
-    atposition:'瑞谷大厦-3',
+    atposition:'永成大厦-2',
     analysis:{
       baidu:12,
       xinlang:11,
@@ -1742,11 +1742,11 @@ export const tableDatajr=[
 
 export const tableDatawl=[
   {
-    name: "江苏康古堂健康科技有限公司",
-    position: "批发和零售业",
-    time: "1000万",
+    name: "宿迁旭锦物流有限公司",
+    position: "物流运输",
+    time: "700万",
     status: "小微企业",
-    atposition:'邗润大厦-1',
+    atposition:'齐智大厦-3',
     analysis:{
       baidu:12,
       xinlang:11,
@@ -1770,11 +1770,11 @@ export const tableDatawl=[
     }
   },
   {
-    name: "宿迁贵昌茂电子商务有限公司",
-    position: "批发和零售业",
-    time: "20万",
+    name: "宿迁市顺达镇村公共交通有限公司",
+    position: "物流运输",
+    time: "950万",
     status: "小微企业",
-    atposition:'恒通大厦-5',
+    atposition:'盛祥大厦-1',
     analysis:{
       baidu:12,
       xinlang:11,
@@ -1798,67 +1798,11 @@ export const tableDatawl=[
     },
   },
   {
-    name: "江苏九马进出口有限公司",
-    position: "批发和零售业",
-    time: "1000万",
+    name: "宿迁市茂昂供应链有限公司",
+    position: "物流运输",
+    time: "650万",
     status: "小微企业",
-    atposition:'齐智大厦-1',
-    analysis:{
-      baidu:12,
-      xinlang:11,
-      zhihu:5,
-      others:27,
-      level:'低等级事件',
-      propertyHead:'张三',
-      propertyPhone:'12124551235',
-      businessLeaders:'李四',
-      businessPhone:'13141515111',
-      parkLeaders:'赵总',
-      parkPhone:'12151618911',
-      },
-    perspective: {
-      y:33.954234,
-      x:118.344476,
-      z:246.8,
-      heading:337.6,
-      pitch:-36.9,
-      roll:0.1
-    },
-  },
-  {
-    name: "江苏苏粤跨境电商综合服务有限公司",
-    position: "批发和零售业",
-    time: "1000万",
-    status: "小微企业",
-    atposition:'齐智大厦-1',
-    analysis:{
-      baidu:12,
-      xinlang:11,
-      zhihu:5,
-      others:27,
-      level:'低等级事件',
-      propertyHead:'张三',
-      propertyPhone:'12124551235',
-      businessLeaders:'李四',
-      businessPhone:'13141515111',
-      parkLeaders:'赵总',
-      parkPhone:'12151618911',
-      },
-    perspective: {
-      y:33.954234,
-      x:118.344476,
-      z:246.8,
-      heading:337.6,
-      pitch:-36.9,
-      roll:0.1
-    },
-  },
-  {
-    name: "宿迁盛洋科技有限公司",
-    position: "批发和零售业",
-    time: "100万",
-    status: "小微企业",
-    atposition:'瑞谷大厦-3',
+    atposition:'盛祥大厦-4',
     analysis:{
       baidu:12,
       xinlang:11,
@@ -2028,11 +1972,11 @@ export const tableDatays=[
 
 export const tableDatazc=[
   {
-    name: "江苏康古堂健康科技有限公司",
-    position: "批发和零售业",
+    name: "宿迁美格宝鑫汽车科技发展有限公司",
+    position: "制造业",
     time: "1000万",
     status: "小微企业",
-    atposition:'邗润大厦-1',
+    atposition:'盛祥大厦-3',
     analysis:{
       baidu:12,
       xinlang:11,
@@ -2171,9 +2115,9 @@ export const tableDatazc=[
 
 export const tableDatakx=[
   {
-    name: "江苏康古堂健康科技有限公司",
-    position: "批发和零售业",
-    time: "1000万",
+    name: "凤和麒（江苏）科技信息有限公司",
+    position: "科学研究",
+    time: "800万",
     status: "小微企业",
     atposition:'邗润大厦-1',
     analysis:{
@@ -2199,11 +2143,11 @@ export const tableDatakx=[
     }
   },
   {
-    name: "宿迁贵昌茂电子商务有限公司",
-    position: "批发和零售业",
-    time: "20万",
+    name: "江苏三五二环保科技有限公司",
+    position: "科学研究",
+    time: "750万",
     status: "小微企业",
-    atposition:'恒通大厦-5',
+    atposition:'邗润大厦-1',
     analysis:{
       baidu:12,
       xinlang:11,
@@ -2227,11 +2171,11 @@ export const tableDatakx=[
     },
   },
   {
-    name: "江苏九马进出口有限公司",
-    position: "批发和零售业",
-    time: "1000万",
+    name: "江苏善德新能源有限公司",
+    position: "科学研究",
+    time: "500万",
     status: "小微企业",
-    atposition:'齐智大厦-1',
+    atposition:'通元大厦-1',
     analysis:{
       baidu:12,
       xinlang:11,
@@ -2255,11 +2199,11 @@ export const tableDatakx=[
     },
   },
   {
-    name: "江苏苏粤跨境电商综合服务有限公司",
-    position: "批发和零售业",
-    time: "1000万",
+    name: "江苏奕均电子科技有限公司",
+    position: "科学研究",
+    time: "500万",
     status: "小微企业",
-    atposition:'齐智大厦-1',
+    atposition:'永成大厦-1',
     analysis:{
       baidu:12,
       xinlang:11,
@@ -2281,33 +2225,5 @@ export const tableDatakx=[
       pitch:-36.9,
       roll:0.1
     },
-  },
-  {
-    name: "宿迁盛洋科技有限公司",
-    position: "批发和零售业",
-    time: "100万",
-    status: "小微企业",
-    atposition:'瑞谷大厦-3',
-    analysis:{
-      baidu:12,
-      xinlang:11,
-      zhihu:5,
-      others:27,
-      level:'低等级事件',
-      propertyHead:'张三',
-      propertyPhone:'12124551235',
-      businessLeaders:'李四',
-      businessPhone:'13141515111',
-      parkLeaders:'赵总',
-      parkPhone:'12151618911',
-      },
-    perspective: {
-      y:33.954234,
-      x:118.344476,
-      z:246.8,
-      heading:337.6,
-      pitch:-36.9,
-      roll:0.1
-    },
-  },
+  }
 ]
