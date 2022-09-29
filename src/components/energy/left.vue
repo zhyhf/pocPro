@@ -14,14 +14,14 @@
       <div class="panel-item analysis">
         <div class="panel-title">设备能耗成本分析</div>
         <div class="analysis-opts">
-          <span
+          <div
             v-for="(item, index) in detailOptions"
             :key="index"
             :class="detailActiveIndex === index ? 'opts-item select-opt' : 'opts-item'"
             @click="changeIndex(index, 'detailActiveIndex')"
           >
             {{ item }}
-          </span>
+          </div>
         </div>
         <div class="panel-item-body">
           <img src="@/assets/img/panel-bg-bodyCan.png" class="panelBodyCan">
@@ -32,14 +32,14 @@
       <div class="panel-item ring">
         <div class="panel-title">耗能环比分析</div>
         <div class="time-opts">
-          <span
+          <div
             v-for="(item, index) in timeOptions"
             :key="index"
             :class="activeOptIndex === index ? 'opts-item select-opt' : 'opts-item'"
             @click="changeIndex(index, 'activeOptIndex')"
           >
             {{ item }}
-          </span>
+          </div>
         </div>
         <div class="panel-item-body">
           <img src="@/assets/img/panel-bg-bodyCan.png" class="panelBodyCan">
@@ -1423,9 +1423,11 @@ export default {
     .opts-item {
       display: inline-block;
       font-size: 12px;
+      margin-top: 2px;
       color: #fff;
       padding: 0 0.5rem;
       height: 2.2rem;
+      line-height: 2.1rem;
       border: 1px solid #fff;
       border-radius: 5px;
       text-align: center;
@@ -1451,6 +1453,7 @@ export default {
       font-size: 12px;
       color: #fff;
       width: 2.2rem;
+      line-height: 2.2rem;
       height: 2.2rem;
       border: 1px solid #fff;
       border-radius: 5px;

@@ -834,7 +834,7 @@ export default {
         height: 8px;
         border-radius: 50%;
         background-color: #38b7fd;
-        margin: 1.5px 4px;
+        margin: 2px 4px;
       }
       .item-title-bottom::before {
         content: "";
@@ -843,7 +843,7 @@ export default {
         height: 8px;
         border-radius: 50%;
         background-color: #2dffbf;
-        margin: 1.5px 4px;
+        margin: 2px 4px;
       }
       .item-detail {
         display: flex;
