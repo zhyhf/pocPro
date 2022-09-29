@@ -1168,10 +1168,11 @@ export const tableDatapf=[
     }
   },
   {
-    name: "吸烟",
-    position: "企业东门2号口",
-    time: "2020.3.9 9:47:34",
-    status: "报警中",
+    name: "宿迁贵昌茂电子商务有限公司",
+    position: "批发和零售业",
+    time: "20万",
+    status: "小微企业",
+    atposition:'恒通大厦-5',
     analysis:{
       baidu:12,
       xinlang:11,
@@ -1195,10 +1196,11 @@ export const tableDatapf=[
     },
   },
   {
-    name: "打架",
-    position: "企业东门3号口",
-    time: "2020.3.9 9:47:34",
-    status: "已处理",
+    name: "江苏九马进出口有限公司",
+    position: "批发和零售业",
+    time: "1000万",
+    status: "小微企业",
+    atposition:'齐智大厦-1',
     analysis:{
       baidu:12,
       xinlang:11,
@@ -1222,10 +1224,11 @@ export const tableDatapf=[
     },
   },
   {
-    name: "打架",
-    position: "企业南门2号口",
-    time: "2020.3.10 9:47:34",
-    status: "报警中",
+    name: "江苏苏粤跨境电商综合服务有限公司",
+    position: "批发和零售业",
+    time: "1000万",
+    status: "小微企业",
+    atposition:'齐智大厦-1',
     analysis:{
       baidu:12,
       xinlang:11,
@@ -1249,10 +1252,11 @@ export const tableDatapf=[
     },
   },
   {
-    name: "打架",
-    position: "2楼广场",
-    time: "2020.3.11 9:47:34",
-    status: "报警中",
+    name: "宿迁盛洋科技有限公司",
+    position: "批发和零售业",
+    time: "100万",
+    status: "小微企业",
+    atposition:'瑞谷大厦-3',
     analysis:{
       baidu:12,
       xinlang:11,
@@ -1279,10 +1283,11 @@ export const tableDatapf=[
 
 export const tableDataxx=[
   {
-    name: "人员聚集",
-    position: "企业东门1号口",
-    time: "2020.3.9 9:47:34",
-    status: "报警中",
+    name: "江苏俊采星驰信息技术有限公司",
+    position: "信息技术服务",
+    time: "1200万",
+    status: "小微企业",
+    atposition:'邗润大厦-1',
     analysis:{
       baidu:12,
       xinlang:11,
@@ -1306,10 +1311,11 @@ export const tableDataxx=[
     }
   },
   {
-    name: "吸烟",
-    position: "企业东门2号口",
-    time: "2020.3.9 9:47:34",
-    status: "报警中",
+    name: "江苏宇德智能科技有限公司",
+    position: "信息技术服务",
+    time: "1200万",
+    status: "小微企业",
+    atposition:'邗润大厦-15',
     analysis:{
       baidu:12,
       xinlang:11,
@@ -1333,10 +1339,11 @@ export const tableDataxx=[
     },
   },
   {
-    name: "打架",
-    position: "企业东门3号口",
-    time: "2020.3.9 9:47:34",
-    status: "已处理",
+    name: "宿豫区先飞信息服务经营部",
+    position: "信息技术服务",
+    time: "105万",
+    status: "小微企业",
+    atposition:'华益大厦A-4',
     analysis:{
       baidu:12,
       xinlang:11,
@@ -1360,10 +1367,11 @@ export const tableDataxx=[
     },
   },
   {
-    name: "打架",
-    position: "企业南门2号口",
-    time: "2020.3.10 9:47:34",
-    status: "报警中",
+    name: "江苏国讯网络有限公司",
+    position: "信息技术服务",
+    time: "160万",
+    status: "小微企业",
+    atposition:'齐智大厦-3',
     analysis:{
       baidu:12,
       xinlang:11,
@@ -1387,10 +1395,11 @@ export const tableDataxx=[
     },
   },
   {
-    name: "打架",
-    position: "2楼广场",
-    time: "2020.3.11 9:47:34",
-    status: "报警中",
+    name: "中誉网络科技宿迁有限公司",
+    position: "信息技术服务",
+    time: "1000万",
+    status: "小微企业",
+    atposition:'瑞谷大厦-5',
     analysis:{
       baidu:12,
       xinlang:11,
@@ -1417,10 +1426,11 @@ export const tableDataxx=[
 
 export const tableDatazl=[
   {
-    name: "人员聚集",
-    position: "企业东门1号口",
-    time: "2020.3.9 9:47:34",
-    status: "报警中",
+    name: "常州钧晨信息服务有限公司宿迁分公司",
+    position: "租赁商务服务",
+    time: "890万",
+    status: "小微企业",
+    atposition:'汇成大厦-1',
     analysis:{
       baidu:12,
       xinlang:11,
@@ -1444,10 +1454,11 @@ export const tableDatazl=[
     }
   },
   {
-    name: "吸烟",
-    position: "企业东门2号口",
-    time: "2020.3.9 9:47:34",
-    status: "报警中",
+    name: "江苏润宁商务秘书有限公司",
+    position: "租赁商务服务",
+    time: "270万",
+    status: "小微企业",
+    atposition:'齐智大厦-1',
     analysis:{
       baidu:12,
       xinlang:11,
@@ -1471,10 +1482,11 @@ export const tableDatazl=[
     },
   },
   {
-    name: "打架",
-    position: "企业东门3号口",
-    time: "2020.3.9 9:47:34",
-    status: "已处理",
+    name: "智慧工场科技服务（宿迁）有限公司",
+    position: "租赁商务服务",
+    time: "670万",
+    status: "小微企业",
+    atposition:'瑞谷大厦-5',
     analysis:{
       baidu:12,
       xinlang:11,
@@ -1498,10 +1510,11 @@ export const tableDatazl=[
     },
   },
   {
-    name: "打架",
-    position: "企业南门2号口",
-    time: "2020.3.10 9:47:34",
-    status: "报警中",
+    name: "宿迁市云众商务秘书有限公司",
+    position: "租赁商务服务",
+    time: "690万",
+    status: "小微企业",
+    atposition:'盛祥大厦-4',
     analysis:{
       baidu:12,
       xinlang:11,
@@ -1525,10 +1538,11 @@ export const tableDatazl=[
     },
   },
   {
-    name: "打架",
-    position: "2楼广场",
-    time: "2020.3.11 9:47:34",
-    status: "报警中",
+    name: "宿迁智恩商务信息咨询服务中心",
+    position: "租赁商务服务",
+    time: "1000万",
+    status: "小微企业",
+    atposition:'通元大厦-2',
     analysis:{
       baidu:12,
       xinlang:11,
@@ -1553,12 +1567,13 @@ export const tableDatazl=[
   },
 ]
 
-export const tableDatajr=[
+export const tableDatajz=[
   {
-    name: "人员聚集",
-    position: "企业东门1号口",
-    time: "2020.3.9 9:47:34",
-    status: "报警中",
+    name: "江苏仁达项目管理咨询有限公司",
+    position: "批发和零售业",
+    time: "1000万",
+    status: "小微企业",
+    atposition:'邗润大厦-1',
     analysis:{
       baidu:12,
       xinlang:11,
@@ -1582,10 +1597,11 @@ export const tableDatajr=[
     }
   },
   {
-    name: "吸烟",
-    position: "企业东门2号口",
-    time: "2020.3.9 9:47:34",
-    status: "报警中",
+    name: "宿迁贵昌茂电子商务有限公司",
+    position: "批发和零售业",
+    time: "20万",
+    status: "小微企业",
+    atposition:'恒通大厦-5',
     analysis:{
       baidu:12,
       xinlang:11,
@@ -1609,10 +1625,11 @@ export const tableDatajr=[
     },
   },
   {
-    name: "打架",
-    position: "企业东门3号口",
-    time: "2020.3.9 9:47:34",
-    status: "已处理",
+    name: "江苏九马进出口有限公司",
+    position: "批发和零售业",
+    time: "1000万",
+    status: "小微企业",
+    atposition:'齐智大厦-1',
     analysis:{
       baidu:12,
       xinlang:11,
@@ -1636,10 +1653,11 @@ export const tableDatajr=[
     },
   },
   {
-    name: "打架",
-    position: "企业南门2号口",
-    time: "2020.3.10 9:47:34",
-    status: "报警中",
+    name: "江苏苏粤跨境电商综合服务有限公司",
+    position: "批发和零售业",
+    time: "1000万",
+    status: "小微企业",
+    atposition:'齐智大厦-1',
     analysis:{
       baidu:12,
       xinlang:11,
@@ -1663,10 +1681,41 @@ export const tableDatajr=[
     },
   },
   {
-    name: "打架",
-    position: "2楼广场",
-    time: "2020.3.11 9:47:34",
-    status: "报警中",
+    name: "宿迁盛洋科技有限公司",
+    position: "批发和零售业",
+    time: "100万",
+    status: "小微企业",
+    atposition:'瑞谷大厦-3',
+    analysis:{
+      baidu:12,
+      xinlang:11,
+      zhihu:5,
+      others:27,
+      level:'低等级事件',
+      propertyHead:'张三',
+      propertyPhone:'12124551235',
+      businessLeaders:'李四',
+      businessPhone:'13141515111',
+      parkLeaders:'赵总',
+      parkPhone:'12151618911',
+      },
+    perspective: {
+      y:33.954234,
+      x:118.344476,
+      z:246.8,
+      heading:337.6,
+      pitch:-36.9,
+      roll:0.1
+    },
+  },
+]
+export const tableDatajr=[
+  {
+    name: "宿迁伍陆资产管理有限公司",
+    position: "金融",
+    time: "1500万",
+    status: "小微企业",
+    atposition:'恒通大厦-7',
     analysis:{
       baidu:12,
       xinlang:11,
@@ -1693,10 +1742,11 @@ export const tableDatajr=[
 
 export const tableDatawl=[
   {
-    name: "人员聚集",
-    position: "企业东门1号口",
-    time: "2020.3.9 9:47:34",
-    status: "报警中",
+    name: "江苏康古堂健康科技有限公司",
+    position: "批发和零售业",
+    time: "1000万",
+    status: "小微企业",
+    atposition:'邗润大厦-1',
     analysis:{
       baidu:12,
       xinlang:11,
@@ -1720,10 +1770,11 @@ export const tableDatawl=[
     }
   },
   {
-    name: "吸烟",
-    position: "企业东门2号口",
-    time: "2020.3.9 9:47:34",
-    status: "报警中",
+    name: "宿迁贵昌茂电子商务有限公司",
+    position: "批发和零售业",
+    time: "20万",
+    status: "小微企业",
+    atposition:'恒通大厦-5',
     analysis:{
       baidu:12,
       xinlang:11,
@@ -1747,10 +1798,11 @@ export const tableDatawl=[
     },
   },
   {
-    name: "打架",
-    position: "企业东门3号口",
-    time: "2020.3.9 9:47:34",
-    status: "已处理",
+    name: "江苏九马进出口有限公司",
+    position: "批发和零售业",
+    time: "1000万",
+    status: "小微企业",
+    atposition:'齐智大厦-1',
     analysis:{
       baidu:12,
       xinlang:11,
@@ -1774,10 +1826,11 @@ export const tableDatawl=[
     },
   },
   {
-    name: "打架",
-    position: "企业南门2号口",
-    time: "2020.3.10 9:47:34",
-    status: "报警中",
+    name: "江苏苏粤跨境电商综合服务有限公司",
+    position: "批发和零售业",
+    time: "1000万",
+    status: "小微企业",
+    atposition:'齐智大厦-1',
     analysis:{
       baidu:12,
       xinlang:11,
@@ -1801,10 +1854,11 @@ export const tableDatawl=[
     },
   },
   {
-    name: "打架",
-    position: "2楼广场",
-    time: "2020.3.11 9:47:34",
-    status: "报警中",
+    name: "宿迁盛洋科技有限公司",
+    position: "批发和零售业",
+    time: "100万",
+    status: "小微企业",
+    atposition:'瑞谷大厦-3',
     analysis:{
       baidu:12,
       xinlang:11,
@@ -1831,10 +1885,11 @@ export const tableDatawl=[
 
 export const tableDatays=[
   {
-    name: "人员聚集",
-    position: "企业东门1号口",
-    time: "2020.3.9 9:47:34",
-    status: "报警中",
+    name: "江苏康古堂健康科技有限公司",
+    position: "批发和零售业",
+    time: "1000万",
+    status: "小微企业",
+    atposition:'邗润大厦-1',
     analysis:{
       baidu:12,
       xinlang:11,
@@ -1858,10 +1913,11 @@ export const tableDatays=[
     }
   },
   {
-    name: "吸烟",
-    position: "企业东门2号口",
-    time: "2020.3.9 9:47:34",
-    status: "报警中",
+    name: "宿迁贵昌茂电子商务有限公司",
+    position: "批发和零售业",
+    time: "20万",
+    status: "小微企业",
+    atposition:'恒通大厦-5',
     analysis:{
       baidu:12,
       xinlang:11,
@@ -1885,10 +1941,11 @@ export const tableDatays=[
     },
   },
   {
-    name: "打架",
-    position: "企业东门3号口",
-    time: "2020.3.9 9:47:34",
-    status: "已处理",
+    name: "江苏九马进出口有限公司",
+    position: "批发和零售业",
+    time: "1000万",
+    status: "小微企业",
+    atposition:'齐智大厦-1',
     analysis:{
       baidu:12,
       xinlang:11,
@@ -1912,10 +1969,11 @@ export const tableDatays=[
     },
   },
   {
-    name: "打架",
-    position: "企业南门2号口",
-    time: "2020.3.10 9:47:34",
-    status: "报警中",
+    name: "江苏苏粤跨境电商综合服务有限公司",
+    position: "批发和零售业",
+    time: "1000万",
+    status: "小微企业",
+    atposition:'齐智大厦-1',
     analysis:{
       baidu:12,
       xinlang:11,
@@ -1939,10 +1997,11 @@ export const tableDatays=[
     },
   },
   {
-    name: "打架",
-    position: "2楼广场",
-    time: "2020.3.11 9:47:34",
-    status: "报警中",
+    name: "宿迁盛洋科技有限公司",
+    position: "批发和零售业",
+    time: "100万",
+    status: "小微企业",
+    atposition:'瑞谷大厦-3',
     analysis:{
       baidu:12,
       xinlang:11,
@@ -1969,10 +2028,11 @@ export const tableDatays=[
 
 export const tableDatazc=[
   {
-    name: "人员聚集",
-    position: "企业东门1号口",
-    time: "2020.3.9 9:47:34",
-    status: "报警中",
+    name: "江苏康古堂健康科技有限公司",
+    position: "批发和零售业",
+    time: "1000万",
+    status: "小微企业",
+    atposition:'邗润大厦-1',
     analysis:{
       baidu:12,
       xinlang:11,
@@ -1996,10 +2056,11 @@ export const tableDatazc=[
     }
   },
   {
-    name: "吸烟",
-    position: "企业东门2号口",
-    time: "2020.3.9 9:47:34",
-    status: "报警中",
+    name: "宿迁贵昌茂电子商务有限公司",
+    position: "批发和零售业",
+    time: "20万",
+    status: "小微企业",
+    atposition:'恒通大厦-5',
     analysis:{
       baidu:12,
       xinlang:11,
@@ -2023,10 +2084,11 @@ export const tableDatazc=[
     },
   },
   {
-    name: "打架",
-    position: "企业东门3号口",
-    time: "2020.3.9 9:47:34",
-    status: "已处理",
+    name: "江苏九马进出口有限公司",
+    position: "批发和零售业",
+    time: "1000万",
+    status: "小微企业",
+    atposition:'齐智大厦-1',
     analysis:{
       baidu:12,
       xinlang:11,
@@ -2050,10 +2112,11 @@ export const tableDatazc=[
     },
   },
   {
-    name: "打架",
-    position: "企业南门2号口",
-    time: "2020.3.10 9:47:34",
-    status: "报警中",
+    name: "江苏苏粤跨境电商综合服务有限公司",
+    position: "批发和零售业",
+    time: "1000万",
+    status: "小微企业",
+    atposition:'齐智大厦-1',
     analysis:{
       baidu:12,
       xinlang:11,
@@ -2077,10 +2140,11 @@ export const tableDatazc=[
     },
   },
   {
-    name: "打架",
-    position: "2楼广场",
-    time: "2020.3.11 9:47:34",
-    status: "报警中",
+    name: "宿迁盛洋科技有限公司",
+    position: "批发和零售业",
+    time: "100万",
+    status: "小微企业",
+    atposition:'瑞谷大厦-3',
     analysis:{
       baidu:12,
       xinlang:11,
@@ -2107,10 +2171,11 @@ export const tableDatazc=[
 
 export const tableDatakx=[
   {
-    name: "人员聚集",
-    position: "企业东门1号口",
-    time: "2020.3.9 9:47:34",
-    status: "报警中",
+    name: "江苏康古堂健康科技有限公司",
+    position: "批发和零售业",
+    time: "1000万",
+    status: "小微企业",
+    atposition:'邗润大厦-1',
     analysis:{
       baidu:12,
       xinlang:11,
@@ -2134,10 +2199,11 @@ export const tableDatakx=[
     }
   },
   {
-    name: "吸烟",
-    position: "企业东门2号口",
-    time: "2020.3.9 9:47:34",
-    status: "报警中",
+    name: "宿迁贵昌茂电子商务有限公司",
+    position: "批发和零售业",
+    time: "20万",
+    status: "小微企业",
+    atposition:'恒通大厦-5',
     analysis:{
       baidu:12,
       xinlang:11,
@@ -2161,10 +2227,11 @@ export const tableDatakx=[
     },
   },
   {
-    name: "打架",
-    position: "企业东门3号口",
-    time: "2020.3.9 9:47:34",
-    status: "已处理",
+    name: "江苏九马进出口有限公司",
+    position: "批发和零售业",
+    time: "1000万",
+    status: "小微企业",
+    atposition:'齐智大厦-1',
     analysis:{
       baidu:12,
       xinlang:11,
@@ -2188,10 +2255,11 @@ export const tableDatakx=[
     },
   },
   {
-    name: "打架",
-    position: "企业南门2号口",
-    time: "2020.3.10 9:47:34",
-    status: "报警中",
+    name: "江苏苏粤跨境电商综合服务有限公司",
+    position: "批发和零售业",
+    time: "1000万",
+    status: "小微企业",
+    atposition:'齐智大厦-1',
     analysis:{
       baidu:12,
       xinlang:11,
@@ -2215,10 +2283,11 @@ export const tableDatakx=[
     },
   },
   {
-    name: "打架",
-    position: "2楼广场",
-    time: "2020.3.11 9:47:34",
-    status: "报警中",
+    name: "宿迁盛洋科技有限公司",
+    position: "批发和零售业",
+    time: "100万",
+    status: "小微企业",
+    atposition:'瑞谷大厦-3',
     analysis:{
       baidu:12,
       xinlang:11,

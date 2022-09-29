@@ -117,9 +117,9 @@
             },
             formatter: function (name) {  //图例后添加数值
               let data =  [
-                { value: 15, name: '1楼楼宇空调' },
-                { value: 20, name: '2楼楼宇空调' },
-                { value: 19, name: '3楼楼宇空调' },
+                { value: 28, name: '1楼楼宇空调' },
+                { value: 30, name: '2楼楼宇空调' },
+                { value: 22, name: '3楼楼宇空调' },
                 { value: 20, name: '水冷机组' },
               ];
               let tarValue;

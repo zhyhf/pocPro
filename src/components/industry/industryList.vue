@@ -15,19 +15,21 @@
         <div class="rows" v-for="(item, i) in $store.state.DigitalTwin.tableDataIndustry" :key="i">
           <div v-for="(v, k, index) in item" :key="index">
             <template v-if="k !== 'perspective'&& k !=='analysis'">
-              <i class="redPoint" v-show="item[k] === '报警中'"></i>
+              <!-- <i class="redPoint" v-show="item[k] === '报警中'"></i>
               <i
                 class="whitePoint"
                 v-show="item[k] === '已处理' || item[k] === '已忽略'"
-              ></i>
-              {{ item[k] }}
+              ></i> -->
+           <el-tooltip class="item" popper-class='my-tooltip' :enterable="false" effect="dark" :content="item[k]" placement="top">
+           <div class="show-msg">{{ item[k] }}</div>
+           </el-tooltip>
             </template>
           </div>
-          <span
+          <!-- <span
             :class="{ operation: true, active: activeIndex === i }"
             @click="flyTo(i, $store.state.DigitalTwin.tableDataWarning[i].perspective, item)"
             >查看</span
-          >
+          > -->
         </div>
         <div class="table-buttons">
           <el-pagination
@@ -126,7 +128,7 @@
     background-size: 100% 100%;
     padding: 1rem;
     bottom: 14%;
-    left: 40.5%;
+    left: 42.5%;
     transform: translateX(-50%);
     .content {
       width: 100%;
@@ -140,16 +142,34 @@
         white-space: nowrap;
         background-color: #0516306e;
         :nth-child(1) {
-          width: 7rem;
+          width: 24rem;
+          overflow: hidden;
+        white-space: nowrap;
+        text-overflow: ellipsis
         }
         :nth-child(2) {
           width: 11rem;
+          overflow: hidden;
+        white-space: nowrap;
+        text-overflow: ellipsis
         }
         :nth-child(3) {
-          width: 15rem;
+          width: 7rem;
+          overflow:hidden;
+        white-space: nowrap;
+        text-overflow: ellipsis
         }
         :nth-child(4) {
           width: 7rem;
+          overflow:hidden;
+         white-space:nowrap;
+         text-overflow:ellipsis
+        }
+        :nth-child(5) {
+          width: 7rem;
+          overflow:hidden;
+         white-space:nowrap;
+         text-overflow:ellipsis
         }
         span {
           width: 30px;

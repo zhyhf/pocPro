@@ -686,7 +686,44 @@ export default {
       timeOptions: ['年', '月', '日'],
       detailOptions: ['耗能占比', '成本占比'],
       activeOptIndex: 0,
-      detailActiveIndex: 0
+      detailActiveIndex: 0,
+
+      // 
+      title_data:["2021", "2020"],
+      x_data:[
+            "5月",
+            "6月",
+            "7月",
+            "8月",
+            "9月",
+            "10月",
+            "11月",
+            "12月"
+          ],
+      bottom_data:[23, 25, 38, 32, 22, 35, 36,30],
+      top_coords:[
+               ['5月', 23],
+               ["6月", 25],
+               ["7月", 38],
+               ["8月", 32],
+               ["9月", 22],
+               ["10月", 35],
+               ["11月", 36],
+               ["12月", 30],
+                ],
+      bottom_coords:[
+                  ['5月', 40],
+                  ["6月", 45],
+                  ["7月", 56],
+                  ["8月", 48],
+                  ["9月", 37],
+                  ["10月", 50],
+                  ["11月", 48],
+                  ["12月", 43],
+                ],
+      top_data:[17, 20, 18, 16, 15, 15, 12, 13],
+      top_title:'2020',
+      bottom_title:'2021'
     }
   },
    created () {
@@ -696,7 +733,8 @@ export default {
     this.initPosition()
     this.initChart()
     this.analysisChart = this.$echarts.init(this.$refs.analysisChart)
-    this.analysisChart.setOption(this.analysisOption)
+    // this.analysisChart.setOption(this.analysisOption)
+    this.getAnalysisOption()
     this.carbonChart = this.$echarts.init(this.$refs.carbonChart)
     this.carbonChart.setOption(this.carbonOption)
       // this.COElementChart = this.$echarts.init(this.$refs.COChart);
@@ -713,8 +751,353 @@ export default {
     });
   },
   methods: {
+    // 耗能环比分析
+    getAnalysisOption(){
+     let analysisOption={
+         tooltip: {
+            trigger: "axis",
+            backgroundColor: 'rgba(0,0,0,0.65)',
+            color: '#fff',
+            textStyle:{
+              color: '#fff',
+              fontSize: '12px'
+            },
+            borderWidth: "0",
+        },
+        legend: {
+          right: 0,
+          padding: [10, 10, 0, 0],
+          itemHeight: 6,
+          // 不同折现表示的含义
+          data:this.title_data,
+          textStyle: {
+            color: "#C6CFCE",
+            fontSize: "10",
+          },
+        },
+        grid: {
+          left: 35,
+          top: 35,
+          right: 20,
+          bottom: 30,
+        },
+        xAxis: {
+          boundaryGap: true,
+          nameTextStyle: {
+            color: "#C6CFCE",
+          },
+          nameLocation: "start", // x轴name处于x轴的什么位置
+          type: "category",
+          data:this.x_data,
+          axisTick: {
+            interval: 0,
+            alignWithLabel: true
+          },
+          axisLabel: {
+            interval: 0,
+            textStyle: {
+              fontSize: 10,
+              color: "#C6CFCE",
+            }
+          },
+        },
+        yAxis: {
+          name: "产值(亿元)",
+          nameTextStyle: {
+            color: "#C6CFCE",
+          },
+          type: "value",
+          splitLine: {
+            lineStyle: {
+              type: "dashed",
+              color: "grey",
+            },
+          },
+          axisLabel: {
+            textStyle: {
+              fontSize: 10,
+              color: "#C6CFCE",
+            },
+          },
+        },
+        series: [
+          {
+            name: this.bottom_title,
+            data: this.bottom_data,
+            type: "line",
+            stack: 'Total',
+            symbol: 'none',
+            areaStyle: {
+              normal: {
+                color: new this.$echarts.graphic.LinearGradient(0, 0, 0, 1, [{
+                  offset: 0,
+                  color: 'rgba(84,251,200,1)'
+                },
+                  {
+                    offset: 0.2,
+                    color: 'rgba(84,251,200,0.3)'
+                  },
+                  {
+                    offset: 1,
+                    color: 'rgba(84,251,200,0)'
+                  }]),
+              }
+            },
+            itemStyle: {
+              normal: {
+                color: new this.$echarts.graphic.LinearGradient(
+                        0,
+                        1,
+                        0,
+                        0,
+                        [
+                          {
+                            offset: 0,
+                            color: "rgba(96, 224, 249, 0)", // 0% 处的颜色
+                          },
+                          {
+                            offset: 0.6,
+                            color: "rgba(96, 224, 249, 0.5)", // 60% 处的颜色
+                          },
+                          {
+                            offset: 1,
+                            color: "rgb(96, 224, 249)", // 100% 处的颜色
+                          },
+                        ],
+                        false
+                ),
+              }, // 2DFDBD
+            },
+            animationDelay: function (idx) {
+              return idx * 500;
+            }
+          },
+          {
+            showSymbol: false,
+            type: "lines",
+            polyline: true,
+            smooth: false,
+            coordinateSystem: "cartesian2d",
+            zlevel: 1,
+            effect: {
+              show: true,
+              smooth: true,
+              period: 6,
+              symbolSize: 4,
+            },
+            lineStyle: {
+              color: "#fff",
+              width: 1,
+              opacity: 0,
+              curveness: 0,
+              cap: "round",
+            },
+            data: [
+              {
+                coords: this.bottom_coords
+              },
+            ]
+          },
+          {
+            name:this.top_title,
+            data:this.top_data,
+            type: "line",
+            stack: 'Total',
+            symbol: 'none',
+            itemStyle: {
+              normal: {
+                color: new this.$echarts.graphic.LinearGradient(
+                        0,
+                        1,
+                        0,
+                        0,
+                        [
+                          {
+                            offset: 0,
+                            color: "rgba(42, 150, 222, 0)", // 0% 处的颜色
+                          },
+                          {
+                            offset: 0.6,
+                            color: "rgba(42, 150, 222, 0.5)", // 60% 处的颜色
+                          },
+                          {
+                            offset: 1,
+                            color: "rgb(42, 150, 222)", // 100% 处的颜色
+                          },
+                        ],
+                        false
+                ),
+              },
+            },
+            areaStyle: {
+              normal: {
+                color: new this.$echarts.graphic.LinearGradient(0, 0, 0, 1, [{
+                  offset: 0,
+                  color: 'rgba(56,183,253,1)'
+                },
+                  {
+                    offset: 0.2,
+                    color: 'rgba(56,183,253,0.3)'
+                  },
+                  {
+                    offset: 1,
+                    color: 'rgba(56,183,253,0)'
+                  }]),
+              }
+            },
+            animationDelay: function (idx) {
+              return idx * 500;
+            }
+          },
+                {
+            showSymbol: false,
+            type: "lines",
+            stack: 'Total',
+            polyline: true,
+            smooth: false,
+            coordinateSystem: "cartesian2d",
+            zlevel: 1,
+            effect: {
+              show: true,
+              smooth: true,
+              period: 6,
+              symbolSize: 4,
+            },
+            lineStyle: {
+              color: "#fff",
+              width: 1,
+              opacity: 0,
+              curveness: 0,
+              cap: "round",
+            },
+            data: [
+              {
+                coords: this.top_coords
+              },
+            ]
+          },
+        ],
+        animationEasing: 'elasticOut',
+        animationDelayUpdate: function (idx) {
+          return idx * 200;
+        }
+      }
+      this.analysisChart.setOption(analysisOption)
+    },
     changeIndex(index, property) {
       this[property] = index
+      console.log('000',index);
+      if(index===0){
+      this.title_data=["2021", "2020"],
+      this.x_data=[
+            "5月",
+            "6月",
+            "7月",
+            "8月",
+            "9月",
+            "10月",
+            "11月",
+            "12月"
+          ],
+      this.bottom_data=[23, 25, 38, 32, 22, 35, 36,30],
+      this.top_coords=[
+               ['5月', 23],
+               ["6月", 25],
+               ["7月", 38],
+               ["8月", 32],
+               ["9月", 22],
+               ["10月", 35],
+               ["11月", 36],
+               ["12月", 30],
+                ],
+      this.bottom_coords=[
+                  ['5月', 40],
+                  ["6月", 45],
+                  ["7月", 56],
+                  ["8月", 48],
+                  ["9月", 37],
+                  ["10月", 50],
+                  ["11月", 48],
+                  ["12月", 43],
+                ],
+      this.top_data=[17, 20, 18, 16, 15, 15, 12, 13],
+      this.top_title='2020',
+      this.bottom_title='2021'
+      } else if (index===1){
+        this.title_data=["7月", "8月"],
+      this.x_data=[
+            "5日",
+            "6日",
+            "7日",
+            "8日",
+            "9日",
+            "10日",
+            "11日",
+            "12日"
+          ],
+      this.bottom_data=[4, 5, 6, 8, 12, 5, 3,4],
+      this.bottom_coords=[
+               ['5日', 4],
+               ["6日", 5],
+               ["7日", 6],
+               ["8日", 8],
+               ["9日", 12],
+               ["10日", 5],
+               ["11日", 3],
+               ["12日", 4],
+                ],
+      this.top_coords=[
+                  ['5日', 9],
+                  ["6日", 14],
+                  ["7日", 14],
+                  ["8日", 14],
+                  ["9日", 17],
+                  ["10日", 10],
+                  ["11日", 5],
+                  ["12日", 7],
+                ],
+      this.top_data=[5, 9, 8, 6, 5, 5, 2, 3],
+      this.top_title='7月',
+      this.bottom_title='8月'
+      } else{
+        this.title_data=["7日", "8日"],
+        this.x_data=[
+            "5时",
+            "6时",
+            "7时",
+            "8时",
+            "9时",
+            "10时",
+            "11时",
+            "12时"
+          ],
+      this.bottom_data=[1.6, 1.6, 2.6,2.3, 3.8,1.1, 3.2,2.1],
+      this.bottom_coords=[
+               ['5时', 1.6],
+               ["6时", 1.6],
+               ["7时", 2.6],
+               ["8时", 2.3],
+               ["9时", 3.8],
+               ["10时", 1.1],
+               ["11时", 3.2],
+               ["12时", 2.1],
+                ],
+      this.top_coords=[
+                  ['5时', 3.7],
+                  ["6时", 3.6],
+                  ["7时", 4.4],
+                  ["8时", 3.8],
+                  ["9时", 7.2],
+                  ["10时", 3.9],
+                  ["11时", 5.3],
+                  ["12时", 4.1],
+                ],
+      this.top_data=[2.1, 2, 1.8, 1.5, 3.4, 2.8, 2.1, 2],
+      this.top_title='7日',
+      this.bottom_title='8日'
+      }
+
+      this.getAnalysisOption()
     },
     initPosition() {
       if (window.innerWidth >= 1920) {
