@@ -2,7 +2,7 @@ import toBase64ForDefaultValue from "./html2base64";
 import store from "../store";
 import { buildingIcon, entityObj,earlywarningIcon } from '@/assets/constant/building'
 import {tableDatarg,tableDataht,tableDatasx,tableDatayx,tableDataqz,entityWarning,
-tableDatapf,tableDataxx,tableDatazl,tableDatajr,tableDatawl,tableDatazc,tableDatakx
+tableDatapf,tableDataxx,tableDatazl,tableDatajr,tableDatajz,tableDatawl,tableDatazc,tableDatakx
 
 } from '@/assets/constant/parkCamera'
 import {
@@ -163,6 +163,7 @@ function addEarlyWaringEvent(){
     let id = pick && pick.id && pick.id.id;
     if (pick) {
       if (id) {
+        console.log('id',id);
         if(id&&id.indexOf('Warning')!==-1){
          // 事件处理显示
         setTimeout(() => {
@@ -174,28 +175,47 @@ function addEarlyWaringEvent(){
         store.state.DigitalTwin.data2ComShow = false;
         store.state.DigitalTwin.analyseShow = false;
         // store.commit('DigitalTwin/changeSelectedBuilding', id)
-        if(entityWarning[id]&&entityWarning[id].perspective){
-          flyTo(entityWarning[id].perspective);
-        }  
+        // if(entityWarning[id]&&entityWarning[id].perspective){
+        //   flyTo(entityWarning[id].perspective);
+        // }  
         store.state.DigitalTwin.eventDetailShow = false;
          let selectedIcon =earlywarningIcon.find(item => item.id === id)
         store.commit('DigitalTwin/changeWarningSelectedIcon', selectedIcon)
          $viewer.entities.removeById(id)
+         store.state.DigitalTwin.eventListShow = false
+         setTimeout(() => {
+          // 显示详情
+          store.commit("DigitalTwin/changeEventDetailShow", true);
+        }, 1500);
          switch (id) {
           case "rgWarning":
-            store.commit('DigitalTwin/changeWarningData',tableDatarg)
+            // 4
+            flyTo(store.state.DigitalTwin.tableDataWarning[3].perspective);
+            store.commit("DigitalTwin/changeEventDetail",store.state.DigitalTwin.tableDataWarning[3]);
+            // store.commit('DigitalTwin/changeWarningData',tableDatarg)
             break;
           case "htWarning":
-            store.commit('DigitalTwin/changeWarningData',tableDataht)
+            // 3
+            flyTo(store.state.DigitalTwin.tableDataWarning[2].perspective);
+            store.commit("DigitalTwin/changeEventDetail",store.state.DigitalTwin.tableDataWarning[2]);
             break;
           case "sxWarning":
-            store.commit('DigitalTwin/changeWarningData',tableDatasx)
+            // 1
+            flyTo(store.state.DigitalTwin.tableDataWarning[0].perspective);
+            store.commit("DigitalTwin/changeEventDetail",store.state.DigitalTwin.tableDataWarning[0]);
+            // store.commit('DigitalTwin/changeWarningData',tableDatasx)
             break;
           case "qzWarning":
-            store.commit('DigitalTwin/changeWarningData',tableDataqz)
+            // 2
+            flyTo(store.state.DigitalTwin.tableDataWarning[1].perspective);
+            store.commit("DigitalTwin/changeEventDetail",store.state.DigitalTwin.tableDataWarning[1]);
+            // store.commit('DigitalTwin/changeWarningData',tableDataqz)
             break;
           case "yxWarning":
-            store.commit('DigitalTwin/changeWarningData',tableDatayx)
+            // 5
+            flyTo(store.state.DigitalTwin.tableDataWarning[4].perspective);
+            store.commit("DigitalTwin/changeEventDetail",store.state.DigitalTwin.tableDataWarning[4]);
+            // store.commit('DigitalTwin/changeWarningData',tableDatayx)
             break;
           default:
             break;

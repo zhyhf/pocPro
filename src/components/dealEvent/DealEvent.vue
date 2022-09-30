@@ -99,6 +99,7 @@ export default {
   methods: {
     currentChange(current) {},
     flyTo(index, position, item) {
+      console.log('index',position,item);
       this.$store.commit("DigitalTwin/changeEventDetailShow", false);
       this.activeIndex = index;
       this.$store.state.DigitalTwin.eventListShow = false;

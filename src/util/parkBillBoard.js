@@ -159,14 +159,18 @@ const addClickEvent = (self) => {
        store.commit("DigitalTwin/changeParkEventDetail", false);
        self.$bus.$emit("changeStyle");
       if(entityObj[id] && entityObj[id].billboardId == "parkPosition1Icon"){
-        store.commit("DigitalTwin/changeParkShow", true);
+        setTimeout(()=>{
+          store.commit("DigitalTwin/changeParkShow", true);
+        },2000)
         store.commit("DigitalTwin/changeParkCamera", tableDataC4D1);
         let parkDetail={parkName:'电商园区停车场',smogNum:5,camera:9,eleNum:74,used:84,spareNum:32,parkNum:4}
         store.commit("DigitalTwin/changeParkDetails",parkDetail);
         $viewer.entities.getById(entityObj[id].billboardId)._show=false
       }
       if(entityObj[id] && entityObj[id].billboardId == "parkPosition2Icon"){
-        store.commit("DigitalTwin/changeParkShow", true);
+        setTimeout(()=>{
+          store.commit("DigitalTwin/changeParkShow", true);
+        },2000)
         store.commit("DigitalTwin/changeParkCamera", tableDataC8);
         let parkDetail={parkName:'中宏停车场',smogNum:5,camera:9,eleNum:23,used:26,spareNum:14,parkNum:4}
         store.commit("DigitalTwin/changeParkDetails",parkDetail);
@@ -174,7 +178,9 @@ const addClickEvent = (self) => {
       }
       if(entityObj[id] && entityObj[id].billboardId == "parkPosition3Icon"){
         // A6 3
-        store.commit("DigitalTwin/changeParkShow", true);
+        setTimeout(()=>{
+          store.commit("DigitalTwin/changeParkShow", true);
+        },2000)
         store.commit("DigitalTwin/changeParkCamera", tableDataA6);
         let parkDetail={parkName:'恒通停车场',smogNum:4,camera:11,eleNum:12,used:9,spareNum:8,parkNum:4}
         store.commit("DigitalTwin/changeParkDetails",parkDetail);
@@ -183,7 +189,9 @@ const addClickEvent = (self) => {
       if(entityObj[id] && entityObj[id].billboardId == "parkPosition4Icon"){
         // A1 4   
          
-        store.commit("DigitalTwin/changeParkShow", true);
+        setTimeout(()=>{
+          store.commit("DigitalTwin/changeParkShow", true);
+        },2000)
         store.commit("DigitalTwin/changeParkCamera", tableDataA1);
         let parkDetail={parkName:'东苑停车场',
         smogNum:3,camera:12,
@@ -192,14 +200,18 @@ const addClickEvent = (self) => {
         $viewer.entities.getById(entityObj[id].billboardId)._show=false
       }
       if(entityObj[id] && entityObj[id].billboardId == "parkPosition5Icon"){
-        store.commit("DigitalTwin/changeParkShow", true);
+        setTimeout(()=>{
+          store.commit("DigitalTwin/changeParkShow", true);
+        },2000)
         store.commit("DigitalTwin/changeParkCamera", tableDataD5);
         let parkDetail={parkName:'万宝停车场',smogNum:5,camera:16,eleNum:29,used:17,spareNum:21,parkNum:4}
         store.commit("DigitalTwin/changeParkDetails",parkDetail);
         $viewer.entities.getById(entityObj[id].billboardId)._show=false
       }
       if(entityObj[id] && entityObj[id].billboardId == "parkPosition6Icon"){
-        store.commit("DigitalTwin/changeParkShow", true);
+        setTimeout(()=>{
+          store.commit("DigitalTwin/changeParkShow", true);
+        },2000)
         store.commit("DigitalTwin/changeParkCamera", tableDataB4);
         let parkDetail={parkName:'电商第一街立体综合停车楼',smogNum:2,camera:14,eleNum:89,used:45,spareNum:105,parkNum:4}
         store.commit("DigitalTwin/changeParkDetails",parkDetail);
