@@ -2,8 +2,23 @@
   <div>
     <div class="panel-wrapper">
       <div class="info">
-        <img :src="activeBg" class="info-bg">
-        <div class="bg-item" v-for="(item, index) in varieties" :key="index">
+        <div class="info-bg">
+         <img :src="activeBg" class="info-bg-inner">
+         <div class="info-message">
+          <div class="parent">
+        <div class="child" v-for="(item, index) in varieties" :key="index">
+           <div :class="[`variety-head-child-${index}`]">
+              <img class="info-img" :src="index === varietyIndex ? item.activeIcon: item.icon">
+              <span  class="variety-title">{{ item.title }}</span>
+              <dv-digital-flop :config="item.config"  class="flop-right"></dv-digital-flop>
+           </div>
+           
+    </div>
+  </div>
+         </div>
+        </div>
+    
+        <!-- <div class="bg-item" v-for="(item, index) in varieties" :key="index">
           <div :class="[`variety-content-${index}`,'variety-content']">
             <div class="variety-head">
               <img :src="index === varietyIndex ? item.activeIcon: item.icon">
@@ -11,7 +26,7 @@
             </div>
             <dv-digital-flop :config="item.config"  class="flop-right"></dv-digital-flop>
           </div>
-        </div>
+        </div> -->
       </div>
 
       <div class="panel-item broken">
@@ -622,7 +637,8 @@ export default {
 @import "../../style/element.less";
 .flop-right{
   height: 30PX; 
-  position: relative;
+  // color: #38b7fd;
+  // position: relative;
 }
 .energy-consume {
   width: 100%;
@@ -670,164 +686,225 @@ export default {
   flex: 2.12 !important;
 }
 .info {
-  flex: 1.1;
+  // flex: 1.1;
+  // width: 100%;
+  // margin-bottom:20px;
+  // display: flex;
+  // flex-wrap: wrap;
+  // justify-content: space-between;
+  // position: relative;
+  .info-bg {
+  // margin-bottom:20px;
+  // position: relative;
+  //   // height: 100%;
+  //   width: 100%;
+  //   background-color: #38b7fd;
+  // // position: absolute;
+   flex: 1.1;
   width: 100%;
   margin-bottom:20px;
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
   position: relative;
-  .info-bg {
-    // height: 100%;
-    width: 100%;
-    position: absolute;
+  // background-color: #38b7fd;
   }
-  .bg-item {
-    flex-basis: 49.5%;
-    z-index: 99;
-    position: relative;
-    .variety-content{
+  .info-bg-inner{
+    width: 100%;
+  }
+  .info-message{
       position: absolute;
+      top:0%;
+      height: 100%;
+      // background-color: #ffd800;
       width: 100%;
-    }
-   @media screen and (min-width:1921px) and (max-width:2570px) {
-      .variety-content-0{
-        top:30% !important;           
-      // transform: translate3d(-50%, -50%, 0);
-    }
-    .variety-content-1{
-        top:30%;           
-      // transform: translate3d(-50%, -50%, 0);
-    }
-    .variety-content-2{
-        top:50%;           
-      // transform: translate3d(-50%, -50%, 0);
-    }
-    .variety-content-3{
-        top:50%;           
-      // transform: translate3d(-50%, -50%, 0);
-    }
-    }
-    @media screen and (min-width:1601px) and (max-width:1920px) {
-      .variety-content-0{
-        top:20%;           
-      // transform: translate3d(-50%, -50%, 0);
-    }
-    .variety-content-1{
-        top:20%;           
-      // transform: translate3d(-50%, -50%, 0);
-    }
-    .variety-content-2{
-        top:38%;           
-      // transform: translate3d(-50%, -50%, 0);
-    }
-    .variety-content-3{
-        top:38%;           
-      // transform: translate3d(-50%, -50%, 0);
-    }
-    }
-    @media screen and (min-width:1401px) and (max-width:1600px) {
-      .variety-content-0{
-        top:20%;           
-      // transform: translate3d(-50%, -50%, 0);
-    }
-    .variety-content-1{
-        top:20%;           
-      // transform: translate3d(-50%, -50%, 0);
-    }
-    .variety-content-2{
-        top:20%;           
-      // transform: translate3d(-50%, -50%, 0);
-    }
-    .variety-content-3{
-        top:20%;           
-      // transform: translate3d(-50%, -50%, 0);
-    }
-    }
-    @media screen and (min-width:1280px) and (max-width:1400px) {
-      .variety-content-0{
-        top:20%;           
-      // transform: translate3d(-50%, -50%, 0);
-    }
-    .variety-content-1{
-        top:20%;           
-      // transform: translate3d(-50%, -50%, 0);
-    }
-    .variety-content-2{
-        top:5%;           
-      // transform: translate3d(-50%, -50%, 0);
-    }
-    .variety-content-3{
-        top:5%;           
-      // transform: translate3d(-50%, -50%, 0);
-    }
-    }
-    @media screen and (min-width:1001px) and (max-width:1279px) {
-      .variety-content-0{
-        top:10%;           
-      // transform: translate3d(-50%, -50%, 0);
-    }
-    .variety-content-1{
-        top:10%;           
-      // transform: translate3d(-50%, -50%, 0);
-    }
-    .variety-content-2{
-        top:-10%;           
-      // transform: translate3d(-50%, -50%, 0);
-    }
-    .variety-content-3{
-        top:-10%;           
-      // transform: translate3d(-50%, -50%, 0);
-    }
-    }
-    @media screen and (min-width:951px) and (max-width:1000px) {
-      .variety-content-0{
-        top:3%;           
-      // transform: translate3d(-50%, -50%, 0);
-    }
-    .variety-content-1{
-        top:0%;           
-      // transform: translate3d(-50%, -50%, 0);
-    }
-    .variety-content-2{
-        top:-40%;           
-      // transform: translate3d(-50%, -50%, 0);
-    }
-    .variety-content-3{
-        top:-40%;           
-      // transform: translate3d(-50%, -50%, 0);
-    }
-    }
-    @media screen and (max-width:950px){
-      .variety-content-0{
-        top:0%;           
-      // transform: translate3d(-50%, -50%, 0);
-    }
-    .variety-content-1{
-        top:0%;           
-      // transform: translate3d(-50%, -50%, 0);
-    }
-    .variety-content-2{
-        top:-48%;           
-      // transform: translate3d(-50%, -50%, 0);
-    }
-    .variety-content-3{
-        top:-48%;           
-      // transform: translate3d(-50%, -50%, 0);
-    }
-    }
-    .variety-head {
-      text-align: center;
+  }
+  .parent {
+     width: 100%;
+     height:100%;
+     display: flex;
+     flex-flow: row wrap;
+     align-items: center;
+     justify-content: center;
+    //  align-content: flex-start;
+   }
+   .child {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+     box-sizing: border-box;
+    //  background-color: red;
+     flex: 50%;
+     height: 50%;
+    //  line-height: 50%;
+    //  border: 1px solid red;
+    // &:nth-child(1){
+    //   margin-top: 30px;
+    //   margin-left: 15px;
+    // }
+   }
+   .variety-head-child-0,.variety-head-child-1{
+      // color:#38b7fd;
       font-size: 12px;
       color: #fff;
-      line-height: 18PX;
-    }
-    .variety-title {
-      position: relative;
-      left: 0.7rem;
-      top: 0.1rem;
-    }
-  }
+      // margin-top:5px;
+   }
+   .variety-head-child-2,.variety-head-child-3{
+      // color:#38b7fd;
+      font-size: 12px;
+      color: #ffffff;
+      padding-top:2.5rem;
+   }
+   .info-img{
+    margin-left:3px;
+    padding-right:7px;
+   }
+  // .bg-item {
+  //   flex-basis: 49.5%;
+  //   z-index: 99;
+  //   position: absolute;
+  //   // .variety-content{
+  //   //   position: absolute;
+  //   //   width: 100%;
+  //   // }
+  // //  @media screen and (min-width:1921px) and (max-width:2570px) {
+  // //     .variety-content-0{
+  // //       top:30% !important;           
+  // //     // transform: translate3d(-50%, -50%, 0);
+  // //   }
+  // //   .variety-content-1{
+  // //       top:30%;           
+  // //     // transform: translate3d(-50%, -50%, 0);
+  // //   }
+  // //   .variety-content-2{
+  // //       top:50%;           
+  // //     // transform: translate3d(-50%, -50%, 0);
+  // //   }
+  // //   .variety-content-3{
+  // //       top:50%;           
+  // //     // transform: translate3d(-50%, -50%, 0);
+  // //   }
+  // //   }
+  // //   @media screen and (min-width:1601px) and (max-width:1920px) {
+  // //     .variety-content-0{
+  // //       top:20%;           
+  // //     // transform: translate3d(-50%, -50%, 0);
+  // //   }
+  // //   .variety-content-1{
+  // //       top:20%;           
+  // //     // transform: translate3d(-50%, -50%, 0);
+  // //   }
+  // //   .variety-content-2{
+  // //       top:38%;           
+  // //     // transform: translate3d(-50%, -50%, 0);
+  // //   }
+  // //   .variety-content-3{
+  // //       top:38%;           
+  // //     // transform: translate3d(-50%, -50%, 0);
+  // //   }
+  // //   }
+  // //   @media screen and (min-width:1401px) and (max-width:1600px) {
+  // //     .variety-content-0{
+  // //       top:20%;           
+  // //     // transform: translate3d(-50%, -50%, 0);
+  // //   }
+  // //   .variety-content-1{
+  // //       top:20%;           
+  // //     // transform: translate3d(-50%, -50%, 0);
+  // //   }
+  // //   .variety-content-2{
+  // //       top:20%;           
+  // //     // transform: translate3d(-50%, -50%, 0);
+  // //   }
+  // //   .variety-content-3{
+  // //       top:20%;           
+  // //     // transform: translate3d(-50%, -50%, 0);
+  // //   }
+  // //   }
+  // //   @media screen and (min-width:1280px) and (max-width:1400px) {
+  // //     .variety-content-0{
+  // //       top:20%;           
+  // //     // transform: translate3d(-50%, -50%, 0);
+  // //   }
+  // //   .variety-content-1{
+  // //       top:20%;           
+  // //     // transform: translate3d(-50%, -50%, 0);
+  // //   }
+  // //   .variety-content-2{
+  // //       top:5%;           
+  // //     // transform: translate3d(-50%, -50%, 0);
+  // //   }
+  // //   .variety-content-3{
+  // //       top:5%;           
+  // //     // transform: translate3d(-50%, -50%, 0);
+  // //   }
+  // //   }
+  // //   @media screen and (min-width:1001px) and (max-width:1279px) {
+  // //     .variety-content-0{
+  // //       top:10%;           
+  // //     // transform: translate3d(-50%, -50%, 0);
+  // //   }
+  // //   .variety-content-1{
+  // //       top:10%;           
+  // //     // transform: translate3d(-50%, -50%, 0);
+  // //   }
+  // //   .variety-content-2{
+  // //       top:-10%;           
+  // //     // transform: translate3d(-50%, -50%, 0);
+  // //   }
+  // //   .variety-content-3{
+  // //       top:-10%;           
+  // //     // transform: translate3d(-50%, -50%, 0);
+  // //   }
+  // //   }
+  // //   @media screen and (min-width:951px) and (max-width:1000px) {
+  // //     .variety-content-0{
+  // //       top:3%;           
+  // //     // transform: translate3d(-50%, -50%, 0);
+  // //   }
+  // //   .variety-content-1{
+  // //       top:0%;           
+  // //     // transform: translate3d(-50%, -50%, 0);
+  // //   }
+  // //   .variety-content-2{
+  // //       top:-40%;           
+  // //     // transform: translate3d(-50%, -50%, 0);
+  // //   }
+  // //   .variety-content-3{
+  // //       top:-40%;           
+  // //     // transform: translate3d(-50%, -50%, 0);
+  // //   }
+  // //   }
+  // //   @media screen and (max-width:950px){
+  // //     .variety-content-0{
+  // //       top:0%;           
+  // //     // transform: translate3d(-50%, -50%, 0);
+  // //   }
+  // //   .variety-content-1{
+  // //       top:0%;           
+  // //     // transform: translate3d(-50%, -50%, 0);
+  // //   }
+  // //   .variety-content-2{
+  // //       top:-48%;           
+  // //     // transform: translate3d(-50%, -50%, 0);
+  // //   }
+  // //   .variety-content-3{
+  // //       top:-48%;           
+  // //     // transform: translate3d(-50%, -50%, 0);
+  // //   }
+  // //   }
+  //   .variety-head {
+  //     text-align: center;
+  //     font-size: 12px;
+  //     color: #fff;
+  //     line-height: 18PX;
+  //   }
+  //   .variety-title {
+  //     position: relative;
+  //     left: 0.7rem;
+  //     top: 0.1rem;
+  //   }
+  // }
 }
 .broken {
   flex: 1.5 !important;
