@@ -16,8 +16,8 @@
                         <img :src="item.bgImg" class="right-pic" @load="imgLoaded('WAVE')">
                         <div class="right-text">
                             <span class="right-text-title" :class="index === 1 ? 'right-text-title-middle' : ''">{{ item.title }}</span>
-                            <dv-digital-flop v-if="counterRender" :config="item.config" style="height: 30px; position: absolute; top: 0.1rem; right: 5.2rem"/>
-                            <span style="position: absolute; right: 0.7rem;line-height:2.2rem;">万 kW.h</span>
+                            <dv-digital-flop v-if="counterRender" :config="item.config" style="height: 30px; position: absolute; top: 0.05rem; right: 5.2rem"/>
+                            <span style="position: absolute; right: 0.7rem;line-height:2rem;">万 kW.h</span>
 <!--                            <span class="right-text-value">{{ item.value }}</span>-->
                         </div>
                     </div>
@@ -1068,7 +1068,7 @@
                   .right-text-title {
                       display: inline-block;
                       margin-left: 12%;
-                      line-height: 2.2rem;
+                      line-height: 2rem;
                   }
                   .right-text-title-middle {
                       width: 20%;
