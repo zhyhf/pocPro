@@ -25,7 +25,7 @@
                 {{ item.title }}
               </div>
               <div class="item-detail">
-                <dv-digital-flop :config="item.config" style="height: 30px; position: relative; left: -10px"/>
+                <dv-digital-flop :config="item.config" style="height: 30px; position: relative; left: -12px"/>
 <!--                <span class="item-value">{{ item.value }}</span>-->
                 <span class="item-unit">{{ item.unit }}</span>
               </div>
@@ -56,7 +56,7 @@
               :class="item.className"
           >
             <div class="item-detail">
-              <dv-digital-flop :config="item.config" style="height: 30px; position: relative; left: -6px; top: 2px;"/>
+              <dv-digital-flop :config="item.config" style="height: 30px; position: relative; left: -11px; top: 2px;"/>
 <!--              <span class="parking-value">{{ item.config.number[0] }}</span>-->
               <span class="item-unit">{{ item.unit }}</span>
             </div>
@@ -77,7 +77,7 @@
           <div class="item-title">{{ item.title }}</div>
           <div class="item-detail">
             <img :src="item.pic" class="item-icon" />
-            <dv-digital-flop :config="item.config" style="height: 20px; position: relative; top: 2px;"/>
+            <dv-digital-flop :config="item.config" style="height: 20px; position: relative; top: 4px;"/>
 <!--            <span class="item-data">{{ item.config.number[0]}}</span>-->
             <span class="item-unit">{{ item.unit }}</span>
           </div>
@@ -860,6 +860,7 @@ export default {
           bottom: 7px;
           font-size: 12px;
           color: #c6cfce;
+          line-height: 0.9rem;
         }
       }
     }
