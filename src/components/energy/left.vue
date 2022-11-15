@@ -274,7 +274,7 @@ export default {
         ],
         rowNum: 5,
         headerBGC: 'transparent',
-        columnWidth: [110],
+        columnWidth: [150,130,110],
         align: ['left'],
         waitTime: 1000
       },
