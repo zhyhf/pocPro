@@ -123,7 +123,7 @@ export default {
           ],
           rowNum: 4,
           headerBGC: 'transparent',
-          columnWidth: [190, 70, 85],
+          columnWidth: [250, 150,150],
           align: ['center'],
           waitTime: 1000
       },

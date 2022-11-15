@@ -656,6 +656,7 @@ export default {
           name: "1楼楼宇空调",
           value: 12,
           itemStyle: {
+            fontSize:'12',
             // opacity: 0.2,
             color: "#F7CF6E",
           },
@@ -664,7 +665,8 @@ export default {
           name: "2楼楼宇空调",
           value: 20,
           itemStyle: {
-            fontSize:'20',
+
+            fontSize:'12',
             // opacity: 0.2,
             color: "#55F0FF",
           },
@@ -673,6 +675,7 @@ export default {
           name: "3楼楼宇空调",
           value: 19,
           itemStyle: {
+            fontSize:'12',
             // opacity: 0.2,
             color: "#42FECA",
           },
@@ -681,6 +684,7 @@ export default {
           name: "水冷机组",
           value: 20,
           itemStyle: {
+            fontSize:'12',
             // opacity: 0.2,
             color: "#28BCFD",
           },
@@ -1106,14 +1110,15 @@ export default {
     },
     initPosition() {
       if(window.innerWidth >= 2560){
+        this.carbonOption.series[0].center = ['26.4%', '50%']
         const innerCircle = this.carbonOption.graphic.elements[0]
         const outerCircle = this.carbonOption.graphic.elements[1]
         this.carbonOption.legend.right='16%'
         this.carbonOption.legend.textStyle.fontSize='12'
         innerCircle.style.width = innerCircle.style.height = 85
-        innerCircle.left = '17%'
+        innerCircle.left = '19%'
         outerCircle.style.width = outerCircle.style.height = 150
-        outerCircle.left = '10%'
+        outerCircle.left = '14%'
       }else if (window.innerWidth >= 1920&&window.innerWidth<2560) {
         const innerCircle = this.carbonOption.graphic.elements[0]
         const outerCircle = this.carbonOption.graphic.elements[1]
