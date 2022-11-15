@@ -202,7 +202,7 @@
                     const innerCircle = this.brokenOptions.graphic.elements[0]
                     const outerCircle = this.brokenOptions.graphic.elements[1]
                     innerCircle.style.width = innerCircle.style.height = 85
-                    innerCircle.left = '12%'
+                    innerCircle.left = '13%'
                     outerCircle.style.width = outerCircle.style.height = 135
                     outerCircle.left = '8%'
                     this.brokenOptions.legend[0].textStyle.fontSize='12'
