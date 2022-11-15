@@ -82,7 +82,7 @@
                 <div class="card-title">{{ item.title }}</div>
               </div>
               <div class="card-detail">
-                <dv-digital-flop v-if="index !== 3" :config="item.config" style="height: 30px; position: relative; left: 0px"/>
+                <dv-digital-flop v-if="index !== 3" :config="item.config" style="height: 30px; position: relative; left: -5px"/>
                 <dv-digital-flop v-else :config="item.config" style="height: 30px; position: relative; left: -10px"/>
 <!--                <span class="card-value">{{ item.value }}</span>-->
                 <span class="card-unit" :style="index === 3 ? { right: 0 } : {}">{{ item.unit }}</span>
@@ -1006,6 +1006,7 @@ export default {
         margin-left: 4px;
         font-size: 12px;
         color: #c6cfce;
+        line-height: 0.9rem;
       }
     }
     .line {
@@ -1109,6 +1110,7 @@ export default {
     /*margin-top: 6px;*/
     font-size: 12px;
     color: #c6cfce;
+    line-height: 0.9rem;
   }
 }
   @keyframes myFloat {

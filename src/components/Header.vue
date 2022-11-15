@@ -1,24 +1,24 @@
 <template>
   <div class="dark index">
     <div class="switchBtn index">
-      <div class="tips" v-show="isLeftTipsShow">隐藏大屏</div>
-      <div class="tips right-tips" v-show="isRightTipsShow">展示大屏</div>
+<!--      <div class="tips" v-show="isLeftTipsShow">隐藏大屏</div>-->
+<!--      <div class="tips right-tips" v-show="isRightTipsShow">展示大屏</div>-->
       <img
-        style="width: auto;"
-        class="left-btn"
-        :src="hideIcons"
-        @click="close"
-        @mouseenter="onMouseEnter('hide')"
-        @mouseleave="onMouseLeave('hide')"
+            style="width: auto;"
+            class="right-btn"
+            :src="screenIcon"
+            @click="switchScreen"
+            @mouseenter="onMouseEnter('screenIcons')"
+            @mouseleave="onMouseLeave('screenIcons')"
       />
-      <img
-        style="width: auto;"
-        class="right-btn"
-        :src="showIcons"
-        @click="open"
-        @mouseenter="onMouseEnter('show')"
-        @mouseleave="onMouseLeave('show')"
-      />
+        <img
+            style="width: auto; margin-left: 10px"
+            class="left-btn"
+            :src="backIcon"
+            @click="jumpToBackPlatform"
+            @mouseenter="onMouseEnter('backIcons')"
+            @mouseleave="onMouseLeave('backIcons')"
+        />
     </div>
     <div class="top">
 <!--      <div class="left-group">浙江省温州市龙湾区宿迁电商产业大脑</div>-->
@@ -79,10 +79,36 @@ export default {
           hover: require('../assets/icon/header/show-hover.svg'),
           isHover: false
         }
+      },
+      screenIcons: {
+          openHover: require('../assets/icon/open-hover.png'),
+          openActive: require('../assets/icon/open-active.png'),
+          closeHover: require('../assets/icon/close-hover.png'),
+          closeActive: require('../assets/icon/close-active.png'),
+          isHover: false
+      },
+      backIcons: {
+          default: require('../assets/icon/back-default.png'),
+          hover: require('../assets/icon/back-hover.png'),
+          active: require('../assets/icon/back-active.png'),
+          isHover: false,
+          click: false
       }
     };
   },
   methods: {
+    jumpToBackPlatform() {
+        this.backIcons.click = true
+        window.location.replace('http://180.101.119.122:10081/#/wel/index')
+    },
+    switchScreen() {
+        this.backIcons.click = false
+        if (this.$store.state.DigitalTwin.largeScreenShow) {
+            this.$store.commit("DigitalTwin/changeLargeScreenShow", false)
+        } else {
+            this.$store.commit("DigitalTwin/changeLargeScreenShow", true)
+        }
+    },
     close() {
       if (this.$store.state.DigitalTwin.largeScreenShow) {
         this.$store.commit("DigitalTwin/changeLargeScreenShow", false);
@@ -93,23 +119,25 @@ export default {
         this.$store.commit("DigitalTwin/changeLargeScreenShow", true);
       }
     },
-    onMouseEnter(type) {
-      if (type === 'hide') {
-        this.isLeftTipsShow = !this.isLeftTipsShow
-        this.icons.hide.isHover = true
-      } else {
-        this.isRightTipsShow = !this.isRightTipsShow
-        this.icons.show.isHover = true
-      }
+    onMouseEnter(variable) {
+        this[variable].isHover = true
+      // if (type === 'hide') {
+      //   this.isLeftTipsShow = !this.isLeftTipsShow
+      //   this.icons.hide.isHover = true
+      // } else {
+      //   this.isRightTipsShow = !this.isRightTipsShow
+      //   this.icons.show.isHover = true
+      // }
     },
-    onMouseLeave(type) {
-      if (type === 'hide') {
-        this.isLeftTipsShow = !this.isLeftTipsShow
-        this.icons.hide.isHover = false
-      } else {
-        this.isRightTipsShow = !this.isRightTipsShow
-        this.icons.show.isHover = false
-      }
+    onMouseLeave(variable) {
+        this[variable].isHover = false
+      // if (type === 'hide') {
+      //   this.isLeftTipsShow = !this.isLeftTipsShow
+      //   this.icons.hide.isHover = false
+      // } else {
+      //   this.isRightTipsShow = !this.isRightTipsShow
+      //   this.icons.show.isHover = false
+      // }
     },
     // changeLeftTips() {
     //   this.isLeftTipsShow = !this.isLeftTipsShow;
@@ -119,6 +147,14 @@ export default {
     // },
   },
   computed: {
+    backIcon: function() {
+        return this.backIcons.isHover ? this.backIcons.hover : (this.backIcons.click ? this.backIcons.active : this.backIcons.default)
+    },
+    screenIcon: function() {
+        return this.screenIcons.isHover ? (
+            !this.$store.state.DigitalTwin.largeScreenShow ? this.screenIcons.openHover : this.screenIcons.closeHover
+        ) : (!this.$store.state.DigitalTwin.largeScreenShow ?  this.screenIcons.openActive : this.screenIcons.closeActive)
+    },
     hideIcons: function() {
      return this.icons.hide.isHover
               ? this.icons.hide.hover

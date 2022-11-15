@@ -535,6 +535,7 @@ export default {
         margin-left: 4px;
         font-size: 12px;
         color: #c6cfce;
+        line-height: 1.9rem;
       }
     }
     .line {

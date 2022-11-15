@@ -832,7 +832,7 @@ export default {
           color: rgba(255,255,255,0.64);
           position: absolute;
           left: 55%;
-          top: 5%;
+          top: 10%;
         }
       }
     }

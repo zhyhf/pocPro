@@ -488,6 +488,7 @@ export default {
     .item-unit {
       margin-left: 0px;
       font-size: 8px;
+      line-height: 1.9rem;
       color: #c6cfce;
     }
   }
