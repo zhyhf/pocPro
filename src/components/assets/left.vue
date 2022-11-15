@@ -317,7 +317,7 @@ export default {
           ],
           rowNum: 5,
           headerBGC: 'transparent',
-          columnWidth: [185, 170, 170],
+          columnWidth: [260, 170, 120],
           align: ['center'],
           waitTime: 1000
       },

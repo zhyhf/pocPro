@@ -23,7 +23,8 @@
                             data: [
                                 {
                                     name: '批发和零售',
-                                    icon: 'rect'
+                                    icon: 'rect',
+                                   
                                 },
                                 {
                                     name: '信息技术服务',
@@ -42,6 +43,7 @@
                             orient: 'vertical',
                             itemHeight: 6,
                             itemWidth: 6,
+                            // 改   fontSize: '10',==>11
                             textStyle: {
                                 color: '#fff',
                                 fontSize: '10',
@@ -195,7 +197,20 @@
         },
         methods: {
             initPosition() {
-                if (window.innerWidth >= 1920) {
+                if(window.innerWidth >= 2560){
+                    this.brokenOptions.series[0].center = ['21%', '50%']
+                    const innerCircle = this.brokenOptions.graphic.elements[0]
+                    const outerCircle = this.brokenOptions.graphic.elements[1]
+                    innerCircle.style.width = innerCircle.style.height = 85
+                    innerCircle.left = '12%'
+                    outerCircle.style.width = outerCircle.style.height = 135
+                    outerCircle.left = '8%'
+                    this.brokenOptions.legend[0].textStyle.fontSize='12'
+                    this.brokenOptions.legend[1].textStyle.fontSize='12'
+                    this.brokenOptions.legend[1].right='10%'
+                    console.log('brokenOptions',this.brokenOptions.legend[1]);
+                  
+                }else if (window.innerWidth >= 1920&&window.innerWidth<2560) {
                     this.brokenOptions.series[0].center = ['18%', '50%']
                     const innerCircle = this.brokenOptions.graphic.elements[0]
                     const outerCircle = this.brokenOptions.graphic.elements[1]

@@ -25,7 +25,11 @@
         </div>
         <div class="panel-item-body">
           <img src="@/assets/img/panel-bg-bodyCan.png" class="panelBodyCan">
-          <div class="panel-item-content" id="threeD-pieChart" ref="threeDPieChart"  style="width: 100%; height: 188px"></div>
+        <div style="width: 100%; height: 188px;display: flex;align-items:center">
+          <div class="panel-item-content" id="threeD-pieChart" ref="threeDPieChart" 
+           style="width: 100%; height: 100%"></div>
+        </div>
+          
         </div>
       </div>
 
@@ -274,7 +278,7 @@ export default {
         ],
         rowNum: 5,
         headerBGC: 'transparent',
-        columnWidth: [150,130,110],
+        columnWidth: [200,200,150],
         align: ['left'],
         waitTime: 1000
       },
@@ -660,6 +664,7 @@ export default {
           name: "2楼楼宇空调",
           value: 20,
           itemStyle: {
+            fontSize:'20',
             // opacity: 0.2,
             color: "#55F0FF",
           },
@@ -1100,7 +1105,16 @@ export default {
       this.getAnalysisOption()
     },
     initPosition() {
-      if (window.innerWidth >= 1920) {
+      if(window.innerWidth >= 2560){
+        const innerCircle = this.carbonOption.graphic.elements[0]
+        const outerCircle = this.carbonOption.graphic.elements[1]
+        this.carbonOption.legend.right='16%'
+        this.carbonOption.legend.textStyle.fontSize='12'
+        innerCircle.style.width = innerCircle.style.height = 85
+        innerCircle.left = '17%'
+        outerCircle.style.width = outerCircle.style.height = 150
+        outerCircle.left = '10%'
+      }else if (window.innerWidth >= 1920&&window.innerWidth<2560) {
         const innerCircle = this.carbonOption.graphic.elements[0]
         const outerCircle = this.carbonOption.graphic.elements[1]
         innerCircle.style.width = innerCircle.style.height = 85
@@ -1120,10 +1134,12 @@ export default {
     initChart () {
       this.statusChart = this.$echarts.init(this.$refs.threeDPieChart)
       // 传入数据生成 option, 构建3d饼状图, 参数工具文件已经备注的很详细
-      if (window.innerWidth >= 1920) {
-      this.option = getPie3D(this.optionData, 0.8, 250, 28, 20, 1 ,'11%')
+      if(window.innerWidth >= 2560){
+        this.option = getPie3D(this.optionData, 0.8, 250, 28, 20, 1 ,'15%','20%')
+      }else if (window.innerWidth >= 1920&&window.innerWidth < 2560) {
+      this.option = getPie3D(this.optionData, 0.8, 250, 28, 20, 1 ,'11%','10%')
       }else{
-      this.option = getPie3D(this.optionData, 0.8, 250, 28, 20, 1, '7%')
+      this.option = getPie3D(this.optionData, 0.8, 250, 28, 20, 1, '7%','10%')
       }
       this.statusChart.setOption(this.option)
       // 是否需要label指引线，如果要就添加一个透明的2d饼状图并调整角度使得labelLine和3d的饼状图对齐，并再次setOption

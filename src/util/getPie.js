@@ -7,7 +7,7 @@
  * @param pieHeight 立体的高度
  * @param opacity 饼或者环的透明度
  */
- const getPie3D = (pieData, internalDiameterRatio, distance, alpha, pieHeight, opacity = 1,graLeft) => {
+ const getPie3D = (pieData, internalDiameterRatio, distance, alpha, pieHeight, opacity = 1,graLeft,right) => {
     const series = []
     let sumValue = 0
     let startValue = 0
@@ -105,9 +105,9 @@
               }
             ],
             orient: 'vertical',  //垂直显示
-            right: '10%',
+            right: right,
             align: 'left',
-            top:'8%',
+            top:'15%',
             itemHeight: 6,
             itemWidth: 6,
             textStyle: {

@@ -33,7 +33,7 @@
 
       <div class="panel-item green-energy">
         <div class="panel-title">绿色能源</div>
-        <div class="panel-item-body">
+        <div class="panel-item-body panel-item-height">
           <img src="@/assets/img/panel-bg-bodyCan.png" class="panelBodyCan">
           <div class="panel-item-content green-content">
             <img src="@/assets/img/energy/green-ele.svg" class="green-ele" @load="imgLoaded('GREEN')">
@@ -936,8 +936,10 @@
 <style lang="less" scoped>
 @import "../../style/panel.less";
 @import "../../style/element.less";
+
 .light-charger {
   display: flex;
+
   .light-value {
     text-align: center;
     font-size: 16px;
@@ -1035,9 +1037,9 @@
           align-items: center;
           .wave-chart{
               flex: 1;
-              height: 9.6rem;
-              margin-right: -7%;
-              margin-top: -0.2rem;
+              height: 8rem;
+              margin-left:3%;
+              margin-top: -0.8rem;
           }
           .wave-right {
               display: flex;
@@ -1049,7 +1051,7 @@
                   font-size: 16px;
                   font-weight: bold;
                   .right-pic {
-                      height: 3rem;
+                      height: 2.5rem;
                       width: auto;
                   }
               }
