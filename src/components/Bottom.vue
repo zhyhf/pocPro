@@ -300,8 +300,12 @@ export default {
       }else{
           this.showOptions = index === 4
       }
-    
-      // 点击下面的菜单栏飞到指定的位置
+      let handler = new Cesium.ScreenSpaceEventHandler($viewer.scene.canvas);
+      let that=this
+      handler.setInputAction(function (movement) {
+       that.showOptions = false;
+      }, Cesium.ScreenSpaceEventType.LEFT_CLICK);
+       // 点击下面的菜单栏飞到指定的位置
       $viewer.qtum.centerAt(this.position[index]); // 飞行到指定位
       if (index === 3) {
         this.selectedIndustry = '选择产业';
