@@ -22,7 +22,7 @@
     </div>
     <div class="top">
 <!--      <div class="left-group">浙江省温州市龙湾区宿迁电商产业大脑</div>-->
-      <div class="name">宿迁电商产业大脑</div>
+      <div class="name">产业大脑平台</div>
       <div class="time">
         <div class="titleContent">
           <i class="iconfont icon-humidity" />

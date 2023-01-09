@@ -294,7 +294,13 @@ export default {
         deleteParkBillboard()
         this.$store.commit('DigitalTwin/changeWarningSelectedIcon',null)
       // 判断index是否为4,this.showOptions为true或者false
-      this.showOptions = index === 4
+      if(this.showOptions){
+          this.showOptions = false;
+            // this.showOptions = index === 4
+      }else{
+          this.showOptions = index === 4
+      }
+    
       // 点击下面的菜单栏飞到指定的位置
       $viewer.qtum.centerAt(this.position[index]); // 飞行到指定位
       if (index === 3) {
