@@ -99,7 +99,7 @@ export default {
   methods: {
     jumpToBackPlatform() {
         this.backIcons.click = true
-        window.location.replace('http://180.101.119.122:10081/#/wel/index')
+        window.location.replace('http://180.101.119.122:30002/#/wel/index')
     },
     switchScreen() {
         this.backIcons.click = false
